@@ -16,7 +16,8 @@
 // });
 
 Route::get('/', function() {
-    return view('website.home.index');
+    // return view('website.home.index');
+    return redirect('/post');
 });
 
 Route::group(['prefix' => 'post'], function() {
