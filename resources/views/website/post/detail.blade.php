@@ -38,7 +38,7 @@
                                     </div>
     
                                     <div class="post-gallery">
-                                        <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-06.jpg')}}" alt="">
+                                        <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-04.jpg')}}" alt="">
                                         <span class="image-caption">Cras eget sem nec dui volutpat ultrices.</span>
                                     </div>
     
