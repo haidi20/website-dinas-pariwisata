@@ -19,8 +19,13 @@ Route::get('/', function() {
     return view('website.home.index');
 });
 
-Route::get('/post/detail', function() {
-    return view('website.home.detail');
+Route::group(['prefix' => 'post'], function() {
+    Route::get('/', function() {
+        return view('website.post.index');
+    });
+    Route::get('/detail', function() {
+        return view('website.post.detail');
+    });
 });
 
 Route::get('/galery', function(){

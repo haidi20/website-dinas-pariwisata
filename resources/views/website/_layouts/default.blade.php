@@ -2,7 +2,7 @@
 
 <!-- Mirrored from nunforest.com/hotmagazine/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Oct 2019 08:40:58 GMT -->
 <head>
-	<title>HotMagazine</title>
+	<title>Dispar Kaltim</title>
 
 	<meta charset="utf-8">
 
