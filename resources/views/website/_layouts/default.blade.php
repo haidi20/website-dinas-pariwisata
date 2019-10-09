@@ -28,7 +28,15 @@
 
 	@include('website._layouts.header')
 
-	@yield('content')
+	<!-- Container -->
+	<div id="container">
+
+		@yield('content')
+
+		@include('website._layouts.footer')
+
+	</div>
+	<!-- End Container -->	
 	
 	<script type="text/javascript" src="{{asset('hotmagazine/js/jquery.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('hotmagazine/js/jquery.migrate.js')}}"></script>
