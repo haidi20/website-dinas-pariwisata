@@ -17,7 +17,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="index.html">
-                            <img src="{{asset('images/logo-keren.png')}}" style="height:200px; weidth: 400px;"  alt="">
+                            <img src="{{asset('images/logo-keren.png')}}" style="height:90px; weidth: 400px;"  alt="">
                         </a>
                     </div>
 
