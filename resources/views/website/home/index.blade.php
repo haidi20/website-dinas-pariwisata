@@ -159,22 +159,23 @@
 				<div class="features-today-box owl-wrapper">
 					<div class="owl-carousel" data-num="4">
 					
-						{{-- <div class="item news-post standard-post">
+						<div class="item news-post standard-post">
 							<div class="post-gallery">
-								<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-08.jpg')}}" alt="">
-								<a class="category-post world" href="world.html">Music</a>
+								{{-- <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-08.jpg')}}" alt="">
+								<a class="category-post world" href="world.html">Music</a> --}}
 							</div>
 							<div class="post-content">
-								<h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+								{{-- <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
 								<ul class="post-tags">
 									<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 									<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
 									<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
-								</ul>
+								</ul> --}}
+								<div align="center"><h1>tempat gambar</h1></div>
 							</div>
 						</div>
 
-						<div class="item news-post standard-post">
+						{{-- <div class="item news-post standard-post">
 							<div class="post-gallery">
 								<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-09.jpg')}}" alt="">
 								<a class="category-post sport" href="sport.html">Sport</a>

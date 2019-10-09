@@ -23,6 +23,12 @@
 
 	@yield('script-top')
 
+	<style>
+		.name-logo{
+			/* display:inline */
+		}
+	</style>
+
 </head>
 <body>
 

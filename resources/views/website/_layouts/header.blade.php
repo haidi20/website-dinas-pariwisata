@@ -5,7 +5,7 @@
         <nav class="navbar navbar-default navbar-static-top" role="navigation">
 
             <!-- Logo & advertisement -->
-            <div class="logo-advertisement" style="background-color:#10481B">
+            <div class="logo-advertisement" style="background-color:white">
                 <div class="container">
 
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -16,13 +16,15 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html"><img src="{{asset('images/logo.jpg')}}" alt=""></a>
+                        <a class="navbar-brand" href="index.html">
+                            <img src="{{asset('images/logo-keren.png')}}" style="height:200px; weidth: 400px;"  alt="">
+                        </a>
                     </div>
 
                     <div class="advertisement">
                         <div class="desktop-advert">
                             {{-- <span>Advertisement</span> --}}
-                            <img style="margin-top: 50px" src="{{asset('hotmagazine/upload/addsense/background-custom.jpg')}}" alt="">
+                            {{-- <img style="margin-top: 50px" src="{{asset('hotmagazine/upload/addsense/background-custom.jpg')}}" alt=""> --}}
                         </div>
                         <div class="tablet-advert">
                             {{-- <span>Advertisement</span> --}}
