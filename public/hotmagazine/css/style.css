@@ -331,7 +331,7 @@ header.active .nav-list-container {
   background: #f44336;
 }
 .navbar-nav > li > a:after {
-  content: '\f107';
+  /* content: '\f107'; */
   position: absolute;
   font-family: 'FontAwesome';
   font-size: 13px;
