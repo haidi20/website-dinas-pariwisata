@@ -196,40 +196,25 @@
 	</section>
 	<!-- End heading-news-section -->
 
-<!-- features-today-section
+	<!-- ticker-news-section
 	================================================== -->
-	<section class="features-today">
+	<section class="ticker-news">
+
 			<div class="container">
-
-				{{-- <div class="title-section">
-					<h1><span>Today's Featured</span></h1>
-				</div> --}}
-
-				<div class="features-today-box owl-wrapper">
-					<div class="owl-carousel" data-num="4">
-					
-						<div class="item news-post standard-post">
-							<div class="post-gallery">
-								{{-- <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-08.jpg')}}" alt="">
-								<a class="category-post world" href="world.html">Music</a> --}}
-							</div>
-							<div class="post-content">
-								{{-- <h2><a href="{{url('/post/detail')}}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-								<ul class="post-tags">
-									<li><i class="fa fa-clock-o"></i>27 may 2013</li>
-									<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
-									<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
-								</ul> --}}
-								<div align="center"><h1>tempat gambar</h1></div>
-							</div>
-						</div>
-
-					</div>
+				<div class="ticker-news-box">
+					<span class="breaking-news">breaking news</span>
+					<span class="new-news">New</span>
+					<ul id="js-news">
+						<li class="news-item"><span class="time-news">11:36 pm</span>  <a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</a> Donec odio. Quisque volutpat mattis eros... </li>
+						<li class="news-item"><span class="time-news">12:40 pm</span>  <a href="#">Dëshmitarja Abrashi: E kam parë Oliverin në turmë,</a> ndërsa neve na shpëtoi “çika Mille” </li>
+						<li class="news-item"><span class="time-news">11:36 pm</span>  <a href="#">Franca do të bashkëpunojë me Kosovën në fushën e shëndetësisë. </a></li>
+						<li class="news-item"><span class="time-news">01:00 am</span>  <a href="#">DioGuardi, kështu e mbrojti Kosovën në Washington, </a> para serbit Vejvoda </li>
+					</ul>
 				</div>
-
 			</div>
+
 		</section>
-		<!-- End features-today-section -->
+		<!-- End ticker-news-section -->
 
 <!-- block-wrapper-section
 	================================================== -->
