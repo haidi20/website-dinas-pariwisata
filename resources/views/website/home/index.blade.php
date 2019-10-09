@@ -2,7 +2,7 @@
 
 @section('script-top')
     <style>
-       
+		
     </style>
 @endsection
 
@@ -52,7 +52,7 @@
 												<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-02.jpg')}}" alt="">
 												<div class="post-content">
 													Pariwisata
-													<h2 >Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam.</h2>
+													<h2>Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam.</h2>
 													<ul class="post-tags">
 														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 													</ul>

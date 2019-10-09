@@ -22,7 +22,7 @@
                     <div class="advertisement">
                         <div class="desktop-advert">
                             {{-- <span>Advertisement</span> --}}
-                            {{-- <img src="{{asset('hotmagazine/upload/addsense/728x90.jpg')}}" alt=""> --}}
+                            <img style="margin-top: 50px" src="{{asset('hotmagazine/upload/addsense/background-custom.jpg')}}" alt="">
                         </div>
                         <div class="tablet-advert">
                             {{-- <span>Advertisement</span> --}}
