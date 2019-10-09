@@ -17,14 +17,24 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="index.html">
-                            <img src="{{asset('images/logo-keren.png')}}" style="height:90px; weidth: 400px;"  alt="">
+                            {{-- <img src="{{asset('images/logo-keren.png')}}" style="height:90px; weidth: 400px;"  alt=""> --}}
+                            <img src="{{asset('images/logo-dispar.png')}}" class="logo-dispar"  alt="">
+                            <div class="title-logo-dispar">
+                                <h2>Pariwisata Kalimantan</h2>
+                                <p>Dinas Kebudayaan & Pariwisata Provinsi Kalimantan Timur</p>
+                            </div>
                         </a>
                     </div>
 
                     <div class="advertisement">
-                        <div class="desktop-advert">
+                        <div class="desktop-advert" style="padding-top:10px">
                             {{-- <span>Advertisement</span> --}}
                             {{-- <img style="margin-top: 50px" src="{{asset('hotmagazine/upload/addsense/background-custom.jpg')}}" alt=""> --}}
+                            <img src="{{asset('images/logo-burung.png')}}" class="logo-burung"  alt="">
+                            <div class="title-logo-burung">
+                                <h2>KALTIM</h2>
+                                <p>The Beauty of Culture and Nature</p>
+                            </div>
                         </div>
                         <div class="tablet-advert">
                             {{-- <span>Advertisement</span> --}}

@@ -1,0 +1,21 @@
+.logo-dispar{
+    height: 90px;
+    width: 70px;
+    left: 25px;
+    position: absolute;
+}
+.logo-burung{
+    height:90px; 
+    width: 90px;
+    right: 27;
+    position:absolute;
+}
+.title-logo-burung{
+    text-align:right;
+    padding-right: 15px;
+}
+
+/* rewrite */
+.navbar-brand{
+    padding:15px;
+}
