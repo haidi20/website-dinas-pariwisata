@@ -18,7 +18,21 @@
     padding-right: 75px;
 }
 
-/* rewrite */
+/* start rewrite css theme */
 .navbar-brand{
     padding:15px;
 }
+
+.bx-controls-direction{
+    height:20px;
+}
+
+.bx-controls-direction a.bx-prev{
+    height:205px;
+}
+
+.bx-controls-direction a.bx-next{
+    height:205px;
+}
+
+/* end rewrite css theme */

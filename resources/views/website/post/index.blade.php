@@ -11,114 +11,101 @@
 				<!-- block content -->
 				<div class="block-content">
 
-					<!-- masonry box -->
-					<div class="masonry-box">
-
+					<!-- grid box -->
+					<div class="grid-box">
 						<div class="title-section">
-							<h1><span>Latest Articles</span></h1>
+							<h1><span class="world">World</span></h1>
 						</div>
 
-						<div class="latest-articles iso-call">
-							<a href="{{url('/post/detail')}}">
-								<div class="news-post standard-post2 default-size">
-									<div class="post-gallery">
-										<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-06.jpg')}}" alt="">
-									</div>
-									<div class="post-title">
-										<h2><a href="{{url('/post/detail')}}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-										<ul class="post-tags">
-											<li><i class="fa fa-clock-o"></i>27 may 2013</li>
-											<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
-											<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
-										</ul>
-									</div>
-								</div>
-							</a>
-
-							<a href="{{url('/post/detail')}}">
-							<div class="news-post standard-post2">
-								<div class="post-gallery">
-									<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" alt="">
-								</div>
-								<div class="post-title">
-									<h2><a href="{{url('/post/detail')}}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-									<ul class="post-tags">
-										<li><i class="fa fa-clock-o"></i>27 may 2013</li>
-										<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
-										<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
-									</ul>
-								</div>
+						<div class="news-post large-post">
+							<div class="post-gallery">
+								<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" alt="">
+								<a class="category-post world" href="world.html">Business</a>
 							</div>
-							</a>
-
-							<a href="{{url('/post/detail')}}">
-							<div class="news-post standard-post2">
-								<div class="post-gallery">
-									<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-03.jpg')}}" alt="">
-								</div>
-								<div class="post-title">
-									<h2>Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam</h2>
-									<ul class="post-tags">
-										<li><i class="fa fa-clock-o"></i>27 may 2013</li>
-										<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
-										<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
-									</ul>
-								</div>
+							<div class="post-title">
+								<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. </a></h2>
+								<ul class="post-tags">
+									<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+									<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+									<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+									<li><i class="fa fa-eye"></i>872</li>
+								</ul>
 							</div>
-							</a>
-
-							<a href="{{url('/post/detail')}}">
-							<div class="news-post standard-post2">
-								<div class="post-gallery">
-									<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-04.jpg')}}" alt="">
-								</div>
-								<div class="post-title">
-									<h2>Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam</h2>
-									<ul class="post-tags">
-										<li><i class="fa fa-clock-o"></i>27 may 2013</li>
-										<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
-										<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
-									</ul>
-								</div>
+							<div class="post-content">
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
+								<a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}" class="read-more-button"><i class="fa fa-arrow-circle-right"></i>Read More</a>
 							</div>
-							</a>
-
-							<a href="{{url('/post/detail')}}">
-							<div class="news-post standard-post2">
-								<div class="post-gallery">
-									<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-05.jpg')}}" alt="">
-								</div>
-								<div class="post-title">
-									<h2>Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam</h2>
-									<ul class="post-tags">
-										<li><i class="fa fa-clock-o"></i>27 may 2013</li>
-										<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
-										<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
-									</ul>
-								</div>
-							</div>
-							</a>
-
-							<a href="{{url('/post/detail')}}">
-							<div class="news-post standard-post2">
-								<div class="post-gallery">
-									<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-07.jpg')}}" alt="">
-								</div>
-								<div class="post-title">
-									<h2>Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam</h2>
-									<ul class="post-tags">
-										<li><i class="fa fa-clock-o"></i>27 may 2013</li>
-										<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
-										<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
-									</ul>
-								</div>
-							</div>
-							</a>
-
 						</div>
+						
 
 					</div>
-					<!-- End masonry box -->
+					<!-- End grid box -->
+
+					<!-- grid box -->
+					<div class="grid-box">
+						<div class="title-section">
+							<h1><span class="world">World</span></h1>
+						</div>
+
+						<div class="news-post large-post">
+							<div class="post-gallery">
+								<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-02.jpg')}}" alt="">
+								<a class="category-post world" href="world.html">Business</a>
+							</div>
+							<div class="post-title">
+								<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. </a></h2>
+								<ul class="post-tags">
+									<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+									<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+									<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+									<li><i class="fa fa-eye"></i>872</li>
+								</ul>
+							</div>
+							<div class="post-content">
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
+								<a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}" class="read-more-button"><i class="fa fa-arrow-circle-right"></i>Read More</a>
+							</div>
+						</div>
+						
+
+					</div>
+					<!-- End grid box -->
+
+					<!-- grid box -->
+					<div class="grid-box">
+						<div class="title-section">
+							<h1><span class="world">World</span></h1>
+						</div>
+
+						<div class="news-post large-post">
+							<div class="post-gallery">
+								<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-03.jpg')}}" alt="">
+								<a class="category-post world" href="world.html">Business</a>
+							</div>
+							<div class="post-title">
+								<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. </a></h2>
+								<ul class="post-tags">
+									<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+									<li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+									<li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+									<li><i class="fa fa-eye"></i>872</li>
+								</ul>
+							</div>
+							<div class="post-content">
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
+								<a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}" class="read-more-button"><i class="fa fa-arrow-circle-right"></i>Read More</a>
+							</div>
+						</div>
+						
+
+					</div>
+					<!-- End grid box -->
 
 					<!-- pagination box -->
 					<div class="pagination-box">
@@ -132,7 +119,7 @@
 						</ul>
 						<p>Page 1 of 9</p>
 					</div>
-					<!-- End pagination box -->
+					<!-- End Pagination box -->
 
 				</div>
 				<!-- End block content -->
@@ -174,7 +161,8 @@
 									<li>
 										<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Sed arcu. Cras consequat. </a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Sed arcu. Cras consequat. </a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -184,7 +172,8 @@
 									<li>
 										<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-02.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Phasellus ultrices nulla quis nibh. Quisque a lectus.  </a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Phasellus ultrices nulla quis nibh. Quisque a lectus.  </a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -194,7 +183,8 @@
 									<li>
 										<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-03.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -204,7 +194,8 @@
 									<li>
 										<img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-04.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi. </a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi. </a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -218,7 +209,8 @@
 									<li>
 										<img src="{{asset('hotmagazine/upload/news-posts/listw3.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Phasellus ultrices nulla quis nibh. Quisque a lectus. </a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Phasellus ultrices nulla quis nibh. Quisque a lectus. </a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -228,7 +220,8 @@
 									<li>
 										<img src="{{asset('hotmagazine/upload/news-posts/listw4.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -238,7 +231,8 @@
 									<li>
 										<img src="{{asset('hotmagazine/upload/news-posts/listw5.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -257,7 +251,8 @@
 									<li>
 										<img src="{{asset('hotmagazine/upload/news-posts/listw2.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Sed arcu. Cras consequat.</a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Sed arcu. Cras consequat.</a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -271,7 +266,8 @@
 									<li>
 										<img src="{{asset('hotmagazine/upload/news-posts/listw4.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -291,7 +287,8 @@
 									<li>
 										<img src="{{asset('hotmagazine/upload/news-posts/listw3.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Phasellus ultrices nulla quis nibh. Quisque a lectus.  </a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Phasellus ultrices nulla quis nibh. Quisque a lectus.  </a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -301,7 +298,8 @@
 									<li>
 										<img src="{{asset('hotmagazine/upload/news-posts/listw2.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Sed arcu. Cras consequat.</a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Sed arcu. Cras consequat.</a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
@@ -311,7 +309,8 @@
 									<li>
 										<img src="{{asset('hotmagazine/upload/news-posts/listw5.jpg')}}" alt="">
 										<div class="post-content">
-											<h2><a href="single-post.html">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</a></h2>
+											<h2><a href="-content">
+                                            <h2><a href="{{url('/post/detail')}}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</a></h2>
 											<ul class="post-tags">
 												<li><i class="fa fa-clock-o"></i>27 may 2013</li>
 											</ul>
