@@ -29,8 +29,8 @@
                                     <li><i class="fa fa-share-alt"></i><span>Share Post</span></li>
                                     <li><a class="facebook" href="#"><i class="fa fa-facebook"></i><span>Share on Facebook</span></a></li>
                                     <li><a class="twitter" href="#"><i class="fa fa-twitter"></i><span>Share on Twitter</span></a></li>
-                                    <li><a class="google" href="#"><i class="fa fa-google-plus"></i><span></span></a></li>
-                                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i><span></span></a></li>
+                                    <li><a class="google" href="#"><i class="fa fa-google-plus"></i><span style="color:red">.</span></a></li>
+                                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i><span style="color:blue">.</span></a></li>
                                 </ul>
                             </div>
 

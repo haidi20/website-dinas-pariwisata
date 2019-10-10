@@ -1,18 +1,21 @@
 .logo-dispar{
     height: 90px;
     width: 70px;
-    left: 25px;
+    left:90px;
     position: absolute;
 }
 .logo-burung{
     height:90px; 
     width: 90px;
-    right: 27;
+    right: 55;
     position:absolute;
+}
+.title-logo-dispar{
+    padding-left: 90px;
 }
 .title-logo-burung{
     text-align:right;
-    padding-right: 15px;
+    padding-right: 75px;
 }
 
 /* rewrite */
