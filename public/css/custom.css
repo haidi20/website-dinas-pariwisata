@@ -12,10 +12,19 @@
 }
 .title-logo-dispar{
     padding-left: 90px;
+    color:white;
 }
+.title-logo-dispar p{
+    color:white;
+}
+
 .title-logo-burung{
     text-align:right;
     padding-right: 75px;
+    color:white;
+}
+.title-logo-burung p{
+    color:white;
 }
 
 /* start rewrite css theme */
