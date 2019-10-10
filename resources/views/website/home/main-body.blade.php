@@ -86,64 +86,189 @@
 
                     </div>
                     <!-- End grid box -->
-                    
-                    <!-- grid-box -->
-                <div class="grid-box">
 
-                    <div class="title-section">
-                        <h1><span class="world">Galery</span></h1>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="{{url('/galery')}}">
-                                <div class="news-post video-post">
-                                    <img alt="" src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-09.jpg')}}">
-                                    {{-- <a href="#" class="video-link"><i class="fa fa-play-circle-o"></i></a> --}}
-                                    <div class="hover-box">
-                                        <h2 style="color:white">Donec odio. Quisque volutpat mattis eros.</h2>
+                    <!-- carousel box -->
+                        <div class="carousel-box owl-wrapper">
+                            <div class="title-section">
+                                <h1><span>Gallery</span></h1>
+                            </div>
+                            <div class="owl-carousel" data-num="3">
+                            
+                                <div class="item news-post image-post3">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" alt="">
+                                    {{-- <div class="hover-box">
+                                        <h2><a href="{{url('/galery')}}">Donec odio. Quisque volutpat mattis eros.</a></h2>
                                         <ul class="post-tags">
                                             <li><i class="fa fa-clock-o"></i>27 may 2013</li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="{{url('/galery')}}">
-                                <div class="news-post video-post">
-                                    <img alt="" src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-10.jpg')}}">
-                                    {{-- <a href="#" class="video-link"><i class="fa fa-play-circle-o"></i></a> --}}
-                                    <div class="hover-box">
-                                        <h2 style="color:white">Donec odio. Quisque volutpat mattis eros.</h2>
+                            
+                                <div class="item news-post image-post3">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-02.jpg')}}" alt="">
+                                    {{-- <div class="hover-box">
+                                        <h2><a href="{{url('/galery')}}">Nullam malesuada erat ut turpis. </a></h2>
                                         <ul class="post-tags">
                                             <li><i class="fa fa-clock-o"></i>27 may 2013</li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="{{url('/galery')}}">
-                                <div class="news-post video-post">
-                                    <img alt="" src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-08.jpg')}}">
-                                    {{-- <a href="#" class="video-link"><i class="fa fa-play-circle-o"></i></a> --}}
-                                    <div class="hover-box">
-                                        <h2 style="color:white">Donec odio. Quisque volutpat mattis eros.</h2>
+                            
+                                <div class="item news-post image-post3">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-03.jpg')}}" alt="">
+                                    {{-- <div class="hover-box">
+                                        <h2><a href="{{url('/galery')}}">Suspendisse urna nibh.</a></h2>
                                         <ul class="post-tags">
                                             <li><i class="fa fa-clock-o"></i>27 may 2013</li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                            </a>
-                        </div>
-                    </div>
+                            
+                                <div class="item news-post image-post3">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-04.jpg')}}" alt="">
+                                    {{-- <div class="hover-box">
+                                        <h2><a href="{{url('/galery')}}">Donec nec justo eget felis facilisis fermentum. Aliquam </a></h2>
+                                        <ul class="post-tags">
+                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        </ul>
+                                    </div> --}}
+                                </div>
+                            
+                                <div class="item news-post image-post3">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-05.jpg')}}" alt="">
+                                    {{-- <div class="hover-box">
+                                        <h2><a href="{{url('/galery')}}">Donec odio. Quisque volutpat mattis eros.</a></h2>
+                                        <ul class="post-tags">
+                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        </ul>
+                                    </div> --}}
+                                </div>
 
+                            </div>
+
+                            <div class="center-button">
+                                <a href="{{url('/galerry')}}"> Show More </a>
+                            </div>
+                        </div>
+                        <!-- End carousel box -->
                 </div>
-                <!-- End grid-box -->
-                    <div class="center-button">
-                        <a href="{{url('/galery')}}"> Show More </a>
+                <!-- End block content -->
+
+                <!-- block content -->
+                <div class="block-content">
+
+                    <!-- masonry box -->
+                    <div class="masonry-box">
+
+                        <div class="title-section">
+                            <h1><span>Latest Articles</span></h1>
+                        </div>
+
+                        <div class="latest-articles iso-call">
+
+                            <div class="news-post standard-post2 default-size">
+                                <div class="post-gallery">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" alt="">
+                                </div>
+                                <div class="post-title">
+                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="news-post standard-post2">
+                                <div class="post-gallery">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-02.jpg')}}" alt="">
+                                </div>
+                                <div class="post-title">
+                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="news-post standard-post2">
+                                <div class="post-gallery">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-03.jpg')}}" alt="">
+                                </div>
+                                <div class="post-title">
+                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="news-post standard-post2">
+                                <div class="post-gallery">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-04.jpg')}}" alt="">
+                                </div>
+                                <div class="post-title">
+                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="news-post standard-post2">
+                                <div class="post-gallery">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-05.jpg')}}" alt="">
+                                </div>
+                                <div class="post-title">
+                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="news-post standard-post2">
+                                <div class="post-gallery">
+                                    <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-06.jpg')}}" alt="">
+                                </div>
+                                <div class="post-title">
+                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
+                    <!-- End masonry box -->
+
+                    <!-- pagination box -->
+                    <div class="pagination-box">
+                        <ul class="pagination-list">
+                            <li><a class="active" href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><span>...</span></li>
+                            <li><a href="#">9</a></li>
+                            <li><a href="#">Next</a></li>
+                        </ul>
+                        <p>Page 1 of 9</p>
+                    </div>
+                    <!-- End pagination box -->
+
                 </div>
                 <!-- End block content -->
 

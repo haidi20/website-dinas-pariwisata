@@ -218,7 +218,8 @@
 
 	@include('website.home.post-popular')
 
-	@include('website.home.post-new')
+	{{-- postingan terbaru, galerry, article, bagian side bar --}}
+	@include('website.home.main-body')
 
 	
 @endsection
