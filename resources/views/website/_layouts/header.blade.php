@@ -20,7 +20,7 @@
                             {{-- <img src="{{asset('images/logo-keren.png')}}" style="height:90px; weidth: 400px;"  alt=""> --}}
                             <img src="{{asset('images/logo-disparr.png')}}" class="logo-dispar"  alt="">
                             <div class="title-logo-dispar">
-                                <h2>Pariwisata Kalimantan</h2>
+                                <h2>Pariwisata Kalimantan Timur</h2>
                                 <p>Dinas Kebudayaan & Pariwisata Provinsi Kalimantan Timur</p>
                             </div>
                         </a>
