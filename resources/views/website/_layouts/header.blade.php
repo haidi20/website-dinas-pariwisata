@@ -5,7 +5,7 @@
         <nav class="navbar navbar-default navbar-static-top" role="navigation">
 
             <!-- Logo & advertisement -->
-            <div class="logo-advertisement" style="background-color:white">
+            <div class="logo-advertisement" style="background-image:url('{{asset('images/bg.jpg')}}')">
                 <div class="container">
 
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -18,7 +18,7 @@
                         </button>
                         <a class="navbar-brand" href="index.html">
                             {{-- <img src="{{asset('images/logo-keren.png')}}" style="height:90px; weidth: 400px;"  alt=""> --}}
-                            <img src="{{asset('images/logo-dispar.png')}}" class="logo-dispar"  alt="">
+                            <img src="{{asset('images/logo-disparr.png')}}" class="logo-dispar"  alt="">
                             <div class="title-logo-dispar">
                                 <h2>Pariwisata Kalimantan</h2>
                                 <p>Dinas Kebudayaan & Pariwisata Provinsi Kalimantan Timur</p>
