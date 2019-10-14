@@ -2,10 +2,10 @@
     ================================================== -->
     <header class="clearfix">
         <!-- Bootstrap navbar -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <nav class="navbar navbar-default navbar-static-top"  role="navigation">
 
             <!-- Logo & advertisement -->
-            <div class="logo-advertisement" style="background-image:url('{{asset('images/bg.jpg')}}')">
+            <div class="logo-advertisement" style="background-image:url('{{asset('images/bg2.png')}}')">
                 <div class="container">
 
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,7 +21,7 @@
                             <img src="{{asset('images/logo-disparr.png')}}" class="logo-dispar"  alt="">
                             <div class="title-logo-dispar">
                                 <h2>Pariwisata Kalimantan Timur</h2>
-                                <p>Dinas Kebudayaan & Pariwisata Provinsi Kalimantan Timur</p>
+                                <p>The Beauty of Culture and Nature</p>
                             </div>
                         </a>
                     </div>
@@ -30,10 +30,10 @@
                         <div class="desktop-advert" style="padding-top:10px">
                             {{-- <span>Advertisement</span> --}}
                             {{-- <img style="margin-top: 50px" src="{{asset('hotmagazine/upload/addsense/background-custom.jpg')}}" alt=""> --}}
-                            <img src="{{asset('images/logo-burung.png')}}" class="logo-burung"  alt="">
+                            <img src="{{asset('images/logo-burung2.png')}}" class="logo-burung"  alt="">
                             <div class="title-logo-burung">
                                 <h2>KALTIM</h2>
-                                <p>The Beauty of Culture and Nature</p>
+                                <p>Pesona Indonesia</p>
                             </div>
                         </div>
                         <div class="tablet-advert">
