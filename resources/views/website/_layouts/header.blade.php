@@ -30,11 +30,11 @@
                         <div class="desktop-advert" style="padding-top:10px">
                             {{-- <span>Advertisement</span> --}}
                             {{-- <img style="margin-top: 50px" src="{{asset('hotmagazine/upload/addsense/background-custom.jpg')}}" alt=""> --}}
-                            <img src="{{asset('images/logo-burung2.png')}}" class="logo-burung"  alt="">
-                            <div class="title-logo-burung">
+                            <img src="{{asset('images/wonderful-indonesia.png')}}" class="logo-burung"  alt="">
+                            {{-- <div class="title-logo-burung">
                                 <h2>KALTIM</h2>
                                 <p>Pesona Indonesia</p>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="tablet-advert">
                             {{-- <span>Advertisement</span> --}}

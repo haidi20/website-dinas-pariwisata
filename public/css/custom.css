@@ -11,8 +11,9 @@
 }
 .logo-burung{
     /* height:90px;  */
-    width: 100px;
-    right: 55;
+    width: 275px;
+    right: 35;
+    top: 0.1;
     position:absolute;
 }
 .title-logo-dispar{
