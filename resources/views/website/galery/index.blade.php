@@ -156,15 +156,6 @@
                         </div>
                     </div>
 
-                </div>
-                <!-- End grid box -->
-
-                <!-- grid box -->
-                <div class="grid-box">
-                    <div class="title-section">
-                        <h1><span class="world">World</span></h1>
-                    </div>
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="news-post image-post2">

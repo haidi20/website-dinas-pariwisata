@@ -55,7 +55,7 @@
                             <li><a class="tech" href="{{url('/')}}">Home</a></li>
                             <li><a class="fashion" href="{{url('/post')}}">Post</a></li>
 
-                            <li><a class="world" href="{{url('galery')}}">Galery</a></li>
+                            <li><a class="world" href="{{url('galery')}}">Gallery</a></li>
 
                         </ul>
                     </div>
