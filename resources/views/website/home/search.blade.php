@@ -1,7 +1,7 @@
 <!-- features-today-section
 ================================================== -->
-<section class="space-search">
-    <div class="container center-search">
+<section class="space-search" style="background-image: url('{{asset('images/logo-pariwisata-kaltim.png')}}')">
+    <div class="container center-search" >
 
         {{-- <div class="center-search"> --}}
             <h2>Welcome To Kalimantan Timur</h2>
