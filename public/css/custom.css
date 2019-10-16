@@ -52,10 +52,16 @@
     font-size: 50px;
 }
 
-.search-form{
+form.search-form input[type="text"]{
     height: 70px;
-    padding: 30px;
-    font-size: 20px;
+    padding: 25px;
+    font-size: 15px;
+    border-radius: 30px;
+    width: 80%;
+}
+form button i.fa-search {
+    font-size: 30px;
+    transform: translate(-80px, 10px);
 }
 
 /* start rewrite css theme */
