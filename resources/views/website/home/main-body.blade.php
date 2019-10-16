@@ -280,7 +280,7 @@
 
                     <div class="widget features-slide-widget">
                         <div class="title-section">
-                            <h1><span>Featured Posts</span></h1>
+                            <h1><span>Postingan</span></h1>
                         </div>
                         <div class="image-post-slider">
                             <ul class="bxslider">
@@ -490,20 +490,23 @@
 
                     <div class="widget post-widget">
                         <div class="title-section">
-                            <h1><span>Featured Video</span></h1>
+                            <h1><span>Video</span></h1>
                         </div>
                         <div class="news-post video-post">
                             <img alt="" src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-13.jpg')}}">
-                            <a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a>
+                                {{-- <a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a> --}}
+                                <a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"></a>
                             <div class="hover-box">
-                                <h2><a href="{{url('/post/detail')}}">Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. </a></h2>
+                                {{-- <h2><a href="{{url('/post/detail')}}">Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. </a></h2> --}}
                                 <ul class="post-tags">
                                     <li><i class="fa fa-clock-o"></i>27 may 2013</li>
                                 </ul>
                             </div>
                             <p></p>
                         </div>
-                        <p>Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis. </p>
+                        <div class="center-button">
+                            <a href="{{url('/post')}}"> Show More </a>
+                        </div>
                     </div>
 
 

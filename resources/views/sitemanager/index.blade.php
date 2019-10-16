@@ -13,15 +13,12 @@
 <meta name="description" content="Point Of Sale">
 <meta name="author" content="KaijuThemes">
 <meta id="token" name="csrf-token" content="{{ csrf_token() }}">
-
-@include('_layouts.script-top')
-@yield('script-top')
-
+<link rel="stylesheet" href="{{mix('css/app.css')}}">
 </head>
     <body class="infobar-offcanvas">
         <div id="app"></div>
 
-        @include('_layouts.script-bottom')
+        <script src="{{mix('js/app.js')}}"></script>
         <script src="https://cdn.tiny.cloud/1/6tf0yfd67hcj5lfbaaypzrphtmsnll2fu91xh9ufe7gekrw2/tinymce/5/tinymce.min.js"></script>
     </body>
 </html>

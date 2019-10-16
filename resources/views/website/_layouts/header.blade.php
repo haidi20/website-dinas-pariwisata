@@ -5,7 +5,7 @@
         <nav class="navbar navbar-default navbar-static-top"  role="navigation">
 
             <!-- Logo & advertisement -->
-            <div class="logo-advertisement" style="background-image:url('{{asset('images/bg2.png')}}')">
+            <div class="logo-advertisement" style="background-image:url('{{asset('images/bg3.png')}}')">
                 <div class="container">
 
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -20,25 +20,18 @@
                             {{-- <img src="{{asset('images/logo-keren.png')}}" style="height:90px; weidth: 400px;"  alt=""> --}}
                             <img src="{{asset('images/logo-disparr.png')}}" class="logo-dispar"  alt="">
                             <div class="title-logo-dispar">
-                                <h2>Pariwisata Kalimantan Timur</h2>
+                                <h2>Kalimantan Timur</h2>
                                 <p>The Beauty of Culture and Nature</p>
                             </div>
                         </a>
                     </div>
 
                     <div class="advertisement">
-                        <div class="desktop-advert" style="padding-top:10px">
-                            {{-- <span>Advertisement</span> --}}
-                            {{-- <img style="margin-top: 50px" src="{{asset('hotmagazine/upload/addsense/background-custom.jpg')}}" alt=""> --}}
+                        <div class="desktop-advert" sytle="background-color:white">
                             <img src="{{asset('images/wonderful-indonesia.png')}}" class="logo-burung"  alt="">
-                            {{-- <div class="title-logo-burung">
-                                <h2>KALTIM</h2>
-                                <p>Pesona Indonesia</p>
-                            </div> --}}
                         </div>
                         <div class="tablet-advert">
-                            {{-- <span>Advertisement</span> --}}
-                            {{-- <img src="{{asset('hotmagazine/upload/addsense/468x60.jpg')}}" alt=""> --}}
+                            
                         </div>
                     </div>
                 </div>
@@ -53,9 +46,9 @@
                         <ul class="nav navbar-nav navbar-left">
 
                             <li><a class="tech" href="{{url('/')}}">Home</a></li>
-                            <li><a class="fashion" href="{{url('/post')}}">Post</a></li>
-
-                            <li><a class="world" href="{{url('galery')}}">Gallery</a></li>
+                            <li><a class="world" href="{{url('image')}}">Image</a></li>
+                            <li><a class="travel" href="{{url('video')}}">Video</a></li>
+                            <li><a class="fashion" href="{{url('contact')}}">Contact</a></li>
 
                         </ul>
                     </div>

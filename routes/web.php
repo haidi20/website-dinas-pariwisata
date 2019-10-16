@@ -28,8 +28,12 @@ Route::group(['prefix' => 'post'], function() {
     });
 });
 
-Route::get('/galery', function(){
+Route::get('/image', function(){
     return view('website.galery.index');
+});
+
+Route::get('/site-manager', function(){
+    return view('sitemanager.index');
 });
 
 Auth::routes();

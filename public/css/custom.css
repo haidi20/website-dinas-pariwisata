@@ -10,11 +10,12 @@
     position: absolute;
 }
 .logo-burung{
-    /* height:90px;  */
+    height:125px; 
     width: 275px;
     right: 35;
     top: 0.1;
     position:absolute;
+    background-color: white;
 }
 .title-logo-dispar{
     padding-left: 90px;
@@ -37,9 +38,27 @@
     font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
+.space-search{
+    height: 100%;
+}
+
+.center-search{
+    transform: translateY(130px);
+    text-align:center;
+    width: 800px;
+}
+
+.center-search h2{
+    font-size: 50px;
+}
+
 /* start rewrite css theme */
 .navbar-brand{
     padding:15px;
+}
+
+section.heading-news {
+    padding-top: 0px;
 }
 
 .bx-controls-direction{

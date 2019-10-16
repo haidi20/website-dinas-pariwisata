@@ -29,6 +29,8 @@
 	</section>
 	<!-- End ticker-news-section -->
 
+	@include('website.home.search')
+
 	@include('website.home.post-popular')
 
 	{{-- postingan terbaru, galerry, article, bagian side bar --}}

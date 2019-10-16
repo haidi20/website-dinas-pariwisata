@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="widget flickr-widget">
-                            <h1>Flickr Photos</h1>
+                            <h1>Photos</h1>
                             <ul class="flickr-list">
                                 <li><a href="#"><img src="{{asset('hotmagazine/upload/flickr/1.jpg')}}" alt=""></a></li>
                                 <li><a href="#"><img src="{{asset('hotmagazine/upload/flickr/2.jpg')}}" alt=""></a></li>
