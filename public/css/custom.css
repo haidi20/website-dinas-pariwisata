@@ -43,13 +43,19 @@
 }
 
 .center-search{
-    transform: translateY(130px);
+    transform: translateY(160px);
     text-align:center;
     width: 800px;
 }
 
 .center-search h2{
     font-size: 50px;
+}
+
+.search-form{
+    height: 70px;
+    padding: 30px;
+    font-size: 20px;
 }
 
 /* start rewrite css theme */
