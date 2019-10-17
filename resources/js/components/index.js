@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import '../public/css/index.css';
 
-export default class App extends Component {
-    render() {
-        return (
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <div className="card">
-                            <div className="card-header">Hello World</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
+// pages
+//sitemanager
 
-if (document.getElementById('app')) {
-    ReactDOM.render(<App />, document.getElementById('app'));
+
+//website
+import Home from './pages/Website/Home';
+
+if (document.getElementById('website-home')) {
+    ReactDOM.render(<Home />, document.getElementById('website-home'));
 }

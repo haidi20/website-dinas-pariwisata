@@ -46,9 +46,9 @@
                         <ul class="nav navbar-nav navbar-left">
 
                             <li><a class="tech" href="{{url('/')}}">Home</a></li>
-                            <li><a class="world" href="{{url('image')}}">Image</a></li>
-                            <li><a class="travel" href="{{url('video')}}">Video</a></li>
-                            <li><a class="fashion" href="{{url('contact')}}">Contact</a></li>
+                            <li><a class="world" href="{{url('/image')}}">Image</a></li>
+                            <li><a class="travel" href="{{url('/video')}}">Video</a></li>
+                            <li><a class="fashion" href="{{url('/contact')}}">Contact</a></li>
 
                         </ul>
                     </div>

