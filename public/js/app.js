@@ -33564,7 +33564,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "space-search mantab",
         style: {
-          backgroundImage: "url('".concat(_logo_pariwisata_kaltim_png__WEBPACK_IMPORTED_MODULE_1___default.a, "')")
+          backgroundImage: 'images/logo-pariwisata-kaltim.png'
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container center-search"
