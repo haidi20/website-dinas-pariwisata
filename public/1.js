@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{11:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return i}));var r=t(0),a=t.n(r);function i(n){return a.a.createElement("img",{src:"images/pemerintah/POSTER BARU PARIWISATA-01.jpg",alt:""})}}}]);
