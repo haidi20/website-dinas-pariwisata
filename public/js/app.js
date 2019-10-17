@@ -33562,10 +33562,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "space-search",
-        style: {
-          backgroundImage: "url('".concat(_logo_pariwisata_kaltim_png__WEBPACK_IMPORTED_MODULE_1___default.a, "')")
-        }
+        className: "space-search"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container center-search"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome To Kalimantan Timur"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "We offer a variety of services and options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {

@@ -7,7 +7,8 @@ class SearchBig extends Component {
     render(){
         return(
             <div>
-                <section className="space-search" style={{backgroundImage: `url('${bg}')` }}>
+                {/* <section className="space-search" style={{backgroundImage: `url('${bg}')` }}> */}
+                <section className="space-search" >
                     <div className="container center-search" >
                         <h2>Welcome To Kalimantan Timur</h2>
                         <h4>We offer a variety of services and options</h4>
