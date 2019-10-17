@@ -1,13 +1,17 @@
 import React, {Component} from 'react'
 
 // container
+import SearchBig from './SearchBig';
 import HeadingNews from './HeadingNews';
+import MainBody from './MainBody';
+import PostPopular from './PostPopular';
 
 class Home extends Component {
     render(){
         return(
             <div>
                 <HeadingNews />
+
                 <section class="ticker-news">
                     <div class="container">
                         <div class="ticker-news-box">
@@ -22,6 +26,13 @@ class Home extends Component {
                         </div>
                     </div>
                 </section>
+                
+                <SearchBig />
+                
+                <PostPopular />
+
+                <MainBody />
+
             </div>
         )
     }
