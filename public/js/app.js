@@ -32592,7 +32592,7 @@ function (_Component) {
         className: "category-post travel",
         href: "travel.html"
       }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -32620,7 +32620,7 @@ function (_Component) {
         "class": "category-post world",
         href: "world.html"
       }, "Business"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Franca do t\xEB bashk\xEBpunoj\xEB me Kosov\xEBn n\xEB ekonomi. ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         "class": "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -32648,7 +32648,7 @@ function (_Component) {
         "class": "category-post sport",
         href: "sport.html"
       }, "Sport"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Phasellus ultrices nulla quis nibh. Quisque a lectus. ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         "class": "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -32676,7 +32676,7 @@ function (_Component) {
         "class": "category-post sport",
         href: "sport.html"
       }, "sport"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Donec odio. Quisque volutpat mattis eros. ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         "class": "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -32704,7 +32704,7 @@ function (_Component) {
         "class": "category-post food",
         href: "food.html"
       }, "food & Health"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Nullam malesuada erat ut turpis.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         "class": "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -32726,7 +32726,7 @@ function (_Component) {
         "class": "category-post travel",
         href: "travel.html"
       }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         "class": "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -32748,7 +32748,7 @@ function (_Component) {
         "class": "category-post sport",
         href: "sport.html"
       }, "sport"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Donec odio. ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         "class": "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -32770,7 +32770,7 @@ function (_Component) {
         "class": "category-post fashion",
         href: "fashion.html"
       }, "fashion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Quisque volutpat mattis ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         "class": "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -32792,7 +32792,7 @@ function (_Component) {
         "class": "category-post sport",
         href: "sport.html"
       }, "sport"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Donec odio. ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         "class": "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -32814,7 +32814,7 @@ function (_Component) {
         "class": "category-post fashion",
         href: "fashion.html"
       }, "fashion"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Quisque volutpat mattis ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         "class": "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -32836,7 +32836,7 @@ function (_Component) {
         "class": "category-post food",
         href: "food.html"
       }, "food & Health"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "{{url('/post/detail')}}"
+        href: '/image'
       }, "Nullam malesuada erat ut turpis.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         "class": "post-tags"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -33564,7 +33564,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "space-search mantab",
         style: {
-          backgroundImage: "url('images/logo-pariwisata-kaltim.png')"
+          backgroundImage: "url('images/logo-pariwisata-kaltim2.png')"
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container center-search"
@@ -33578,7 +33578,7 @@ function (_Component) {
         placeholder: "what are you looking for?"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         "class": "category-search"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "Alam")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "All")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-search"
