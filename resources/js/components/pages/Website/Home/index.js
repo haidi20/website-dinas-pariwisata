@@ -31,7 +31,7 @@ class Home extends Component {
                 
                 <PostPopular />
 
-                <MainBody />
+                {/* <MainBody /> */}
 
             </div>
         )
