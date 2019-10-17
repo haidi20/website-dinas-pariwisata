@@ -4,7 +4,7 @@ class SearchBig extends Component {
     render(){
         return(
             <div>
-                <section className="space-search">
+                <section className="space-search" styleName="background-image: url('/images/logo-pariwisata-kaltim.png')">
                     <div className="container center-search" >
                         <h2>Welcome To Kalimantan Timur</h2>
                         <h4>We offer a variety of services and options</h4>

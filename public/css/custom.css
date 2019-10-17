@@ -43,7 +43,7 @@
     background-size: 600px;
     background-repeat: no-repeat;
     background-position:center;
-    background-image: url('/images/logo-pariwisata-kaltim.png');
+    /* background-image: url('/images/logo-pariwisata-kaltim.png'); */
 }
 
 .center-search{
@@ -82,7 +82,7 @@ form.search-form input[type="text"]{
     font-size: 15px; 
     transform:translate(-20px, -16px);
     border:0px solid black;   
-    border-right: 1px solid black;
+    border-right: 1px solid #e9e9e9;
 }
 
 form.search-form select.category-search{

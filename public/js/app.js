@@ -33559,7 +33559,8 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "space-search"
+        className: "space-search",
+        styleName: "background-image: url('/images/logo-pariwisata-kaltim.png')"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container center-search"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome To Kalimantan Timur"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "We offer a variety of services and options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
