@@ -33570,9 +33570,8 @@ function (_Component) {
         id: "search",
         name: "search",
         placeholder: "what are you looking for?"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "submit",
-        id: "search-submit"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-search"
       }))))));
