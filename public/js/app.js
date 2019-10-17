@@ -33524,6 +33524,8 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _logo_pariwisata_kaltim_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logo-pariwisata-kaltim.png */ "./resources/js/components/pages/Website/Home/logo-pariwisata-kaltim.png");
+/* harmony import */ var _logo_pariwisata_kaltim_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_logo_pariwisata_kaltim_png__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33544,6 +33546,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var SearchBig =
 /*#__PURE__*/
 function (_Component) {
@@ -33560,7 +33563,9 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "space-search",
-        styleName: "background-image: url('/images/logo-pariwisata-kaltim.png')"
+        style: {
+          backgroundImage: "url('".concat(_logo_pariwisata_kaltim_png__WEBPACK_IMPORTED_MODULE_1___default.a, "')")
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container center-search"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome To Kalimantan Timur"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "We offer a variety of services and options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -33686,6 +33691,17 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/Website/Home/logo-pariwisata-kaltim.png":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/pages/Website/Home/logo-pariwisata-kaltim.png ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo-pariwisata-kaltim.png?ee2846b30a3ab61960efd41ae6f6fb5c";
 
 /***/ }),
 
