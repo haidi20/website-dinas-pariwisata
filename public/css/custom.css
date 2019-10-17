@@ -65,11 +65,11 @@
 }
 
 form.search-form{
+    width: 100%;
     height: 70px;
     padding: 25px;
     font-size: 15px;    
     border-radius: 30px;
-    width: 80%;
     box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
     border: 1px solid #d1d1d1;
     border-right: 1px solid #e9e9e9;
@@ -78,23 +78,27 @@ form.search-form{
 
 form.search-form input[type="text"]{
     height: 40px;
-    width: 50%;
+    width: 60%;
     font-size: 15px; 
-    transform:translate(-120px, -11px);
+    transform:translate(-20px, -16px);
     border:0px solid black;   
+    border-right: 1px solid black;
 }
 
 form.search-form select.category-search{
-    width: 130px;
+    width: 150px;
     height: 50px;
-    transform: translate(-200px);
+    transform: translate(30px, -15px);
     border: 0px;
     font-size: 25px;
+}
+form.search-form select.category-search:focus{
+    outline:0px;
 }
 
 form a i.fa-search {
     font-size: 30px;
-    transform: translate(130px, -10px);
+    transform: translate(60px, -20px);
 }
 
 /* start rewrite css theme */

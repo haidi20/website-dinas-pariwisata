@@ -33570,7 +33570,9 @@ function (_Component) {
         id: "search",
         name: "search",
         placeholder: "what are you looking for?"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        "class": "category-search"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "Alam")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-search"

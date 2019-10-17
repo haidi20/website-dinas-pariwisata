@@ -10,9 +10,10 @@ class SearchBig extends Component {
                         <h4>We offer a variety of services and options</h4>
                         <form role="search" className="search-form">
                             <input type="text" id="search" name="search" placeholder="what are you looking for?" />
-                            {/* <select class="category-search">
-                                <option>satu</option>
-                            </select> */}
+                            <select class="category-search">
+                                <option>All</option>
+                                <option>Alam</option>
+                            </select>
                             <a className="btn">
                                 <i className="fa fa-search"></i>
                             </a>
