@@ -3,6 +3,5 @@
 @section('content')
 
 	<div id="website-home"></div>
-
 	
 @endsection
