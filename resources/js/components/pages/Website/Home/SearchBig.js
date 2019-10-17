@@ -14,7 +14,6 @@ class SearchBig extends Component {
                             <input type="text" id="search" name="search" placeholder="what are you looking for?" />
                             <select class="category-search">
                                 <option>All</option>
-                                <option>Alam</option>
                             </select>
                             <a className="btn">
                                 <i className="fa fa-search"></i>
