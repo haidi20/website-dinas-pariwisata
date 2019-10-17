@@ -8,7 +8,7 @@ class SearchBig extends Component {
         return(
             <div>
                 {/* <section className="space-search" style={{backgroundImage: `url('${bg}')` }}> */}
-                <section className="space-search" >
+                <section className="space-search keren" >
                     <div className="container center-search" >
                         <h2>Welcome To Kalimantan Timur</h2>
                         <h4>We offer a variety of services and options</h4>
