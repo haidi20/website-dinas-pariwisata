@@ -1,11 +1,10 @@
 import React, {Component} from 'react'
-import bg from './logo-pariwisata-kaltim.png';
 
 class SearchBig extends Component {
     render(){
         return(
             <div>
-                <section className="space-search mantab" style={{backgroundImage:"url('images/logo-pariwisata-kaltim2.png')" }}>
+                <section className="space-search" style={{backgroundImage:"url('images/bg-search.png')" }}>
                 {/* <section className="space-search keren" > */}
                     <div className="container center-search" >
                         <h2>Welcome To Kalimantan Timur</h2>
