@@ -32,7 +32,7 @@ const Image = React.lazy(() => retry(() => {
     return x;
 }));
 
-const sizeImagePostHeader = 230;
+const sizeImagePostHeader = 210;
 
 class HeadingNews extends Component {
     constructor(props){
@@ -75,7 +75,7 @@ class HeadingNews extends Component {
                         </Suspense> */}
 
                         <img 
-                            src="images/pemerintah/POSTER BARU PARIWISATA-05.jpg" 
+                            src={`images/pemerintah/POSTER BARU PARIWISATA-0${i}.jpg`}
                         />
                         
                         <div className="hover-box">
@@ -111,8 +111,8 @@ class HeadingNews extends Component {
                     </Suspense> */}
 
                     <img 
-                        src="images/pemerintah/POSTER BARU PARIWISATA-06.jpg" 
-                        height={sizeImagePostHeader}
+                        src={`images/pemerintah/POSTER BARU PARIWISATA-0${j}.jpg`} 
+                        // height={sizeImagePostHeader}
                     />
 
                     <div className="hover-box">
@@ -147,8 +147,8 @@ class HeadingNews extends Component {
                             </Suspense> */}
 
                             <img 
-                                height={sizeImagePostHeader}
                                 src="images/pemerintah/POSTER BARU PARIWISATA-08.jpg" 
+                                // height={sizeImagePostHeader}
                             />
 
                             <div className="hover-box">
@@ -164,14 +164,14 @@ class HeadingNews extends Component {
                             </div>
                         </div>
 
-                        {/* <div className="image-slider snd-size">
+                        <div className="image-slider snd-size">
                             <span className="top-stories">TOP STORIES</span>
                             <ul className="bxslider">
                             {
                                 postSlideHeader
                             }
                             </ul>
-                        </div> */}
+                        </div>
 
                         {
                             postHeader

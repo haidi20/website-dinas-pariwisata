@@ -37262,7 +37262,7 @@ var Image = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
     return x;
   });
 });
-var sizeImagePostHeader = 230;
+var sizeImagePostHeader = 210;
 
 var HeadingNews =
 /*#__PURE__*/
@@ -37308,7 +37308,7 @@ function (_Component) {
           className: "news-post image-post",
           key: i
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "images/pemerintah/POSTER BARU PARIWISATA-05.jpg"
+          src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(i, ".jpg")
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hover-box"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -37342,8 +37342,8 @@ function (_Component) {
           className: "news-post image-post",
           key: j
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "images/pemerintah/POSTER BARU PARIWISATA-06.jpg",
-          height: sizeImagePostHeader
+          src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(j, ".jpg") // height={sizeImagePostHeader}
+
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hover-box"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -37371,8 +37371,8 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-post image-post default-size"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        height: sizeImagePostHeader,
-        src: "images/pemerintah/POSTER BARU PARIWISATA-08.jpg"
+        src: "images/pemerintah/POSTER BARU PARIWISATA-08.jpg" // height={sizeImagePostHeader}
+
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hover-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -37390,7 +37390,13 @@ function (_Component) {
         href: "#"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-comments-o"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))), postHeader)));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "image-slider snd-size"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "top-stories"
+      }, "TOP STORIES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "bxslider"
+      }, postSlideHeader)), postHeader)));
     }
   }]);
 
