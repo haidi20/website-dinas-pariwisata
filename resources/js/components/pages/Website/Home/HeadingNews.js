@@ -45,7 +45,6 @@ class HeadingNews extends Component {
 
     render(){
         function imageLoadingPostSlideHeader(){
-            // const link = "https://i.pinimg.com/originals/f9/84/42/f984425b6ac113bfb4402ccca0168910.jpg"
             const link = "images/loading.jpg";
             return(
                 <img height="400" src={link} />
@@ -53,7 +52,6 @@ class HeadingNews extends Component {
         }
 
         function imageLoadingPostHeader(){
-            // const link = "https://i.pinimg.com/originals/f9/84/42/f984425b6ac113bfb4402ccca0168910.jpg"
             const link = "images/loading.jpg";
             return(
                 // <img height="209" src={link}/>
@@ -72,7 +70,7 @@ class HeadingNews extends Component {
                             imageLoadingPostSlideHeader()
                         }>
                             <Image 
-                                src={`images/pemerintah/POSTER BARU PARIWISATA-0${i}.jpg`} 
+                                src="images/pemerintah/POSTER BARU PARIWISATA-05.jpg"
                             />
                         </Suspense>
 
@@ -105,7 +103,7 @@ class HeadingNews extends Component {
                         imageLoadingPostHeader()
                     }>
                         <Image 
-                            src={`images/pemerintah/POSTER BARU PARIWISATA-0${j}.jpg`}  
+                            src="images/pemerintah/POSTER BARU PARIWISATA-06.jpg"  
                             height={sizeImagePostHeader}
                         />
                     </Suspense>
@@ -138,7 +136,7 @@ class HeadingNews extends Component {
                                 imageLoadingPostHeader()
                             }>
                                 <Image 
-                                    src={`images/pemerintah/POSTER BARU PARIWISATA-0${j}.jpg`}  
+                                    src="images/pemerintah/POSTER BARU PARIWISATA-01.jpg"  
                                 />
                             </Suspense>
 
