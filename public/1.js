@@ -1,1 +1,1 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{11:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return i}));var r=t(0),a=t.n(r);function i(n){return a.a.createElement("img",{src:"images/pemerintah/POSTER BARU PARIWISATA-01.jpg",alt:""})}}}]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{22:function(n,t,e){"use strict";e.r(t),e.d(t,"default",(function(){return u}));var r=e(0),c=e.n(r);function u(n){return c.a.createElement("img",{src:n.src,alt:""})}}}]);
