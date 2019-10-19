@@ -37233,13 +37233,34 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
  // import PostHeader from '../../../organisms/Website/PostHeader';
 // import PostSlideHeader from '../../../organisms/Website/PostSlideHeader';
 
-var Image = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
-  var x = new Promise(function (resolve) {
-    setTimeout(function () {
-      return resolve(__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../../../atoms/Image */ "./resources/js/components/atoms/Image.js")));
-    }, 5500);
+function retry(fn) {
+  var retriesLeft = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
+  var interval = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1000;
+  return new Promise(function (resolve, reject) {
+    fn().then(resolve)["catch"](function (error) {
+      setTimeout(function () {
+        if (retriesLeft === 1) {
+          // reject('maximum retries exceeded');
+          reject(error);
+          return;
+        } // Passing on "reject" is the important part
+
+
+        retry(fn, retriesLeft - 1, interval).then(resolve, reject);
+      }, interval);
+    });
   });
-  return x;
+}
+
+var Image = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
+  return retry(function () {
+    var x = new Promise(function (resolve) {
+      setTimeout(function () {
+        return resolve(__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../../../atoms/Image */ "./resources/js/components/atoms/Image.js")));
+      }, 5500);
+    });
+    return x;
+  });
 });
 var sizeImagePostHeader = 200;
 
