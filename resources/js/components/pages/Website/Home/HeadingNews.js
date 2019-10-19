@@ -27,7 +27,7 @@ const Image = React.lazy(() => retry(() => {
     const x = new Promise((resolve) => {
       setTimeout(() => {
         return resolve(import("../../../atoms/Image"))
-      }, 5500)
+      }, 1000)
     })
     return x;
 }));

@@ -37257,7 +37257,7 @@ var Image = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
     var x = new Promise(function (resolve) {
       setTimeout(function () {
         return resolve(__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../../../atoms/Image */ "./resources/js/components/atoms/Image.js")));
-      }, 5500);
+      }, 1000);
     });
     return x;
   });
