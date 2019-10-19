@@ -42,7 +42,7 @@ class HeadingNews extends Component {
         for(var i = 3; i<=5; i++){
             postSlideHeader.push(
                 <li>
-                    <div className="news-post image-post">
+                    <div className="news-post image-post" key={i}>
 
                         <Suspense fallback={
                             imageLoadingPostSlideHeader()
@@ -75,7 +75,7 @@ class HeadingNews extends Component {
 
         for(var j=2; j<9; j++){
             postHeader.push(
-                <div className={`news-post image-post`}>
+                <div className={`news-post image-post`} key={j}>
 
                     <Suspense fallback={
                         imageLoadingPostHeader()

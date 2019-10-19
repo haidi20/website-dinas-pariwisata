@@ -37281,7 +37281,8 @@ function (_Component) {
 
       for (var i = 3; i <= 5; i++) {
         postSlideHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "news-post image-post"
+          className: "news-post image-post",
+          key: i
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
           fallback: imageLoadingPostSlideHeader()
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
@@ -37316,7 +37317,8 @@ function (_Component) {
 
       for (var j = 2; j < 9; j++) {
         postHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "news-post image-post"
+          className: "news-post image-post",
+          key: j
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
           fallback: imageLoadingPostHeader()
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
