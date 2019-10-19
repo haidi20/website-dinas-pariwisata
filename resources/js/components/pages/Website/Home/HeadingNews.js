@@ -20,7 +20,7 @@ class HeadingNews extends Component {
     }
 
     componentDidCatch(error, errorInfo) {
-        console.log(error, errorInfo);
+        console.log('ERROR = ', error, errorInfo);
     }
 
     render(){

@@ -37257,7 +37257,7 @@ function (_Component) {
   _createClass(HeadingNews, [{
     key: "componentDidCatch",
     value: function componentDidCatch(error, errorInfo) {
-      console.log(error, errorInfo);
+      console.log('ERROR = ', error, errorInfo);
     }
   }, {
     key: "render",
