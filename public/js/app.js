@@ -37346,36 +37346,7 @@ function (_Component) {
         className: "heading-news"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "iso-call heading-news-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "news-post image-post default-size"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
-        fallback: imageLoadingPostHeader()
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
-        src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(j, ".jpg")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "hover-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "inner-hover"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "category-post travel",
-        href: "travel.html"
-      }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: '/image'
-      }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "post-tags"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fa fa-clock-o"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "27 may 2013")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fa fa-comments-o"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "image-slider snd-size"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "top-stories"
-      }, "TOP STORIES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "bxslider"
-      }, postSlideHeader)), postHeader)));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "coba"))));
     }
   }]);
 

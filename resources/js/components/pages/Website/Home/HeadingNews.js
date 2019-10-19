@@ -102,48 +102,13 @@ class HeadingNews extends Component {
                 </div>
             )
         }
+
         return(
             <div>
                 <section className="heading-news">
                     <div className="iso-call heading-news-box">
 
-                    <div className={`news-post image-post default-size`}>
-
-                        <Suspense fallback={
-                            imageLoadingPostHeader()
-                        }>
-                            <Image 
-                                src={`images/pemerintah/POSTER BARU PARIWISATA-0${j}.jpg`}  
-                            />
-                        </Suspense>
-
-                        {/* <img src={props.src} /> */}
-
-                        <div className="hover-box">
-                            <div className="inner-hover">
-                                <a className="category-post travel" href="travel.html">Travel</a>
-                                <h2><a href={'/image'}>Lorem ipsum dolor sit amet, consectetuer</a></h2>
-                                <ul className="post-tags">
-                                    <li><i className="fa fa-clock-o"></i><span>27 may 2013</span></li>
-                                    <li><a href="#"><i className="fa fa-comments-o"></i><span>23</span></a></li>
-                                </ul>
-                                <p>Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                        <div className="image-slider snd-size">
-                            <span className="top-stories">TOP STORIES</span>
-                            <ul className="bxslider">
-                            {
-                                postSlideHeader
-                            }
-                            </ul>
-                        </div>
-
-                        {
-                            postHeader
-                        }
+                    <h1>coba</h1>
 
                     </div>
                 </section>
