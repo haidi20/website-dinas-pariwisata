@@ -10,7 +10,7 @@ class Home extends Component {
     render(){
         return(
             <div>
-                <HeadingNews />
+                {/* <HeadingNews /> */}
 
                 <section className="ticker-news">
                     <div className="container">
