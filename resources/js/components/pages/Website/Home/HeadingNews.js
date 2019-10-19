@@ -1,7 +1,7 @@
 import React, {Component, Suspense} from 'react';
 
-import PostHeader from '../../../organisms/Website/PostHeader';
-import PostSlideHeader from '../../../organisms/Website/PostSlideHeader';
+// import PostHeader from '../../../organisms/Website/PostHeader';
+// import PostSlideHeader from '../../../organisms/Website/PostSlideHeader';
 
 const Image = React.lazy(() => {
     const x = new Promise((resolve) => {
