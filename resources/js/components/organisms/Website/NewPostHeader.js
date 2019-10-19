@@ -1,6 +1,6 @@
 import React, {lazy, Suspense} from 'react';
 
-const Image = lazy(() => import('../../atoms/Image'));
+// const Image = lazy(() => import('../../atoms/Image'));
 function imageLoading(){
     const link = "https://i.pinimg.com/originals/f9/84/42/f984425b6ac113bfb4402ccca0168910.jpg"
     return(
@@ -14,11 +14,13 @@ export default function NewPostHeading (props){
     return(
         <div className={`news-post image-post ${defSize}`}>
 
-            <Suspense fallback={
+            {/* <Suspense fallback={
                 imageLoading()
             }>
                 <Image src={props.src} />
-            </Suspense>
+            </Suspense> */}
+
+            <img src={props.src} />
 
             <div className="hover-box">
                 <div className="inner-hover">
