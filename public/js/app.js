@@ -37362,6 +37362,15 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var Image = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
+  var x = new Promise(function (resolve) {
+    setTimeout(function () {
+      return resolve(__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../../../atoms/Image */ "./resources/js/components/atoms/Image.js")));
+    }, 5500);
+  });
+  return x;
+});
+var sizeImagePostHeader = 200;
 
 var HeadingNews =
 /*#__PURE__*/
@@ -37377,32 +37386,119 @@ function (_Component) {
   _createClass(HeadingNews, [{
     key: "render",
     value: function render() {
+      function imageLoadingPostSlideHeader() {
+        // const link = "https://i.pinimg.com/originals/f9/84/42/f984425b6ac113bfb4402ccca0168910.jpg"
+        var link = "images/loading.jpg";
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          height: "400",
+          src: link
+        });
+      }
+
+      function imageLoadingPostHeader() {
+        // const link = "https://i.pinimg.com/originals/f9/84/42/f984425b6ac113bfb4402ccca0168910.jpg"
+        var link = "images/loading.jpg";
+        return (// <img height="209" src={link}/>
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            height: sizeImagePostHeader,
+            src: link
+          })
+        );
+      }
+
       var postSlideHeader = [];
 
       for (var i = 3; i <= 5; i++) {
-        postSlideHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_Website_PostSlideHeader__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          key: i,
+        postSlideHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "news-post image-post"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: imageLoadingPostSlideHeader()
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
           src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(i, ".jpg")
-        }));
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "hover-box"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "inner-hover"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "category-post world",
+          href: "world.html"
+        }, "Business"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: '/image'
+        }, "Franca do t\xEB bashk\xEBpunoj\xEB me Kosov\xEBn n\xEB ekonomi. ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "post-tags"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-clock-o"
+        }), "27 may 2013"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-user"
+        }), "by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, "John Doe")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-comments-o"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-eye"
+        }), "872")))))));
       }
 
       var postHeader = [];
 
       for (var j = 2; j < 9; j++) {
-        postHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_Website_PostHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: j,
-          src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(j, ".jpg")
-        }));
+        postHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "news-post image-post"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+          fallback: imageLoadingPostHeader()
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
+          src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(j, ".jpg"),
+          height: sizeImagePostHeader
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "hover-box"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "inner-hover"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "category-post travel",
+          href: "travel.html"
+        }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: '/image'
+        }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "post-tags"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-clock-o"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "27 may 2013")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-comments-o"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))));
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "heading-news"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "iso-call heading-news-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_Website_PostHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        "default": true,
-        src: "images/pemerintah/POSTER BARU PARIWISATA-12.jpg"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "news-post image-post default-size"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
+        fallback: imageLoadingPostHeader()
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
+        src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(j, ".jpg")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hover-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-hover"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "category-post travel",
+        href: "travel.html"
+      }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: '/image'
+      }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "post-tags"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-clock-o"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "27 may 2013")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-comments-o"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "image-slider snd-size"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "top-stories"
