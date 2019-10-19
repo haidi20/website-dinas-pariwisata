@@ -32,7 +32,7 @@ const Image = React.lazy(() => retry(() => {
     return x;
 }));
 
-const sizeImagePostHeader = 200;
+const sizeImagePostHeader = 230;
 
 class HeadingNews extends Component {
     constructor(props){
@@ -112,6 +112,7 @@ class HeadingNews extends Component {
 
                     <img 
                         src="images/pemerintah/POSTER BARU PARIWISATA-06.jpg" 
+                        height={sizeImagePostHeader}
                     />
 
                     <div className="hover-box">
@@ -136,15 +137,18 @@ class HeadingNews extends Component {
 
                         <div className={`news-post image-post default-size`}>
 
-                            {/* <Suspense fallback={
+                            <Suspense fallback={
                                 imageLoadingPostHeader()
                             }>
-                                <Image 
+                                <Image
+                                    height={sizeImagePostHeader} 
                                     src="images/pemerintah/POSTER BARU PARIWISATA-01.jpg"  
                                 />
-                            </Suspense> */}
+                            </Suspense>
 
-                            {/* <img src={props.src} /> */}
+                            {/* <img 
+                                src="images/pemerintah/POSTER BARU PARIWISATA-08.jpg" 
+                            /> */}
 
                             <div className="hover-box">
                                 <div className="inner-hover">
