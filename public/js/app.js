@@ -36554,7 +36554,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "{{ active_menu('sitemanager/user*') }}"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "{{ url('sitemanager/user') }}"
+        to: "#"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "pull-left"
       }, "User Account"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -36562,7 +36562,7 @@ function (_Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "{{ active_menu('sitemanager/change-password') }}"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "{{ url('sitemanager/change-password') }}"
+        to: "#"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "pull-left"
       }, "Change Password"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -36570,7 +36570,7 @@ function (_Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "{{ active_menu('sitemanager/setting/contact') }}"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "{{ url('sitemanager/setting/contact') }}"
+        to: "#"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "pull-left"
       }, "Setting"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -36578,7 +36578,7 @@ function (_Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "divider"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "{{ url('sitemanager/logout') }}"
+        to: "#"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "pull-left"
       }, "Sign Out"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {

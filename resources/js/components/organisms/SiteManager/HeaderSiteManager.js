@@ -24,23 +24,23 @@ export default class HeaderSiteManager extends Component {
             <Link to="#" className="dropdown-toggle" data-toggle='dropdown'><span className="icon-bg"><i className="fa fa-fw fa-user"></i></span></Link>
             <ul className="dropdown-menu userinfo arrow" data-auto-collapse="false">
               <li className="{{ active_menu('sitemanager/user*') }}">
-                <Link to="{{ url('sitemanager/user') }}">
+                <Link to="#">
                   <span className="pull-left">User Account</span> <i className="pull-right fa fa-user"></i>
                 </Link>
               </li>
               <li className="{{ active_menu('sitemanager/change-password') }}">
-                <Link to="{{ url('sitemanager/change-password') }}">
+                <Link to="#">
                   <span className="pull-left">Change Password</span> <i className="pull-right fa fa-lock"></i>
                 </Link>
               </li>
               <li className="{{ active_menu('sitemanager/setting/contact') }}">
-                <Link to="{{ url('sitemanager/setting/contact') }}">
+                <Link to="#">
                   <span className="pull-left">Setting</span> <i className="pull-right fa fa-cog"></i>
                 </Link>
               </li>
               {/* <!-- <li><Link to="#"><span className="pull-left">Settings</span> <i className="pull-right fa fa-cog"></i></Link></li> --> */}
               <li className="divider"></li>
-              <li><Link to="{{ url('sitemanager/logout') }}"><span className="pull-left">Sign Out</span> <i className="pull-right fa fa-sign-out"></i></Link></li>
+              <li><Link to="#"><span className="pull-left">Sign Out</span> <i className="pull-right fa fa-sign-out"></i></Link></li>
             </ul>
           </li>
 
