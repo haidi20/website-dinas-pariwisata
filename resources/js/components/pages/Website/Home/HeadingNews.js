@@ -1,7 +1,7 @@
 import React, {Component, Suspense} from 'react';
 
-import NewPostHeading from '../../../organisms/Website/NewPostHeader';
-import NewPostSlideHeader from '../../../organisms/Website/NewPostSlideHeader';
+import PostHeader from '../../../organisms/Website/PostHeader';
+import PostSlideHeader from '../../../organisms/Website/PostSlideHeader';
 
 class HeadingNews extends Component {
     constructor(props){
@@ -9,22 +9,22 @@ class HeadingNews extends Component {
     }
 
     render(){
-        const slideImage = []
+        const postSlideHeader = []
 
         for(var i = 3; i<=5; i++){
-            slideImage.push(
-                <NewPostSlideHeader
+            postSlideHeader.push(
+                <PostSlideHeader
                     key={i}
                     src={`images/pemerintah/POSTER BARU PARIWISATA-0${i}.jpg`} 
                 />
             )
         }
 
-        const imageHeader = []
+        const postHeader = []
 
         for(var j=2; j<9; j++){
-            imageHeader.push(
-                <NewPostHeading  
+            postHeader.push(
+                <PostHeader  
                     key={j}
                     src={`images/pemerintah/POSTER BARU PARIWISATA-0${j}.jpg`} 
                 />
@@ -35,7 +35,7 @@ class HeadingNews extends Component {
                 <section className="heading-news">
                     <div className="iso-call heading-news-box">
 
-                        <NewPostHeading 
+                        <PostHeader 
                             default={true}
                             src="images/pemerintah/POSTER BARU PARIWISATA-12.jpg" 
                         />
@@ -44,13 +44,13 @@ class HeadingNews extends Component {
                             <span className="top-stories">TOP STORIES</span>
                             <ul className="bxslider">
                             {
-                                slideImage
+                                postSlideHeader
                             }
                             </ul>
                         </div>
 
                         {
-                            imageHeader
+                            postHeader
                         }
 
                     </div>

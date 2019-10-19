@@ -16,7 +16,7 @@ function imageLoading(){
     )
 }
 
-export default function NewPostHeading (props){
+export default function PostHeader (props){
     const defSize = props.default ? 'default-size' : '';   
 
     return(
