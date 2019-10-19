@@ -30691,7 +30691,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38195,7 +38195,7 @@ function (_Component) {
   _createClass(Home, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HeadingNews__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "ticker-news"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
@@ -38231,7 +38231,7 @@ function (_Component) {
         className: "time-news"
       }, "01:00 am"), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
-      }, "DioGuardi, k\xEBshtu e mbrojti Kosov\xEBn n\xEB Washington, "), " para serbit Vejvoda "))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBig__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PostPopular__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MainBody__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      }, "DioGuardi, k\xEBshtu e mbrojti Kosov\xEBn n\xEB Washington, "), " para serbit Vejvoda "))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBig__WEBPACK_IMPORTED_MODULE_1__["default"], null));
     }
   }]);
 
