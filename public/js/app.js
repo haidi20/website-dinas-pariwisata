@@ -37255,6 +37255,11 @@ function (_Component) {
   }
 
   _createClass(HeadingNews, [{
+    key: "componentDidCatch",
+    value: function componentDidCatch(error, errorInfo) {
+      console.log(error, errorInfo);
+    }
+  }, {
     key: "render",
     value: function render() {
       function imageLoadingPostSlideHeader() {

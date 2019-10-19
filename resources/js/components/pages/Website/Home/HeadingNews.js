@@ -19,6 +19,10 @@ class HeadingNews extends Component {
         super(props);
     }
 
+    componentDidCatch(error, errorInfo) {
+        console.log(error, errorInfo);
+    }
+
     render(){
         function imageLoadingPostSlideHeader(){
             // const link = "https://i.pinimg.com/originals/f9/84/42/f984425b6ac113bfb4402ccca0168910.jpg"
