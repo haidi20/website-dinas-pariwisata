@@ -137,18 +137,19 @@ class HeadingNews extends Component {
 
                         <div className={`news-post image-post default-size`}>
 
-                            <Suspense fallback={
+                            {/* <Suspense fallback={
                                 imageLoadingPostHeader()
                             }>
                                 <Image
                                     height={sizeImagePostHeader} 
                                     src="images/pemerintah/POSTER BARU PARIWISATA-01.jpg"  
                                 />
-                            </Suspense>
+                            </Suspense> */}
 
-                            {/* <img 
+                            <img 
+                                height={sizeImagePostHeader}
                                 src="images/pemerintah/POSTER BARU PARIWISATA-08.jpg" 
-                            /> */}
+                            />
 
                             <div className="hover-box">
                                 <div className="inner-hover">

@@ -37370,12 +37370,10 @@ function (_Component) {
         className: "iso-call heading-news-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-post image-post default-size"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
-        fallback: imageLoadingPostHeader()
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         height: sizeImagePostHeader,
-        src: "images/pemerintah/POSTER BARU PARIWISATA-01.jpg"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        src: "images/pemerintah/POSTER BARU PARIWISATA-08.jpg"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hover-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "inner-hover"
