@@ -66,15 +66,17 @@ class HeadingNews extends Component {
                 <li>
                     <div className="news-post image-post" key={i}>
 
-                        <Suspense fallback={
+                        {/* <Suspense fallback={
                             imageLoadingPostSlideHeader()
                         }>
                             <Image 
                                 src="images/pemerintah/POSTER BARU PARIWISATA-05.jpg"
                             />
-                        </Suspense>
+                        </Suspense> */}
 
-                        {/* <img src={props.src} /> */}
+                        <img 
+                            src="images/pemerintah/POSTER BARU PARIWISATA-05.jpg" 
+                        />
                         
                         <div className="hover-box">
                             <div className="inner-hover">
@@ -99,16 +101,18 @@ class HeadingNews extends Component {
             postHeader.push(
                 <div className={`news-post image-post`} key={j}>
 
-                    <Suspense fallback={
+                    {/* <Suspense fallback={
                         imageLoadingPostHeader()
                     }>
                         <Image 
                             src="images/pemerintah/POSTER BARU PARIWISATA-06.jpg"  
                             height={sizeImagePostHeader}
                         />
-                    </Suspense>
+                    </Suspense> */}
 
-                    {/* <img src={props.src} /> */}
+                    <img 
+                        src="images/pemerintah/POSTER BARU PARIWISATA-06.jpg" 
+                    />
 
                     <div className="hover-box">
                         <div className="inner-hover">
@@ -132,13 +136,13 @@ class HeadingNews extends Component {
 
                         <div className={`news-post image-post default-size`}>
 
-                            <Suspense fallback={
+                            {/* <Suspense fallback={
                                 imageLoadingPostHeader()
                             }>
                                 <Image 
                                     src="images/pemerintah/POSTER BARU PARIWISATA-01.jpg"  
                                 />
-                            </Suspense>
+                            </Suspense> */}
 
                             {/* <img src={props.src} /> */}
 

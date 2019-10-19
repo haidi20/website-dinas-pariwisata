@@ -37307,11 +37307,9 @@ function (_Component) {
         postSlideHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "news-post image-post",
           key: i
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
-          fallback: imageLoadingPostSlideHeader()
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "images/pemerintah/POSTER BARU PARIWISATA-05.jpg"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hover-box"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "inner-hover"
@@ -37343,12 +37341,9 @@ function (_Component) {
         postHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "news-post image-post",
           key: j
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
-          fallback: imageLoadingPostHeader()
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
-          src: "images/pemerintah/POSTER BARU PARIWISATA-06.jpg",
-          height: sizeImagePostHeader
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "images/pemerintah/POSTER BARU PARIWISATA-06.jpg"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "hover-box"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "inner-hover"
@@ -37374,11 +37369,7 @@ function (_Component) {
         className: "iso-call heading-news-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-post image-post default-size"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
-        fallback: imageLoadingPostHeader()
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
-        src: "images/pemerintah/POSTER BARU PARIWISATA-01.jpg"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hover-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "inner-hover"
