@@ -86,11 +86,12 @@ form.search-form input[type="text"]{
 }
 
 form.search-form select.category-search{
-    width: 150px;
+    width: 210px;
     height: 50px;
-    transform: translate(30px, -15px);
+    transform: translate(-10px, -15px);
     border: 0px;
-    font-size: 25px;
+    font-size: 19px;
+    -webkit-appearance: none;
 }
 form.search-form select.category-search:focus{
     outline:0px;
@@ -98,7 +99,7 @@ form.search-form select.category-search:focus{
 
 form a i.fa-search {
     font-size: 30px;
-    transform: translate(60px, -20px);
+    transform: translate(30px, -20px);
 }
 
 /* start rewrite css theme */

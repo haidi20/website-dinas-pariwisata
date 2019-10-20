@@ -30691,7 +30691,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38125,8 +38125,20 @@ function (_Component) {
         name: "search",
         placeholder: "what are you looking for?"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        "class": "category-search"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "All")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        "class": "category-search",
+        name: "",
+        onchange: "",
+        onclick: "return false;",
+        id: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: ""
+      }, "Seleciona una Opcion "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "1"
+      }, "Select option 1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "2"
+      }, "Select option 2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "3"
+      }, "Select option 3")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-search"

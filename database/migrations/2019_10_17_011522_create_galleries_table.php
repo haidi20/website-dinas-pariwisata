@@ -21,7 +21,7 @@ class CreateGalleriesTable extends Migration
             // link :
             // video = menaruh link
             // image = kosong
-            $table->string('link');
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }
