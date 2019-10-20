@@ -16,7 +16,7 @@ class CategoriesTableSeeder extends Seeder
     {
         Category::truncate();
 
-        $categories = config('library.website.categories');
+        $categories = config('library.categories');
 
         foreach ($categories as $index => $item) {
             factory(Category::class)->create([

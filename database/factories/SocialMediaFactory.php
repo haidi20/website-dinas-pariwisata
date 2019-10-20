@@ -2,13 +2,12 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\Gallery;
+use App\Models\Media;
 use Faker\Generator as Faker;
 
-$factory->define(Gallery::class, function (Faker $faker) {
+$factory->define(Media::class, function (Faker $faker) {
     return [
         "name" => null,
-        "type" => null,
         "link" => null,
     ];
 });

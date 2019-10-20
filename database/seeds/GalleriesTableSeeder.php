@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Models\Gallery;
+
 class GalleriesTableSeeder extends Seeder
 {
     /**
@@ -11,6 +13,16 @@ class GalleriesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Gallery::truncate();
+
+        $galleries = config('library.galleries');
+
+        foreach ($galleries as $index => $item) {
+            factory(Gallery::class)->create([
+                "name" => $item['name'],
+                "type" => $item['type'],
+                "link" => $item['link'],
+            ]);
+        }
     }
 }
