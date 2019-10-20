@@ -18,8 +18,8 @@ class CreatePostsTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->integer('author_id')->unsigned();
             $table->string('title');
-            $table->string('slug');
-            $table->string('content');
+            $table->string('slug')->nullable();
+            $table->longtext('content');
             $table->integer('read')->default(0);
             // breaking_news boolean. untuk post ini breaking news atau tidak
             $table->integer('breaking_news')->default(0);
