@@ -19,4 +19,11 @@ class HomeController extends Controller
     {
         return view('website.home.index');
     }
+
+    public function postHeader()
+    {
+        $allPost = $this->postRepo->all();
+
+        return $allPost;
+    }
 }

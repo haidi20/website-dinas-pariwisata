@@ -26,7 +26,7 @@ Route::group(['prefix' => '/auth', 'namespace' => 'Auth'], function(){
 });
 
 Route::namespace('website')->group(function(){
-    Route::prefix('post')->group(function(){
-        Route::get('/', 'HomeController@index');
+    Route::prefix('home')->group(function(){
+        Route::get('post-header', 'HomeController@postHeader');
     });
 });
