@@ -1,73 +1,71 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<!-- Mirrored from themepixels.com/demo/webpage/quirk/templates/signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Apr 2016 14:45:02 GMT -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+  <title>Sitemanager</title>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+  <link href="{{asset('avenger/assets/fonts/font-awesome/css/font-awesome.min.css')}}" rel='stylesheet' type='text/css'>
+  <link href="{{asset('quirk/quirk.css')}}" rel='stylesheet' type='text/css'>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+  <!-- <script src="../lib/modernizr/modernizr.js"></script> -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="../lib/html5shiv/html5shiv.js"></script>
+  <script src="../lib/respond/respond.src.js"></script>
+  <![endif]-->
+</head>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+<body class="signwrapper">
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+  <div class="sign-overlay"></div>
+  <div class="signpanel"></div>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+  <div class="panel signin">
+    <div class="panel-heading">
+      <h1>sitemanager</h1>
+      <h4 class="panel-title">Welcome! Please login.</h4>
     </div>
-</div>
-@endsection
+    <div class="panel-body">
+      @if (count($errors) > 0)
+          <div class="alert alert-dismissable alert-danger">
+              @fa('warning') <strong>Error :</strong><br>
+              @foreach ($errors->all() as $error)
+                  {{ $error }}<br>
+              @endforeach
+          </div>
+      @endif
+        <form action="#">
+            <div class="form-group mb10">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" name="username" class="form-control" placeholder="Enter Username" />
+            </div>
+            </div>
+            <div class="form-group nomargin">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="password" name="password" class="form-control" placeholder="Enter Password" />
+            </div>
+            </div>
+            <div>
+            <!-- <a href="#" class="forgot">Forgot password?</a> -->
+            &nbsp;
+            </div>
+            <div class="form-group">
+            <button type="submit" class="btn btn-success btn-quirk btn-block">Login</button>
+            </div>
+        </form>
+      <hr class="invisible">
+    </div>
+  </div><!-- panel -->
+
+</body>
+
+<!-- Mirrored from themepixels.com/demo/webpage/quirk/templates/signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Apr 2016 14:45:02 GMT -->
+</html>

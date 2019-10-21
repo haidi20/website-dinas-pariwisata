@@ -1,0 +1,1 @@
+{"version":3,"sources":["sitemanager.scss"],"names":[],"mappings":"AAAM;EACF,mBAAmB;EACnB,UAAU,EACb","file":"custom.css","sourcesContent":["select.select2{\n    visibility: hidden;\n    height: 0;\n}\n"],"sourceRoot":"/source/"}
