@@ -16,7 +16,8 @@ __webpack_require__.r(__webpack_exports__);
 function Image(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: props.src,
-    alt: ""
+    alt: "",
+    height: props.height
   });
 }
 

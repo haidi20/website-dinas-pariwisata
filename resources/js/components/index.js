@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+//redux
+import {createStore} from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from '../redux/reducers';
+
+const storeRedux = createStore(rootReducer);
+
 //sitemanager
 import AppSiteManager from './pages/SiteManager';
 
@@ -13,5 +20,5 @@ if (document.getElementById('app-sitemanager')) {
 import Home from './pages/Website/Home';
 
 if (document.getElementById('website-home')) {
-    ReactDOM.render(<Home />, document.getElementById('website-home'));
+    ReactDOM.render(<Provider store={storeRedux}><Home /></Provider>, document.getElementById('website-home'));
 }

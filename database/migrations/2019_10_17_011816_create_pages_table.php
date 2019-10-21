@@ -17,7 +17,7 @@ class CreatePagesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('menu_id')->unsigned();
             $table->string('title');
-            $table->string('content');
+            $table->longtext('content');
             $table->timestamps();
         });
     }

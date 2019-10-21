@@ -1,12 +1,18 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 // container
-import SearchBig from './SearchBig';
-import HeadingNews from './HeadingNews';
 import MainBody from './MainBody';
 import PostPopular from './PostPopular';
+import SearchPost from '../../../organisms/Website/SearchPost';
+import HeadingNews from '../../../organisms/Website/HeadingNews';
 
 class Home extends Component {
+
+    componentDidMount(){
+        console.log(this.props.data);
+    }
+
     render(){
         return(
             <div>
@@ -27,15 +33,21 @@ class Home extends Component {
                     </div>
                 </section>
                 
-                <SearchBig />
+                <SearchPost />
                 
-                <PostPopular />
+                {/* <PostPopular /> */}
 
-                <MainBody />
+                {/* <MainBody /> */}
 
             </div>
         )
     }
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+      data : state.postReducer
+    }
+}
+
+export default connect(mapStateToProps)(Home);

@@ -1,8 +1,17 @@
 import React, {lazy, Suspense} from 'react';
 
-const Image = lazy(() => import('../../atoms/Image'));
+const Image = React.lazy(() => {
+    const x = new Promise((resolve) => {
+      setTimeout(() => {
+        return resolve(import("../../atoms/Image"))
+      }, 3500)
+    })
+    return x;
+});
+
 function imageLoading(){
-    const link = "https://i.pinimg.com/originals/f9/84/42/f984425b6ac113bfb4402ccca0168910.jpg"
+    // const link = "https://i.pinimg.com/originals/f9/84/42/f984425b6ac113bfb4402ccca0168910.jpg"
+    const link = "images/loading.jpg";
     return(
         <img height="420" src={link} />
     )
@@ -14,10 +23,12 @@ export default function NewPostSlideHeader (props){
             <div className="news-post image-post">
 
                 <Suspense fallback={
-                    imageLoading()
+                   imageLoading()
                 }>
                     <Image src={props.src} />
                 </Suspense>
+
+                {/* <img src={props.src} /> */}
                 
                 <div className="hover-box">
                     <div className="inner-hover">

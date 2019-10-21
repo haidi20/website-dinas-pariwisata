@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('hotmagazine/css/owl.theme.css')}}" media="screen">
 	<link rel="stylesheet" type="text/css" href="{{asset('hotmagazine/css/ticker-style.css')}}"/>
 	<link rel="stylesheet" type="text/css" href="{{asset('hotmagazine/css/style.css')}}" media="screen">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/custom.css')}}" media="screen">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/website.css')}}" media="screen">
 	{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" media="screen"> --}}
 
 	@yield('script-top')
