@@ -15,10 +15,10 @@ class SearchBig extends Component {
                                 <option>All</option>
                             </select> */}
                             <select class="category-search" name="" onchange="" onclick="return false;" id="">
-                                <option value=""  >Seleciona una Opcion </option>
-                                <option value="1">Select option 1</option>
-                                <option value="2" >Select option 2</option>
-                                <option value="3">Select option 3</option>
+                                <option value=""  >Semua Kategori </option>
+                                <option value="1">Hutan</option>
+                                <option value="2">Wisata</option>
+                                <option value="3">Pantai</option>
                             </select>
                             <a className="btn">
                                 <i className="fa fa-search"></i>

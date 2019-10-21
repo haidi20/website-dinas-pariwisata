@@ -92,6 +92,7 @@ form.search-form select.category-search{
     border: 0px;
     font-size: 19px;
     -webkit-appearance: none;
+    padding-left: 10px;
 }
 form.search-form select.category-search:focus{
     outline:0px;
