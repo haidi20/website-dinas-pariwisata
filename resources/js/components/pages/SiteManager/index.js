@@ -13,6 +13,9 @@ import BreakingNews from './BreakingNews';
 import Pages from './Pages';
 import Images from './Images';
 import Videos from './Videos';
+import User from './Settings/User';
+import Password from './Settings/Password';
+import Contact from './Settings/Contact';
 
 //organism
 import HeaderSiteManager from '../../organisms/SiteManager/HeaderSiteManager';
@@ -41,6 +44,9 @@ export default class AppSiteManager extends Component {
                             <Route path='/sitemanager/images' exact component={Images} />
                             <Route path='/sitemanager/videos' exact component={Videos} />
                             <Route path='/sitemanager/social-media' exact component={SocialMedia} />
+                            <Route path='/sitemanager/setting-user' exact component={User} />
+                            <Route path='/sitemanager/change-password' exact component={Password} />
+                            <Route path='/sitemanager/setting-contact' exact component={Contact} />
                         </Switch>
 
                         {/* @include('sitemanager._layout.footer') */}

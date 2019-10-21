@@ -26,9 +26,9 @@ export default class Videos extends Component {
                         </div>
                     </div> 
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Videos List</div>
-                        <div class="panel-body">  
+                    <div className="panel panel-default">
+                        <div className="panel-heading" style={{fontWeight:'bold'}}>Videos List</div>
+                        <div className="panel-body">  
                             <div className="container-fluid">
                                 <div className="row">
                                     <div className="col-md-12">
