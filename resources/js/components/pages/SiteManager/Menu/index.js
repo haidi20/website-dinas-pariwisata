@@ -19,7 +19,7 @@ export default class Menu extends Component {
                         <h1>Menu</h1>
                         <div className="options">
                             <div className="btn-toolbar">
-                                <Link to="#" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Menu</Link>
+                                <Link to="/sitemanager/menu/create" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Menu</Link>
                             </div>
                         </div>
                     </div>

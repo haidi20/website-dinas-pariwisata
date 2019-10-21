@@ -15,7 +15,7 @@ export default class HeaderSiteManager extends Component {
         <Link className="navbar-brand" to="#">kreasibeton</Link>
 
         <span id="trigger-infobar" className="toolbar-trigger toolbar-icon-bg">
-          <Link data-toggle="tooltips" data-placement="left" title="Toggle Infobar"></Link>
+          <a data-toggle="tooltips" data-placement="left" title="Toggle Infobar"></a>
         </span>
 
         <ul className="nav navbar-nav toolbar pull-right" data-auto-collapse="false">

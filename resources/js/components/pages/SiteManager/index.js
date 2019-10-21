@@ -16,6 +16,7 @@ import Videos from './Videos';
 import User from './Settings/User';
 import Password from './Settings/Password';
 import Contact from './Settings/Contact';
+import CreateMenu from './Menu/create';
 
 //organism
 import HeaderSiteManager from '../../organisms/SiteManager/HeaderSiteManager';
@@ -38,6 +39,7 @@ export default class AppSiteManager extends Component {
                         <Switch>
                             <Route path='/sitemanager' exact component={Dashboard} />
                             <Route path='/sitemanager/menu' exact component={Menu} />
+                            <Route path='/sitemanager/menu/create' exact component={CreateMenu} />
                             <Route path='/sitemanager/post' exact component={Posts} />
                             <Route path='/sitemanager/breaking-news' exact component={BreakingNews} />
                             <Route path='/sitemanager/pages' exact component={Pages} />
