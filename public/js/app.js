@@ -36761,7 +36761,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 var Image = Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-  return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../../atoms/Image */ "./resources/js/components/atoms/Image.js"));
+  return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../../atoms/Image */ "./resources/js/components/atoms/Image.js"));
 });
 
 function imageLoading() {
@@ -36816,7 +36816,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 var Image = Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-  return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../../atoms/Image */ "./resources/js/components/atoms/Image.js"));
+  return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../../atoms/Image */ "./resources/js/components/atoms/Image.js"));
 });
 
 function imageLoading() {
