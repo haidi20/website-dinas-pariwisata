@@ -26,7 +26,7 @@ function retry(fn, retriesLeft = 5, interval = 1000) {
 const Image = React.lazy(() => retry(() => {
     const x = new Promise((resolve) => {
       setTimeout(() => {
-        return resolve(import("../../../atoms/Image"))
+        return resolve(import("../../atoms/Image"))
       }, 1000)
     })
     return x;

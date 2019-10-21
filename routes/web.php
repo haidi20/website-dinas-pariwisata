@@ -21,21 +21,6 @@ Route::namespace('Website')->group(function(){
     Route::get('/image', 'ImageController@index');
 });
 
-Route::get('test', function(){
-    $limit = 1;
-
-    for($i = 1; $i <= 5; $i++){
-        if($limit <= 3){
-            $value[] = 1;
-
-            $limit++;
-        }else{
-            $value[] = 0;
-        }
-    }
-    return $value;
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

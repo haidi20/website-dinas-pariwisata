@@ -36747,6 +36747,212 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/organisms/Website/HeadingNews.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/organisms/Website/HeadingNews.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+ // import PostHeader from '../../../organisms/Website/PostHeader';
+// import PostSlideHeader from '../../../organisms/Website/PostSlideHeader';
+
+function retry(fn) {
+  var retriesLeft = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
+  var interval = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1000;
+  return new Promise(function (resolve, reject) {
+    fn().then(resolve)["catch"](function (error) {
+      setTimeout(function () {
+        if (retriesLeft === 1) {
+          // reject('maximum retries exceeded');
+          reject(error);
+          return;
+        } // Passing on "reject" is the important part
+
+
+        retry(fn, retriesLeft - 1, interval).then(resolve, reject);
+      }, interval);
+    });
+  });
+}
+
+var Image = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
+  return retry(function () {
+    var x = new Promise(function (resolve) {
+      setTimeout(function () {
+        return resolve(__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../../atoms/Image */ "./resources/js/components/atoms/Image.js")));
+      }, 1000);
+    });
+    return x;
+  });
+});
+var sizeImagePostHeader = 210;
+
+var HeadingNews =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(HeadingNews, _Component);
+
+  function HeadingNews(props) {
+    _classCallCheck(this, HeadingNews);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(HeadingNews).call(this, props));
+  }
+
+  _createClass(HeadingNews, [{
+    key: "componentDidCatch",
+    value: function componentDidCatch(error, errorInfo) {
+      console.log('ERROR = ', error, errorInfo);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      function imageLoadingPostSlideHeader() {
+        var link = "images/loading.jpg";
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          height: "400",
+          src: link
+        });
+      }
+
+      function imageLoadingPostHeader() {
+        var link = "images/loading.jpg";
+        return (// <img height="209" src={link}/>
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            height: sizeImagePostHeader,
+            src: link
+          })
+        );
+      }
+
+      var postSlideHeader = [];
+
+      for (var i = 3; i <= 5; i++) {
+        postSlideHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "news-post image-post",
+          key: i
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(i, ".jpg")
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "hover-box"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "inner-hover"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "category-post world",
+          href: "world.html"
+        }, "Business"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: '/image'
+        }, "Franca do t\xEB bashk\xEBpunoj\xEB me Kosov\xEBn n\xEB ekonomi. ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "post-tags"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-clock-o"
+        }), "27 may 2013"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-user"
+        }), "by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, "John Doe")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-comments-o"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-eye"
+        }), "872")))))));
+      }
+
+      var postHeader = [];
+
+      for (var j = 2; j < 9; j++) {
+        postHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "news-post image-post",
+          key: j
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(j, ".jpg") // height={sizeImagePostHeader}
+
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "hover-box"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "inner-hover"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "category-post travel",
+          href: "travel.html"
+        }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: '/image'
+        }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "post-tags"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-clock-o"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "27 may 2013")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fa fa-comments-o"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))));
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "heading-news"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "iso-call heading-news-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "news-post image-post default-size"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "images/pemerintah/POSTER BARU PARIWISATA-08.jpg" // height={sizeImagePostHeader}
+
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hover-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-hover"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "category-post travel",
+        href: "travel.html"
+      }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: '/image'
+      }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "post-tags"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-clock-o"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "27 may 2013")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-comments-o"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "image-slider snd-size"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "top-stories"
+      }, "TOP STORIES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "bxslider"
+      }, postSlideHeader)), postHeader)));
+    }
+  }]);
+
+  return HeadingNews;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (HeadingNews);
+
+/***/ }),
+
 /***/ "./resources/js/components/organisms/Website/PostRightSide.js":
 /*!********************************************************************!*\
   !*** ./resources/js/components/organisms/Website/PostRightSide.js ***!
@@ -37048,6 +37254,95 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/organisms/Website/SearchPost.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/organisms/Website/SearchPost.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var SearchPost =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(SearchPost, _Component);
+
+  function SearchPost() {
+    _classCallCheck(this, SearchPost);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SearchPost).apply(this, arguments));
+  }
+
+  _createClass(SearchPost, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "space-search",
+        style: {
+          backgroundImage: "url('images/bg-search.png')"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container center-search"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome To Kalimantan Timur"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "We offer a variety of services and options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        role: "search",
+        className: "search-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        id: "search",
+        name: "search",
+        placeholder: "what are you looking for?"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        "class": "category-search",
+        name: "",
+        onchange: "",
+        onclick: "return false;",
+        id: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: ""
+      }, "Semua Kategori "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "1"
+      }, "Hutan"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "2"
+      }, "Wisata"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "3"
+      }, "Pantai")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-search"
+      }))))));
+    }
+  }]);
+
+  return SearchPost;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (SearchPost);
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/SiteManager/Dashboard/index.js":
 /*!**********************************************************************!*\
   !*** ./resources/js/components/pages/SiteManager/Dashboard/index.js ***!
@@ -37198,212 +37493,6 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
-
-/***/ }),
-
-/***/ "./resources/js/components/pages/Website/Home/HeadingNews.js":
-/*!*******************************************************************!*\
-  !*** ./resources/js/components/pages/Website/Home/HeadingNews.js ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
- // import PostHeader from '../../../organisms/Website/PostHeader';
-// import PostSlideHeader from '../../../organisms/Website/PostSlideHeader';
-
-function retry(fn) {
-  var retriesLeft = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
-  var interval = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1000;
-  return new Promise(function (resolve, reject) {
-    fn().then(resolve)["catch"](function (error) {
-      setTimeout(function () {
-        if (retriesLeft === 1) {
-          // reject('maximum retries exceeded');
-          reject(error);
-          return;
-        } // Passing on "reject" is the important part
-
-
-        retry(fn, retriesLeft - 1, interval).then(resolve, reject);
-      }, interval);
-    });
-  });
-}
-
-var Image = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
-  return retry(function () {
-    var x = new Promise(function (resolve) {
-      setTimeout(function () {
-        return resolve(__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../../../atoms/Image */ "./resources/js/components/atoms/Image.js")));
-      }, 1000);
-    });
-    return x;
-  });
-});
-var sizeImagePostHeader = 210;
-
-var HeadingNews =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(HeadingNews, _Component);
-
-  function HeadingNews(props) {
-    _classCallCheck(this, HeadingNews);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(HeadingNews).call(this, props));
-  }
-
-  _createClass(HeadingNews, [{
-    key: "componentDidCatch",
-    value: function componentDidCatch(error, errorInfo) {
-      console.log('ERROR = ', error, errorInfo);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      function imageLoadingPostSlideHeader() {
-        var link = "images/loading.jpg";
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          height: "400",
-          src: link
-        });
-      }
-
-      function imageLoadingPostHeader() {
-        var link = "images/loading.jpg";
-        return (// <img height="209" src={link}/>
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            height: sizeImagePostHeader,
-            src: link
-          })
-        );
-      }
-
-      var postSlideHeader = [];
-
-      for (var i = 3; i <= 5; i++) {
-        postSlideHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "news-post image-post",
-          key: i
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(i, ".jpg")
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "hover-box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "inner-hover"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "category-post world",
-          href: "world.html"
-        }, "Business"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: '/image'
-        }, "Franca do t\xEB bashk\xEBpunoj\xEB me Kosov\xEBn n\xEB ekonomi. ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          className: "post-tags"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-clock-o"
-        }), "27 may 2013"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-user"
-        }), "by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, "John Doe")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-comments-o"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-eye"
-        }), "872")))))));
-      }
-
-      var postHeader = [];
-
-      for (var j = 2; j < 9; j++) {
-        postHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "news-post image-post",
-          key: j
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(j, ".jpg") // height={sizeImagePostHeader}
-
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "hover-box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "inner-hover"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "category-post travel",
-          href: "travel.html"
-        }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: '/image'
-        }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          className: "post-tags"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-clock-o"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "27 may 2013")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-comments-o"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))));
-      }
-
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "heading-news"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "iso-call heading-news-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "news-post image-post default-size"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "images/pemerintah/POSTER BARU PARIWISATA-08.jpg" // height={sizeImagePostHeader}
-
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "hover-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "inner-hover"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "category-post travel",
-        href: "travel.html"
-      }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: '/image'
-      }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "post-tags"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fa fa-clock-o"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "27 may 2013")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fa fa-comments-o"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "image-slider snd-size"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "top-stories"
-      }, "TOP STORIES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "bxslider"
-      }, postSlideHeader)), postHeader)));
-    }
-  }]);
-
-  return HeadingNews;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (HeadingNews);
 
 /***/ }),
 
@@ -38064,95 +38153,6 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/Website/Home/SearchBig.js":
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/pages/Website/Home/SearchBig.js ***!
-  \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var SearchBig =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(SearchBig, _Component);
-
-  function SearchBig() {
-    _classCallCheck(this, SearchBig);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(SearchBig).apply(this, arguments));
-  }
-
-  _createClass(SearchBig, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-        className: "space-search",
-        style: {
-          backgroundImage: "url('images/bg-search.png')"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container center-search"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome To Kalimantan Timur"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "We offer a variety of services and options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        role: "search",
-        className: "search-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        id: "search",
-        name: "search",
-        placeholder: "what are you looking for?"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        "class": "category-search",
-        name: "",
-        onchange: "",
-        onclick: "return false;",
-        id: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: ""
-      }, "Semua Kategori "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "1"
-      }, "Hutan"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "2"
-      }, "Wisata"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "3"
-      }, "Pantai")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "btn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fa fa-search"
-      }))))));
-    }
-  }]);
-
-  return SearchBig;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (SearchBig);
-
-/***/ }),
-
 /***/ "./resources/js/components/pages/Website/Home/index.js":
 /*!*************************************************************!*\
   !*** ./resources/js/components/pages/Website/Home/index.js ***!
@@ -38164,10 +38164,10 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _SearchBig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchBig */ "./resources/js/components/pages/Website/Home/SearchBig.js");
-/* harmony import */ var _HeadingNews__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeadingNews */ "./resources/js/components/pages/Website/Home/HeadingNews.js");
-/* harmony import */ var _MainBody__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MainBody */ "./resources/js/components/pages/Website/Home/MainBody.js");
-/* harmony import */ var _PostPopular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PostPopular */ "./resources/js/components/pages/Website/Home/PostPopular.js");
+/* harmony import */ var _MainBody__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MainBody */ "./resources/js/components/pages/Website/Home/MainBody.js");
+/* harmony import */ var _PostPopular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PostPopular */ "./resources/js/components/pages/Website/Home/PostPopular.js");
+/* harmony import */ var _organisms_Website_SearchPost__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../organisms/Website/SearchPost */ "./resources/js/components/organisms/Website/SearchPost.js");
+/* harmony import */ var _organisms_Website_HeadingNews__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../organisms/Website/HeadingNews */ "./resources/js/components/organisms/Website/HeadingNews.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38207,7 +38207,7 @@ function (_Component) {
   _createClass(Home, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HeadingNews__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_Website_HeadingNews__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "ticker-news"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
@@ -38243,7 +38243,7 @@ function (_Component) {
         className: "time-news"
       }, "01:00 am"), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
-      }, "DioGuardi, k\xEBshtu e mbrojti Kosov\xEBn n\xEB Washington, "), " para serbit Vejvoda "))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBig__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      }, "DioGuardi, k\xEBshtu e mbrojti Kosov\xEBn n\xEB Washington, "), " para serbit Vejvoda "))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_Website_SearchPost__WEBPACK_IMPORTED_MODULE_3__["default"], null));
     }
   }]);
 

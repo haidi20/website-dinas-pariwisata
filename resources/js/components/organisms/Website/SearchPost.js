@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class SearchBig extends Component {
+class SearchPost extends Component {
     render(){
         return(
             <div>
@@ -8,7 +8,7 @@ class SearchBig extends Component {
                 {/* <section className="space-search keren" > */}
                     <div className="container center-search" >
                         <h2>Welcome To Kalimantan Timur</h2>
-                        <h4>We offer a variety of services and options</h4>
+                        <h3>We offer a variety of services and options</h3>
                         <form role="search" className="search-form">
                             <input type="text" id="search" name="search" placeholder="what are you looking for?" />
                             {/* <select class="category-search">
@@ -31,4 +31,4 @@ class SearchBig extends Component {
     }
 }
 
-export default SearchBig;
+export default SearchPost;

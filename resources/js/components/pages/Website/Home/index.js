@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 
 // container
-import SearchBig from './SearchBig';
-import HeadingNews from './HeadingNews';
 import MainBody from './MainBody';
 import PostPopular from './PostPopular';
+import SearchPost from '../../../organisms/Website/SearchPost';
+import HeadingNews from '../../../organisms/Website/HeadingNews';
 
 class Home extends Component {
     render(){
@@ -27,7 +27,7 @@ class Home extends Component {
                     </div>
                 </section>
                 
-                <SearchBig />
+                <SearchPost />
                 
                 {/* <PostPopular /> */}
 
