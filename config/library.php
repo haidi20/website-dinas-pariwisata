@@ -20,6 +20,56 @@ return [
             "link" => "https://twitter.com/tourismkaltim",
         ],
     ],
+    "menus" => [
+        0 => [
+            "name"          => "home",
+            "color"         => "#74B430",
+            "parent_id"     => 0,
+            "position"      => "menu",
+            "order"         => 1,
+            "status"        => "static"
+        ],
+        1 => [
+            "name"          => "Image",
+            "color"         => "#33A3F1",
+            "parent_id"     => 0,
+            "position"      => "menu",
+            "order"         => 2,
+            "status"        => "static"
+        ],
+        2 => [
+            "name"          => "Video",
+            "color"         => "#F58021",
+            "parent_id"     => 0,
+            "position"      => "menu",
+            "order"         => 3,
+            "status"        => "static"
+        ],
+        3 => [
+            "name"          => "Contact",
+            "color"         => "#AA35D6",
+            "parent_id"     => 0,
+            "position"      => "menu",
+            "order"         => 4,
+            "status"        => "static"
+        ],
+        4 => [
+            "name"          => "About",
+            "color"         => "#224877",
+            "parent_id"     => 0,
+            "position"      => "menu",
+            "order"         => 5,
+            "status"        => "synamic"
+        ],
+        5 => [
+            "name"          => "SubAbout",
+            "color"         => null,
+            "parent_id"     => 5,
+            "position"      => "menu",
+            "order"         => 1,
+            "status"        => "dynamic"
+        ],
+    ],
     "shares" => [
         0 => [
             "name" => "facebook",
@@ -32,6 +82,28 @@ return [
         ], 
         3 => [
             "name" => "google_plus",
+        ],
+    ],
+    "settings" => [
+        0 => [
+            "key"   => "address",
+            "value" => "Jl. Jenderal Soedirman No.22, Bugis, Kec. Samarinda Kota, Kota Samarinda, Kalimantan Timur 75111",
+        ],
+        1 => [
+            "key" => "phone",
+            "value" => "(0541) 736850",
+        ],
+        2 => [
+            "key" => "fax",
+            "value" => "(0541) 736850",
+        ],
+        3 => [
+            "key" => "email",
+            "value" => "disbudparkaltim@gmail.com",
+        ],
+        4 => [
+            "key" => "time",
+            "value" => "07.00 - 16.00",
         ],
     ],
     "galleries" => [
