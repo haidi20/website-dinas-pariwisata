@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMenusesTable extends Migration
+class CreateMenusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMenusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('menuses', function (Blueprint $table) {
+        Schema::create('Menus', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             // color = menentukan warna background menu 
@@ -36,6 +36,6 @@ class CreateMenusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menuses');
+        Schema::dropIfExists('Menus');
     }
 }

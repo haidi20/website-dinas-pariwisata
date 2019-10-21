@@ -59,13 +59,13 @@ return [
             "parent_id"     => 0,
             "position"      => "menu",
             "order"         => 5,
-            "status"        => "synamic"
+            "status"        => "dynamic"
         ],
         5 => [
             "name"          => "SubAbout",
             "color"         => null,
             "parent_id"     => 5,
-            "position"      => "menu",
+            "position"      => "submenu",
             "order"         => 1,
             "status"        => "dynamic"
         ],

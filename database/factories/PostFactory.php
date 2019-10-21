@@ -18,6 +18,6 @@ $factory->define(Post::class, function (Faker $faker) {
         "slug"          => null,
         "content"       => $faker->paragraph(4),
         "read"          => rand(1, 20),
-        "breaking_news" => rand(0, 1),
+        "breaking_news" => 0,
     ];
 });
