@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 // container
 import MainBody from './MainBody';
@@ -7,6 +8,11 @@ import SearchPost from '../../../organisms/Website/SearchPost';
 import HeadingNews from '../../../organisms/Website/HeadingNews';
 
 class Home extends Component {
+
+    componentDidMount(){
+        console.log(this.props.data);
+    }
+
     render(){
         return(
             <div>
@@ -38,4 +44,10 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+      data : state.postReducer
+    }
+}
+
+export default connect(mapStateToProps)(Home);
