@@ -61,6 +61,7 @@
 }
 .center-search h3{
     color:#224877;
+    text-shadow: 0px -2px black;
     /* font-weight:bold; */
     /* text-shadow: 2 2px black; */
     /* text-shadow: -1px 0 #224877, 0 2px #224877, 2px 0 #224877, 0 -1px #224877; */
