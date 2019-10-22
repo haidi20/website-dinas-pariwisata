@@ -19,22 +19,27 @@ export default class Menu extends Component {
                         <h1>Menu</h1>
                         <div className="options">
                             <div className="btn-toolbar">
-                                <Link to="#" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Menu</Link>
+                                <Link to="/sitemanager/menu/create" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Menu</Link>
                             </div>
                         </div>
                     </div>
 
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-md-12">
-                            
-                            {/* <div class="alert alert-info">
-                                <p>WELCOME TO MENU PAGE</p>
-                            </div> */}
-                            {/* DataTables */}
-                            
-                            <DatatablePage/>
 
+                    <div className="panel panel-default">
+                        <div className="panel-heading" style={{fontWeight:'bold'}}></div>
+                        <div className="panel-body"></div>
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-md-12">
+                                
+                                {/* <div class="alert alert-info">
+                                    <p>WELCOME TO MENU PAGE</p>
+                                </div> */}
+                                {/* DataTables */}
+                                
+                                <DatatablePage/>
+
+                                </div>
                             </div>
                         </div>
                     </div> {/* <!-- .container-fluid --> */}

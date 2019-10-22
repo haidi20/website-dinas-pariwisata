@@ -1,72 +1,94 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+
+import {baseURL} from '../Utils';
 
 //Atom Component
 import CardVideo from '../../../atoms/CardVideo';
 
 export default class Videos extends Component {
-  render() {
-    return (
-        <>
-            <div className="static-content">
-                <div className="page-content">
+    constructor(props){
+        super(props);
 
-                    <ol className="breadcrumb">
-                        <li>
-                            <Link to="/sitemanager/videos">Videos</Link>
-                        </li>
-                    </ol>
+        this.state = {
+            videos: []
+        };
 
-                    <div className="page-heading">
-                        <h1>Videos</h1>
-                        <div className="options">
-                            <div className="btn-toolbar">
-                                <Link to="#" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Video</Link>
+        this._onDelete = this._onDelete.bind(this);
+    }
+
+    componentDidMount(){
+        this.getData();
+    }
+
+    async getData() {
+        const results = await axios.get(`${baseURL}/videos`)
+            .then(res => res.data)
+            .catch(err => console.log(err));
+        let videos = this.state.videos;
+
+        results.data.map(v => videos.push({
+            created_at: v.created_at,
+            id: v.id,
+            link: v.link,
+            name: v.name,
+            type: v.type,
+            updated_at: v.updated_at,
+        }));
+        this.setState({videos});
+    }
+
+    _onDelete(id){
+        let videos = [...this.state.videos];
+        videos = videos.filter((val) => val.id !== id);
+        this.setState({videos});
+    }
+
+    render() {
+        return (
+            <>
+                <div className="static-content">
+                    <div className="page-content">
+
+                        <ol className="breadcrumb">
+                            <li>
+                                <Link to="/sitemanager/videos">Videos</Link>
+                            </li>
+                        </ol>
+
+                        <div className="page-heading">
+                            <h1>Videos</h1>
+                            <div className="options">
+                                <div className="btn-toolbar">
+                                    <Link to="/sitemanager/videos/create" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Video</Link>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div className="panel panel-default">
+                            <div className="panel-heading" style={{fontWeight:'bold'}}>Videos List</div>
+                            <div className="panel-body">  
+                                <div className="container-fluid">
+                                    <div className="row">
+
+                                        {this.state.videos.map(vid => <CardVideo
+                                            key={vid.id}
+                                            src={vid.link}
+                                            title={vid.name}
+                                            id={vid.id}
+                                            _onDelete={this._onDelete}
+                                            />
+                                        )}
+                                            
+                                    </div>
+                                </div> {/* <!-- .container-fluid --> */}
                             </div>
                         </div>
-                    </div> 
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Videos List</div>
-                        <div class="panel-body">  
-                            <div className="container-fluid">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                    
-                                    <CardVideo 
-                                        src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" 
-                                        title="Big Buck Bunny_720p_1mb"
-                                        />
-                                    <CardVideo 
-                                        src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" 
-                                        title="Big Buck Bunny_720p_1mb"
-                                        />
-                                    <CardVideo 
-                                        src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" 
-                                        title="Big Buck Bunny_720p_1mb"
-                                        />
-                                    <CardVideo 
-                                        src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" 
-                                        title="Big Buck Bunny_720p_1mb"
-                                        />
-                                    <CardVideo 
-                                        src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" 
-                                        title="Big Buck Bunny_720p_1mb"
-                                        />
-                                    <CardVideo 
-                                        src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" 
-                                        title="Big Buck Bunny_720p_1mb"
-                                        />
-                                        
-                                    </div>
-                                </div>
-                            </div> {/* <!-- .container-fluid --> */}
-                        </div>
-                    </div>
-
-                </div> {/* <!-- #page-content --> */}
-            </div>
-        </>
-    );
-  }
+                    </div> {/* <!-- #page-content --> */}
+                </div>
+            </>
+        );
+    }
 }
