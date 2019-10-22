@@ -19,4 +19,14 @@ class HomeController extends Controller
     {
         return view('website.home.index');
     }
+
+    public function post()
+    {
+        $firstPost          = $this->postRepo->firstPost();
+        $postsLimitSix      = $this->postRepo->postsLimit(7);
+        $postsLimitThree    = $this->postRepo->postsLimit(3);
+
+        // return response()->json($posts);
+        return compact('firstPost', 'postsLimitSix', 'postsLimitThree');
+    }
 }

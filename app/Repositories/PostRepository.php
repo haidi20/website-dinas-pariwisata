@@ -10,4 +10,12 @@ class PostRepository {
         return Post::all();
     }
 
+    public function postsLimit($limit){
+        return Post::take($limit)->get();
+    }
+
+    public function firstPost(){
+        return Post::first();
+    }
+
 }

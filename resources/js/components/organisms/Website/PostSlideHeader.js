@@ -17,7 +17,7 @@ function imageLoading(){
     )
 }
 
-export default function NewPostSlideHeader (props){
+export default function PostSlideHeader (props){
     return(
         <li>
             <div className="news-post image-post">

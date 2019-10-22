@@ -5,18 +5,28 @@ import {connect} from 'react-redux';
 import MainBody from './MainBody';
 import PostPopular from './PostPopular';
 import SearchPost from '../../../organisms/Website/SearchPost';
-import HeadingNews from '../../../organisms/Website/HeadingNews';
+import PostHeader  from '../../../organisms/Website/PostHeader';
 
 class Home extends Component {
 
-    componentDidMount(){
-        console.log(this.props.data);
+    constructor(){
+        super()
+        
+        this.state = {
+            posts : []
+        }
     }
 
+    async componentDidMount(){
+       this.setState({
+           posts: await this.props.posts
+       })
+    }
+    
     render(){
         return(
             <div>
-                <HeadingNews />
+                <PostHeader />
 
                 <section className="ticker-news">
                     <div className="container">
@@ -33,7 +43,7 @@ class Home extends Component {
                     </div>
                 </section>
                 
-                <SearchPost />
+                {/* <SearchPost /> */}
                 
                 {/* <PostPopular /> */}
 
@@ -46,7 +56,7 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     return {
-      data : state.postReducer
+      posts : state.postReducer
     }
 }
 

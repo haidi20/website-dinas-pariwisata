@@ -25,7 +25,13 @@ Route::group(['prefix' => '/auth', 'namespace' => 'Auth'], function(){
     Route::post('me', 'AuthController@me');
 });
 
-Route::group(['prefix' => '/sitemanager', 'namespace' => 'SiteManager'], function(){
+Route::namespace('website')->group(function(){
+    Route::prefix('home')->group(function(){
+        Route::get('post', 'HomeController@post');
+    });
+});
+
+Route::group(['namespace' => 'SiteManager'], function(){
     Route::group(['prefix' => '/videos'], function(){
         Route::get('/', 'VideoController@index');
         Route::post('/', 'VideoController@store');
@@ -33,10 +39,13 @@ Route::group(['prefix' => '/sitemanager', 'namespace' => 'SiteManager'], functio
         Route::patch('/{id}', 'VideoController@update');
         Route::delete('/{id}', 'VideoController@destroy');
     });
-});
-
-Route::namespace('website')->group(function(){
-    Route::prefix('post')->group(function(){
-        Route::get('/', 'HomeController@index');
+    Route::group(['prefix' => '/images'], function(){
+        Route::get('/', 'ImageController@index');
+        Route::post('/', 'ImageController@store');
+        Route::get('/{id}', 'ImageController@show');
+        Route::patch('/{id}', 'ImageController@update');
+        Route::delete('/{id}', 'ImageController@destroy');
     });
 });
+
+

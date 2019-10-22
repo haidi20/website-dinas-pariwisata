@@ -45579,7 +45579,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55225,7 +55225,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _redux_reducers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../redux/reducers */ "./resources/js/redux/reducers.js");
+/* harmony import */ var _config_redux_reducers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../config/redux/reducers */ "./resources/js/config/redux/reducers.js");
 /* harmony import */ var _pages_SiteManager__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/SiteManager */ "./resources/js/components/pages/SiteManager/index.js");
 /* harmony import */ var _pages_Website_Home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Website/Home */ "./resources/js/components/pages/Website/Home/index.js");
 
@@ -55234,7 +55234,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var storeRedux = Object(redux__WEBPACK_IMPORTED_MODULE_2__["createStore"])(_redux_reducers__WEBPACK_IMPORTED_MODULE_4__["default"]); //sitemanager
+var storeRedux = Object(redux__WEBPACK_IMPORTED_MODULE_2__["createStore"])(_config_redux_reducers__WEBPACK_IMPORTED_MODULE_4__["default"]); //sitemanager
 
  //app-sitemanager
 
@@ -55612,18 +55612,27 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/organisms/Website/HeadingNews.js":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/organisms/Website/HeadingNews.js ***!
-  \******************************************************************/
+/***/ "./resources/js/components/organisms/Website/PostHeader.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/organisms/Website/PostHeader.js ***!
+  \*****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -55633,16 +55642,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- // import PostHeader from '../../../organisms/Website/PostHeader';
-// import PostSlideHeader from '../../../organisms/Website/PostSlideHeader';
+
+
 
 function retry(fn) {
   var retriesLeft = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
@@ -55663,7 +55672,7 @@ function retry(fn) {
   });
 }
 
-var Image = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
+var Image = Object(react__WEBPACK_IMPORTED_MODULE_1__["lazy"])(function () {
   return retry(function () {
     var x = new Promise(function (resolve) {
       setTimeout(function () {
@@ -55673,148 +55682,212 @@ var Image = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
     return x;
   });
 });
-var sizeImagePostHeader = 210;
 
-var HeadingNews =
+var PostHeader =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(HeadingNews, _Component);
+  _inherits(PostHeader, _Component);
 
-  function HeadingNews(props) {
-    _classCallCheck(this, HeadingNews);
+  function PostHeader() {
+    var _this;
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(HeadingNews).call(this, props));
+    _classCallCheck(this, PostHeader);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PostHeader).call(this));
+    _this.state = {
+      firstPost: {},
+      postsLimitSix: [],
+      postsLimitThree: []
+    };
+    _this.imageLoading = _this.imageLoading.bind(_assertThisInitialized(_this));
+    _this.postSlideHeader = _this.postSlideHeader.bind(_assertThisInitialized(_this));
+    _this.imageLoadingSlide = _this.imageLoadingSlide.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
-  _createClass(HeadingNews, [{
-    key: "componentDidCatch",
-    value: function componentDidCatch(error, errorInfo) {
-      console.log('ERROR = ', error, errorInfo);
+  _createClass(PostHeader, [{
+    key: "imageLoadingSlide",
+    value: function imageLoadingSlide() {
+      var link = "images/loading.jpg";
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+        height: "400",
+        src: link
+      });
+    }
+  }, {
+    key: "imageLoading",
+    value: function imageLoading() {
+      var link = "images/loading.jpg";
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+        height: "209",
+        src: link
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return this.props.posts;
+
+              case 2:
+                data = _context.sent;
+                this.setState({
+                  firstPost: data.firstPost,
+                  postsLimitSix: data.postsLimitSix,
+                  postsLimitThree: data.postsLimitThree
+                });
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
+    key: "postHeader",
+    value: function postHeader() {
+      var _this2 = this;
+
+      var postsLimitSix = this.state.postsLimitSix;
+      var result = postsLimitSix.map(function (post, index) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "news-post image-post",
+          key: index
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Suspense"], {
+          fallback: _this2.imageLoading()
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
+          src: "images/pemerintah/POSTER BARU PARIWISATA-07.jpg"
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "hover-box"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "inner-hover"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          className: "category-post travel",
+          href: "travel.html"
+        }, "Travel"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          href: '/image'
+        }, post.title)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+          className: "post-tags"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+          className: "fa fa-clock-o"
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, post.created_at)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          href: "#"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+          className: "fa fa-comments-o"
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, post.read)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, post.content))));
+      });
+      return result;
+    }
+  }, {
+    key: "postSlideHeader",
+    value: function postSlideHeader() {
+      var _this3 = this;
+
+      var postsLimitThree = this.state.postsLimitThree;
+      var result = postsLimitThree.map(function (post, i) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+          key: i
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "news-post image-post"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Suspense"], {
+          fallback: _this3.imageLoading()
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Image, {
+          src: "images/pemerintah/POSTER BARU PARIWISATA-11.jpg"
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "hover-box"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "inner-hover"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          className: "category-post world",
+          href: "world.html"
+        }, "Business"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          href: '/image'
+        }, "judul")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+          className: "post-tags"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+          className: "fa fa-clock-o"
+        }), "27 may 2013"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+          className: "fa fa-user"
+        }), "by ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          href: "#"
+        }, "John Doe")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          href: "#"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+          className: "fa fa-comments-o"
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "23"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+          className: "fa fa-eye"
+        }), "872"))))));
+      });
+      return result;
     }
   }, {
     key: "render",
     value: function render() {
-      function imageLoadingPostSlideHeader() {
-        var link = "images/loading.jpg";
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          height: "400",
-          src: link
-        });
-      }
-
-      function imageLoadingPostHeader() {
-        var link = "images/loading.jpg";
-        return (// <img height="209" src={link}/>
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            height: sizeImagePostHeader,
-            src: link
-          })
-        );
-      }
-
-      var postSlideHeader = [];
-
-      for (var i = 3; i <= 5; i++) {
-        postSlideHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "news-post image-post",
-          key: i
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(i, ".jpg")
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "hover-box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "inner-hover"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "category-post world",
-          href: "world.html"
-        }, "Business"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: '/image'
-        }, "Franca do t\xEB bashk\xEBpunoj\xEB me Kosov\xEBn n\xEB ekonomi. ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          className: "post-tags"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-clock-o"
-        }), "27 may 2013"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-user"
-        }), "by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, "John Doe")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-comments-o"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-eye"
-        }), "872")))))));
-      }
-
-      var postHeader = [];
-
-      for (var j = 2; j < 9; j++) {
-        postHeader.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "news-post image-post",
-          key: j
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "images/pemerintah/POSTER BARU PARIWISATA-0".concat(j, ".jpg") // height={sizeImagePostHeader}
-
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "hover-box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "inner-hover"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "category-post travel",
-          href: "travel.html"
-        }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: '/image'
-        }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          className: "post-tags"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-clock-o"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "27 may 2013")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-comments-o"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))));
-      }
-
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      var _this$state = this.state,
+          firstPost = _this$state.firstPost,
+          postsLimitThree = _this$state.postsLimitThree,
+          postsLimitSix = _this$state.postsLimitSix;
+      console.log(postsLimitThree, postsLimitSix);
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
         className: "heading-news"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "iso-call heading-news-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "news-post image-post default-size"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
         src: "images/pemerintah/POSTER BARU PARIWISATA-08.jpg" // height={sizeImagePostHeader}
 
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "hover-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "inner-hover"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "category-post travel",
         href: "travel.html"
-      }, "Travel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "Travel"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: '/image'
-      }, "Lorem ipsum dolor sit amet, consectetuer")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, firstPost.title)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "post-tags"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fa fa-clock-o"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "27 may 2013")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, firstPost.created_at)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: "#"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fa fa-comments-o"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "23")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, firstPost.read)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, firstPost.content)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "image-slider snd-size"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "top-stories"
-      }, "TOP STORIES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "bxslider"
-      }, postSlideHeader)), postHeader)));
+      }, this.postSlideHeader())), this.postHeader())));
     }
   }]);
 
-  return HeadingNews;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+  return PostHeader;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (HeadingNews);
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    posts: state.postReducer
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps)(PostHeader));
 
 /***/ }),
 
@@ -56180,10 +56253,7 @@ function (_Component) {
         name: "search",
         placeholder: "what are you looking for?"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        "class": "category-search",
-        name: "",
-        onchange: "",
-        onclick: "return false;",
+        className: "category-search",
         id: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: ""
@@ -58970,14 +59040,22 @@ function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _MainBody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MainBody */ "./resources/js/components/pages/Website/Home/MainBody.js");
-/* harmony import */ var _PostPopular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PostPopular */ "./resources/js/components/pages/Website/Home/PostPopular.js");
-/* harmony import */ var _organisms_Website_SearchPost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../organisms/Website/SearchPost */ "./resources/js/components/organisms/Website/SearchPost.js");
-/* harmony import */ var _organisms_Website_HeadingNews__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../organisms/Website/HeadingNews */ "./resources/js/components/organisms/Website/HeadingNews.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _MainBody__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MainBody */ "./resources/js/components/pages/Website/Home/MainBody.js");
+/* harmony import */ var _PostPopular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PostPopular */ "./resources/js/components/pages/Website/Home/PostPopular.js");
+/* harmony import */ var _organisms_Website_SearchPost__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../organisms/Website/SearchPost */ "./resources/js/components/organisms/Website/SearchPost.js");
+/* harmony import */ var _organisms_Website_PostHeader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../organisms/Website/PostHeader */ "./resources/js/components/organisms/Website/PostHeader.js");
+
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -59009,117 +59087,157 @@ function (_Component) {
   _inherits(Home, _Component);
 
   function Home() {
+    var _this;
+
     _classCallCheck(this, Home);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Home).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this));
+    _this.state = {
+      posts: []
+    };
+    return _this;
   }
 
   _createClass(Home, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      console.log(this.props.data);
-    }
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.t0 = this;
+                _context.next = 3;
+                return this.props.posts;
+
+              case 3:
+                _context.t1 = _context.sent;
+                _context.t2 = {
+                  posts: _context.t1
+                };
+
+                _context.t0.setState.call(_context.t0, _context.t2);
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_Website_HeadingNews__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_organisms_Website_PostHeader__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
         className: "ticker-news"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "ticker-news-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "breaking-news"
-      }, "breaking news"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, "breaking news"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "new-news"
-      }, "New"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, "New"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         id: "js-news"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "news-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "time-news"
-      }, "11:36 pm"), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "11:36 pm"), "  ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: "#"
-      }, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."), " Donec odio. Quisque volutpat mattis eros... "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."), " Donec odio. Quisque volutpat mattis eros... "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "news-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "time-news"
-      }, "12:40 pm"), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "12:40 pm"), "  ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: "#"
-      }, "D\xEBshmitarja Abrashi: E kam par\xEB Oliverin n\xEB turm\xEB,"), " nd\xEBrsa neve na shp\xEBtoi \u201C\xE7ika Mille\u201D "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "D\xEBshmitarja Abrashi: E kam par\xEB Oliverin n\xEB turm\xEB,"), " nd\xEBrsa neve na shp\xEBtoi \u201C\xE7ika Mille\u201D "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "news-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "time-news"
-      }, "11:36 pm"), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "11:36 pm"), "  ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: "#"
-      }, "Franca do t\xEB bashk\xEBpunoj\xEB me Kosov\xEBn n\xEB fush\xEBn e sh\xEBndet\xEBsis\xEB. ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Franca do t\xEB bashk\xEBpunoj\xEB me Kosov\xEBn n\xEB fush\xEBn e sh\xEBndet\xEBsis\xEB. ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "news-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "time-news"
-      }, "01:00 am"), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "01:00 am"), "  ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: "#"
-      }, "DioGuardi, k\xEBshtu e mbrojti Kosov\xEBn n\xEB Washington, "), " para serbit Vejvoda "))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_Website_SearchPost__WEBPACK_IMPORTED_MODULE_4__["default"], null));
+      }, "DioGuardi, k\xEBshtu e mbrojti Kosov\xEBn n\xEB Washington, "), " para serbit Vejvoda "))))));
     }
   }]);
 
   return Home;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    data: state.postReducer
+    posts: state.postReducer
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Home));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps)(Home));
 
 /***/ }),
 
-/***/ "./resources/js/redux/postReducer.js":
-/*!*******************************************!*\
-  !*** ./resources/js/redux/postReducer.js ***!
-  \*******************************************/
+/***/ "./resources/js/config/redux/postReducer.js":
+/*!**************************************************!*\
+  !*** ./resources/js/config/redux/postReducer.js ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-// global state for default null
-var initialState = [{
-  id: 1,
-  name: 'Instagram',
-  link: 'www.instagram.com'
-}, {
-  id: 2,
-  name: 'Facebook',
-  link: 'www.facebook.com'
-}, {
-  id: 3,
-  name: 'github',
-  link: 'www.github.com'
-}];
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+ // global state for default null
+
+var initialState = [];
 
 var postReducer = function postReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  return state;
+
+  switch (action.type) {
+    case "UPDATE_POST":
+    default:
+      state = axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/home/post').then(function (ress) {
+        // resolve(ress.data);
+        return ress.data;
+      })["catch"](function (err) {
+        // reject(err)
+        return err;
+      });
+      return state;
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (postReducer);
 
 /***/ }),
 
-/***/ "./resources/js/redux/reducers.js":
-/*!****************************************!*\
-  !*** ./resources/js/redux/reducers.js ***!
-  \****************************************/
+/***/ "./resources/js/config/redux/reducers.js":
+/*!***********************************************!*\
+  !*** ./resources/js/config/redux/reducers.js ***!
+  \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _postReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./postReducer */ "./resources/js/redux/postReducer.js");
+/* harmony import */ var _postReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./postReducer */ "./resources/js/config/redux/postReducer.js");
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
@@ -59135,7 +59253,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/abonsapi/Documents/Kerjaan/web-dinas-pariwisata-kaltim/website-dinas-pariwisata/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\laragon\www\blog\resources\js\app.js */"./resources/js/app.js");
 
 
 /***/ })
