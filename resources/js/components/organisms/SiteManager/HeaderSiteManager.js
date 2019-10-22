@@ -15,7 +15,7 @@ export default class HeaderSiteManager extends Component {
         <Link className="navbar-brand" to="#">kreasibeton</Link>
 
         <span id="trigger-infobar" className="toolbar-trigger toolbar-icon-bg">
-          <Link data-toggle="tooltips" data-placement="left" title="Toggle Infobar"></Link>
+          <a data-toggle="tooltips" data-placement="left" title="Toggle Infobar"></a>
         </span>
 
         <ul className="nav navbar-nav toolbar pull-right" data-auto-collapse="false">
@@ -23,18 +23,18 @@ export default class HeaderSiteManager extends Component {
           <li className="dropdown toolbar-icon-bg">
             <Link to="#" className="dropdown-toggle" data-toggle='dropdown'><span className="icon-bg"><i className="fa fa-fw fa-user"></i></span></Link>
             <ul className="dropdown-menu userinfo arrow" data-auto-collapse="false">
-              <li className="{{ active_menu('sitemanager/user*') }}">
-                <Link to="#">
+              <li className="">
+                <Link to="/sitemanager/setting-user">
                   <span className="pull-left">User Account</span> <i className="pull-right fa fa-user"></i>
                 </Link>
               </li>
-              <li className="{{ active_menu('sitemanager/change-password') }}">
-                <Link to="#">
+              <li className="">
+                <Link to="/sitemanager/change-password">
                   <span className="pull-left">Change Password</span> <i className="pull-right fa fa-lock"></i>
                 </Link>
               </li>
-              <li className="{{ active_menu('sitemanager/setting/contact') }}">
-                <Link to="#">
+              <li className="">
+                <Link to="/sitemanager/setting-contact">
                   <span className="pull-left">Setting</span> <i className="pull-right fa fa-cog"></i>
                 </Link>
               </li>

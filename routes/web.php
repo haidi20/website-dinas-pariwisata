@@ -15,6 +15,7 @@ use Carbon\Carbon;
 Route::group(['namespace' => 'SiteManager', 'prefix' => 'sitemanager'], function(){
     Route::get('/', 'DashboardController@index');
     Route::view('/{path?}', 'sitemanager.index');
+    Route::view('/{path?}/{path1?}', 'sitemanager.index');
 });
 
 Route::namespace('Website')->group(function(){
