@@ -54590,6 +54590,143 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/pages/SiteManager/Videos/create.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/pages/SiteManager/Videos/create.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CreateVideo; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var CreateVideo =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(CreateVideo, _Component);
+
+  function CreateVideo() {
+    _classCallCheck(this, CreateVideo);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(CreateVideo).apply(this, arguments));
+  }
+
+  _createClass(CreateVideo, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "static-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", {
+        className: "breadcrumb"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/sitemanager/videos"
+      }, "Videos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/sitemanager/videoscreate"
+      }, "Create"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Tambah"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "options"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btn-toolbar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/sitemanager/videos",
+        className: "btn btn-default"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-reply"
+      }), " Kembali")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container-fluid"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "panel panel-default"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "panel-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Form Videos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "panel-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "form-horizontal"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "namaMenu",
+        className: "control-label col-sm-2"
+      }, "Nama Menu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-sm-10"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "name",
+        className: "form-control",
+        placeholder: "masukkan nama menu"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "caption",
+        className: "control-label col-sm-2"
+      }, "Caption"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-sm-10"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "caption",
+        className: "form-control",
+        placeholder: "masukkan caption menu"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "panel-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-sm-11 col-sm-offset-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/sitemanager/videos",
+        className: "btn-default btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-reply"
+      }), " Kembali"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn-primary btn",
+        type: "submit",
+        style: {
+          marginLeft: 5
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-save"
+      }), " Simpan")))))))))))));
+    }
+  }]);
+
+  return CreateVideo;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/SiteManager/Videos/index.js":
 /*!*******************************************************************!*\
   !*** ./resources/js/components/pages/SiteManager/Videos/index.js ***!
@@ -54656,7 +54793,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "btn-toolbar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "#",
+        to: "/sitemanager/videos/create",
         className: "btn btn-primary"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-plus"
@@ -54728,10 +54865,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Settings_Password__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Settings/Password */ "./resources/js/components/pages/SiteManager/Settings/Password/index.js");
 /* harmony import */ var _Settings_Contact__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Settings/Contact */ "./resources/js/components/pages/SiteManager/Settings/Contact/index.js");
 /* harmony import */ var _Menu_create__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Menu/create */ "./resources/js/components/pages/SiteManager/Menu/create.js");
-/* harmony import */ var _organisms_SiteManager_HeaderSiteManager__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../organisms/SiteManager/HeaderSiteManager */ "./resources/js/components/organisms/SiteManager/HeaderSiteManager.js");
-/* harmony import */ var _organisms_SiteManager_SideBarMenus__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../organisms/SiteManager/SideBarMenus */ "./resources/js/components/organisms/SiteManager/SideBarMenus.js");
-/* harmony import */ var _organisms_SiteManager_FooterSiteManager__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../organisms/SiteManager/FooterSiteManager */ "./resources/js/components/organisms/SiteManager/FooterSiteManager.js");
-/* harmony import */ var _SocialMedia__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./SocialMedia */ "./resources/js/components/pages/SiteManager/SocialMedia/index.js");
+/* harmony import */ var _SocialMedia__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./SocialMedia */ "./resources/js/components/pages/SiteManager/SocialMedia/index.js");
+/* harmony import */ var _Videos_create__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Videos/create */ "./resources/js/components/pages/SiteManager/Videos/create.js");
+/* harmony import */ var _organisms_SiteManager_HeaderSiteManager__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../organisms/SiteManager/HeaderSiteManager */ "./resources/js/components/organisms/SiteManager/HeaderSiteManager.js");
+/* harmony import */ var _organisms_SiteManager_SideBarMenus__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../organisms/SiteManager/SideBarMenus */ "./resources/js/components/organisms/SiteManager/SideBarMenus.js");
+/* harmony import */ var _organisms_SiteManager_FooterSiteManager__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../organisms/SiteManager/FooterSiteManager */ "./resources/js/components/organisms/SiteManager/FooterSiteManager.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -54763,8 +54901,9 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
- //organism
 
+
+ //organism
 
 
 
@@ -54784,11 +54923,11 @@ function (_Component) {
   _createClass(AppSiteManager, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_HeaderSiteManager__WEBPACK_IMPORTED_MODULE_13__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_HeaderSiteManager__WEBPACK_IMPORTED_MODULE_15__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "layout-static"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_SideBarMenus__WEBPACK_IMPORTED_MODULE_14__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_SideBarMenus__WEBPACK_IMPORTED_MODULE_16__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "static-content-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/sitemanager",
@@ -54800,7 +54939,6 @@ function (_Component) {
         component: _Menu__WEBPACK_IMPORTED_MODULE_3__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/sitemanager/menu/create",
-        exact: true,
         component: _Menu_create__WEBPACK_IMPORTED_MODULE_12__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/sitemanager/post",
@@ -54823,9 +54961,12 @@ function (_Component) {
         exact: true,
         component: _Videos__WEBPACK_IMPORTED_MODULE_8__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/sitemanager/videos/create",
+        component: _Videos_create__WEBPACK_IMPORTED_MODULE_14__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/sitemanager/social-media",
         exact: true,
-        component: _SocialMedia__WEBPACK_IMPORTED_MODULE_16__["default"]
+        component: _SocialMedia__WEBPACK_IMPORTED_MODULE_13__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/sitemanager/setting-user",
         exact: true,
@@ -54838,7 +54979,7 @@ function (_Component) {
         path: "/sitemanager/setting-contact",
         exact: true,
         component: _Settings_Contact__WEBPACK_IMPORTED_MODULE_11__["default"]
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_FooterSiteManager__WEBPACK_IMPORTED_MODULE_15__["default"], null)))));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_FooterSiteManager__WEBPACK_IMPORTED_MODULE_17__["default"], null)))));
     }
   }]);
 

@@ -21,7 +21,7 @@ export default class Videos extends Component {
                         <h1>Videos</h1>
                         <div className="options">
                             <div className="btn-toolbar">
-                                <Link to="#" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Video</Link>
+                                <Link to="/sitemanager/videos/create" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Video</Link>
                             </div>
                         </div>
                     </div> 

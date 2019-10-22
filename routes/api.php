@@ -25,6 +25,14 @@ Route::group(['prefix' => '/auth', 'namespace' => 'Auth'], function(){
     Route::post('me', 'AuthController@me');
 });
 
+Route::group(['prefix' => '/sitemanager', 'namespace' => 'SiteManager'], function(){
+    Route::group(['prefix' => '/videos'], function(){
+        Route::get('/', 'VideoController@index');
+        Route::post('/', 'VideoController@store');
+        Route::get('/{id}', 'VideoController@show');
+    });
+});
+
 Route::namespace('website')->group(function(){
     Route::prefix('post')->group(function(){
         Route::get('/', 'HomeController@index');
