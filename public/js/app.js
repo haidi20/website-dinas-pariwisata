@@ -45579,7 +45579,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59189,19 +59189,19 @@ var initialState = [];
 var postReducer = function postReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case "UPDATE_POST":
-    default:
-      state = axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/home/post').then(function (ress) {
-        // resolve(ress.data);
-        return ress.data;
-      })["catch"](function (err) {
-        // reject(err)
-        return err;
-      });
-      return state;
-  }
+  // switch(action.type){
+  //     case "UPDATE_POST":
+  //     default:
+  //         state = axios.get('api/home/post').then(ress => {
+  //             // resolve(ress.data);
+  //             return ress.data
+  //         }).catch(err => {
+  //             // reject(err)
+  //             return err
+  //         });
+  //         return state;
+  // }
+  return state;
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (postReducer);

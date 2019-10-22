@@ -43,11 +43,7 @@ class ImageController extends Controller
     {
         $nameImage = $this->fileManager->insertImage();
 
-        return response()->json([
-            'status' => true,
-            'message' => 'success',
-            'data' => $nameImage
-        ], 200);
+        return $this->sendResponse($nameImage, "Name Image");
     }
 
     /**
