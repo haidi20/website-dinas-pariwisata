@@ -45579,7 +45579,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54544,7 +54544,8 @@ function (_Component) {
     value: function render() {
       var _this$props = this.props,
           src = _this$props.src,
-          title = _this$props.title;
+          title = _this$props.title,
+          id = _this$props.id;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-sm-6 col-md-4 col-lg-3 mt-4",
         style: {
@@ -54553,23 +54554,74 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card",
         style: {
-          width: "18rem"
+          width: "24rem"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: src,
         className: "card-img-top",
         alt: src,
         style: {
           borderRadius: 5
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        },
+        width: "240",
+        height: "240",
+        "data-toggle": "modal",
+        "data-target": "#modal".concat(id)
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body",
         style: {
           textAlign: 'center'
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
         className: "card-title"
-      }, title)))));
+      }, title)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal fade",
+        id: "modal".concat(id),
+        tabIndex: "-1",
+        role: "dialog",
+        "aria-labelledby": "myModalLabel",
+        "aria-hidden": "true"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-dialog"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "close",
+        "data-dismiss": "modal"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "aria-hidden": "true"
+      }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "sr-only"
+      }, "Close")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "modal-title",
+        id: "myModalLabel"
+      }, "Image preview")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: src,
+        id: "imagepreview",
+        style: {
+          width: 610,
+          height: 320
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          textAlign: 'center'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "btn btn-warning",
+        "data-dismiss": "modal"
+      }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "btn btn-danger",
+        "data-dismiss": "modal"
+      }, "Delete"))))));
     }
   }]);
 
@@ -54709,18 +54761,22 @@ function (_Component) {
         allowFullScreen: true
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-footer justify-content-center"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          textAlign: 'center'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
         className: "mr-8",
         style: {
           marginRight: 30,
           fontSize: 16,
           fontWeight: 'bold'
         }
-      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/sitemanager/videos/".concat(id),
-        className: "btn btn-warning btn-rounded btn-md ml-4"
+        className: "btn btn-warning btn-md ml-4"
       }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "btn btn-danger btn-rounded btn-md ml-4",
+        className: "btn btn-danger btn-md ml-4",
         onClick: function onClick() {
           return _this2._onDelete(id);
         }
@@ -54741,12 +54797,13 @@ function (_Component) {
         "data-target": "#modal".concat(id),
         width: "300",
         height: "240"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        className: "card-title",
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: {
           textAlign: 'center'
         }
-      }, "".concat(title.length < 40 ? title : title.slice(0, 40) + "..."))))))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "card-title"
+      }, "".concat(title.length < 40 ? title : title.slice(0, 40) + "...")))))))));
     }
   }]);
 
@@ -56352,7 +56409,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "alert alert-info"
+        className: "alert alert-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WELCOME TO BREAKING NEWS PAGE"))))), " "), " "));
     }
   }]);
@@ -56451,11 +56508,22 @@ function (_Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Images; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _atoms_CardImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../atoms/CardImage */ "./resources/js/components/atoms/CardImage.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Utils */ "./resources/js/components/pages/SiteManager/Utils/index.js");
+/* harmony import */ var _atoms_CardImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../atoms/CardImage */ "./resources/js/components/atoms/CardImage.js");
+
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -56474,6 +56542,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
+
+
  //Atom Component
 
 
@@ -56483,79 +56553,123 @@ var Images =
 function (_Component) {
   _inherits(Images, _Component);
 
-  function Images() {
+  function Images(props) {
+    var _this;
+
     _classCallCheck(this, Images);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Images).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Images).call(this, props));
+    _this.state = {
+      images: []
+    };
+    return _this;
   }
 
   _createClass(Images, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+    }
+  }, {
+    key: "getData",
+    value: function () {
+      var _getData = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var results, images;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("".concat(_Utils__WEBPACK_IMPORTED_MODULE_4__["baseURL"], "/images")).then(function (res) {
+                  return res.data;
+                })["catch"](function (err) {
+                  return console.log(err);
+                });
+
+              case 2:
+                results = _context.sent;
+                images = this.state.images;
+                results.data.map(function (img) {
+                  return images.push({
+                    created_at: img.created_at,
+                    id: img.id,
+                    link: img.link,
+                    name: img.name,
+                    type: img.type,
+                    updated_at: img.updated_at
+                  });
+                });
+                this.setState({
+                  images: images
+                });
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function getData() {
+        return _getData.apply(this, arguments);
+      }
+
+      return getData;
+    }()
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var images = this.state.images;
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "static-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "page-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ol", {
         className: "breadcrumb"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/sitemanager/images"
-      }, "Images"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Images"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "page-heading"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Images"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Images"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "options"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "btn-toolbar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "#",
         className: "btn btn-primary"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fa fa-plus"
-      }), " Tambah Images")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " Tambah Images")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "panel panel-default"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "panel-heading",
         style: {
           fontWeight: 'bold'
         }
-      }, "Images List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Images List"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "panel-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container-fluid"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-md-12"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_CardImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        src: "https://dummyimage.com/200x200/bfbfbf/a6a6a6",
-        title: "200x200 Image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_CardImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        src: "https://dummyimage.com/200x200/bfbfbf/a6a6a6",
-        title: "200x200 Image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_CardImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        src: "https://dummyimage.com/200x200/bfbfbf/a6a6a6",
-        title: "200x200 Image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_CardImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        src: "https://dummyimage.com/200x200/bfbfbf/a6a6a6",
-        title: "200x200 Image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_CardImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        src: "https://dummyimage.com/200x200/bfbfbf/a6a6a6",
-        title: "200x200 Image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_CardImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        src: "https://dummyimage.com/200x200/bfbfbf/a6a6a6",
-        title: "200x200 Image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_CardImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        src: "https://dummyimage.com/200x200/bfbfbf/a6a6a6",
-        title: "200x200 Image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atoms_CardImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        src: "https://dummyimage.com/200x200/bfbfbf/a6a6a6",
-        title: "200x200 Image"
+      }, images.map(function (img) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_atoms_CardImage__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          key: img.id,
+          id: img.id,
+          src: "http://localhost:3000/images/pemerintah/".concat(img.name),
+          title: img.name
+        });
       })))), " "))), " "));
     }
   }]);
 
   return Images;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 
 
@@ -56929,7 +57043,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "alert alert-info"
+        className: "alert alert-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WELCOME TO PAGES PAGE"))))), " "), " "));
     }
   }]);
@@ -57024,7 +57138,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "alert alert-info"
+        className: "alert alert-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "WELCOME TO POST PAGE"))))), " "), " "));
     }
   }]);
@@ -59253,7 +59367,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\laragon\www\blog\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/abonsapi/Documents/Kerjaan/web-dinas-pariwisata-kaltim/website-dinas-pariwisata/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

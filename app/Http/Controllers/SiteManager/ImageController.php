@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\SiteManager;
 
+use App\Models\Gallery;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,17 +22,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $videos = DB::table('galleries')->where('type', 'image')->orderByRaw('created_at DESC')->get();
+        return $this->sendResponse($videos->toArray(),"Videos retrieved successfully.");
     }
 
     /**
@@ -43,11 +36,7 @@ class ImageController extends Controller
     {
         $nameImage = $this->fileManager->insertImage();
 
-        return response()->json([
-            'status' => true,
-            'message' => 'success',
-            'data' => $nameImage
-        ], 200);
+        return $this->sendResponse($nameImage, "Image create successfully.");
     }
 
     /**

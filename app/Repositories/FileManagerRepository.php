@@ -10,7 +10,7 @@ class FileManagerRepository {
             // @unlink(public_path('storages/' . request('image')->getClientOriginalName));
             $extension      = $files->getClientOriginalExtension();
             $fileName       = str_random(8) . '.' . $extension;
-            $files->move("images/", $fileName);
+            $files->move("images/pemerintah", $fileName);
 
             return $fileName;
         }else{
