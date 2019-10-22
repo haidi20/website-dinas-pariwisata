@@ -31,7 +31,7 @@ Route::namespace('website')->group(function(){
     });
 });
 
-Route::group(['namespace' => 'SiteManager'], function(){
+Route::group(['prefix' => 'sitemanager', 'namespace' => 'SiteManager'], function(){
     Route::group(['prefix' => '/videos'], function(){
         Route::get('/', 'VideoController@index');
         Route::post('/', 'VideoController@store');

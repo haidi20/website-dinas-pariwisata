@@ -22,6 +22,10 @@ export default class CardVideo extends Component {
         }
     }
 
+    _onClose(){
+        console.log("Close jalan!");
+    }
+
     render() {
         let {src, title, id} = this.props;
         let url = src.replace("watch?v=", "embed/");
@@ -37,20 +41,21 @@ export default class CardVideo extends Component {
 
                             {/* <!--Content--> */}
                             <div className="modal-content">
-
+                                <div className="modal-header justify-content-center">
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this._onClose}>
+                                        <span aria-hidden="true" style={{fontSize:35}}>&times;</span>
+                                    </button>
+                                </div>
                                 {/* <!--Body--> */}
                                 <div className="modal-body mb-0 p-0">
-
                                     <div className="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                                    <iframe className="embed-responsive-item" src={url}
-                                        allowFullScreen></iframe>
+                                        <iframe className="embed-responsive-item" id="video" src={url} allowFullScreen></iframe>
                                     </div>
-
                                 </div>
 
                                 {/* <!--Footer--> */}
                                 <div className="modal-footer justify-content-center">
-                                    <span className="mr-8" style={{marginRight:30, fontSize:20, fontWeight:'bold'}}>{title}</span>
+                                    <span className="mr-8" style={{marginRight:30, fontSize:16, fontWeight:'bold'}}>{title}</span>
                                     <Link to={`/sitemanager/videos/${id}`} className="btn btn-warning btn-rounded btn-md ml-4">Edit</Link>
                                     <button className="btn btn-danger btn-rounded btn-md ml-4" onClick={() => this._onDelete(id)}>Delete</button>
                                 </div>

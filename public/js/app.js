@@ -54649,6 +54649,11 @@ function (_Component) {
       }
     }
   }, {
+    key: "_onClose",
+    value: function _onClose() {
+      console.log("Close jalan!");
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -54681,11 +54686,25 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-header justify-content-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "close",
+        "data-dismiss": "modal",
+        "aria-label": "Close",
+        onClick: this._onClose
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "aria-hidden": "true",
+        style: {
+          fontSize: 35
+        }
+      }, "\xD7"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-body mb-0 p-0"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "embed-responsive embed-responsive-16by9 z-depth-1-half"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
         className: "embed-responsive-item",
+        id: "video",
         src: url,
         allowFullScreen: true
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -54694,7 +54713,7 @@ function (_Component) {
         className: "mr-8",
         style: {
           marginRight: 30,
-          fontSize: 20,
+          fontSize: 16,
           fontWeight: 'bold'
         }
       }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -59189,19 +59208,19 @@ var initialState = [];
 var postReducer = function postReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case "UPDATE_POST":
-    default:
-      state = axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/home/post').then(function (ress) {
-        // resolve(ress.data);
-        return ress.data;
-      })["catch"](function (err) {
-        // reject(err)
-        return err;
-      });
-      return state;
-  }
+  // switch(action.type){
+  //     case "UPDATE_POST":
+  //     default:
+  //         state = axios.get('api/home/post').then(ress => {
+  //             // resolve(ress.data);
+  //             return ress.data
+  //         }).catch(err => {
+  //             // reject(err)
+  //             return err
+  //         });
+  //         return state;
+  // }
+  return state;
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (postReducer);
