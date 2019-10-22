@@ -54649,6 +54649,11 @@ function (_Component) {
       }
     }
   }, {
+    key: "_onClose",
+    value: function _onClose() {
+      console.log("Close jalan!");
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -54681,11 +54686,25 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-header justify-content-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "close",
+        "data-dismiss": "modal",
+        "aria-label": "Close",
+        onClick: this._onClose
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "aria-hidden": "true",
+        style: {
+          fontSize: 35
+        }
+      }, "\xD7"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-body mb-0 p-0"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "embed-responsive embed-responsive-16by9 z-depth-1-half"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
         className: "embed-responsive-item",
+        id: "video",
         src: url,
         allowFullScreen: true
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -54694,7 +54713,7 @@ function (_Component) {
         className: "mr-8",
         style: {
           marginRight: 30,
-          fontSize: 20,
+          fontSize: 16,
           fontWeight: 'bold'
         }
       }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
