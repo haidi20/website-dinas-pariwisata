@@ -30,6 +30,7 @@ Route::group(['prefix' => '/sitemanager', 'namespace' => 'SiteManager'], functio
         Route::get('/', 'VideoController@index');
         Route::post('/', 'VideoController@store');
         Route::get('/{id}', 'VideoController@show');
+        Route::patch('/{id}', 'VideoController@update');
     });
 });
 

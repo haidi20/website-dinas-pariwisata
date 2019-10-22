@@ -19,6 +19,7 @@ import Contact from './Settings/Contact';
 import CreateMenu from './Menu/create';
 import SocialMedia from './SocialMedia';
 import CreateVideo from './Videos/create';
+import EditVideo from './Videos/edit';
 
 //organism
 import HeaderSiteManager from '../../organisms/SiteManager/HeaderSiteManager';
@@ -47,6 +48,7 @@ export default class AppSiteManager extends Component {
                             <Route path='/sitemanager/images' exact component={Images} />
                             <Route path='/sitemanager/videos' exact component={Videos} />
                             <Route path='/sitemanager/videos/create' component={CreateVideo} />
+                            <Route path='/sitemanager/videos/:id' component={EditVideo} />
                             <Route path='/sitemanager/social-media' exact component={SocialMedia} />
                             <Route path='/sitemanager/setting-user' exact component={User} />
                             <Route path='/sitemanager/change-password' exact component={Password} />

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
+import {baseURL} from '../Utils';
+
 //Atom Component
 import CardVideo from '../../../atoms/CardVideo';
 
@@ -19,8 +21,9 @@ export default class Videos extends Component {
     }
 
     async getData() {
-        const results = await axios.get('http://localhost:8000/api/sitemanager/videos')
-            .then(res => res.data);
+        const results = await axios.get(`${baseURL}/videos`)
+            .then(res => res.data)
+            .catch(err => console.log(err));
         let videos = this.state.videos;
 
         results.data.map(v => videos.push({

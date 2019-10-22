@@ -35,7 +35,7 @@ export default class CardVideo extends Component {
                                 {/* <!--Footer--> */}
                                 <div className="modal-footer justify-content-center">
                                     <span className="mr-8" style={{marginRight:30, fontSize:20, fontWeight:'bold'}}>{title}</span>
-                                    <Link to="#" className="btn btn-warning btn-rounded btn-md ml-4">Edit</Link>
+                                    <Link to={`/sitemanager/videos/${id}`} className="btn btn-warning btn-rounded btn-md ml-4">Edit</Link>
                                     <Link to="#" className="btn btn-danger btn-rounded btn-md ml-4">Delete</Link>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@ export default class CardVideo extends Component {
                         <div className="card" style={{width: "30rem"}}>
                             <div className="card-body">
                                 <a><img className="img-fluid z-depth-1" src={`https://img.youtube.com/vi/${url.split('/')[4]}/hqdefault.jpg`} alt="video" data-toggle="modal" data-target={`#modal${id}`} width="300" height="240" /></a>
-                                <h5 className="card-title" style={{textAlign:'center'}}>{`${title.slice(0,40)}...`}</h5>
+                                <h5 className="card-title" style={{textAlign:'center'}}>{`${title.length < 40 ? title : title.slice(0,40)+"..."}`}</h5>
                             </div>
                         </div>
                     </div>

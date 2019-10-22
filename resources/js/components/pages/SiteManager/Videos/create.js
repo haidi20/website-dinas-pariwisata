@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+
+import {baseURL} from '../Utils';
 
 export default class CreateVideo extends Component {
     constructor(props){
@@ -8,7 +11,7 @@ export default class CreateVideo extends Component {
             name:'',
             link:'',
             isNameFalse: false,
-            isLinkFalse: false
+            isLinkFalse: false,
         };
 
         this._handleChange = this._handleChange.bind(this);
@@ -44,20 +47,31 @@ export default class CreateVideo extends Component {
 
     _handleOnSubmit(e){
         e.preventDefault();
-
-        alert(this.state.name+" ====> "+this.state.link);
-        this.setState({
-            name:'',
-            link:'',
-            isNameFalse: false,
-            isLinkFalse: false,
-        }, () =>{
-            this.props.history.push('/sitemanager/videos');
-        });
+        if(this.state.isLinkFalse == false && this.state.isNameFalse == false){
+            let data = {
+                name: this.state.name,
+                type: 'video',
+                link: this.state.link
+            };
+    
+        axios.post(`${baseURL}/videos`,data)
+            .then(res => {
+                this.setState({
+                    name:'',
+                    link:'',
+                    isNameFalse: false,
+                    isLinkFalse: false,
+                }, () =>{
+                    alert("Video berhasil ditambahkan.");
+                    this.props.history.push('/sitemanager/videos');
+                });
+            })
+            .catch(function(err) {console.log(err)});
+        }
     }
 
     render() {
-        let {name, link} = this.state;
+        let {name, link, isLinkFalse, isNameFalse} = this.state;
         return (
             <>
                 <div className="static-content">
@@ -68,7 +82,7 @@ export default class CreateVideo extends Component {
                                 <Link to="/sitemanager/videos">Videos</Link>
                             </li>
                             <li>
-                                <Link to="/sitemanager/videoscreate">Create</Link>
+                                <Link to="/sitemanager/videos/create">Create</Link>
                             </li>
                         </ol>
 
@@ -84,7 +98,6 @@ export default class CreateVideo extends Component {
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-md-12">
-
                                     <div className="panel panel-default">
                                         <div className="panel-heading">
                                             <h2>Form Videos</h2>
@@ -95,14 +108,14 @@ export default class CreateVideo extends Component {
                                                     <label htmlFor="namaVideo" className="control-label col-sm-2">Nama Video</label>
                                                     <div className="col-sm-8">
                                                         <input type="text" name="name" className="form-control" placeholder="masukkan nama vidoe" onChange={this._handleChange} value={name} required />
-                                                        {this.state.isNameFalse && <small id="emailHelp" class="form-text text-muted" style={{color:'red'}}>Nama Video harus lebih dari 6 karakter!</small>}
+                                                        {isNameFalse && <small id="emailHelp" class="form-text text-muted" style={{color:'red'}}>Nama Video harus lebih dari 6 karakter!</small>}
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="link" className="control-label col-sm-2">Link</label>
                                                     <div className="col-sm-8">
                                                         <input type="text" name="link" className="form-control" placeholder="masukkan link video" onChange={this._handleChange} value={link} required />
-                                                        {this.state.isLinkFalse && <small id="emailHelp" class="form-text text-muted" style={{color:'red'}}>Silahkan masukan Link yang benar!</small>}
+                                                        {isLinkFalse && <small id="emailHelp" class="form-text text-muted" style={{color:'red'}}>Silahkan masukan Link yang benar!</small>}
                                                     </div>
                                                 </div>
                                                 <div className="panel-footer">
@@ -111,14 +124,13 @@ export default class CreateVideo extends Component {
                                                             <Link to="/sitemanager/videos" className="btn-default btn">
                                                                 <i className="fa fa-reply"></i> Kembali
                                                             </Link>
-                                                            <button className="btn-primary btn" type="submit" style={{marginLeft:5}}><i className="fa fa-save"></i> Simpan</button>
+                                                            <button className="btn-primary btn" type="submit" style={{marginLeft:5}} disabled={(isLinkFalse == false && isNameFalse == false) ? false : true}><i className="fa fa-save"></i> Simpan</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

@@ -51,26 +51,27 @@ class VideoController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Gallery  $gallery
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Gallery $gallery)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        
+        $video = Gallery::find($id);
+        
+        if(is_null($video)){
+            return $this->sendError('Video not found.');
+        }else{
+            $video->name = $input['name'];
+            $video->link = $input['link'];
+            $video->save();
+        }
+
+        return $this->sendResponse($video->toArray(), "Video updated successfully.");
     }
 
     /**
