@@ -14,7 +14,7 @@ class SearchPost extends Component {
                             {/* <select class="category-search">
                                 <option>All</option>
                             </select> */}
-                            <select class="category-search" name="" onchange="" onclick="return false;" id="">
+                            <select className="category-search" id="">
                                 <option value=""  >Semua Kategori </option>
                                 <option value="1">Hutan</option>
                                 <option value="2">Wisata</option>

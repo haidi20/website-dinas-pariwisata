@@ -20,10 +20,13 @@ class HomeController extends Controller
         return view('website.home.index');
     }
 
-    public function postHeader()
+    public function post()
     {
-        $allPost = $this->postRepo->all();
+        $firstPost          = $this->postRepo->firstPost();
+        $postsLimitSix      = $this->postRepo->postsLimit(7);
+        $postsLimitThree    = $this->postRepo->postsLimit(3);
 
-        return $allPost;
+        // return response()->json($posts);
+        return compact('firstPost', 'postsLimitSix', 'postsLimitThree');
     }
 }

@@ -1,46 +1,51 @@
 import React, {Component, Suspense} from 'react';
 
-// import PostHeader from '../../../organisms/Website/PostHeader';
-// import PostSlideHeader from '../../../organisms/Website/PostSlideHeader';
-
-function retry(fn, retriesLeft = 5, interval = 1000) {
-    return new Promise((resolve, reject) => {
-      fn()
-        .then(resolve)
-        .catch((error) => {
-          setTimeout(() => {
-            if (retriesLeft === 1) {
-              // reject('maximum retries exceeded');
-              reject(error);
-              return;
-            }
+// function retry(fn, retriesLeft = 5, interval = 1000) {
+//     return new Promise((resolve, reject) => {
+//       fn()
+//         .then(resolve)
+//         .catch((error) => {
+//           setTimeout(() => {
+//             if (retriesLeft === 1) {
+//               // reject('maximum retries exceeded');
+//               reject(error);
+//               return;
+//             }
   
-            // Passing on "reject" is the important part
-            retry(fn, retriesLeft - 1, interval).then(resolve, reject);
-          }, interval);
-        });
-    });
-  }
+//             // Passing on "reject" is the important part
+//             retry(fn, retriesLeft - 1, interval).then(resolve, reject);
+//           }, interval);
+//         });
+//     });
+//   }
   
 
-const Image = React.lazy(() => retry(() => {
-    const x = new Promise((resolve) => {
-      setTimeout(() => {
-        return resolve(import("../../atoms/Image"))
-      }, 1000)
-    })
-    return x;
-}));
+// const Image = React.lazy(() => retry(() => {
+//     const x = new Promise((resolve) => {
+//       setTimeout(() => {
+//         return resolve(import("../../atoms/Image"))
+//       }, 1000)
+//     })
+//     return x;
+// }));
 
 const sizeImagePostHeader = 210;
 
-class HeadingNews extends Component {
+export default class PostHeader extends Component {
     constructor(props){
         super(props);
+
+        this.state = {
+            posts: this.props.posts
+        }
     }
 
     componentDidCatch(error, errorInfo) {
         console.log('ERROR = ', error, errorInfo);
+    }
+
+    componentDidMount(){
+        console.log(this.state.posts);
     }
 
     render(){
@@ -63,7 +68,7 @@ class HeadingNews extends Component {
 
         for(var i = 3; i<=5; i++){
             postSlideHeader.push(
-                <li>
+                <li key={i}>
                     <div className="news-post image-post" key={i}>
 
                         {/* <Suspense fallback={
@@ -130,58 +135,6 @@ class HeadingNews extends Component {
             )
         }
 
-        return(
-            <div>
-                <section className="heading-news">
-                    <div className="iso-call heading-news-box">
-
-                        <div className={`news-post image-post default-size`}>
-
-                            {/* <Suspense fallback={
-                                imageLoadingPostHeader()
-                            }>
-                                <Image
-                                    height={sizeImagePostHeader} 
-                                    src="images/pemerintah/POSTER BARU PARIWISATA-01.jpg"  
-                                />
-                            </Suspense> */}
-
-                            <img 
-                                src="images/pemerintah/POSTER BARU PARIWISATA-08.jpg" 
-                                // height={sizeImagePostHeader}
-                            />
-
-                            <div className="hover-box">
-                                <div className="inner-hover">
-                                    <a className="category-post travel" href="travel.html">Travel</a>
-                                    <h2><a href={'/image'}>Lorem ipsum dolor sit amet, consectetuer</a></h2>
-                                    <ul className="post-tags">
-                                        <li><i className="fa fa-clock-o"></i><span>27 may 2013</span></li>
-                                        <li><a href="#"><i className="fa fa-comments-o"></i><span>23</span></a></li>
-                                    </ul>
-                                    <p>Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="image-slider snd-size">
-                            <span className="top-stories">TOP STORIES</span>
-                            <ul className="bxslider">
-                            {
-                                postSlideHeader
-                            }
-                            </ul>
-                        </div>
-
-                        {
-                            postHeader
-                        }
-
-                    </div>
-                </section>
-            </div>
-        )
+        
     }
 }
-
-export default HeadingNews;
