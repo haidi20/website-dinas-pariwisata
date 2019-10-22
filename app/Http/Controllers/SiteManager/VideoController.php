@@ -29,7 +29,8 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        return $this->sendResponse($input,"Video created successfully.");
+        $video = Gallery::create($input);
+        return $this->sendResponse($video->toArray(),"Video created successfully.");
     }
 
     /**

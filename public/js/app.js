@@ -54605,6 +54605,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -54613,9 +54615,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -54629,15 +54631,80 @@ var CreateVideo =
 function (_Component) {
   _inherits(CreateVideo, _Component);
 
-  function CreateVideo() {
+  function CreateVideo(props) {
+    var _this;
+
     _classCallCheck(this, CreateVideo);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(CreateVideo).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CreateVideo).call(this, props));
+    _this.state = {
+      name: '',
+      link: '',
+      isNameFalse: false,
+      isLinkFalse: false
+    };
+    _this._handleChange = _this._handleChange.bind(_assertThisInitialized(_this));
+    _this._handleOnSubmit = _this._handleOnSubmit.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(CreateVideo, [{
+    key: "_handleChange",
+    value: function _handleChange(e) {
+      var _this2 = this;
+
+      this.setState(_defineProperty({}, e.target.name, e.target.value), function () {
+        var _this2$state = _this2.state,
+            name = _this2$state.name,
+            link = _this2$state.link;
+
+        if (name != '') {
+          //validasi panjang karakter
+          if (name.length < 6) {
+            _this2.setState({
+              isNameFalse: true
+            });
+          } else {
+            _this2.setState({
+              isNameFalse: false
+            });
+          }
+        }
+
+        if (link != '') {
+          //validasi format link
+          var re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+
+          if (!re.test(link)) {
+            _this2.setState({
+              isLinkFalse: true
+            });
+          } else {
+            _this2.setState({
+              isLinkFalse: false
+            });
+          }
+        }
+      });
+    }
+  }, {
+    key: "_handleOnSubmit",
+    value: function _handleOnSubmit(e) {
+      e.preventDefault();
+      alert(this.state.name + " ====> " + this.state.link);
+      this.setState({
+        name: '',
+        link: '',
+        isNameFalse: false,
+        isLinkFalse: false
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this$state = this.state,
+          name = _this$state.name,
+          link = _this$state.link;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "static-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -54672,32 +54739,51 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Form Videos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "panel-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "form-horizontal"
+        className: "form-horizontal",
+        onSubmit: this._handleOnSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "namaMenu",
+        htmlFor: "namaVideo",
         className: "control-label col-sm-2"
-      }, "Nama Menu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-sm-10"
+      }, "Nama Video"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-sm-8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         name: "name",
         className: "form-control",
-        placeholder: "masukkan nama menu"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        placeholder: "masukkan nama vidoe",
+        onChange: this._handleChange,
+        value: name,
+        required: true
+      }), this.state.isNameFalse && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        id: "emailHelp",
+        "class": "form-text text-muted",
+        style: {
+          color: 'red'
+        }
+      }, "Nama Video harus lebih dari 6 karakter!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "caption",
+        htmlFor: "link",
         className: "control-label col-sm-2"
-      }, "Caption"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-sm-10"
+      }, "Link"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-sm-8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        name: "caption",
+        name: "link",
         className: "form-control",
-        placeholder: "masukkan caption menu"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        placeholder: "masukkan link video",
+        onChange: this._handleChange,
+        value: link,
+        required: true
+      }), this.state.isLinkFalse && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        id: "emailHelp",
+        "class": "form-text text-muted",
+        style: {
+          color: 'red'
+        }
+      }, "Silahkan masukan Link yang benar!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "panel-footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
