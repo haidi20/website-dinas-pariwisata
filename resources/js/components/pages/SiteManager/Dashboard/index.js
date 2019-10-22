@@ -5,24 +5,24 @@ export default class Dashboard extends Component {
   render() {
     return (
         <>
-            <div class="static-content">
-                <div class="page-content">
+            <div className="static-content">
+                <div className="page-content">
         
-                    <ol class="breadcrumb">
+                    <ol className="breadcrumb">
                         <li>
-                            <Link to="sitemanager">Home</Link>
+                            <Link to="/sitemanager">Home</Link>
                         </li>
                     </ol>
 
-                    <div class="page-heading">            
+                    <div className="page-heading">            
                         <h1>Dashboard</h1>
                     </div>
                     
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-md-12">
 
-                                <div class="alert alert-info">
+                                <div className="alert alert-info">
                                     <p>WELCOME TO DASHBOARD</p>
                                 </div>
 

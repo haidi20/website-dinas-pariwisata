@@ -14,6 +14,7 @@ use Carbon\Carbon;
 
 Route::group(['namespace' => 'SiteManager', 'prefix' => 'sitemanager'], function(){
     Route::get('/', 'DashboardController@index');
+    Route::view('/{path?}', 'sitemanager.index');
 });
 
 Route::namespace('Website')->group(function(){
@@ -21,6 +22,6 @@ Route::namespace('Website')->group(function(){
     Route::get('/image', 'ImageController@index');
 });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
