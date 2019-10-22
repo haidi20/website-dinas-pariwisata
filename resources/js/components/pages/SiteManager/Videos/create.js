@@ -51,6 +51,8 @@ export default class CreateVideo extends Component {
             link:'',
             isNameFalse: false,
             isLinkFalse: false,
+        }, () =>{
+            this.props.history.push('/sitemanager/videos');
         });
     }
 

@@ -36,7 +36,7 @@ class VideoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gallery  $gallery
+     * @param  id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
