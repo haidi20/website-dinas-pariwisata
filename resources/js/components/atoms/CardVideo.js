@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+
+import {baseURL} from '../pages/SiteManager/Utils';
 
 export default class CardVideo extends Component {
     constructor(props){
         super(props);
+    }
+
+    _onDelete(id){
+        let del = confirm("Apakah anda yakin ?");
+        if(del){
+            axios.delete(`${baseURL}/videos/${id}`)
+            .then(res => {
+                let val = res.data;
+                alert(`Video ${val.data.name} telah terhapus`);
+                this.props._onDelete(id);
+            })
+            .catch(err => console.log(err));
+        }
     }
 
     render() {
@@ -36,7 +52,7 @@ export default class CardVideo extends Component {
                                 <div className="modal-footer justify-content-center">
                                     <span className="mr-8" style={{marginRight:30, fontSize:20, fontWeight:'bold'}}>{title}</span>
                                     <Link to={`/sitemanager/videos/${id}`} className="btn btn-warning btn-rounded btn-md ml-4">Edit</Link>
-                                    <Link to="#" className="btn btn-danger btn-rounded btn-md ml-4">Delete</Link>
+                                    <button className="btn btn-danger btn-rounded btn-md ml-4" onClick={() => this._onDelete(id)}>Delete</button>
                                 </div>
                             </div>
                             {/* <!--/.Content--> */}

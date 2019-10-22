@@ -80,8 +80,16 @@ class VideoController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery $gallery)
+    public function destroy($id)
     {
-        //
+        $video = Gallery::find($id);
+
+        if(is_null($video)){
+            return $this->sendError('Video not found.');
+        }else{
+            $video->delete();
+        }
+
+        return $this->sendResponse($video->toArray(), "Video deleted successfully");
     }
 }

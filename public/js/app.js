@@ -54593,6 +54593,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _pages_SiteManager_Utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/SiteManager/Utils */ "./resources/js/components/pages/SiteManager/Utils/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -54614,6 +54617,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var CardVideo =
 /*#__PURE__*/
 function (_Component) {
@@ -54626,8 +54631,28 @@ function (_Component) {
   }
 
   _createClass(CardVideo, [{
+    key: "_onDelete",
+    value: function _onDelete(id) {
+      var _this = this;
+
+      var del = confirm("Apakah anda yakin ?");
+
+      if (del) {
+        axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("".concat(_pages_SiteManager_Utils__WEBPACK_IMPORTED_MODULE_3__["baseURL"], "/videos/").concat(id)).then(function (res) {
+          var val = res.data;
+          alert("Video ".concat(val.data.name, " telah terhapus"));
+
+          _this.props._onDelete(id);
+        })["catch"](function (err) {
+          return console.log(err);
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _this$props = this.props,
           src = _this$props.src,
           title = _this$props.title,
@@ -54675,9 +54700,11 @@ function (_Component) {
       }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/sitemanager/videos/".concat(id),
         className: "btn btn-warning btn-rounded btn-md ml-4"
-      }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "#",
-        className: "btn btn-danger btn-rounded btn-md ml-4"
+      }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-danger btn-rounded btn-md ml-4",
+        onClick: function onClick() {
+          return _this2._onDelete(id);
+        }
       }, "Delete"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-sm-6 col-md-4 col-lg-4 mt-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -57929,6 +57956,14 @@ __webpack_require__.r(__webpack_exports__);
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -57941,9 +57976,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -57970,6 +58005,7 @@ function (_Component) {
     _this.state = {
       videos: []
     };
+    _this._onDelete = _this._onDelete.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -58028,8 +58064,22 @@ function (_Component) {
       return getData;
     }()
   }, {
+    key: "_onDelete",
+    value: function _onDelete(id) {
+      var videos = _toConsumableArray(this.state.videos);
+
+      videos = videos.filter(function (val) {
+        return val.id !== id;
+      });
+      this.setState({
+        videos: videos
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "static-content"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -58067,7 +58117,8 @@ function (_Component) {
           key: vid.id,
           src: vid.link,
           title: vid.name,
-          id: vid.id
+          id: vid.id,
+          _onDelete: _this2._onDelete
         });
       }))), " "))), " "));
     }

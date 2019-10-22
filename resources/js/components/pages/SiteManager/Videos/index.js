@@ -14,6 +14,8 @@ export default class Videos extends Component {
         this.state = {
             videos: []
         };
+
+        this._onDelete = this._onDelete.bind(this);
     }
 
     componentDidMount(){
@@ -34,6 +36,12 @@ export default class Videos extends Component {
             type: v.type,
             updated_at: v.updated_at,
         }));
+        this.setState({videos});
+    }
+
+    _onDelete(id){
+        let videos = [...this.state.videos];
+        videos = videos.filter((val) => val.id !== id);
         this.setState({videos});
     }
 
@@ -69,6 +77,7 @@ export default class Videos extends Component {
                                             src={vid.link}
                                             title={vid.name}
                                             id={vid.id}
+                                            _onDelete={this._onDelete}
                                             />
                                         )}
                                             

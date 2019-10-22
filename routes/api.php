@@ -31,6 +31,7 @@ Route::group(['prefix' => '/sitemanager', 'namespace' => 'SiteManager'], functio
         Route::post('/', 'VideoController@store');
         Route::get('/{id}', 'VideoController@show');
         Route::patch('/{id}', 'VideoController@update');
+        Route::delete('/{id}', 'VideoController@destroy');
     });
 });
 
