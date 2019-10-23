@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\SiteManager;
 
+use App\Models\Gallery;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,17 +22,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $videos = DB::table('galleries')->where('type', 'image')->orderByRaw('created_at DESC')->get();
+        return $this->sendResponse($videos->toArray(),"Videos retrieved successfully.");
     }
 
     /**
@@ -41,9 +34,11 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        $nameImage = $this->fileManager->insertImage();
-
-        return $this->sendResponse($nameImage, "Name Image");
+        $input = $request->all();
+        $nameImage = $this->fileManager->insertImage($input['name']);
+        $input['name'] = $nameImage;
+        $video = Gallery::create($input);
+        return $this->sendResponse($video->toArray(), "Image create successfully.");
     }
 
     /**
@@ -54,18 +49,11 @@ class ImageController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $image = Gallery::find($id);
+        if(is_null($image)){
+            return $this->sendError('Image not found.');
+        }
+        return $this->sendResponse($image->toArray(), "Image retrieved successfully.");
     }
 
     /**
@@ -77,7 +65,19 @@ class ImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $image = Gallery::find($id);
+        
+        if(is_null($image)){
+            return $this->sendError('Image not found.');
+        }else{
+            $lastName = $image['name'];
+            $newName = $input['name'];
+            $nameImage = $this->fileManager->updateImage($newName, $lastName);
+            $image['name'] = $nameImage;
+            $image->save();
+        }
+        return $this->sendResponse($image->toArray(), "Image updated successfully.");
     }
 
     /**
@@ -88,6 +88,14 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $image = Gallery::find($id);
+
+        if(is_null($image)){
+            return $this->sendError('Image not found.');
+        }else{
+            $image->delete();
+        }
+
+        return $this->sendResponse($image->toArray(), "Image deleted successfully");
     }
 }

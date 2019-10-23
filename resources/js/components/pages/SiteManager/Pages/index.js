@@ -27,7 +27,7 @@ export default class Pages extends Component {
                         <div className="row">
                             <div className="col-md-12">
                             
-                            <div class="alert alert-info">
+                            <div className="alert alert-info">
                                 <p>WELCOME TO PAGES PAGE</p>
                             </div>
                             {/* DataTables */}
