@@ -45,7 +45,7 @@ export default class CreateVideo extends Component {
         });
     }
 
-    _handleSubmit(e){
+    _handleOnSubmit(e){
         e.preventDefault();
         if(this.state.isLinkFalse == false && this.state.isNameFalse == false){
             let data = {

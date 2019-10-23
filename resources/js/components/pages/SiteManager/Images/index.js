@@ -68,7 +68,7 @@ export default class Images extends Component {
                                         {images.map(img => <CardImage
                                             key={img.id}
                                             id={img.id}
-                                            src={`http://localhost:3000/images/pemerintah/${img.name}`} 
+                                            src={`http://localhost:3000/images/${img.name}`} 
                                             title={img.name}
                                             />
                                         )}
