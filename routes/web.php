@@ -16,6 +16,7 @@ Route::group(['namespace' => 'SiteManager', 'prefix' => 'sitemanager'], function
     Route::get('/', 'DashboardController@index');
     Route::view('/{path?}', 'sitemanager.index');
     Route::view('/{path?}/{path1?}', 'sitemanager.index');  
+    Route::view('/{path?}/{path1?}/{path2?}', 'sitemanager.index');  
 });
 
 Route::namespace('Website')->group(function(){
