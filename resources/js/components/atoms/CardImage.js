@@ -1,21 +1,46 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+
+import {baseURL} from '../../components/pages/SiteManager/Utils';
 
 export default class CardImage extends Component {
     constructor(props){
         super(props);
     }
 
+    _onDelete(id){
+        let del = confirm("Apakah anda yakin ?");
+        if(del){
+            let bodyFormData = new FormData();
+            bodyFormData.append('_method', 'DELETE');
+            
+            axios({
+                method: 'post',
+                url: `${baseURL}/images/${id}`,
+                data: bodyFormData,
+                config: { headers: {'Content-Type': 'multipart/form-data' }}
+            })
+            .then(res => {
+                let val = res.data;
+                alert(`Image ${val.data.name} telah terhapus`);
+                this.props._onDelete(id);
+            })
+            .catch(err => console.log(err));
+        }
+    }
+
     render() {
         let {src, title, id} = this.props;
+        let newTitle = title.includes('pemerintah/') ? title.replace('pemerintah/','') : title;
         return (
             <>
                 <div className="col-sm-6 col-md-4 col-lg-3 mt-4" style={{marginBottom:35}}>
                     <div className="card" style={{width: "24rem"}}>
                         <a><img src={src} className="card-img-top" alt={src} style={{borderRadius:5}} width="240" height="240" data-toggle="modal" data-target={`#modal${id}`} /></a>
-                        <div className="card-body" style={{textAlign:'center'}}>
-                            <h5 className="card-title">{title.includes('.jpg')? title.replace('.jpg','') : title.includes('.png')? title.replace('.png','') : title.includes('.jpeg')? title.replace('.jpeg','') : ''}</h5>
-                        </div>
+                        {/* <div className="card-body" style={{textAlign:'center'}}>
+                            <h5 className="card-title">{newTitle.includes('.jpg')? newTitle.replace('.jpg','') : newTitle.includes('.png')? newTitle.replace('.png','') : newTitle.includes('.jpeg')? newTitle.replace('.jpeg','') : ''}</h5>
+                        </div> */}
                     </div>
                 </div>
 
@@ -32,10 +57,10 @@ export default class CardImage extends Component {
                         </div>
                         <div className="modal-footer">
                             <div style={{textAlign:'center'}}>
-                                <h5>{title.includes('.jpg')? title.replace('.jpg','') : title.includes('.png')? title.replace('.png','') : title.includes('.jpeg')? title.replace('.jpeg','') : ''}</h5>
+                                <h5>{newTitle.includes('.jpg')? newTitle.replace('.jpg','') : newTitle.includes('.png')? newTitle.replace('.png','') : newTitle.includes('.jpeg')? newTitle.replace('.jpeg','') : ''}</h5>
                             </div>
                             <Link to={`/sitemanager/images/${id}`} type="button" className="btn btn-warning">Edit</Link>
-                            <button type="button" className="btn btn-danger" data-dismiss="modal">Delete</button>
+                            <button type="button" className="btn btn-danger" onClick={() => this._onDelete(id)}>Delete</button>
                         </div>
                         </div>
                     </div>

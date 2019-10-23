@@ -22,8 +22,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $videos = DB::table('galleries')->where('type', 'image')->orderByRaw('created_at DESC')->get();
-        return $this->sendResponse($videos->toArray(),"Videos retrieved successfully.");
+        $image = DB::table('galleries')->where('type', 'image')->orderByRaw('created_at DESC')->get();
+        return $this->sendResponse($image->toArray(),"Videos retrieved successfully.");
     }
 
     /**
@@ -37,8 +37,8 @@ class ImageController extends Controller
         $input = $request->all();
         $nameImage = $this->fileManager->insertImage($input['name']);
         $input['name'] = $nameImage;
-        $video = Gallery::create($input);
-        return $this->sendResponse($video->toArray(), "Image create successfully.");
+        $image = Gallery::create($input);
+        return $this->sendResponse($image->toArray(), "Image create successfully.");
     }
 
     /**
@@ -69,13 +69,10 @@ class ImageController extends Controller
         $image = Gallery::find($id);
         if(is_null($image)){
             return $this->sendError('Image not found.');
-        }else{
-            $lastName = $image['name'];
-            $newName = $input['name'];
-            $nameImage = $this->fileManager->updateImage($newName, $lastName);
-            $image['name'] = $nameImage;
-            $image->save();
         }
+        $nameImage = $this->fileManager->updateImage($input['name'], $image['name']);
+        $image->name = $nameImage;
+        $image->save();
         return $this->sendResponse($image->toArray(), "Image updated successfully.");
     }
 
@@ -92,6 +89,7 @@ class ImageController extends Controller
         if(is_null($image)){
             return $this->sendError('Image not found.');
         }else{
+            $this->fileManager->deleteImage($image['name']);
             $image->delete();
         }
 

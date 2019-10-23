@@ -13,6 +13,8 @@ export default class Images extends Component {
         this.state = {
             images: []
         }
+
+        this._onDelete = this._onDelete.bind(this);
     }
 
     componentDidMount(){
@@ -33,6 +35,12 @@ export default class Images extends Component {
             type: img.type,
             updated_at: img.updated_at,
         }));
+        this.setState({images});
+    }
+
+    _onDelete(id){
+        let images = [...this.state.images];
+        images = images.filter((val) => val.id !== id);
         this.setState({images});
     }
 
@@ -68,8 +76,9 @@ export default class Images extends Component {
                                         {images.map(img => <CardImage
                                             key={img.id}
                                             id={img.id}
-                                            src={`http://localhost:3000/images/pemerintah/${img.name}`} 
+                                            src={`http://localhost:3000/images/${img.name}`} 
                                             title={img.name}
+                                            _onDelete={this._onDelete}
                                             />
                                         )}
                                             

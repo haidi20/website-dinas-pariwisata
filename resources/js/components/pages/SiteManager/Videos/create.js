@@ -15,7 +15,7 @@ export default class CreateVideo extends Component {
         };
 
         this._handleChange = this._handleChange.bind(this);
-        this._handleOnSubmit = this._handleOnSubmit.bind(this);
+        this._handleSubmit = this._handleSubmit.bind(this);
     }
 
     _handleChange(e) {
@@ -33,7 +33,7 @@ export default class CreateVideo extends Component {
                 }
             }
 
-            if(link != ''){
+            if(link != '' || link.includes('youtube.com/')){
                 //validasi format link
                 let re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
                 if (!re.test(link)) { 
