@@ -20,6 +20,7 @@ import CreateMenu from './Menu/create';
 import SocialMedia from './SocialMedia';
 import CreateVideo from './Videos/create';
 import EditVideo from './Videos/edit';
+import CreateImage from './Images/create';
 
 //organism
 import HeaderSiteManager from '../../organisms/SiteManager/HeaderSiteManager';
@@ -46,6 +47,7 @@ export default class AppSiteManager extends Component {
                             <Route path='/sitemanager/breaking-news' exact component={BreakingNews} />
                             <Route path='/sitemanager/pages' exact component={Pages} />
                             <Route path='/sitemanager/images' exact component={Images} />
+                            <Route path='/sitemanager/images/create' component={CreateImage} />
                             <Route path='/sitemanager/videos' exact component={Videos} />
                             <Route path='/sitemanager/videos/create' component={CreateVideo} />
                             <Route path='/sitemanager/videos/:id' component={EditVideo} />

@@ -56498,6 +56498,132 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/pages/SiteManager/Images/create.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/pages/SiteManager/Images/create.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CreateImage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var CreateImage =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(CreateImage, _Component);
+
+  function CreateImage() {
+    _classCallCheck(this, CreateImage);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(CreateImage).apply(this, arguments));
+  }
+
+  _createClass(CreateImage, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "static-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", {
+        className: "breadcrumb"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/sitemanager/images"
+      }, "Images")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/sitemanager/images/create"
+      }, "Create"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Tambah"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "options"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btn-toolbar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/sitemanager/images",
+        className: "btn btn-default"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-reply"
+      }), " Kembali")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container-fluid"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "panel panel-default"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "panel-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Form Image")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "panel-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "form-horizontal"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "namaImage",
+        className: "control-label col-sm-2"
+      }, "Nama Image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-sm-8"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "name",
+        className: "form-control",
+        placeholder: "masukkan nama vidoe",
+        required: true
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "panel-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-sm-11 col-sm-offset-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/sitemanager/images",
+        className: "btn-default btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-reply"
+      }), " Kembali"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn-primary btn",
+        type: "submit",
+        style: {
+          marginLeft: 5
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-save"
+      }), " Simpan"))))))))))));
+    }
+  }]);
+
+  return CreateImage;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/SiteManager/Images/index.js":
 /*!*******************************************************************!*\
   !*** ./resources/js/components/pages/SiteManager/Images/index.js ***!
@@ -56638,7 +56764,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "btn-toolbar"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "#",
+        to: "/sitemanager/images/create",
         className: "btn btn-primary"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fa fa-plus"
@@ -57758,7 +57884,7 @@ function (_Component) {
         className: "panel panel-default"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "panel-heading"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Form Videos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Form Video")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "panel-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "form-horizontal",
@@ -58361,9 +58487,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SocialMedia__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./SocialMedia */ "./resources/js/components/pages/SiteManager/SocialMedia/index.js");
 /* harmony import */ var _Videos_create__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Videos/create */ "./resources/js/components/pages/SiteManager/Videos/create.js");
 /* harmony import */ var _Videos_edit__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Videos/edit */ "./resources/js/components/pages/SiteManager/Videos/edit.js");
-/* harmony import */ var _organisms_SiteManager_HeaderSiteManager__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../organisms/SiteManager/HeaderSiteManager */ "./resources/js/components/organisms/SiteManager/HeaderSiteManager.js");
-/* harmony import */ var _organisms_SiteManager_SideBarMenus__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../organisms/SiteManager/SideBarMenus */ "./resources/js/components/organisms/SiteManager/SideBarMenus.js");
-/* harmony import */ var _organisms_SiteManager_FooterSiteManager__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../organisms/SiteManager/FooterSiteManager */ "./resources/js/components/organisms/SiteManager/FooterSiteManager.js");
+/* harmony import */ var _Images_create__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Images/create */ "./resources/js/components/pages/SiteManager/Images/create.js");
+/* harmony import */ var _organisms_SiteManager_HeaderSiteManager__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../organisms/SiteManager/HeaderSiteManager */ "./resources/js/components/organisms/SiteManager/HeaderSiteManager.js");
+/* harmony import */ var _organisms_SiteManager_SideBarMenus__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../organisms/SiteManager/SideBarMenus */ "./resources/js/components/organisms/SiteManager/SideBarMenus.js");
+/* harmony import */ var _organisms_SiteManager_FooterSiteManager__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../organisms/SiteManager/FooterSiteManager */ "./resources/js/components/organisms/SiteManager/FooterSiteManager.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -58398,6 +58525,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
  //organism
 
 
@@ -58418,11 +58546,11 @@ function (_Component) {
   _createClass(AppSiteManager, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_HeaderSiteManager__WEBPACK_IMPORTED_MODULE_16__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_HeaderSiteManager__WEBPACK_IMPORTED_MODULE_17__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "layout-static"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_SideBarMenus__WEBPACK_IMPORTED_MODULE_17__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_SideBarMenus__WEBPACK_IMPORTED_MODULE_18__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "static-content-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/sitemanager",
@@ -58452,6 +58580,9 @@ function (_Component) {
         exact: true,
         component: _Images__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/sitemanager/images/create",
+        component: _Images_create__WEBPACK_IMPORTED_MODULE_16__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/sitemanager/videos",
         exact: true,
         component: _Videos__WEBPACK_IMPORTED_MODULE_8__["default"]
@@ -58477,7 +58608,7 @@ function (_Component) {
         path: "/sitemanager/setting-contact",
         exact: true,
         component: _Settings_Contact__WEBPACK_IMPORTED_MODULE_11__["default"]
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_FooterSiteManager__WEBPACK_IMPORTED_MODULE_18__["default"], null)))));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_organisms_SiteManager_FooterSiteManager__WEBPACK_IMPORTED_MODULE_19__["default"], null)))));
     }
   }]);
 

@@ -53,7 +53,7 @@ export default class Images extends Component {
                             <h1>Images</h1>
                             <div className="options">
                                 <div className="btn-toolbar">
-                                    <Link to="#" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Images</Link>
+                                    <Link to="/sitemanager/images/create" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Images</Link>
                                 </div>
                             </div>
                         </div> 

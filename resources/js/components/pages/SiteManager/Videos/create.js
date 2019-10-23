@@ -100,7 +100,7 @@ export default class CreateVideo extends Component {
                                 <div className="col-md-12">
                                     <div className="panel panel-default">
                                         <div className="panel-heading">
-                                            <h2>Form Videos</h2>
+                                            <h2>Form Video</h2>
                                         </div>
                                         <div className="panel-body">
                                             <form className="form-horizontal" onSubmit={this._handleOnSubmit}>
