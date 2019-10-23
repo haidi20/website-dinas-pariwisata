@@ -45,7 +45,7 @@ export default class CreateVideo extends Component {
         });
     }
 
-    _handleOnSubmit(e){
+    _handleSubmit(e){
         e.preventDefault();
         if(this.state.isLinkFalse == false && this.state.isNameFalse == false){
             let data = {
@@ -100,10 +100,10 @@ export default class CreateVideo extends Component {
                                 <div className="col-md-12">
                                     <div className="panel panel-default">
                                         <div className="panel-heading">
-                                            <h2>Form Videos</h2>
+                                            <h2>Form Video</h2>
                                         </div>
                                         <div className="panel-body">
-                                            <form className="form-horizontal" onSubmit={this._handleOnSubmit}>
+                                            <form className="form-horizontal" onSubmit={this._handleSubmit}>
                                                 <div className="form-group">
                                                     <label htmlFor="namaVideo" className="control-label col-sm-2">Nama Video</label>
                                                     <div className="col-sm-8">

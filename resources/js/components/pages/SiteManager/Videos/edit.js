@@ -57,13 +57,10 @@ export default class EditVideo extends Component {
             axios.patch(`${baseURL}/videos/${this.props.match.params.id}`,data)
                 .then(res => {
                     this.setState({
-                        name:'',
-                        link:'',
                         isNameFalse: false,
                         isLinkFalse: false,
                     }, () =>{
                         alert("Data Video berhasil diedit.");
-                        this.props.history.push('/sitemanager/videos');
                     });
                 })
                 .catch(function(err) {console.log(err)});
