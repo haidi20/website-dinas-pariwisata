@@ -34,9 +34,11 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        $nameImage = $this->fileManager->insertImage();
-
-        return $this->sendResponse($nameImage, "Image create successfully.");
+        $input = $request->all();
+        $nameImage = $this->fileManager->insertImage($input['name']);
+        $input['name'] = $nameImage;
+        $video = Gallery::create($input);
+        return $this->sendResponse($video->toArray(), "Image create successfully.");
     }
 
     /**
@@ -47,18 +49,11 @@ class ImageController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $image = Gallery::find($id);
+        if(is_null($image)){
+            return $this->sendError('Image not found.');
+        }
+        return $this->sendResponse($image->toArray(), "Image retrieved successfully.");
     }
 
     /**
@@ -70,7 +65,19 @@ class ImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $image = Gallery::find($id);
+        
+        if(is_null($image)){
+            return $this->sendError('Image not found.');
+        }else{
+            $lastName = $image['name'];
+            $newName = $input['name'];
+            $nameImage = $this->fileManager->updateImage($newName, $lastName);
+            $image['name'] = $nameImage;
+            $image->save();
+        }
+        return $this->sendResponse($image->toArray(), "Image updated successfully.");
     }
 
     /**
@@ -81,6 +88,14 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $image = Gallery::find($id);
+
+        if(is_null($image)){
+            return $this->sendError('Image not found.');
+        }else{
+            $image->delete();
+        }
+
+        return $this->sendResponse($image->toArray(), "Image deleted successfully");
     }
 }

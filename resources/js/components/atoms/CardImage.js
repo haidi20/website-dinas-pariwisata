@@ -14,7 +14,7 @@ export default class CardImage extends Component {
                     <div className="card" style={{width: "24rem"}}>
                         <a><img src={src} className="card-img-top" alt={src} style={{borderRadius:5}} width="240" height="240" data-toggle="modal" data-target={`#modal${id}`} /></a>
                         <div className="card-body" style={{textAlign:'center'}}>
-                            <h5 className="card-title">{title}</h5>
+                            <h5 className="card-title">{title.includes('.jpg')? title.replace('.jpg','') : title.includes('.png')? title.replace('.png','') : title.includes('.jpeg')? title.replace('.jpeg','') : ''}</h5>
                         </div>
                     </div>
                 </div>
@@ -32,9 +32,9 @@ export default class CardImage extends Component {
                         </div>
                         <div className="modal-footer">
                             <div style={{textAlign:'center'}}>
-                                <h5>{title}</h5>
+                                <h5>{title.includes('.jpg')? title.replace('.jpg','') : title.includes('.png')? title.replace('.png','') : title.includes('.jpeg')? title.replace('.jpeg','') : ''}</h5>
                             </div>
-                            <button type="button" className="btn btn-warning" data-dismiss="modal">Edit</button>
+                            <Link to={`/sitemanager/images/${id}`} type="button" className="btn btn-warning">Edit</Link>
                             <button type="button" className="btn btn-danger" data-dismiss="modal">Delete</button>
                         </div>
                         </div>
