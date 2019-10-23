@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
+import DatatablePage from '../../../atoms/DataTables';
+
 export default class Pages extends Component {
   render() {
     return (
@@ -27,10 +29,7 @@ export default class Pages extends Component {
                         <div className="row">
                             <div className="col-md-12">
                             
-                            <div className="alert alert-info">
-                                <p>WELCOME TO PAGES PAGE</p>
-                            </div>
-                            {/* DataTables */}
+                            <DatatablePage/>
                                 
                             </div>
                         </div>

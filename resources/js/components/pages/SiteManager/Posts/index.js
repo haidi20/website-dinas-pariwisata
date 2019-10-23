@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
+import DatatablePage from '../../../atoms/DataTables';
+import ModalCategory from '../../../organisms/SiteManager/ModalCategory';
+
 export default class Posts extends Component {
   render() {
     return (
@@ -18,7 +21,7 @@ export default class Posts extends Component {
                         <h1>Post</h1>
                         <div className="options">
                             <div className="btn-toolbar">
-                                <a data-toggle="modal" href="#category" className="btn btn-default" style={{marginRight:5}}><i className="fa fa-tasks"></i> Kategori</a>
+                                <a data-toggle="modal" data-target="#modalCategory" className="btn btn-default" style={{marginRight:5}}><i className="fa fa-tasks"></i> Kategori</a>
                                 <Link to="#" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Post</Link>
                             </div>
                         </div>
@@ -28,11 +31,9 @@ export default class Posts extends Component {
                         <div className="row">
                             <div className="col-md-12">
                             
-                            <div className="alert alert-info">
-                                <p>WELCOME TO POST PAGE</p>
-                            </div>
-                            {/* DataTables */}
-                                
+                            <DatatablePage/>
+                            
+                            <ModalCategory/>
                             </div>
                         </div>
                     </div> {/* <!-- .container-fluid --> */}

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import DatatablePage from '../../../atoms/DataTables';
 
-
 require('react-jquery-datatables/css/datatables.min.css')
 
 export default class Menu extends Component {
@@ -35,14 +34,9 @@ export default class Menu extends Component {
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-md-12">
-                                
-                                {/* <div class="alert alert-info">
-                                    <p>WELCOME TO MENU PAGE</p>
-                                </div> */}
-                                <DatatablePage />
-                                
-                                
 
+                                    <DatatablePage />
+                                
                                 </div>
                             </div>
                         </div>
