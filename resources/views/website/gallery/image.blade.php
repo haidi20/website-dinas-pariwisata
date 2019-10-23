@@ -1,5 +1,13 @@
 @extends('website._layouts.default')
 
+@section('script-top')
+    <style>
+        img{
+            cursor: pointer;
+        }
+    </style>
+@endsection
+
 @section('script-bottom')
     <script>
         $(function(){
