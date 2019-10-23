@@ -1,6 +1,7 @@
 /* bagian header atas */
 .logo-advertisement{
-    background:white;
+    background:#f7f7f7;
+    background-repeat:no-repeat;
 }
 
 .logo-dispar{
@@ -127,4 +128,14 @@ section.heading-news {
     height:205px;
 }
 
+.modal{
+    padding-top:40px
+}
+
 /* end rewrite css theme */
+
+/* page gallery */
+
+img{
+    cursor: pointer;
+}

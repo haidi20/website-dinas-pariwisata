@@ -15,12 +15,18 @@ use Carbon\Carbon;
 Route::group(['namespace' => 'SiteManager', 'prefix' => 'sitemanager'], function(){
     Route::get('/', 'DashboardController@index');
     Route::view('/{path?}', 'sitemanager.index');
-    Route::view('/{path?}/{path1?}', 'sitemanager.index');
+    Route::view('/{path?}/{path1?}', 'sitemanager.index');  
 });
 
 Route::namespace('Website')->group(function(){
     Route::get('/', 'HomeController@index');
-    Route::get('/image', 'ImageController@index');
+    Route::get('/image', 'GalleryController@image');
+    Route::get('/video', 'GalleryController@video');
+    Route::group(['prefix' => 'post'], function(){
+        Route::get('/', 'PostController@index');
+        Route::get('/detail', 'PostController@detail');
+    });
+    Route::get('/contact', 'ContactController@index');
 });
 
 // Auth::routes();
