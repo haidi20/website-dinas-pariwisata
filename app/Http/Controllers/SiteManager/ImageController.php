@@ -67,7 +67,6 @@ class ImageController extends Controller
     {
         $input = $request->all();
         $image = Gallery::find($id);
-        
         if(is_null($image)){
             return $this->sendError('Image not found.');
         }else{
