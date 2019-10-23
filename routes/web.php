@@ -20,7 +20,8 @@ Route::group(['namespace' => 'SiteManager', 'prefix' => 'sitemanager'], function
 
 Route::namespace('Website')->group(function(){
     Route::get('/', 'HomeController@index');
-    Route::get('/image', 'ImageController@index');
+    Route::get('/image', 'GalleryController@image');
+    Route::get('/video', 'GalleryController@video');
     Route::group(['prefix' => 'post'], function(){
         Route::get('/', 'PostController@index');
         Route::get('/detail', 'PostController@detail');
