@@ -2,7 +2,9 @@
 
 @section('content')
 
-	@include('website.home.heading-news')
+	@if($firstPost)
+		@include('website.home.heading-news')
+	@endif
 
 	<section class="ticker-news">
 		<div class="container">
