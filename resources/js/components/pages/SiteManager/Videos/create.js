@@ -15,7 +15,7 @@ export default class CreateVideo extends Component {
         };
 
         this._handleChange = this._handleChange.bind(this);
-        this._handleSubmit = this._handleSubmit.bind(this);
+        this._handleOnSubmit = this._handleOnSubmit.bind(this);
     }
 
     _handleChange(e) {
@@ -103,7 +103,7 @@ export default class CreateVideo extends Component {
                                             <h2>Form Video</h2>
                                         </div>
                                         <div className="panel-body">
-                                            <form className="form-horizontal" onSubmit={this._handleSubmit}>
+                                            <form className="form-horizontal" onSubmit={this._handleOnSubmit}>
                                                 <div className="form-group">
                                                     <label htmlFor="namaVideo" className="control-label col-sm-2">Nama Video</label>
                                                     <div className="col-sm-8">

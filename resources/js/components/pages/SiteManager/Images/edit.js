@@ -17,7 +17,7 @@ export default class EditImage extends Component {
         };
 
         this._handleImageChange = this._handleImageChange.bind(this);
-        this._handleSubmit = this._handleSubmit.bind(this);
+        this._handleOnSubmit = this._handleOnSubmit.bind(this);
         this._handleChange = this._handleChange.bind(this);
     }
 
@@ -37,8 +37,8 @@ export default class EditImage extends Component {
         }
     }
 
-    _handleChange(e){
-        e.preventDefault();
+    // _handleChange(e){
+    //     e.preventDefault();
         // this.setState({name: e.target.value}, () => {
         //     if(this.state.name != ''){
         //         //validasi panjang karakter
@@ -49,9 +49,9 @@ export default class EditImage extends Component {
         //         }
         //     }
         // });
-    }
+    // }
 
-    _handleSubmit(e){
+    _handleOnSubmit(e){
         e.preventDefault();
         
         // if(this.state.isNameFalse === false){
@@ -134,7 +134,7 @@ export default class EditImage extends Component {
                                         <h2>Form Image</h2>
                                     </div>
                                     <div className="panel-body">
-                                        <form className="form-horizontal" onSubmit={this._handleSubmit}>
+                                        <form className="form-horizontal" onSubmit={this._handleOnSubmit}>
                                             <div className="form-group">
                                                 {/* <label htmlFor="namaImage" className="control-label col-sm-2">Nama Image</label> */}
                                                 <div className="col-sm-8">
