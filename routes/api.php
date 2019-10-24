@@ -46,6 +46,13 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'SiteManager'], function
         Route::patch('/{id}', 'ImageController@update');
         Route::delete('/{id}', 'ImageController@destroy');
     });
+    Route::group(['prefix' => '/pages'], function(){
+        Route::get('/', 'PageController@index');
+        // Route::post('/', 'PageController@store');
+        // Route::get('/{id}', 'PageController@show');
+        // Route::patch('/{id}', 'PageController@update');
+        // Route::delete('/{id}', 'PageController@destroy');
+    });
     Route::group(['prefix' => '/social-media'], function(){
         Route::get('/', 'MediaController@index');
         // Route::post('/', 'MediaController@store');

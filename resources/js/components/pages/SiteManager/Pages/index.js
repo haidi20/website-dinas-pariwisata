@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import { MDBDataTable } from 'mdbreact';
+import { MDBDataTable, MDBBtn } from 'mdbreact';
 import axios from 'axios';
 
 import {baseURL} from '../Utils';
@@ -12,22 +12,29 @@ export default class Pages extends Component {
             data: {
                 columns: [
                     {
-                        label: 'Name',
-                        field: 'name',
+                        label: 'No.',
+                        field: 'no.',
                         sort: 'asc',
-                        width: 150
                     },
                     {
-                        label: 'Link',
-                        field: 'link',
+                        label: 'ID Menu',
+                        field: 'id menu',
                         sort: 'asc',
-                        width: 270
+                    },
+                    {
+                        label: 'Title',
+                        field: 'title',
+                        sort: 'asc',
+                    },
+                    {
+                        label: 'Content',
+                        field: 'content',
+                        sort: 'asc',
                     },
                     {
                         label: 'Action',
                         field: 'action',
                         sort: 'asc',
-                        width: 270
                     },
                 ],
                 rows: [],
@@ -35,8 +42,25 @@ export default class Pages extends Component {
         }
     }
 
+    componentDidMount(){
+        this.getData();
+    }
+
     async getData(){
-        // let results = await axios.get(`${baseURL}/`)
+        let results = await axios.get(`${baseURL}/pages`)
+                                    .then(res => res.data)
+                                    .catch(err => console.log(err));
+        let columns = this.state.data.columns;
+        let rows = [];
+        results.data.map((row,key) => rows.push({
+            no: key+1,
+            menu_id: row.menu_id,
+            title: row.title,
+            content: row.content,
+            action: <><MDBBtn color="warning" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded size="sm">Edit</MDBBtn> <MDBBtn color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded size="sm">Delete</MDBBtn></>
+        }));
+        
+        this.setState({data:{columns,rows}});
     }
 
     render() {
@@ -60,19 +84,23 @@ export default class Pages extends Component {
                             </div>
                         </div>
 
+                        <div className="panel panel-default">
+                        <div className="panel-heading" style={{fontWeight:'bold'}}></div>
+                        <div className="panel-body"></div>
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-md-12">
-                                
+
                                 <MDBDataTable
                                     striped
                                     bordered
-                                    small
+                                    hover
                                     data={this.state.data}
-                                />
-                                    
+                                />  
+                                
                                 </div>
                             </div>
+                        </div>
                         </div> {/* <!-- .container-fluid --> */}
                     </div> {/* <!-- #page-content --> */}
                 </div>

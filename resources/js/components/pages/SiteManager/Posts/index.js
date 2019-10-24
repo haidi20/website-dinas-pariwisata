@@ -27,15 +27,19 @@ export default class Posts extends Component {
                         </div>
                     </div>
 
+                    <div className="panel panel-default">
+                    <div className="panel-heading" style={{fontWeight:'bold'}}></div>
+                    <div className="panel-body"></div>
                     <div className="container-fluid">
                         <div className="row">
                             <div className="col-md-12">
-                            
-                            <DatatablePage/>
-                            
-                            <ModalCategory/>
+
+                                <DatatablePage />
+                                <ModalCategory/>
+                                
                             </div>
                         </div>
+                    </div>
                     </div> {/* <!-- .container-fluid --> */}
                 </div> {/* <!-- #page-content --> */}
             </div>

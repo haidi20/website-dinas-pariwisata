@@ -15,19 +15,16 @@ export default class SocialMedia extends Component {
                         label: 'Name',
                         field: 'name',
                         sort: 'asc',
-                        width: 150
                     },
                     {
                         label: 'Link',
                         field: 'link',
                         sort: 'asc',
-                        width: 270
                     },
                     {
                         label: 'Action',
                         field: 'action',
                         sort: 'asc',
-                        width: 270
                     },
                 ],
                 rows: [],
@@ -75,6 +72,9 @@ export default class SocialMedia extends Component {
                             </div>
                         </div>
                         
+                        <div className="panel panel-default">
+                        <div className="panel-heading" style={{fontWeight:'bold'}}></div>
+                        <div className="panel-body"></div>
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-md-12">
@@ -85,10 +85,11 @@ export default class SocialMedia extends Component {
                                         small
                                         data={this.state.data}
                                     />
-
+                                
                                 </div>
                             </div>
                         </div>
+                        </div> {/* <!-- .container-fluid --> */}
                     </div>
                 </div>
             </>
