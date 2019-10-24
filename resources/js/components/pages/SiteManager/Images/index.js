@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-import {baseURL} from '../Utils';
+import {baseURL, root} from '../Utils';
 
 //Atom Component
 import CardImage from '../../../atoms/CardImage';
@@ -76,7 +76,7 @@ export default class Images extends Component {
                                         {images.map(img => <CardImage
                                             key={img.id}
                                             id={img.id}
-                                            src={`http://localhost:3000/images/${img.name}`} 
+                                            src={`${root}/images/${img.name}`} 
                                             title={img.name}
                                             _onDelete={this._onDelete}
                                             />
