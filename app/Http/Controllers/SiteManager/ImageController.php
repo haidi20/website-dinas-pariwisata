@@ -35,9 +35,13 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $nameImage = $this->fileManager->insertImage($input['name']);
-        $input['name'] = $nameImage;
-        $image = Gallery::create($input);
+        $nameImage = $this->fileManager->actionImage();
+
+        $image = new Gallery;
+        $image->name = $nameImage;
+        $image->type = "image";
+        $image->save();
+
         return $this->sendResponse($image->toArray(), "Image create successfully.");
     }
 
@@ -70,8 +74,9 @@ class ImageController extends Controller
         if(is_null($image)){
             return $this->sendError('Image not found.');
         }
-        $nameImage = $this->fileManager->updateImage($input['name'], $image['name']);
+        $nameImage   = $this->fileManager->actionImage($image->name);
         $image->name = $nameImage;
+        $image->type = "image";
         $image->save();
         return $this->sendResponse($image->toArray(), "Image updated successfully.");
     }
@@ -89,7 +94,7 @@ class ImageController extends Controller
         if(is_null($image)){
             return $this->sendError('Image not found.');
         }else{
-            $this->fileManager->deleteImage($image['name']);
+            $this->fileManager->actionImage($image->name, "delete");
             $image->delete();
         }
 

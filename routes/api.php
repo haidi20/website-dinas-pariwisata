@@ -43,7 +43,7 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'SiteManager'], function
         Route::get('/', 'ImageController@index');
         Route::post('/', 'ImageController@store');
         Route::get('/{id}', 'ImageController@show');
-        Route::patch('/{id}', 'ImageController@update');
+        Route::post('/{id}', 'ImageController@update');
         Route::delete('/{id}', 'ImageController@destroy');
     });
 });
