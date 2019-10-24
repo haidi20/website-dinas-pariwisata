@@ -53,9 +53,10 @@ export default class CreateImage extends Component {
     _handleSubmit(e){
         e.preventDefault();
         
-        if(this.state.isNameFalse === false && this.state.file !== null){
+        // if(this.state.isNameFalse === false && this.state.file !== null){
+        if(this.state.file !== null){
             let bodyFormData = new FormData();
-            bodyFormData.append('name', this.state.name);
+            // bodyFormData.append('name', this.state.name);
             bodyFormData.append('image', this.state.file);
             bodyFormData.append('type', 'image');
             
@@ -115,10 +116,10 @@ export default class CreateImage extends Component {
                                     <div className="panel-body">
                                         <form className="form-horizontal" onSubmit={this._handleSubmit}>
                                             <div className="form-group">
-                                                <label htmlFor="namaImage" className="control-label col-sm-2">Nama Image</label>
+                                                {/* <label htmlFor="namaImage" className="control-label col-sm-2">Nama Image</label> */}
                                                 <div className="col-sm-8">
-                                                    <input type="text" name="name" className="form-control" placeholder="masukkan nama image" required onChange={this._handleChange} value={name} />
-                                                    {isNameFalse && <small id="emailHelp" className="form-text text-muted" style={{color:'red'}}>Nama Image harus lebih dari 6 karakter!</small>}
+                                                    {/* <input type="text" name="name" className="form-control" placeholder="masukkan nama image" required onChange={this._handleChange} value={name} />
+                                                    {isNameFalse && <small id="emailHelp" className="form-text text-muted" style={{color:'red'}}>Nama Image harus lebih dari 6 karakter!</small>} */}
                                                 </div>
                                             </div>
                                             <div className="form-group">

@@ -57,7 +57,7 @@ export default class CardImage extends Component {
                         </div>
                         <div className="modal-footer">
                             <div style={{textAlign:'center'}}>
-                                <h5>{newTitle.includes('.jpg')? newTitle.replace('.jpg','') : newTitle.includes('.png')? newTitle.replace('.png','') : newTitle.includes('.jpeg')? newTitle.replace('.jpeg','') : ''}</h5>
+                                {/* <h5>{newTitle.includes('.jpg')? newTitle.replace('.jpg','') : newTitle.includes('.png')? newTitle.replace('.png','') : newTitle.includes('.jpeg')? newTitle.replace('.jpeg','') : ''}</h5> */}
                             </div>
                             <Link to={`/sitemanager/images/${id}`} type="button" className="btn btn-warning">Edit</Link>
                             <button type="button" className="btn btn-danger" onClick={() => this._onDelete(id)}>Delete</button>

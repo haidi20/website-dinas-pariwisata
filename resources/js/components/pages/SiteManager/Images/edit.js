@@ -23,7 +23,7 @@ export default class EditImage extends Component {
 
     _handleImageChange(e){
         e.preventDefault();
-        const types = ['image/png', 'image/jpeg', 'image/jpg'];
+        const types = ['image/png', 'image/jpeg', 'image/jpg', 'image/PNG'];
         let file = e.target.files[0];
 
         if (types.every(type => file.type !== type)) {
@@ -39,27 +39,29 @@ export default class EditImage extends Component {
 
     _handleChange(e){
         e.preventDefault();
-        this.setState({name: e.target.value}, () => {
-            if(this.state.name != ''){
-                //validasi panjang karakter
-                if(this.state.name.length < 6){
-                    this.setState({isNameFalse:true});
-                }else{
-                    this.setState({isNameFalse:false});
-                }
-            }
-        });
+        // this.setState({name: e.target.value}, () => {
+        //     if(this.state.name != ''){
+        //         //validasi panjang karakter
+        //         if(this.state.name.length < 6){
+        //             this.setState({isNameFalse:true});
+        //         }else{
+        //             this.setState({isNameFalse:false});
+        //         }
+        //     }
+        // });
     }
 
     _handleSubmit(e){
         e.preventDefault();
         
-        if(this.state.isNameFalse === false){
+        // if(this.state.isNameFalse === false){
             let bodyFormData = new FormData();
-            bodyFormData.append('name', this.state.name);
+            // bodyFormData.append('name', this.state.name);
             bodyFormData.append('image', this.state.file);
             bodyFormData.append('type', 'image');
             bodyFormData.append('_method', 'PATCH');
+
+            console.log(`${baseURL}/images/${this.props.match.params.id}`)
             
             axios({
                 method: 'post',
@@ -78,9 +80,9 @@ export default class EditImage extends Component {
                 });
             })
             .catch(err => {
-                console.log(err);
+                console.log('error = ',err);
             });
-        }
+        // }
     }
 
     componentDidMount(){
@@ -134,10 +136,10 @@ export default class EditImage extends Component {
                                     <div className="panel-body">
                                         <form className="form-horizontal" onSubmit={this._handleSubmit}>
                                             <div className="form-group">
-                                                <label htmlFor="namaImage" className="control-label col-sm-2">Nama Image</label>
+                                                {/* <label htmlFor="namaImage" className="control-label col-sm-2">Nama Image</label> */}
                                                 <div className="col-sm-8">
-                                                    <input type="text" name="name" className="form-control" placeholder="masukkan nama image" required onChange={this._handleChange} value={name} />
-                                                    {isNameFalse && <small id="emailHelp" className="form-text text-muted" style={{color:'red'}}>Nama Image harus lebih dari 6 karakter!</small>}
+                                                    {/* <input type="text" name="name" className="form-control" placeholder="masukkan nama image" required onChange={this._handleChange} value={name} />
+                                                    {isNameFalse && <small id="emailHelp" className="form-text text-muted" style={{color:'red'}}>Nama Image harus lebih dari 6 karakter!</small>} */}
                                                 </div>
                                             </div>
                                             <div className="form-group">
@@ -145,7 +147,7 @@ export default class EditImage extends Component {
                                                 <div className="col-sm-8">
                                                     {this.state.fileName && <img src={`${root}/images/${this.state.fileName}`} width="160" height="100" style={{marginBottom:5}} />}
                                                     <div className="custom-file">
-                                                        <input type="file" name="image" className="custom-file-input" onChange={this._handleImageChange} />
+                                                        <input type="file" src={`${root}/images/${this.state.fileName}`} name="image" className="custom-file-input" onChange={this._handleImageChange} />
                                                         {badFormat && <small id="image" className="form-text text-muted" style={{color:'red'}}>Ukuran Image maksimal <b>150MB</b> dan format harus <b>jpg, png dan jpeg!</b></small>}
                                                     </div>
                                                 </div>
