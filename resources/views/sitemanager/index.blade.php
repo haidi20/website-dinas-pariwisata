@@ -27,6 +27,12 @@
 
     <div id="app-sitemanager"></div>
 
+{{-- set root --}}
+
+<script>
+    var root = "http:{{asset('')}}"
+</script>
+
 <script src="{{asset('js/app.js')}}"></script>
 <script src="https://cdn.tiny.cloud/1/6tf0yfd67hcj5lfbaaypzrphtmsnll2fu91xh9ufe7gekrw2/tinymce/5/tinymce.min.js"></script>
 

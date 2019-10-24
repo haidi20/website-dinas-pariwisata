@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-import {baseURL} from '../Utils';
+import {baseURL, root} from '../Utils';
 
 export default class EditImage extends Component {
     constructor(props) {
@@ -143,7 +143,7 @@ export default class EditImage extends Component {
                                             <div className="form-group">
                                                 <label htmlFor="namaImage" className="control-label col-sm-2">Choose Image</label>
                                                 <div className="col-sm-8">
-                                                    {this.state.fileName && <img src={`http://localhost:3000/images/${this.state.fileName}`} width="160" height="100" style={{marginBottom:5}} />}
+                                                    {this.state.fileName && <img src={`${root}/images/${this.state.fileName}`} width="160" height="100" style={{marginBottom:5}} />}
                                                     <div className="custom-file">
                                                         <input type="file" name="image" className="custom-file-input" onChange={this._handleImageChange} />
                                                         {badFormat && <small id="image" className="form-text text-muted" style={{color:'red'}}>Ukuran Image maksimal <b>150MB</b> dan format harus <b>jpg, png dan jpeg!</b></small>}
