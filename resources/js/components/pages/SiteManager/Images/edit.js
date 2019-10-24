@@ -96,6 +96,8 @@ export default class EditImage extends Component {
             name,
             fileName: result.name
         });
+
+        console.log(this.state)
     }
 
     render() {
