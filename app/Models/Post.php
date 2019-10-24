@@ -15,4 +15,22 @@ class Post extends Model
             return $this->category->name;
         }
     }
+
+    public function getColorCategoryAttribute(){
+        if($this->category){
+            return $this->category->color;
+        }
+    }
+
+    public function getDateAttribute(){
+        return $this->created_at->format('d M Y');
+    }
+
+    public function getTimeAttribute(){
+        return $this->created_at->format('H:i A');
+    }
+
+    public function getLimitContentAttribute(){
+        return str_limit($this->content, 40);
+    }
 }

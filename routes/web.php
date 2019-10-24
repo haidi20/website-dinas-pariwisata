@@ -30,6 +30,10 @@ Route::namespace('Website')->group(function(){
     Route::get('/contact', 'ContactController@index');
 });
 
+Route::get('time', function(){
+    return Carbon::now()->format('H:i:s');
+});
+
 // Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

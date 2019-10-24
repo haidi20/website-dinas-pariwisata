@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Website;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Website\BaseWebsiteController as BaseController;
 
 use App\Repositories\GalleryRepository;
 
-class GalleryController extends Controller
+class GalleryController extends BaseController
 {
     public function __construct(GalleryRepository $galleryRepo)
     {

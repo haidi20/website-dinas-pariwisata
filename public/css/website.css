@@ -132,4 +132,8 @@ section.heading-news {
     padding-top:40px
 }
 
+.video-post a.video-link{
+    font-size:15px;
+}
+
 /* end rewrite css theme */

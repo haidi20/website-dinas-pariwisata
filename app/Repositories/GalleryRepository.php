@@ -7,13 +7,11 @@ use App\Models\Gallery;
 class GalleryRepository 
 {
     // image
-    public function allImage()
-    {
+    public function allImage(){
         return Gallery::where('type', 'image')->paginate(10);
     }
 
-    public function imageLimit($limit)
-    {
+    public function imageLimit($limit){
         return Gallery::where('type', 'image')->limit($limit)->get();
     }
 
@@ -21,13 +19,15 @@ class GalleryRepository
 
     //video
 
-    public function allVideo()
-    {
+    public function allVideo(){
         // return DB::table()
     }
 
-    public function videoLimit()
-    {
+    public function limitVideo(){
 
+    }
+
+    public function firstVideo(){
+        return Gallery::where('type', 'video')->first();
     }
 }
