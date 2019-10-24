@@ -99,10 +99,10 @@
                             @foreach ($lastPosts as $index => $item)
                                 <div class="news-post standard-post2 {{$index == 0 ? 'default-size' : ''}}">
                                     <div class="post-gallery">
-                                        <img src='{{asset("images/$item->image")}}' alt="">
+                                        <a href="{{url('post/detail')}}"> <img src='{{asset("images/$item->image")}}' alt=""> </a>
                                     </div>
                                     <div class="post-title">
-                                        <h2><a href="single-post.html">{{$item->title}}</a></h2>
+                                        <h2><a href="{{url('post/detail')}}">{{$item->title}}</a></h2>
                                         <ul class="post-tags">
                                             <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
                                             <li><a href="#">
