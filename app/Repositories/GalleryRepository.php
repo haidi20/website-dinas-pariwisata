@@ -7,11 +7,11 @@ use App\Models\Gallery;
 class GalleryRepository 
 {
     // image
-    public function allImage(){
+    public function allImages(){
         return Gallery::where('type', 'image')->paginate(10);
     }
 
-    public function imageLimit($limit){
+    public function limitImages($limit){
         return Gallery::where('type', 'image')->limit($limit)->get();
     }
 
@@ -19,11 +19,11 @@ class GalleryRepository
 
     //video
 
-    public function allVideo(){
+    public function allVideos(){
         // return DB::table()
     }
 
-    public function limitVideo(){
+    public function limitVideos(){
 
     }
 

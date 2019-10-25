@@ -17,7 +17,7 @@
                             <a class="category-post world" style="background-color:{{$item->colorCategory}}">{{$item->nameCategory}}</a>
                         </div>
                         <div class="post-content">
-                            <h2><a href="{{url('/post/detail')}}">{{$item->title}}</a></h2>
+                            <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                             <ul class="post-tags">
                                 <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
                                 <li><a href="#">

@@ -9,7 +9,7 @@
 				<div class="hover-box">
 					<div class="inner-hover">
 						<a class="category-post" style="background-color:{{$firstPost->colorCategory}}" href="#">{{$firstPost->nameCategory}}</a>
-						<h2><a href="{{url('/post/detail')}}">{{$firstPost->title}}</a></h2>
+						<h2><a href="{{url('post', $firstPost->slug)}}">{{$firstPost->title}}</a></h2>
 						<ul class="post-tags">
 							<li><i class="fa fa-clock-o"></i><span>{{$firstPost->date}}</span></li>
 							<li><a href="#"><i class="fa fa-eye"></i><span>{{$firstPost->read}}</span></a></li>
@@ -29,7 +29,7 @@
 								<div class="hover-box">
 									<div class="inner-hover">
 										<a class="category-post" style="background-color:{{$item->colorCategory}}" href="#">{{$item->nameCategory}}</a>
-										<h2><a href="{{url('/post/detail')}}">{{$item->title}}</a></h2>
+										<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
 										<ul class="post-tags">
 											<li><i class="fa fa-clock-o"> {{$item->date}}</i></li>
 											{{-- <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li> --}}
@@ -49,7 +49,7 @@
 					<div class="hover-box">
 						<div class="inner-hover">
 							<a class="category-post" style="background-color:{{$item->colorCategory}}" href="#">{{$item->nameCategory}}</a>
-							<h2><a href="{{url('/post/detail')}}">{{$item->title}}</a></h2>
+							<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
 							<ul class="post-tags">
 								<li><i class="fa fa-clock-o"></i><span>{{$item->date}}</span></li>
 								<li><i class="fa fa-eye"></i><span>{{$item->read}}</span></li>

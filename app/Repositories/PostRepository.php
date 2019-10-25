@@ -30,5 +30,13 @@ class PostRepository {
         return Post::where('breaking_news', 1)->get();
     }
 
+    public function baseSlug($slug){
+        return Post::where('slug', $slug)->first();
+    }
+
+    public function baseCategory($category, $limit = null){
+        return Post::where('category_id', $category)->limit($limit)->get();
+    }
+
 
 }

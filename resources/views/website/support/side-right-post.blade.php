@@ -15,7 +15,7 @@
                                     <img src='{{asset("images/$item->image")}}' alt="">
                                     <div class="hover-box">
                                         <div class="inner-hover">
-                                            <h2><a href="{{url('/post/detail')}}">{{$item->title}} </a></h2>
+                                            <h2><a href="{{url('post', $item->slug)}}">{{$item->title}} </a></h2>
                                             <ul class="post-tags">
                                                 <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
                                                 <li><a href="#">
@@ -36,7 +36,7 @@
                     <li>
                         <img src='{{asset("images/$item->image")}}' alt="">
                         <div class="post-content">
-                            <h2><a href="{{url('/post/detail')}}">{{$item->title}}</a></h2>
+                            <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                             <ul class="post-tags">
                                 <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
                             </ul>
@@ -65,7 +65,7 @@
                             <li>
                                 <img src='{{asset("images/$item->image")}}' alt="">
                                 <div class="post-content">
-                                    <h2><a href="{{url('/post/detail')}}">{{$item->title}}</a></h2>
+                                    <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
                                     </ul>
@@ -81,7 +81,7 @@
                             <li>
                                 <img src='{{asset("images/$item->image")}}' alt="">
                                 <div class="post-content">
-                                    <h2><a href="{{url('/post/detail')}}">{{$item->title}} </a></h2>
+                                    <h2><a href="{{url('post', $item->slug)}}">{{$item->title}} </a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
                                     </ul>
@@ -100,10 +100,8 @@
             </div>
             <div class="news-post video-post">
                     <img src="{{$rightSideVideo->thumbnail}}">
-                    {{-- <a href="https://www.youtube.com/watch?v=LL59es7iy8Q" class="video-link"><i class="fa fa-play-circle-o"></i></a> --}}
                     <a href="{{$rightSideVideo->link}}" class="video-link">{{$rightSideVideo->name}}</a>
                 <div class="hover-box">
-                    {{-- <h2><a href="{{url('/post/detail')}}">Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. </a></h2> --}}
                     <ul class="post-tags">
                         <li><i class="fa fa-clock-o"></i>{{$rightSideVideo->date}}</li>
                     </ul>

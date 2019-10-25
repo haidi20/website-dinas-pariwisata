@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function category(){
         return $this->belongsTo('App\Models\Category');
     }
@@ -32,5 +37,9 @@ class Post extends Model
 
     public function getLimitContentAttribute(){
         return str_limit($this->content, 40);
+    }
+
+    public function getLimitContentLargeAttribute(){
+        return str_limit($this->content, 200);
     }
 }

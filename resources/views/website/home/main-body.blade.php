@@ -23,7 +23,7 @@
                                         <div class="hover-box">
                                             <div class="inner-hover">
                                                 <a class="category-post tech">{{$firstPost->nameCategory}}</a>
-                                                <h2 style="color:white"><a href="{{url('/post/detail')}}" >{{$firstPost->title}}</a></h2>
+                                                <h2 style="color:white"><a href="{{url('post', $item->slug)}}" >{{$firstPost->title}}</a></h2>
                                                 <ul class="post-tags">
                                                     <li><i class="fa fa-clock-o"></i>{{$firstPost->date}}</li>
                                                     <li><i class="fa fa-eye"></i>{{$firstPost->read}}</li>
@@ -38,7 +38,7 @@
                                 <ul class="list-posts">
                                     @foreach ($limitThreePosts as $index => $item)
                                         <li>
-                                            <a href="{{url('/post/detail')}}" >
+                                            <a href="{{url('post', $item->slug)}}" >
                                                 <img src='{{asset("images/$item->image")}}' alt="">
                                                 <div class="post-content">
                                                     {{$item->nameCategory}}
@@ -99,10 +99,10 @@
                             @foreach ($lastPosts as $index => $item)
                                 <div class="news-post standard-post2 {{$index == 0 ? 'default-size' : ''}}">
                                     <div class="post-gallery">
-                                        <a href="{{url('post/detail')}}"> <img src='{{asset("images/$item->image")}}' alt=""> </a>
+                                        <a href="{{url('post', $item->slug)}}"> <img src='{{asset("images/$item->image")}}' alt=""> </a>
                                     </div>
                                     <div class="post-title">
-                                        <h2><a href="{{url('post/detail')}}">{{$item->title}}</a></h2>
+                                        <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                                         <ul class="post-tags">
                                             <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
                                             <li><a href="#">

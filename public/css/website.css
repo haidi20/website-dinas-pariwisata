@@ -102,9 +102,9 @@ form.search-form select.category-search:focus{
     outline:0px;
 }
 
-form a i.fa-search {
+form button i.fa-search {
     font-size: 30px;
-    transform: translate(30px, -20px);
+    transform: translate(-10px, 10px);
 }
 
 /* start rewrite css theme */
@@ -134,6 +134,10 @@ section.heading-news {
 
 .video-post a.video-link{
     font-size:15px;
+}
+
+.single-post-box .share-post-box ul.share-box li a.instagram {
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
 }
 
 /* end rewrite css theme */

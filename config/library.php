@@ -90,7 +90,7 @@ return [
             "name" => "twitter",
         ], 
         3 => [
-            "name" => "google_plus",
+            "name" => "google-plus",
         ],
     ],
     "settings" => [
