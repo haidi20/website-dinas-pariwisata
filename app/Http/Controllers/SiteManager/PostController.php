@@ -105,4 +105,25 @@ class PostController extends Controller
         $unSelected = DB::table('posts')->select('id','title')->where('breaking_news',1)->get();
         return $this->sendResponse($unSelected->toArray(), "Breaking news selected retrieved successfully.");
     }
+
+    /**
+     * Change Status Breaking News of Post
+     * 
+     * @param id
+     * @param  \Illuminate\Http\Request  $request
+     */
+    public function changeStatus(Request $request, $id){
+        $input = $request->all();
+        
+        $post = Post::find($id);
+        
+        if(is_null($post)){
+            return $this->sendError('post not found.');
+        }else{
+            $post->breaking_news = $input['breaking_news'];
+            $post->save();
+        }
+
+        return $this->sendResponse($post->toArray(), "Posts updated successfully.");
+    }
 }

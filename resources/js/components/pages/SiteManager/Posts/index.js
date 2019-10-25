@@ -88,7 +88,7 @@ export default class Posts extends Component {
             content: row.content,
             read: row.read,
             breaking_news: (row.breaking_news === 1) ? 'Yes': 'No',
-            action: <><MDBBtn color="warning" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded >Edit</MDBBtn> <MDBBtn color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
+            action: <><MDBBtn size="sm" color="warning" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded >Edit</MDBBtn> <MDBBtn size="sm" color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
         }));
         
         this.setState({data:{columns,rows}});

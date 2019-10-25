@@ -59,10 +59,7 @@ export default class EditImage extends Component {
             // bodyFormData.append('name', this.state.name);
             bodyFormData.append('image', this.state.file);
             bodyFormData.append('type', 'image');
-            bodyFormData.append('_method', 'PATCH');
-
-            console.log(`${baseURL}/images/${this.props.match.params.id}`)
-            
+            bodyFormData.append('_method', 'PATCH');            
             axios({
                 method: 'post',
                 url: `${baseURL}/images/${this.props.match.params.id}`,

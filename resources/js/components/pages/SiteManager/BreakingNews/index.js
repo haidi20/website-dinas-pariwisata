@@ -13,6 +13,9 @@ export default class BreakingNews extends Component {
                 right: []
             }
         }
+
+        this._toRight = this._toRight.bind(this);
+        this._toLeft = this._toLeft.bind(this);
     }
 
     componentDidMount(){
@@ -26,6 +29,62 @@ export default class BreakingNews extends Component {
         let right = await axios.get(`${baseURL}/breaking-news/selected`)
                                     .then(res => res.data.data)
                                     .catch(err => console.log(err));
+        this.setState({
+            data:{
+                left,
+                right
+            }
+        });
+    }
+
+    async _toRight(bn){
+        if(this.state.data.right.length < 5){
+            let bodyFormData = new FormData();
+            bodyFormData.append('breaking_news', 1);
+            bodyFormData.append('_method', 'PATCH');            
+            axios({
+                method: 'post',
+                url: `${baseURL}/breaking-news/update/${bn.id}`,
+                data: bodyFormData,
+            })
+            .then(res => {
+                
+            })
+            .catch(err => {
+                console.log('error = ',err);
+            });
+
+            let left = this.state.data.left.filter(data => data.id !== bn.id);
+            let right = [];
+            right = [...this.state.data.right, bn];
+            this.setState({
+                data:{
+                    left,
+                    right
+                }
+            });
+        }
+    }
+
+    _toLeft(bn){
+        let bodyFormData = new FormData();
+            bodyFormData.append('breaking_news', 0);
+            bodyFormData.append('_method', 'PATCH');            
+            axios({
+                method: 'post',
+                url: `${baseURL}/breaking-news/update/${bn.id}`,
+                data: bodyFormData,
+            })
+            .then(res => {
+                
+            })
+            .catch(err => {
+                console.log('error = ',err);
+            });
+
+        let right = this.state.data.right.filter(data => data.id !== bn.id);
+        let left = [];
+        left = [...this.state.data.left, bn];
         this.setState({
             data:{
                 left,
@@ -49,11 +108,6 @@ export default class BreakingNews extends Component {
 
                         <div className="page-heading">
                             <h1>Breaking News</h1>
-                            <div className="options">
-                                <div className="btn-toolbar">
-                                    <Link to="#" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah News</Link>
-                                </div>
-                            </div>
                         </div>
 
                         <div className="panel panel-default">
@@ -63,13 +117,13 @@ export default class BreakingNews extends Component {
 
                                     <div style={{marginTop:50}}>
                                         <select className="custom-select" multiple size="12" style={{width:'38rem'}}>
-                                            {data.left.map(bn => <option key={bn.id} value="1">{bn.title}</option>)}
+                                            {data.left.map(bn => <option key={bn.id} onClick={() => this._toRight(bn)} value="1">{bn.title}</option>)}
                                         </select>
 
                                         <i className="fa fa-arrows-h" aria-hidden="true" style={{marginLeft:30, marginRight:30}}></i>
 
                                         <select className="custom-select" multiple size="12" style={{width:'38rem'}}>
-                                            {data.right.map(bn => <option key={bn.id} value="1">{bn.title}</option>)}
+                                            {data.right.map(bn => <option key={bn.id} onClick={() => this._toLeft(bn)} value="1">{bn.title}</option>)}
                                         </select>
                                     </div>
 

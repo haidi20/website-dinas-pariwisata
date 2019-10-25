@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\SiteManager;
 
 use App\Models\Menu;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        $menus = DB::table('menus')->get();
+        return $this->sendResponse($menus->toArray(), "Menus retrieved successfully.");
     }
 
     /**

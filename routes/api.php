@@ -64,12 +64,13 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'SiteManager'], function
         Route::get('/', 'PostController@index');
         // Route::post('/', 'PostController@store');
         // Route::get('/{id}', 'PostController@show');
-        // Route::patch('/{id}', 'PostController@update');
+        Route::patch('/{id}', 'PostController@update');
         // Route::delete('/{id}', 'PostController@destroy');
     });
     Route::group(['prefix' => '/breaking-news'], function(){
         Route::get('/unselected', 'PostController@unSelected');
         Route::get('/selected', 'PostController@selected');
+        Route::patch('/update/{id}', 'PostController@changeStatus');
     });
     Route::group(['prefix' => '/categories'], function(){
         Route::get('/', 'CotegoryController@index');
@@ -77,6 +78,13 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'SiteManager'], function
         // Route::get('/{id}', 'CotegoryController@show');
         // Route::patch('/{id}', 'CotegoryController@update');
         // Route::delete('/{id}', 'CotegoryController@destroy');
+    });
+    Route::group(['prefix' => '/menus'], function(){
+        Route::get('/', 'MenuController@index');
+        // Route::post('/', 'MenuController@store');
+        // Route::get('/{id}', 'MenuController@show');
+        // Route::patch('/{id}', 'MenuController@update');
+        // Route::delete('/{id}', 'MenuController@destroy');
     });
 });
 
