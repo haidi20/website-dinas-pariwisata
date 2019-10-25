@@ -23,6 +23,11 @@ export default class ModalCategory extends Component {
                         sort: 'asc',
                     },
                     {
+                        label: 'Warna',
+                        field: 'warna',
+                        sort: 'asc',
+                    },
+                    {
                         label: 'Action',
                         field: 'action',
                         width:20,
@@ -47,7 +52,8 @@ export default class ModalCategory extends Component {
         results.data.map((row,key) => rows.push({
             no: key+1,
             name: row.name,
-            action: <><MDBBtn color="warning" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded >Edit</MDBBtn> <MDBBtn color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
+            color: <MDBBtn size="sm" style={{backgroundColor:row.color}} >{row.color}</MDBBtn>,
+            action: <><MDBBtn size="sm" color="success" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded >Edit</MDBBtn> <MDBBtn size="sm" color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
         }));
         
         this.setState({data:{columns,rows}});

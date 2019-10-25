@@ -86,6 +86,13 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'SiteManager'], function
         // Route::patch('/{id}', 'MenuController@update');
         // Route::delete('/{id}', 'MenuController@destroy');
     });
+    Route::group(['prefix' => '/users'], function(){
+        Route::get('/', 'UserController@index');
+        // Route::post('/', 'UserController@store');
+        // Route::get('/{id}', 'UserController@show');
+        // Route::patch('/{id}', 'UserController@update');
+        // Route::delete('/{id}', 'UserController@destroy');
+    });
 });
 
 
