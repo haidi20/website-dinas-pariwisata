@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\SiteManager;
 
-use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PostController extends Controller
+class CotegoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = DB::table('posts')->orderByRaw('created_at DESC')->get();
-        return $this->sendResponse($posts->toArray(), "Posts retrieved successfully.");
+        $categories = DB::table('categories')->get();
+        return $this->sendResponse($categories->toArray(), "Categories retrieved successfully.");
     }
 
     /**
@@ -44,10 +44,10 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Category $category)
     {
         //
     }
@@ -55,10 +55,10 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Category $category)
     {
         //
     }
@@ -67,10 +67,10 @@ class PostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -78,31 +78,11 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Category $category)
     {
         //
-    }
-
-    /**
-     * Display list of Breaking news unselected
-     * 
-     * @return \Illuminate\Http\Response
-     */
-    public function unSelected(){
-        $unSelected = DB::table('posts')->select('id','title')->where('breaking_news',0)->get();
-        return $this->sendResponse($unSelected->toArray(), "Breaking news un-selected retrieved successfully.");
-    }
-
-    /**
-     * Display list of Breaking news selected
-     * 
-     * @return \Illuminate\Http\Response
-     */
-    public function selected(){
-        $unSelected = DB::table('posts')->select('id','title')->where('breaking_news',1)->get();
-        return $this->sendResponse($unSelected->toArray(), "Breaking news selected retrieved successfully.");
     }
 }

@@ -57,7 +57,7 @@ export default class Pages extends Component {
             menu_id: row.menu_id,
             title: row.title,
             content: row.content,
-            action: <><MDBBtn color="warning" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded size="sm">Edit</MDBBtn> <MDBBtn color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded size="sm">Delete</MDBBtn></>
+            action: <><MDBBtn color="warning" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded >Edit</MDBBtn> <MDBBtn color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
         }));
         
         this.setState({data:{columns,rows}});

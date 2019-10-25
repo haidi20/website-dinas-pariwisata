@@ -45,7 +45,7 @@ export default class SocialMedia extends Component {
         result.data.map(row => rows.push({
             name: row.name,
             link: row.link,
-            action: <><MDBBtn color="warning" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded size="sm">Edit</MDBBtn> <MDBBtn color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded size="sm">Delete</MDBBtn></>
+            action: <><MDBBtn color="warning" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded > Edit</MDBBtn> <MDBBtn color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
         }));
         
         this.setState({data:{columns,rows}});

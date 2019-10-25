@@ -60,6 +60,24 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'SiteManager'], function
         // Route::patch('/{id}', 'MediaController@update');
         // Route::delete('/{id}', 'MediaController@destroy');
     });
+    Route::group(['prefix' => '/posts'], function(){
+        Route::get('/', 'PostController@index');
+        // Route::post('/', 'PostController@store');
+        // Route::get('/{id}', 'PostController@show');
+        // Route::patch('/{id}', 'PostController@update');
+        // Route::delete('/{id}', 'PostController@destroy');
+    });
+    Route::group(['prefix' => '/breaking-news'], function(){
+        Route::get('/unselected', 'PostController@unSelected');
+        Route::get('/selected', 'PostController@selected');
+    });
+    Route::group(['prefix' => '/categories'], function(){
+        Route::get('/', 'CotegoryController@index');
+        // Route::post('/', 'CotegoryController@store');
+        // Route::get('/{id}', 'CotegoryController@show');
+        // Route::patch('/{id}', 'CotegoryController@update');
+        // Route::delete('/{id}', 'CotegoryController@destroy');
+    });
 });
 
 

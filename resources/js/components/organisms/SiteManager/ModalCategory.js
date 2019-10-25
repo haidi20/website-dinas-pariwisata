@@ -1,12 +1,58 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import { MDBDataTable, MDBBtn } from 'mdbreact';
 
-import DatatablePage from '../../atoms/DataTables';
+import {baseURL} from '../../pages/SiteManager/Utils';
 
 export default class ModalCategory extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            data: {
+                columns: [
+                    {
+                        label: 'No.',
+                        field: 'no.',
+                        width: 20,
+                        sort: 'asc',
+                    },
+                    {
+                        label: 'Nama',
+                        field: 'nama',
+                        sort: 'asc',
+                    },
+                    {
+                        label: 'Action',
+                        field: 'action',
+                        width:20,
+                        sort: 'asc',
+                    },
+                ],
+                rows: [],
+            },
+        }
     }
+
+    componentDidMount(){
+        this.getData();
+    }
+
+    async getData(){
+        let results = await axios.get(`${baseURL}/categories`)
+                                    .then(res => res.data)
+                                    .catch(err => console.log(err));
+        let columns = this.state.data.columns;
+        let rows = [];
+        results.data.map((row,key) => rows.push({
+            no: key+1,
+            name: row.name,
+            action: <><MDBBtn color="warning" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded >Edit</MDBBtn> <MDBBtn color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
+        }));
+        
+        this.setState({data:{columns,rows}});
+    }
+
     render() {
         return (
             <>
@@ -22,7 +68,14 @@ export default class ModalCategory extends Component {
                             <div style={{marginBottom:25}}>
                                 <Link to="#" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Category</Link>
                             </div>
-                            <DatatablePage/>
+                            
+                            <MDBDataTable
+                                striped
+                                bordered
+                                hover
+                                data={this.state.data}
+                            />
+                            
                         </div>
                         </div>
                     </div>
