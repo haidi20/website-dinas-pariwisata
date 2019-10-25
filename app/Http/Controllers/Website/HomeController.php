@@ -3,30 +3,42 @@
 namespace App\Http\Controllers\Website;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Website\BaseWebsiteController as BaseController;
 
 // repositories
 use App\Repositories\PostRepository;
+use App\Repositories\GalleryRepository;
+use App\Repositories\CategoryRepository;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
-    public function __construct(PostRepository $postRepo)
-    {
-        $this->postRepo = $postRepo;
+    public function __construct(
+        PostRepository $postRepo,
+        GalleryRepository $galleryRepo,
+        CategoryRepository $categoryRepo
+    ){
+        $this->postRepo     = $postRepo;
+        $this->galleryRepo  = $galleryRepo;
+        $this->categoryRepo  = $categoryRepo;
     }
 
     public function index()
     {
-        return view('website.home.index');
-    }
+        $image              = $this->galleryRepo->limitImages(5);
+        
+        $firstPost          = $this->postRepo->first();
+        $lastPosts          = $this->postRepo->last($limit = 6);
+        $categories         = $this->categoryRepo->all();
+        $popularPosts       = $this->postRepo->popular($limit = 6);
+        $limitSixPosts      = $this->postRepo->limit(7);
+        $limitThreePosts    = $this->postRepo->limit(3);
+        $breakingNewsPosts  = $this->postRepo->breakingNews();
 
-    public function post()
-    {
-        $firstPost          = $this->postRepo->firstPost();
-        $postsLimitSix      = $this->postRepo->postsLimit(7);
-        $postsLimitThree    = $this->postRepo->postsLimit(3);
 
-        // return response()->json($posts);
-        return compact('firstPost', 'postsLimitSix', 'postsLimitThree');
+        return $this->view('website.home.index', compact(
+            'firstPost', 'limitSixPosts', 'limitThreePosts',
+            'breakingNewsPosts', 'image', 'lastPosts', 'popularPosts',
+            'categories'
+        ));
     }
 }

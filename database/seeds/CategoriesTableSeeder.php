@@ -20,7 +20,8 @@ class CategoriesTableSeeder extends Seeder
 
         foreach ($categories as $index => $item) {
             factory(Category::class)->create([
-                "name" => $item,
+                "name" => $item['name'],
+                "color" => $item['color'],
             ]);
         } 
     }

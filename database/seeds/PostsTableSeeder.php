@@ -42,8 +42,7 @@ class PostsTableSeeder extends Seeder
             }
 
            factory(Post::class)->create([
-                "created_at" => $day->format('Y-m-d 10:i:s'),
-                "updated_at" => $day->format('Y-m-d 10:i:s'),
+                "created_at" => $day->format("Y-m-d 10:25:05"),
                 "breaking_news" => $value,
                 "image" => "pemerintah/POSTER BARU PARIWISATA-".$zero.$number.".jpg"
             ]);

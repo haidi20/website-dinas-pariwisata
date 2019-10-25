@@ -25,9 +25,13 @@ Route::namespace('Website')->group(function(){
     Route::get('/video', 'GalleryController@video');
     Route::group(['prefix' => 'post'], function(){
         Route::get('/', 'PostController@index');
-        Route::get('/detail', 'PostController@detail');
+        Route::get('/{slug}', 'PostController@detail');
     });
     Route::get('/contact', 'ContactController@index');
+});
+
+Route::get('time', function(){
+    return Carbon::now()->format('H:i:s');
 });
 
 // Auth::routes();

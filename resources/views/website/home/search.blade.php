@@ -6,17 +6,17 @@
     <div class="container center-search" >
         <h2>Welcome To Kalimantan Timur</h2>
         <h3>We offer a variety of services and options</h3>
-        <form role="search" class="search-form">
+        <form role="search" class="search-form" method="get" action="{{url('post')}}">
             <input type="text" id="search" name="search" placeholder="what are you looking for?" />
-            <select class="category-search" id="">
+            <select class="category-search" name="category" id="">
                 <option value=""  >Semua Kategori </option>
-                <option value="1">Hutan</option>
-                <option value="2">Wisata</option>
-                <option value="3">Pantai</option>
+                @foreach ($categories as $index => $item)
+                    <option value="{{$item->id}}">{{$item->name}}</option>
+                @endforeach
             </select>
-            <a class="btn">
+            <button class="btn" type="submit">
                 <i class="fa fa-search"></i>
-            </a>
+            </button>
         </form>
     </div>
 </section>

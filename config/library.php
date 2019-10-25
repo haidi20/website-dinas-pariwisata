@@ -2,9 +2,18 @@
 
 return [
     "categories" => [
-        'Hutan', 
-        'Pantai', 
-        'Kuliner',
+        0 => [
+            "name" => "Hutan", 
+            "color" => "#6EC9A2",
+        ],
+        1 => [
+            "name" => "Pantai",
+            "color"=> "#F7A563",
+        ],
+        2 => [
+            "name" => "Kuliner",
+            "color"=> "#2E7FAF",
+        ],
     ],
     "social_media" => [
         0 => [
@@ -81,7 +90,7 @@ return [
             "name" => "twitter",
         ], 
         3 => [
-            "name" => "google_plus",
+            "name" => "google-plus",
         ],
     ],
     "settings" => [
