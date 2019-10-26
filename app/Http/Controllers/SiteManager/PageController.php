@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\SiteManager;
 
 use App\Models\Page;
+use App\Models\Menu;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,6 +18,13 @@ class PageController extends Controller
     public function index()
     {
         $pages = DB::table('pages')->get();
+
+        $pages->map(function($item){
+            $item->menus = Menu::where('id', $item->menu_id)->first();
+
+            return $item;
+        });
+
         return $this->sendResponse($pages->toArray(), "Pages retrieved successfully.");
     }
 

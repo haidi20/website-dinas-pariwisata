@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\SiteManager;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,7 +17,16 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = DB::table('posts')->orderByRaw('created_at DESC')->get();
+
+        $posts = DB::table('posts')->orderBy('posts.created_at');
+        $posts = $posts->get();
+
+        $posts = $posts->map(function($post){
+           $post->category = Category::where('id', $post->category_id)->first();
+
+           return $post;
+        });
+
         return $this->sendResponse($posts->toArray(), "Posts retrieved successfully.");
     }
 

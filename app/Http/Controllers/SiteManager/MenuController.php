@@ -16,7 +16,14 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = DB::table('menus')->get();
+        $menus = DB::table('menus')->where('position', 'menu')->get();
+        return $this->sendResponse($menus->toArray(), "Menus retrieved successfully.");
+    }
+
+    public function select()
+    {
+        $menus = DB::table('menus')->where('status', 'dynamic')->get();
+
         return $this->sendResponse($menus->toArray(), "Menus retrieved successfully.");
     }
 

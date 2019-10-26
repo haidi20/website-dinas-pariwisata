@@ -23,7 +23,7 @@
                                         <div class="hover-box">
                                             <div class="inner-hover">
                                                 <a class="category-post tech">{{$firstPost->nameCategory}}</a>
-                                                <h2 style="color:white"><a href="{{url('post', $item->slug)}}" >{{$firstPost->title}}</a></h2>
+                                                <h2 style="color:white"><a href="{{url('post', $firstPost->slug)}}" >{{$firstPost->title}}</a></h2>
                                                 <ul class="post-tags">
                                                     <li><i class="fa fa-clock-o"></i>{{$firstPost->date}}</li>
                                                     <li><i class="fa fa-eye"></i>{{$firstPost->read}}</li>

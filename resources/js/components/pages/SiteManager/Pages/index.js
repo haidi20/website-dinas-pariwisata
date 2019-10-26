@@ -17,18 +17,13 @@ export default class Pages extends Component {
                         sort: 'asc',
                     },
                     {
-                        label: 'ID Menu',
-                        field: 'id menu',
+                        label: 'Nama Menu',
+                        field: 'menu',
                         sort: 'asc',
                     },
                     {
-                        label: 'Title',
+                        label: 'Judul',
                         field: 'title',
-                        sort: 'asc',
-                    },
-                    {
-                        label: 'Content',
-                        field: 'content',
                         sort: 'asc',
                     },
                     {
@@ -54,10 +49,20 @@ export default class Pages extends Component {
         let rows = [];
         results.data.map((row,key) => rows.push({
             no: key+1,
-            menu_id: row.menu_id,
+            menu: row.menus.name,
             title: row.title,
-            content: row.content,
-            action: <><MDBBtn size="sm" color="success" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded >Edit</MDBBtn> <MDBBtn size="sm" color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
+            action: <><MDBBtn size="sm" color="success" 
+                    onClick={() => alert(`Edit data with ID : ${row.id}`)} 
+                    rounded 
+                >
+                    Edit
+                </MDBBtn> 
+                <MDBBtn size="sm" color="danger" 
+                    onClick={() => alert(`Delete data with ID : ${row.id}`)} 
+                    rounded 
+                >
+                    Delete
+                </MDBBtn></>
         }));
         
         this.setState({data:{columns,rows}});
@@ -79,7 +84,7 @@ export default class Pages extends Component {
                             <h1>Pages</h1>
                             <div className="options">
                                 <div className="btn-toolbar">
-                                    <Link to="#" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Pages</Link>
+                                    <Link to="/sitemanager/pages/create" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Pages</Link>
                                 </div>
                             </div>
                         </div>

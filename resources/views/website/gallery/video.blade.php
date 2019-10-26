@@ -1,6 +1,28 @@
 @extends('website._layouts.default')
 
+@section('script-top')
+    <style>
+        img{
+            cursor: pointer;
+        }
+    </style>
+@endsection
+
+@section('script-bottom')
+    <script>
+        $(function(){
+            $('.image').click(function(){
+                $('#show-gallery').modal('show');
+                var source = $(this).attr('data-source').replace("watch?v=", "embed/")
+
+                $(".modal-gallery").attr('src', source)
+            });
+        })
+    </script>
+@endsection
+
 @section('content')
+@include('website.gallery.modal')
 <!-- block-wrapper-section
     ================================================== -->
     <section class="block-wrapper">
@@ -19,9 +41,10 @@
                         @if($index + 1 % 2)
                             <div class="col-md-6">
                                 <div class="news-post image-post2">
-                                    <div class="post-gallery">
-                                        <img src='{{asset("images/pemerintah/$item->name")}}' alt="">
-                                    </div>
+                                    <img 
+                                        src='{{$item->thumbnail}}' 
+                                        class="image" data-source='{{$item->link}}'
+                                    />
                                 </div>
                             </div>
                         @else 
@@ -35,16 +58,17 @@
                     </div>
                     @endforelse
 
-                    <div class="center-button">
-                        <a href="#"><i class="fa fa-refresh"></i> More from featured</a>
-                    </div>
-
                 </div>
                 <!-- End grid box -->
 
             </div>
             <!-- End block content -->
+            
         </div>
+        <div class="center-button">
+            <a href="#"><i class="fa fa-refresh"></i> More from featured</a>
+        </div>
+        <br><br>
     </section>
 <!-- End block-wrapper-section -->
 @endsection

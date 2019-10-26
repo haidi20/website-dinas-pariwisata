@@ -73,7 +73,7 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'SiteManager'], function
         Route::patch('/update/{id}', 'PostController@changeStatus');
     });
     Route::group(['prefix' => '/categories'], function(){
-        Route::get('/', 'CotegoryController@index');
+        Route::get('/', 'CategoryController@index');
         // Route::post('/', 'CotegoryController@store');
         // Route::get('/{id}', 'CotegoryController@show');
         // Route::patch('/{id}', 'CotegoryController@update');
@@ -81,6 +81,7 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'SiteManager'], function
     });
     Route::group(['prefix' => '/menus'], function(){
         Route::get('/', 'MenuController@index');
+        Route::get('/select-menu', 'MenuController@select');
         // Route::post('/', 'MenuController@store');
         // Route::get('/{id}', 'MenuController@show');
         // Route::patch('/{id}', 'MenuController@update');

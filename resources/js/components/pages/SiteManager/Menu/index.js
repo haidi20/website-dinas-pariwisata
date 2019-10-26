@@ -14,45 +14,29 @@ export default class Menu extends Component {
             data: {
                 columns:[
                     {
-                        label: 'No.',
-                        field: 'no.',
-                        sort: 'asc',
-                    },
-                    {
-                        label: 'Name',
-                        field: 'name',
-                        sort: 'asc',
-                    },
-                    {
-                        label: 'Color',
-                        field: 'color',
-                        sort: 'asc',
-                    },
-                    {
-                        label: 'Parent ID',
-                        field: 'parent id',
-                        sort: 'asc',
-                    },
-                    {
-                        label: 'Position',
-                        field: 'position',
-                        sort: 'asc',
-                    },
-                    {
-                        label: 'Order',
-                        field: 'order',
-                        sort: 'asc',
-                    },
-                    {
-                        label: 'Status',
-                        field: 'status',
-                        sort: 'asc',
-                    },
-                    {
-                        label: 'Action',
-                        field: 'action',
-                        sort: 'asc',
-                    },
+                        label: "Id",
+                        field: "id",
+                        width: 150
+                      },       {
+                        label: "Name",
+                        field: "name",
+                        width: 270
+                      },
+                      {
+                        label: "Warna",
+                        field: "category",
+                        width: 270
+                      },
+                      {
+                        label: "Urutan",
+                        field: "average",
+                        width: 270
+                      },
+                      {
+                        label: "Action",
+                        field: "updatedAt",
+                        width: 270
+                      },
                 ],
                 rows:[]
             }
@@ -72,15 +56,36 @@ export default class Menu extends Component {
         results.data.map((row,key) => rows.push({
             no: key+1,
             name: row.name,
-            color: <MDBBtn size="sm" style={{backgroundColor:row.color}} >{row.color}</MDBBtn>,
-            parent_id: row.parent_id,
-            position: row.position,
+            color: <MDBBtn size="lg" style={{backgroundColor:row.color}} ></MDBBtn>,
             order: row.order,
-            status: row.status,
-            action: <><MDBBtn size="sm" color="success" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded >Edit</MDBBtn> <MDBBtn size="sm" color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
+            action: <>
+                <MDBBtn size="sm" color="info" 
+                    onClick={() => alert(`Edit data with ID : ${row.id}`)} 
+                    rounded 
+                >
+                    subMenu
+                </MDBBtn> 
+                <MDBBtn size="sm" color="success" 
+                    onClick={() => alert(`Edit data with ID : ${row.id}`)} 
+                    rounded 
+                >
+                    Edit
+                </MDBBtn> 
+                <MDBBtn size="sm" color="danger" 
+                    onClick={() => alert(`Delete data with ID : ${row.id}`)} 
+                    rounded 
+                >
+                    Delete
+                </MDBBtn>
+            </>
         }));
         
-        this.setState({data:{columns,rows}});
+        this.setState({
+            data:{
+                columns,
+                rows
+            }
+        });
     }
 
     render() {

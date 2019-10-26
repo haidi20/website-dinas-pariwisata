@@ -20,7 +20,7 @@ class GalleryRepository
     //video
 
     public function allVideos(){
-        // return DB::table()
+        return Gallery::where('type', 'video')->paginate(10);
     }
 
     public function limitVideos(){

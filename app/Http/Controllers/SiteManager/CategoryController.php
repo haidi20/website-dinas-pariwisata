@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CotegoryController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
