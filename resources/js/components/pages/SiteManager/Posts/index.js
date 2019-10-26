@@ -42,11 +42,11 @@ export default class Posts extends Component {
                         field: 'slug',
                         sort: 'asc',
                     },
-                    {
-                        label: 'Content',
-                        field: 'content',
-                        sort: 'asc',
-                    },
+                    // {
+                    //     label: 'Content',
+                    //     field: 'content',
+                    //     sort: 'asc',
+                    // },
                     {
                         label: 'Read',
                         field: 'read',
@@ -85,7 +85,7 @@ export default class Posts extends Component {
             title: row.title,
             image: row.image,
             slug: row.slug,
-            content: row.content,
+            // content: row.content,
             read: row.read,
             breaking_news: (row.breaking_news === 1) ? 'Yes': 'No',
             action: <><MDBBtn size="sm" color="success" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded >Edit</MDBBtn> <MDBBtn size="sm" color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
