@@ -22,6 +22,17 @@ export default class CreateMenu extends Component {
     
     render() {
         let {name,color,parent_id,position,order,status} = this.state;
+
+        const selectOrder = []
+
+        for(var i = 1; i <= 5; i++){
+            selectOrder.push( 
+            
+                <option value={i}>{i}</option>
+            
+            )
+        }
+
         return (
             <>
                 <div className="static-content">
@@ -56,53 +67,25 @@ export default class CreateMenu extends Component {
                                         <div className="panel-body">
                                             <form className="form-horizontal">
                                                 <div className="form-group">
-                                                    <label htmlFor="namaMenu" className="control-label col-sm-2">Nama Menu</label>
+                                                    <label htmlFor="namaMenu" className="control-label col-sm-2">Nama</label>
                                                     <div className="col-sm-10">
                                                         <input type="text" name="name" value={name} onChange={this._handleChange} className="form-control" placeholder="masukkan nama menu" required />
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="color" className="control-label col-sm-2">Color</label>
-                                                    <div className="col-sm-10">
+                                                    <div className="col-sm-1">
                                                         <input className="form-control" type="color" name="color" value={color} onChange={this._handleChange} id="example-color-input" required />
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
-                                                    <label htmlFor="parent_id" className="control-label col-sm-2">Parent Menu</label>
-                                                    <div className="col-sm-10">
-                                                        <select className="form-control" name="parent_id" value={parent_id} onChange={this._handleChange} id="parentMenu" required>
-                                                            <option>----Pilih----</option>                                                            
-                                                            <option value="menu1">Menu 1</option>
-                                                            <option value="menu2">Menu 2</option>
-                                                            <option value="menu3">Menu 3</option>
-                                                            <option value="menu4">Menu 4</option>
-                                                            <option value="menu5">Menu 5</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="position" className="control-label col-sm-2">Position Menu</label>
+                                                    <label htmlFor="position" className="control-label col-sm-2">Urutan</label>
                                                     <div className="col-sm-10">
                                                         <select className="form-control" name="position" value={position} onChange={this._handleChange} id="positionMenu" required>
                                                             <option>----Pilih----</option>
-                                                            <option value="menu">Menu</option>
-                                                            <option value="submenu">Submenu</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="orderMenu" className="control-label col-sm-2">Urutan Menu</label>
-                                                    <div className="col-sm-10">
-                                                        <input type="text" name="order" value={position} onChange={this._handleChange} className="form-control" placeholder="masukkan urutan menu" required />
-                                                    </div>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="status" className="control-label col-sm-2">Status Menu</label>
-                                                    <div className="col-sm-10">
-                                                        <select className="form-control" name="status" value={status} onChange={this._handleChange} id="statusMenu" required>
-                                                            <option>----Pilih----</option>
-                                                            <option value="static">Static</option>
-                                                            <option value="dynamic">Dynamic</option>
+                                                            {
+                                                                selectOrder
+                                                            }
                                                         </select>
                                                     </div>
                                                 </div>

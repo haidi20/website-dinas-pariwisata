@@ -18,42 +18,22 @@ export default class Posts extends Component {
                         sort: 'asc',
                     },
                     {
-                        label: 'ID Category',
+                        label: 'Category',
                         field: 'id category',
                         sort: 'asc',
                     },
                     {
-                        label: 'ID Author',
-                        field: 'id author',
-                        sort: 'asc',
-                    },
-                    {
-                        label: 'Title',
+                        label: 'Judul',
                         field: 'title',
                         sort: 'asc',
                     },
                     {
-                        label: 'Image',
-                        field: 'image',
-                        sort: 'asc',
-                    },
-                    {
-                        label: 'Slug',
-                        field: 'slug',
-                        sort: 'asc',
-                    },
-                    // {
-                    //     label: 'Content',
-                    //     field: 'content',
-                    //     sort: 'asc',
-                    // },
-                    {
-                        label: 'Read',
+                        label: 'Dibaca',
                         field: 'read',
                         sort: 'asc',
                     },
                     {
-                        label: 'Breaking News',
+                        label: 'Terakhir dibaca',
                         field: 'breaking news',
                         sort: 'asc',
                     },
@@ -80,15 +60,22 @@ export default class Posts extends Component {
         let rows = [];
         results.data.map((row,key) => rows.push({
             no: key+1,
-            category_id: row.category_id,
-            author_id: row.author_id,
+            category: row.category.name,
             title: row.title,
-            image: row.image,
-            slug: row.slug,
             // content: row.content,
             read: row.read,
-            breaking_news: (row.breaking_news === 1) ? 'Yes': 'No',
-            action: <><MDBBtn size="sm" color="success" onClick={() => alert(`Edit data with ID : ${row.id}`)} rounded >Edit</MDBBtn> <MDBBtn size="sm" color="danger" onClick={() => alert(`Delete data with ID : ${row.id}`)} rounded >Delete</MDBBtn></>
+            created_at: row.created_at,
+            action: <><MDBBtn size="sm" color="success" onClick={() => 
+                    alert(`Edit data with ID : ${row.id}`)} rounded 
+                >
+                    Edit
+                </MDBBtn> 
+                <MDBBtn size="sm" color="danger" onClick={() => 
+                    alert(`Delete data with ID : ${row.id}`)} 
+                    rounded 
+                >
+                    Delete
+                </MDBBtn></>
         }));
         
         this.setState({data:{columns,rows}});
