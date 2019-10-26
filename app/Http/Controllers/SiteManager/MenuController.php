@@ -20,6 +20,13 @@ class MenuController extends Controller
         return $this->sendResponse($menus->toArray(), "Menus retrieved successfully.");
     }
 
+    public function select()
+    {
+        $menus = DB::table('menus')->where('status', 'dynamic')->get();
+
+        return $this->sendResponse($menus->toArray(), "Menus retrieved successfully.");
+    }
+
     /**
      * Show the form for creating a new resource.
      *

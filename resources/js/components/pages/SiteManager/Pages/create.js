@@ -4,30 +4,28 @@ import {Link} from 'react-router-dom';
 import {baseURL} from '../Utils';
 import CKEditor from 'ckeditor4-react';
 
-export default class CreatePost extends Component {
+export default class CreatePage extends Component {
     constructor(props){
         super(props);
         this.state = {
             data: {
-                category_id: '',
+                menu_id: '',
                 title: '',
                 read: '',
-                created_at: '',
                 content: ''
             },
-            categories: [],
-            badFormat: ''
+            menus: [],
         }
 
         this._handleChange = this._handleChange.bind(this);
     }
 
     componentDidMount(){
-        this.getCategory();
+        this.getMenus();
     }
 
-    async getCategory(){
-        let results = await axios.get(`${baseURL}/categories`)
+    async getMenus(){
+        let results = await axios.get(`${baseURL}/menus/select-menu`)
                                     .then(res => res.data)
                                     .catch(err => console.log(err));
         let rows = [];
@@ -37,7 +35,7 @@ export default class CreatePost extends Component {
         }));
         
         this.setState({
-            categories:rows
+            menus:rows
         });
     }
 
@@ -90,12 +88,12 @@ export default class CreatePost extends Component {
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
-                                                    <label htmlFor="position" className="control-label col-sm-2">Urutan</label>
+                                                    <label htmlFor="menu" className="control-label col-sm-2">Pilih Menu</label>
                                                     <div className="col-sm-10">
-                                                        <select className="form-control" name="position" value={this.state.data.category_id} onChange={this._handleChange} id="positionMenu" required>
+                                                        <select className="form-control" name="menu" value={this.state.data.menus_id} onChange={this._handleChange} id="positionMenu" required>
                                                             <option>----Pilih----</option>
                                                             {
-                                                                this.state.categories.map(item => 
+                                                                this.state.menus.map(item => 
                                                                     <option 
                                                                         key={item.id}
                                                                         value={item.id}
@@ -103,15 +101,6 @@ export default class CreatePost extends Component {
                                                                 )
                                                             }
                                                         </select>
-                                                    </div>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="namaImage" className="control-label col-sm-2">Pilih Gambar</label>
-                                                    <div className="col-sm-8">
-                                                        <div className="custom-file">
-                                                            <input type="file" name="image" className="custom-file-input" onChange={this._handleImageChange} required />
-                                                            {this.state.badFormat && <small id="image" className="form-text text-muted" style={{color:'red'}}>Ukuran Image maksimal <b>150MB</b> dan format harus <b>jpg, png dan jpeg!</b></small>}
-                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -127,7 +116,7 @@ export default class CreatePost extends Component {
                                                 <div className="panel-footer">
                                                     <div className="row">
                                                         <div className="col-sm-11 col-sm-offset-1">
-                                                            <Link to="/sitemanager/post" className="btn-default btn">
+                                                            <Link to="/sitemanager/pages" className="btn-default btn">
                                                                 <i className="fa fa-reply"></i> Kembali
                                                             </Link>
                                                             <button className="btn-primary btn" type="submit" style={{marginLeft:5}}><i className="fa fa-save"></i> Simpan</button>

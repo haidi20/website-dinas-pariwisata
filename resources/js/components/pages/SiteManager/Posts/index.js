@@ -65,13 +65,14 @@ export default class Posts extends Component {
             // content: row.content,
             read: row.read,
             created_at: row.created_at,
-            action: <><MDBBtn size="sm" color="success" onClick={() => 
-                    alert(`Edit data with ID : ${row.id}`)} rounded 
+            action: <><MDBBtn size="sm" color="success" 
+                    onClick={() => alert(`Edit data with ID : ${row.id}`)} 
+                    rounded 
                 >
                     Edit
                 </MDBBtn> 
-                <MDBBtn size="sm" color="danger" onClick={() => 
-                    alert(`Delete data with ID : ${row.id}`)} 
+                <MDBBtn size="sm" color="danger" 
+                    onClick={() => alert(`Delete data with ID : ${row.id}`)} 
                     rounded 
                 >
                     Delete

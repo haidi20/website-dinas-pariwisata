@@ -81,6 +81,7 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'SiteManager'], function
     });
     Route::group(['prefix' => '/menus'], function(){
         Route::get('/', 'MenuController@index');
+        Route::get('/select-menu', 'MenuController@select');
         // Route::post('/', 'MenuController@store');
         // Route::get('/{id}', 'MenuController@show');
         // Route::patch('/{id}', 'MenuController@update');
