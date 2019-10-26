@@ -98,7 +98,7 @@ export default class Posts extends Component {
                             <div className="options">
                                 <div className="btn-toolbar">
                                     <a data-toggle="modal" data-target="#modalCategory" className="btn btn-default" style={{marginRight:5}}><i className="fa fa-tasks"></i> Kategori</a>
-                                    <Link to="#" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Post</Link>
+                                    <Link to="/sitemanager/post/create" className="btn btn-primary"><i className="fa fa-plus"></i> Tambah Post</Link>
                                 </div>
                             </div>
                         </div>

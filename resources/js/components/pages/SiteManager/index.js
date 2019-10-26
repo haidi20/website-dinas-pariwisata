@@ -10,6 +10,7 @@ import Dashboard from './Dashboard';
 import Menu from './Menu';
 import CreateMenu from './Menu/create';
 import Posts from './Posts';
+import CreatePost from './Posts/create';
 import BreakingNews from './BreakingNews';
 import Pages from './Pages';
 import Images from './Images';
@@ -47,6 +48,8 @@ export default class AppSiteManager extends Component {
                             <Route path='/sitemanager/menu/create' component={CreateMenu} />
 
                             <Route path='/sitemanager/post' exact component={Posts} />
+                            <Route path='/sitemanager/post/create' exact component={CreatePost} />
+
                             <Route path='/sitemanager/breaking-news' exact component={BreakingNews} />
                             <Route path='/sitemanager/pages' exact component={Pages} />
 
