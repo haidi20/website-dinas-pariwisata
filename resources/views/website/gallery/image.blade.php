@@ -12,7 +12,7 @@
     <script>
         $(function(){
             $('.image').click(function(){
-                $('#show-gallery').modal('show').appendTo('body');
+                $('#show-gallery').modal('show');
 
                 $(".modal-gallery").attr('src', $(this).attr('data-source'))
             });
@@ -59,16 +59,17 @@
                     </div>
                     @endforelse
 
-                    <div class="center-button">
-                        <a href="#"><i class="fa fa-refresh"></i> More from featured</a>
-                    </div>
-
                 </div>
                 <!-- End grid box -->
 
             </div>
             <!-- End block content -->
         </div>
+
+        <div class="center-button">
+            <a href="#"><i class="fa fa-refresh"></i> More from featured</a>
+        </div>
+        <br><br>
     </section>
 <!-- End block-wrapper-section -->
 @endsection
