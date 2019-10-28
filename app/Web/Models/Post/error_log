@@ -1,0 +1,2 @@
+[20-Nov-2015 01:02:41 UTC] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/infopade/public_html/app/Models/Post/Post.php on line 8
+[20-Nov-2015 01:02:47 UTC] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/infopade/public_html/app/Models/Post/Category.php on line 7

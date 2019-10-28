@@ -1,19 +1,24 @@
-<?php
+<?php 
+namespace App\Http\Controllers\Sitemanager;
 
-namespace App\Http\Controllers\SiteManager;
-
+use App\Web\Models\User;
+use App\Web\Models\Setting;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class DashboardController extends Controller
+use Closure, Auth;
+
+class DashboardController extends BaseController
 {
-    public function __construct()
+	public function __construct(Request $request, User $user)
     {
-
+        parent::__construct();
+		$this->request = $request;
+		$this->user    = $user;
     }
 
-    public function index()
-    {
-        return view('sitemanager.index');
-    }
+	public function index()
+	{
+		$data = [];
+		return view('sitemanager.dashboard', compact('data'));
+	}
 }

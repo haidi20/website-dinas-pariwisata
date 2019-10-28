@@ -10,8 +10,9 @@
 
   <title>Sitemanager</title>
 
-  <link href="{{asset('avenger/assets/fonts/font-awesome/css/font-awesome.min.css')}}" rel='stylesheet' type='text/css'>
-  <link href="{{asset('quirk/quirk.css')}}" rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ asset('avenger/assets/fonts/font-awesome/css/font-awesome.min.css') }}">
+
+  <link rel="stylesheet" href="{{ asset('quirk/quirk.css') }}">
 
   <!-- <script src="../lib/modernizr/modernizr.js"></script> -->
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -40,27 +41,27 @@
               @endforeach
           </div>
       @endif
-        <form action="#">
-            <div class="form-group mb10">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="text" name="username" class="form-control" placeholder="Enter Username" />
-            </div>
-            </div>
-            <div class="form-group nomargin">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <input type="password" name="password" class="form-control" placeholder="Enter Password" />
-            </div>
-            </div>
-            <div>
-            <!-- <a href="#" class="forgot">Forgot password?</a> -->
-            &nbsp;
-            </div>
-            <div class="form-group">
-            <button type="submit" class="btn btn-success btn-quirk btn-block">Login</button>
-            </div>
-        </form>
+      {!! Form::open(['class' => '']) !!}
+        <div class="form-group mb10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            {!! Form::text('username', null, ['class'=>'form-control', 'placeholder' => 'Enter Username']) !!}
+          </div>
+        </div>
+        <div class="form-group nomargin">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            {!! Form::password('password', ['class'=>'form-control', 'placeholder' => 'Enter Password']) !!}
+          </div>
+        </div>
+        <div>
+          <!-- <a href="#" class="forgot">Forgot password?</a> -->
+          &nbsp;
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success btn-quirk btn-block">Login</button>
+        </div>
+      {!! Form::close() !!}
       <hr class="invisible">
     </div>
   </div><!-- panel -->
