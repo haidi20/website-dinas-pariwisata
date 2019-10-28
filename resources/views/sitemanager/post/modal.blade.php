@@ -8,7 +8,7 @@
 			</div>
 			<div class="modal-body">
 				<p class="text-center modal-loading">
-                    @fa('spin fa-spinner fa-2x')
+                    {!!fa('spin fa-spinner fa-2x')!!}
                 </p>
 				<table class="table table-striped" id="table-menu">
 					<tbody>

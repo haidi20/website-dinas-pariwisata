@@ -28,6 +28,7 @@ class MenusTableSeeder extends Seeder
                     "order" => $item['order'],
                     "status" => $item['status'],
                     "link" => $item['link'],
+                    "caption" => $item['caption'],
                 ]);
             }
         }

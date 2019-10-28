@@ -40,9 +40,9 @@
 						<li class="{{ active_menu('sitemanager/page*') }}">
 							<a href="{{ url('sitemanager', ['page']) }}">{!!fa('file-text-o')!!}<span>Pages</span></a>
 						</li>
-						<li class="{{ active_menu('sitemanager/slider*') }}">
+						{{-- <li class="{{ active_menu('sitemanager/slider*') }}">
 							<a href="{{ url('sitemanager', ['slider']) }}">{!!fa('sliders')!!}<span>Slider</span></a>
-						</li>
+						</li> --}}
 						<li class="{{ active_menu('sitemanager/media*') }}">
 							<a href="{{ url('sitemanager', ['media']) }}">{!!fa('comments-o')!!}<span>Social Media</span></a>
 						</li>

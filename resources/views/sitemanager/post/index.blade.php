@@ -20,9 +20,9 @@
             <div class="options">
 			    <div class="btn-toolbar">
 			    	@if($moduleTitle === 'Post')
-			        <a data-toggle="modal" href="#category" class="btn btn-default">@fa('tasks') Kategori</a>
+			        <a data-toggle="modal" href="#category" class="btn btn-default">{!!fa('tasks')!!} Kategori</a>
 			        @endif
-			        <a href="{{ url($moduleUrl, ['create']) }}" class="btn btn-primary">@fa('plus') Tambah {{ $moduleTitle }}</a>
+			        <a href="{{ url($moduleUrl, ['create']) }}" class="btn btn-primary">{!!fa('plus')!!} Tambah {{ $moduleTitle }}</a>
 			    </div>
 			</div>
         </div>

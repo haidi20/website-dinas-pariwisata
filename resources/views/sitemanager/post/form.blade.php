@@ -23,7 +23,7 @@
             <h1>Tambah</h1>
             <div class="options">
 			    <div class="btn-toolbar">
-			        <a href="{{ url($moduleUrl) }}" class="btn btn-default">@fa('reply') Kembali</a>
+			        <a href="{{ url($moduleUrl) }}" class="btn btn-default">{!!fa('reply')!!} Kembali</a>
 			    </div>
 			</div>
         </div>
@@ -55,7 +55,7 @@
 											{!! Form::hidden('link', old('slug'), ['id' => 'link', 'class' => 'form-control']) !!}
 											<div class="input-group-btn">
 												<a data-toggle="modal" href="#menu">
-													<button type="button" class="btn btn-info">@fa('link')</button>
+													<button type="button" class="btn btn-info">{!!fa('link')!!}</button>
 												</a>
 											</div>
 										</div>
@@ -127,9 +127,9 @@
 									<div class="row">
 										<div class="col-sm-11 col-sm-offset-1">
 											<a href="{{ url($moduleUrl) }}" class="btn-default btn">
-												@fa('reply') Kembali
+												{!!fa('reply')!!} Kembali
 											</a>
-											<button class="btn-primary btn" type="submit">@fa('save') Simpan</button>
+											<button class="btn-primary btn" type="submit">{!!fa('save')!!} Simpan</button>
 										</div>
 									</div>
 								</div>

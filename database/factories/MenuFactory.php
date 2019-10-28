@@ -14,8 +14,9 @@ $factory->define(Menu::class, function (Faker $faker) {
         "position" => "header",
         "order" => 1,
         "status" => null,
-        "caption" => "sebebas bebasnya",
+        "caption" => null,
         "link" => null,
         "icon" => null,
+        "lock" => 1,
     ];
 });

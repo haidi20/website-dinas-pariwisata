@@ -31,8 +31,8 @@ return [
     ],
     "menus" => [
         0 => [
-            "name"          => "home",
-            "caption"       => "bebas",
+            "name"          => "Home",
+            "caption"       => "home",
             "link"          => "home",
             "active_link"   => 1,
             "icon"          => null,
@@ -45,7 +45,7 @@ return [
         ],
         1 => [
             "name"          => "Image",
-            "caption"       => "bebas",
+            "caption"       => "image",
             "link"          => "image",
             "active_link"   => 1,
             "icon"          => null,
@@ -58,7 +58,7 @@ return [
         ],
         2 => [
             "name"          => "Video",
-            "caption"       => "bebas",
+            "caption"       => "video",
             "link"          => "video",
             "active_link"   => 1,
             "icon"          => null,
@@ -71,7 +71,7 @@ return [
         ],
         3 => [
             "name"          => "Contact",
-            "caption"       => "bebas",
+            "caption"       => "contact",
             "link"          => "contact",
             "active_link"   => 1,
             "icon"          => null,

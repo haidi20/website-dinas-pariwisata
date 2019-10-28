@@ -8,7 +8,7 @@
 			</div>
 			<div class="modal-body">
 				<p class="text-center modal-loading">
-                    @fa('spin fa-spinner fa-2x')
+                    {!!fa('spin fa-spinner fa-2x')!!}
                 </p>
 				<table class="table table-striped" id="table-category">
 					<thead>
@@ -18,7 +18,7 @@
 							<th width="100">Jumlah Post</th>
 							<th width="150" style="text-align: right;">
 								<!-- <a href="javascript:void(0)" onclick="addCategory()" class="btn btn-info btn-xs btn-label"><i class="fa fa-plus"></i>Tambah Kategori</a> -->
-								<button onclick="addCategory()" class="btn btn-info btn-xs">@fa('plus') Tambah Kategori</button>
+								<button onclick="addCategory()" class="btn btn-info btn-xs">{!!fa('plus')!!} Tambah Kategori</button>
 							</th>
 						</tr>
 					</thead>
@@ -50,7 +50,7 @@
 			</div>
 			<div class="modal-body">
 				<p class="text-center modal-loading">
-                    @fa('spin fa-refresh fa-2x')
+                    {!!fa('spin fa-refresh fa-2x')!!}
                 </p>
 
 				{!! Form::open(['url' => url($moduleUrl, ['category', 'save'])]) !!}

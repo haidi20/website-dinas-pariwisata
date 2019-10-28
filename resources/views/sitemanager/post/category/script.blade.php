@@ -62,6 +62,9 @@
         form = modal.find('form');
         loading = modal.find('.modal-loading');
 
+        title   = modal.find('h2.modal-title');
+        title.html('Edit Kategori Post');
+
         form.hide();
         loading.show();
         form.attr('action', saveUrl);
@@ -103,6 +106,9 @@
         /* Empty All Form */
         form.find('input:not([name="_token"])').val('');
 
+        title   = modal.find('h2.modal-title');
+        title.html('Buat Kategori Post');
+
         modal.modal('show');
     }
 
@@ -119,6 +125,7 @@
         }
 
         $.post(url, data, function(response){
+            console.log(response);
             if(response.success){
                 swal({
                     title: "Sudah Disimpan!",
@@ -180,8 +187,8 @@
         });
         
         $('#form-category').on('show.bs.modal', function(){
-            modal = $(this);
-            btn = modal.find('.btn-save');
+            modal   = $(this);
+            btn     = modal.find('.btn-save');
             modal.find('form').on('submit', function(e){
                 btn.click();
                 return false;

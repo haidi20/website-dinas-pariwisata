@@ -45,8 +45,9 @@ class CategoryController extends BaseController
 			$success = false;
 			$data = $category;
 		}else{
-			$category->name = $input['name'];
-			$category->slug = str_slug($category->name);
+			$category->name 	= $input['name'];
+			$category->slug 	= str_slug($category->name);
+			$category->active 	= 0;
 			$category->save();
 
 			$success = true;
