@@ -89,8 +89,8 @@
 										@endif
 										<td class="text-center">{!! $item->status_label !!}</td>
 										<td class="text-center">
-											<a href="{{ url($moduleUrl, ['edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">@fa('pencil')Edit</a>
-											<a href="javascript:void(0)" class="btn btn-danger btn-xs btn-label btn-delete" data-url="{{ url($moduleUrl, ['delete', $item->id]) }}">@fa('trash-o')Delete</a>
+											<a href="{{ url($moduleUrl, ['edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}Edit</a>
+											<a href="javascript:void(0)" class="btn btn-danger btn-xs btn-label btn-delete" data-url="{{ url($moduleUrl, ['delete', $item->id]) }}">{!!fa('trash-o')!!}Delete</a>
 										</td>
 									</tr>
 									@empty

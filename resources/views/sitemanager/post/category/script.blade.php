@@ -62,6 +62,7 @@
         form = modal.find('form');
         loading = modal.find('.modal-loading');
 
+        // merubah judul modal 
         title   = modal.find('h2.modal-title');
         title.html('Edit Kategori Post');
 
@@ -106,6 +107,7 @@
         /* Empty All Form */
         form.find('input:not([name="_token"])').val('');
 
+        // merubah judul modal 
         title   = modal.find('h2.modal-title');
         title.html('Buat Kategori Post');
 
@@ -155,7 +157,7 @@
                 row = new Array;
                 $.each(response, function(i, d){
                     var temp = $(template);
-                    temp.find('td:eq(0)').html(d.id);
+                    temp.find('td:eq(0)').html(i + 1);
                     temp.find('td:eq(1)').html(d.name);
                     temp.find('td:eq(2)').html(d.total_post);
                     temp.find('td:eq(3)').html(d.action);

@@ -104,6 +104,7 @@ class PostController extends BaseController
 		$post->type        = 'post';
 		$post->status      = $input['status'];
 		$post->author_id   = Auth::user()->id;
+		$post->read 	   = 0;
 
 		$post->save();
 
@@ -111,7 +112,7 @@ class PostController extends BaseController
 			$image = $this->filemanager->upload('file', $post, 'file');
 		}
 
-		flash_message('message', 'success', 'check', 'Data '.strtolower($this->moduleTitle).' "'.$post->name.'" telah disimpan', false);
+		flash_message('message', 'success', 'check', 'Data '.strtolower($this->moduleTitle).' "'.str_limit($post->title, 40).'" telah disimpan', false);
 
 		$redirect = url($this->moduleUrl);
 		return redirect($redirect);
