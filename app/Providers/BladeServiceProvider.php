@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Web\Commons\BladeExtend;
+// use App\Web\Commons\BladeExtend;
 
 class BladeServiceProvider extends ServiceProvider
 {
@@ -15,9 +15,9 @@ class BladeServiceProvider extends ServiceProvider
     public function register()
     {
         // BladeExtend::register();
-        Blade::directive('fa', function ($expression) {
-            return "&lt;?php echo fa({$expression}); ?&lt;";
-        });
+        // Blade::directive('fa', function ($expression) {
+        //     return "&lt;?php echo fa({$expression}); ?&lt;";
+        // });
     }
 
     /**
@@ -27,8 +27,8 @@ class BladeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::directive('fa', function ($expression) {
-            return "&lt;?php echo fa({$expression}); ?&lt;";
-        });
+        // Blade::directive('fa', function ($expression) {
+        //     return "&lt;?php echo fa({$expression}); ?&lt;";
+        // });
     }
 }
