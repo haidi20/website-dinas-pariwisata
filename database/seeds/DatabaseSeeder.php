@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(SharesTableSeeder::class);
         // $this->call(SettingsTableSeeder::class);
         // $this->call(InboxsTableSeeder::class);
-        // $this->call(MenusTableSeeder::class);
+        $this->call(MenusTableSeeder::class);
         // $this->call(PagesTableSeeder::class);
     }
 }
