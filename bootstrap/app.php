@@ -41,6 +41,9 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+// $app->withFacades();
+$app->alias('blade.compiler', Illuminate\View\Compilers\BladeCompiler::class);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

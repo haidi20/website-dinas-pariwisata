@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Models\Menu;
+use App\Web\Models\Menu;
 
 class MenusTableSeeder extends Seeder
 {
@@ -13,19 +13,24 @@ class MenusTableSeeder extends Seeder
      */
     public function run()
     {
-        Menu::truncate();
+        // Menu::truncate();
 
         $menus = config('library.menus');
 
         foreach ($menus as $index => $item) {
-            factory(Menu::class)->create([
-                "name" => $item['name'],
-                "color" => $item['color'],
-                "parent_id" => $item['parent_id'],
-                "position" => $item['position'],
-                "order" => $item['order'],
-                "status" => $item['status'],
-            ]);
+            $validate = Menu::where('name', $item['name'])->first();
+            if($validate == null){
+                factory(Menu::class)->create([
+                    "name" => $item['name'],
+                    "color" => $item['color'],
+                    "parent_id" => $item['parent_id'],
+                    "position" => $item['position'],
+                    "order" => $item['order'],
+                    "status" => $item['status'],
+                    "link" => $item['link'],
+                    "caption" => $item['caption'],
+                ]);
+            }
         }
     }
 }

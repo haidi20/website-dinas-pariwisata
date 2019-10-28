@@ -31,53 +31,73 @@ return [
     ],
     "menus" => [
         0 => [
-            "name"          => "home",
+            "name"          => "Home",
+            "caption"       => "home",
+            "link"          => "home",
+            "active_link"   => 1,
+            "icon"          => null,
             "color"         => "#74B430",
             "parent_id"     => 0,
-            "position"      => "menu",
+            "position"      => "header",
             "order"         => 1,
-            "status"        => "static"
+            "status"        => 1,
+            "lock"          => 0,
         ],
         1 => [
             "name"          => "Image",
+            "caption"       => "image",
+            "link"          => "image",
+            "active_link"   => 1,
+            "icon"          => null,
             "color"         => "#33A3F1",
             "parent_id"     => 0,
-            "position"      => "menu",
+            "position"      => "header",
             "order"         => 2,
-            "status"        => "static"
+            "status"        => 1,
+            "lock"          => 0,
         ],
         2 => [
             "name"          => "Video",
+            "caption"       => "video",
+            "link"          => "video",
+            "active_link"   => 1,
+            "icon"          => null,
             "color"         => "#F58021",
             "parent_id"     => 0,
-            "position"      => "menu",
+            "position"      => "header",
             "order"         => 3,
-            "status"        => "static"
+            "status"        => 1,
+            "lock"          => 0,
         ],
         3 => [
             "name"          => "Contact",
+            "caption"       => "contact",
+            "link"          => "contact",
+            "active_link"   => 1,
+            "icon"          => null,
             "color"         => "#AA35D6",
             "parent_id"     => 0,
-            "position"      => "menu",
+            "position"      => "header",
             "order"         => 4,
-            "status"        => "static"
+            "status"        => 1,
+            "lock"          => 0,
         ],
-        4 => [
-            "name"          => "About",
-            "color"         => "#224877",
-            "parent_id"     => 0,
-            "position"      => "menu",
-            "order"         => 5,
-            "status"        => "dynamic"
-        ],
-        5 => [
-            "name"          => "SubAbout",
-            "color"         => null,
-            "parent_id"     => 5,
-            "position"      => "submenu",
-            "order"         => 1,
-            "status"        => "dynamic"
-        ],
+        // 4 => [
+        //     "name"          => "About",
+        //     "color"         => "#224877",
+        //     "parent_id"     => 0,
+        //     "position"      => "menu",
+        //     "order"         => 5,
+        //     "status"        => "dynamic"
+        // ],
+        // 5 => [
+        //     "name"          => "SubAbout",
+        //     "color"         => null,
+        //     "parent_id"     => 5,
+        //     "position"      => "submenu",
+        //     "order"         => 1,
+        //     "status"        => "dynamic"
+        // ],
     ],
     "shares" => [
         0 => [

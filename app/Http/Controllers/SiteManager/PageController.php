@@ -1,96 +1,129 @@
-<?php
+<?php 
+namespace App\Http\Controllers\Sitemanager;
 
-namespace App\Http\Controllers\SiteManager;
-
-use App\Models\Page;
-use App\Models\Menu;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Web\Models\Post\Post;
+use App\Web\Models\Menu;
 
-class PageController extends Controller
+use Auth;
+
+class PageController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+	public function __construct(Request $request, Post $post, Menu $menu)
+	{
+		parent::__construct();
+		$this->moduleUrl    = $this->baseUrl('page');
+		$this->baseTemplate = $this->template('post');
+		$this->request      = $request;
+		$this->post         = $post;
+		$this->menu         = $menu;
+
+		view()->share([
+			'baseUrl'     => $this->baseUrl(),
+			'moduleUrl'   => $this->moduleUrl,
+            'moduleTitle' => $this->moduleTitle = 'Page'
+		]);
+	}
+
+	public function index()
+	{
+		$q       = request('q');
+		$by      = request('by');
+		$perpage = (request('perpage')) ? request('perpage') : 10;
+
+		$posts = $this->post->type('page');
+
+		if($by){
+			$posts = $posts->search($by, $q);
+		}
+
+		$total_record = $posts->count();
+		$posts        = $posts->latest()->paginate($perpage);
+
+        return $this->template('index', compact('posts', 'total_record'));
+	}
+
+	public function create()
+	{
+		return $this->form();
+	}
+
+	public function edit($id)
+	{
+		return $this->form($id);
+	}
+
+	public function postCreate()
+	{
+		return $this->save();
+	}
+
+	public function postEdit($id)
+	{
+		return $this->save($id);
+	}
+
+	public function menu()
     {
-        $pages = DB::table('pages')->get();
-
-        $pages->map(function($item){
-            $item->menus = Menu::where('id', $item->menu_id)->first();
-
-            return $item;
-        });
-
-        return $this->sendResponse($pages->toArray(), "Pages retrieved successfully.");
+        $link = $this->menu->all();
+        return $link->toArray();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+	public function form($id=null)
+	{
+		if($id)
+		{
+			$post = $this->post->find($id);
+			session()->flash('_old_input', $post);
+		}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+		$link = $this->menu->pluck("link", "id");
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Page  $page
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Page $page)
-    {
-        //
-    }
+		return $this->template('form', compact('link'));
+	}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Page  $page
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Page $page)
-    {
-        //
-    }
+	public function save($id=null)
+	{
+		$input = $this->request->except('_token');
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Page  $page
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Page $page)
-    {
-        //
-    }
+		$this->validate($this->request, [
+			'url' 		=> 'required',
+			'title' 	=> 'required',
+			'content' 	=> 'required',
+		]);	
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Page  $page
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Page $page)
+		if($id){
+			$post = $this->post->find($id);
+		}else{
+			$post = new $this->post;
+		}
+
+		$post->title       = $input['title'];
+		$post->menu_id     = 2;
+		$post->slug        = str_slug($input['link']);
+		$post->content     = $input['content'];
+		$post->type        = 'page';
+		$post->status      = $input['status'];
+		$post->author_id   = Auth::user()->id;
+
+		$post->save();
+
+		flash_message('message', 'success', 'check', 'Data '.strtolower($this->moduleTitle).' telah disimpan', false);
+
+		$redirect = url($this->moduleUrl);
+		return redirect($redirect);
+	}
+
+	public function delete($id)
     {
-        //
+        $post = $this->post->find($id);
+
+        if( ! is_object($post) ) return false;
+
+        $post->delete();
+
+        flash_message('message', 'success', 'check', 'Data '.strtolower($this->moduleTitle).' telah dihapus', false);
+        return redirect()->back();
     }
 }
