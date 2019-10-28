@@ -17,16 +17,22 @@ class MediaController extends BaseController
         view()->share([
             'baseUrl'     => $this->baseUrl(),
             'moduleUrl'   => $this->moduleUrl,
-            'moduleTitle' => $this->moduleTitle = 'Media Sosial'
+            'moduleTitle' => $this->moduleTitle = $request->route('type') == 'medsos' ?  'Media Sosial' : 'Share'
         ]);
     }
 
-    public function index()
+    // public function index()
+    // {
+    //     $url = url($this->moduleUrl, ['type', 'image']);
+    //     return redirect($url);
+    // }
+
+    public function type($type)
     {
         $q       = request('q');
         $perpage = (request('perpage')) ? request('perpage') : 10;
 
-        $media   = $this->media;
+        $media   = $this->media->where('type', $type);
 
         if($q){
             $media = $media->search('name', $q);
@@ -35,48 +41,58 @@ class MediaController extends BaseController
         $total_record = $media->count();
         $media        = $media->sorted('id', 'DESC')->paginate($perpage);
 
-        return $this->template('index', compact('media', 'total_record'));
+        return $this->template('index', compact('media', 'total_record', 'type'));
     }
 
-    public function create()
+    public function create($type)
     {
-        return $this->form();
+        return $this->form($type);
     }
 
-    public function postCreate()
+    public function postCreate($type)
     {
-        return $this->save();
+        return $this->save($type);
     }
 
-    public function edit($id)
+    public function edit($type, $id)
     {
-        return $this->form($id);
+        return $this->form($type, $id);
     }
 
-    public function postEdit($id)
+    public function postEdit($type, $id)
     {
-        return $this->save($id);
+        return $this->save($type, $id);
     }
 
-    public function form($id = null)
+    public function form($type, $id = null)
     {
         if($id){
             $media = $this->media->find($id);
             session()->flash('_old_input', $media);
         }
 
-        $social_media = config('sitemanager.social_media');
-        return $this->template('form', compact('social_media'));
+        if($type == 'medsos'){
+            $media = config('sitemanager.social_media');
+        }elseif($type == 'share'){
+            $media = config('sitemanager.share');
+        }
+
+        return $this->template('form', compact('media', 'type'));
     }
 
-    public function save($id = null)
+    public function save($type, $id = null)
     {
         $input = $this->request->except('_token');
 
         $this->validate($this->request, [
             'name' => 'required',
-            'link' => 'required'
         ]);
+
+        if($type == 'medsos'){
+            $this->validate($this->request, [
+                'link' => 'required',
+            ]);
+        }
 
         if($id) {
             $media = $this->media->find($id);
@@ -84,12 +100,16 @@ class MediaController extends BaseController
             $media = new $this->media;
         }
 
+        if($type == 'medsos'){
+            $media->link = $input['link'];
+        }
+
         $media->name = $input['name'];
-        $media->link = $input['link'];
+        $media->type = $type;
         $media->save();
 
         flash_message('message', 'success', 'check', 'Data '.strtolower($this->moduleTitle).' "'.$media->name.'" telah disimpan', false);
-        return redirect(url($this->moduleUrl));
+        return redirect(url($this->moduleUrl, ['type', $type]));
     }
 
     public function delete($id)

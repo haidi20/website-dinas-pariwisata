@@ -24,6 +24,12 @@ return[
 		'instagram',
 		'google',
 		'youtube'
+	],
+
+	'share' => [
+		'facebook',
+		'twitter',
+		'instagram',
 	]
 
 ];

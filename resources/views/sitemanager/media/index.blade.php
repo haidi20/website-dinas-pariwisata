@@ -20,7 +20,7 @@ $(function() {
             <h1>{{ $moduleTitle }}</h1>
             <div class="options">
                 <div class="btn-toolbar">
-					<a href="{{ url($moduleUrl, 'create') }}" class="btn btn-primary">{!!fa('plus')!!}dd {{ $moduleTitle }}</a>
+					<a href="{{ url($moduleUrl, ['create', $type]) }}" class="btn btn-primary">{!!fa('plus')!!} {{ $moduleTitle }}</a>
                 </div>
             </div>
         </div>

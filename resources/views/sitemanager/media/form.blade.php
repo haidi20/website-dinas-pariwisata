@@ -32,18 +32,20 @@
 									<div class="col-sm-10">
 										<select class="form-control" name="name">
 											<option value=""></option>
-											@foreach($social_media as $item)
+											@foreach($media as $item)
 											<option value="{{ $item }}" @if(old('name') == $item) selected="selected" @endif>{{ $item }}</option>
 											@endforeach
 										</select>
 									</div>
 								</div>
+								@if($type == 'medsos')
 								<div class="form-group {{ ($errors->first('link')) ? 'has-error' : '' }}">
 									{!! Form::label('link', 'Alamat Link', ['class' => 'col-sm-2 control-label']) !!}
 									<div class="col-sm-10">
 										{!! Form::text('link', old('link'), ['class' => 'form-control', 'placeholder' => 'Masukan Alamat Link']) !!}
 									</div>
 								</div>
+								@endif
 								<div class="panel-footer">
 									<div class="row">
 										<div class="col-sm-10 col-sm-offset-2">
