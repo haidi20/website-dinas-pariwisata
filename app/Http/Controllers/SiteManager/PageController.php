@@ -87,6 +87,12 @@ class PageController extends BaseController
 	{
 		$input = $this->request->except('_token');
 
+		$this->validate($this->request, [
+			'url' 		=> 'required',
+			'title' 	=> 'required',
+			'content' 	=> 'required',
+		]);	
+
 		if($id){
 			$post = $this->post->find($id);
 		}else{

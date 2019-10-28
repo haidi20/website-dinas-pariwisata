@@ -20,7 +20,7 @@ $(function() {
             <h1>{{ $moduleTitle }}</h1>
             <div class="options">
                 <div class="btn-toolbar">
-					<a href="{{ url($moduleUrl, 'create') }}" class="btn btn-primary">@fa('plus') Add {{ $moduleTitle }}</a>
+					<a href="{{ url($moduleUrl, 'create') }}" class="btn btn-primary">{!!fa('plus')!!}dd {{ $moduleTitle }}</a>
                 </div>
             </div>
         </div>
@@ -65,8 +65,8 @@ $(function() {
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->link }}</td>
                                         <td class="text-center">
-                                            <a href="{{ url($moduleUrl, ['edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">@fa('pencil')Edit</a>
-                                            <a href="javascript:void(0)" data-url="{{ url($moduleUrl, ['delete', $item->id]) }}"  class="btn btn-danger btn-xs btn-label btn-delete">@fa('trash-o')Delete</a>
+                                            <a href="{{ url($moduleUrl, ['edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}Edit</a>
+                                            <a href="javascript:void(0)" data-url="{{ url($moduleUrl, ['delete', $item->id]) }}"  class="btn btn-danger btn-xs btn-label btn-delete">{!!fa('trash-o')!!}Delete</a>
                                         </td>
                                     </tr>
                                     @empty
