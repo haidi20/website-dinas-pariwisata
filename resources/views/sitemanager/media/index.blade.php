@@ -65,7 +65,9 @@ $(function() {
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->link }}</td>
                                         <td class="text-center">
-                                            <a href="{{ url($moduleUrl, ['edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}Edit</a>
+                                            @if($type == 'medsos')
+                                            <a href="{{ url($moduleUrl, ['edit', $type, $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}Edit</a>
+                                            @endif
                                             <a href="javascript:void(0)" data-url="{{ url($moduleUrl, ['delete', $item->id]) }}"  class="btn btn-danger btn-xs btn-label btn-delete">{!!fa('trash-o')!!}Delete</a>
                                         </td>
                                     </tr>

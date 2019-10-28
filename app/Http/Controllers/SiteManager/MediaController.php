@@ -1,18 +1,21 @@
 <?php 
 namespace App\Http\Controllers\Sitemanager;
 
+use App\Web\Services\Sitemanager\ManageMedia;
 use Illuminate\Http\Request;
 use App\Web\Models\Media;
 
+
 class MediaController extends BaseController
 {
-	public function __construct(Request $request, Media $media)
+	public function __construct(Request $request, Media $media, ManageMedia $service)
     {
         parent::__construct();
 		$this->moduleUrl    = $this->baseUrl('media');
 		$this->baseTemplate = $this->template('media');
 		$this->request      = $request;
 		$this->media        = $media;
+		$this->service      = $service;
 
         view()->share([
             'baseUrl'     => $this->baseUrl(),
@@ -71,13 +74,9 @@ class MediaController extends BaseController
             session()->flash('_old_input', $media);
         }
 
-        if($type == 'medsos'){
-            $media = config('sitemanager.social_media');
-        }elseif($type == 'share'){
-            $media = config('sitemanager.share');
-        }
+        $listMedia = $this->service->listMedia($type, $id);
 
-        return $this->template('form', compact('media', 'type'));
+        return $this->template('form', compact('listMedia', 'type'));
     }
 
     public function save($type, $id = null)
