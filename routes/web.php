@@ -37,6 +37,10 @@ Route::group(['prefix' => 'fileman'], function(){
 	Route::post('mce-upload', 'FilemanagerController@postMceUpload');
 });
 
+Route::group(['prefix' => 'thumbnail'], function(){
+	Route::get('fit/{id}/{width}/{height}', 'ThumbnailController@fit')->where('id', '[0-9]+')->where('width', '[0-9]+')->where('height', '[0-9]+');
+});
+
 Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager', 'middleware' => 'auth'], function(){
 	Route::get('/', 'DashboardController@index');
 

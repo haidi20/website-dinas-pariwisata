@@ -90,7 +90,7 @@ $('.close').on('click', function(){
             {{ ucfirst($type) }}</h1>
             <div class="options">
 			    <div class="btn-toolbar">
-			        <a href="{{ url($moduleUrl, ['type', $type]) }}" class="btn btn-default">{!!fa('reply')!!} Kembali</a>
+			        <a href="{{ url($moduleUrl, ['type', $type]) }}" class="btn btn-default">{!! fa('reply') !!} Kembali</a>
 			    </div>
 			</div>
         </div>
@@ -106,9 +106,7 @@ $('.close').on('click', function(){
 							<h2>Form {{ $moduleTitle }} {{ ucfirst($type) }}</h2>
 						</div>
 						<div class="panel-body">
-							{{-- {!! Form::open(['class' => 'form-horizontal', 'files' => true]) !!} --}}
-							<form action="{{url($moduleUrl, ['create', $type])}}" method="POST" enctype="multipart/form-data">
-								@csrf
+							{!! Form::open(['class' => 'form-horizontal', 'files' => true]) !!}
 								<div class="form-group {{ has_error($errors, 'caption') }}">
 									{!! Form::label('caption', ($type == 'plant') ? 'Nama' : 'Judul', ['class' => 'col-sm-2 control-label']) !!}
 									<div class="col-sm-10">
@@ -131,12 +129,10 @@ $('.close').on('click', function(){
 								</div>
 								@endif
 
-								<div class="form-group">
-									{!! Form::label('file', ($type === 'video') ? ucfirst($type).' from youtube' : 'Image', ['class' => 'col-sm-2 control-label']) !!}
-									<div class="col-sm-10">
-										@if($type === 'video')
-											{!! Form::text('link', old('link'), ['class' => 'form-control', 'placeholder' => ($type == 'video') ? 'masukkan link video youtube' : '']) !!}
-										@else
+								@if($type == 'image')
+									<div class="form-group">
+										{!! Form::label('file', ($type === 'video') ? ucfirst($type).' from youtube' : 'Image', ['class' => 'col-sm-2 control-label']) !!}
+										<div class="col-sm-10">
 											<div class="fileinput fileinput-new" data-provides="fileinput">
 												<span class="btn btn-default btn-file">
 													<span class="fileinput-new">Select file</span>
@@ -149,11 +145,22 @@ $('.close').on('click', function(){
 											<hr>
 											<div class="preview"></div>
 											@if(old())
-											{!! old('small_preview') !!}
+												{!! old('small_preview') !!}
 											@endif
-										@endif
+										</div>
 									</div>
-								</div>
+								@else
+									<div class="form-group">
+										{!! Form::label('link', 'Alamat Link Youtube', ['class' => 'col-sm-2 control-label']) !!}
+										<div class="col-sm-10">
+											{!! Form::text('link', old('link'), ['class' => 'form-control', 'placeholder' => ($type === 'video') ? 'ex : https://www.youtube.com/watch?v=uVdV-lxRPFo' : 'masukkan link']) !!}
+											@if(old())
+											<hr>
+											{!! old('preview') !!}
+											@endif
+										</div>
+									</div> 
+								@endif
 								
 								{{-- <div class="form-group">
 									{!! Form::label('link', 'Alamat Link Youtube', ['class' => 'col-sm-2 control-label']) !!}
@@ -171,14 +178,13 @@ $('.close').on('click', function(){
 									<div class="row">
 										<div class="col-sm-10 col-sm-offset-2">
 											<a href="{{ url($moduleUrl, ['type', $type]) }}" class="btn-default btn">
-												{!!fa('reply')!!} Kembali
+												{!! fa('reply') !!} Kembali
 											</a>
-											<button class="btn-primary btn" type="submit">{!!fa('save')!!} Simpan</button>
+											<button class="btn-primary btn" type="submit">{!! fa('save') !!} Simpan</button>
 										</div>
 									</div>
 								</div>
-							{{-- {!! Form::close() !!} --}}
-							</form>
+							{!! Form::close() !!}
 						</div>
 					</div>
 
