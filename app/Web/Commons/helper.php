@@ -71,6 +71,15 @@ if( ! function_exists('image_fit') )
     }
 }
 
+if( ! function_exists('thumbnail') )
+{
+    function thumbnail($link)
+    {
+        parse_str( parse_url( $link, PHP_URL_QUERY ), $code );
+        return asset("https://img.youtube.com/vi/".$code['v']."/0.jpg");
+    }
+}
+
 if( ! function_exists('table_row_number') ){
     function table_row_number($paginate, $index)
     {

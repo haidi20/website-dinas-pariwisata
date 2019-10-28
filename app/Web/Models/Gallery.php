@@ -61,6 +61,8 @@ class Gallery extends Model
 
     public function preview($width=null, $height=null, $link=false)
     {
+        $linkYoutube = null;
+
         if( is_object($this->image) ){
             if($width || $height){
                 $url = image_fit($this->image->id, (int)$width, $height);
@@ -69,6 +71,14 @@ class Gallery extends Model
                 $url = asset('storages/image/'.$this->image->name);
                 $style = '';
             }
+        }elseif($this->type == 'video'){
+            $url    = thumbnail($this->link);
+            $style = 'style="min-height: ' . $height .'px"';
+
+            parse_str( parse_url( $this->link, PHP_URL_QUERY ), $my_array_of_vars );
+            $vid = $my_array_of_vars['v'];
+            $embed_url = str_replace('watch?v=', 'embed/', $this->link);
+            $linkYoutube   = $embed_url;
         }else{
             if($width || $height){
                 $url = 'http://placehold.it/' . $width . 'x' . $height;
@@ -80,7 +90,13 @@ class Gallery extends Model
 
         if($link) return $url;
 
-        return '<img src="'.$url.'" class="img-responsive" data-url-edit="'.$this->url_edit.'" data-url-delete="'.$this->url_delete.'" data-category="'.$this->type.'">';
+        return '<img src="'.$url.'" 
+                    class="img-responsive" 
+                    data-url-edit="'.$this->url_edit.'" 
+                    data-url-delete="'.$this->url_delete.'" 
+                    data-category="'.$this->type.'"
+                    data-link="'.$linkYoutube.'"
+                    >';
     }
 
     public function getFormatTagsAttribute()

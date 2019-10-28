@@ -35,7 +35,7 @@
     <div class="panel-body">
       @if (count($errors) > 0)
           <div class="alert alert-dismissable alert-danger">
-              @fa('warning') <strong>Error :</strong><br>
+              {!! fa('warning') !!} <strong>Error :</strong><br>
               @foreach ($errors->all() as $error)
                   {{ $error }}<br>
               @endforeach

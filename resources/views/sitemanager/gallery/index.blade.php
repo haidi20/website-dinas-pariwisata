@@ -61,6 +61,8 @@
         link = element.find("img").data('link');
         category = element.find("img").data('category');
 
+        console.log(link);
+
         e.preventDefault();
         var img = $(this).find('img').attr("src");
         var imgname = $(this).closest(".item-wrapper").attr("data-name");
@@ -154,12 +156,12 @@
                             <div class="row">
                                 <div class="col-md-9">
                                     <div class="clearfix">
-                                        {{-- <div class="btn-group pull-left" id="galleryfilter">
+                                        <div class="btn-group pull-left" id="galleryfilter">
                                             <button class="btn btn-default active" data-group="all">All</button>
                                             @foreach($tags as $tag)
                                             <button class="btn btn-default" data-group="{{ $tag }}">{{ ucfirst($tag) }}</button>
                                             @endforeach
-                                        </div> --}}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -175,7 +177,7 @@
                                     <hr style="mt0 mb10">
 
                                     <ul class="gallery row">
-                                    {{-- @foreach($gallery as $item)
+                                    @foreach($gallery as $item)
                                         <div data-groups='{{ $item->gallery_tags }}' class="item-wrapper col-md-3" data-name="{{ $item->caption }}">
                                             <div class="item">
                                                 {!! $item->preview_original !!}
@@ -186,7 +188,7 @@
                                     </ul>
                                     <div class="text-right">
                                         {!! str_replace('/?', '?', $gallery->links()) !!}
-                                    </div> --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
