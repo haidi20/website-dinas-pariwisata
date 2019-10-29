@@ -15,7 +15,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        Post::truncate();
+        // Post::truncate();
 
         $start = Carbon::now()->subMonth()->startOfMonth();
         $end = Carbon::now()->subMonth()->endOfMonth();
