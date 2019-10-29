@@ -15,7 +15,7 @@ class CustomSocialMediaTable extends Migration
     {
         Schema::table('social_media', function (Blueprint $table) {
             $table->string('type');
-            $table->string('link')->nullable()->change();
+            $table->string('link')->nullable();
         });
     }
 
