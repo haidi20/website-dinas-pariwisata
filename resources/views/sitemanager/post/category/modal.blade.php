@@ -58,6 +58,10 @@
                     <div class="form-group">
                         {!! Form::label('name', 'Nama Kategori', ['class' => 'control-label']) !!}
                         {!! Form::text('name', old('name'), ['class' => 'form-control form-control']) !!}
+					</div>
+					<div class="form-group">
+						{!! Form::label('name', 'Warna Kategori', ['class' => 'control-label']) !!}
+						<input type="color" class="form-control col-sm-2" name="color">
                     </div>
                 {!! Form::close() !!}
 

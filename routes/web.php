@@ -84,6 +84,11 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager', 'middlewa
 		Route::post('category/save', 'CategoryController@save');
 		Route::post('category/save/{id}', 'CategoryController@save');
 		Route::post('category/delete/{id}', 'CategoryController@delete');
+
+	});
+
+	Route::group(['prefix' => 'breaking-news'], function(){
+		Route::get('/', 'BreakingNewsController@index');
 	});
 	
 	Route::group(['prefix' => 'page'], function(){

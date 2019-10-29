@@ -37,12 +37,12 @@
 						<li class="{{ active_menu('sitemanager/post*') }}">
 							<a href="{{ url('sitemanager', ['post']) }}">{!!fa('file-text')!!}<span>Posts</span></a>
 						</li>
+						<li class="{{ active_menu('sitemanager/breaking-news') }}">
+							<a href="{{ url('sitemanager', ['breaking-news']) }}">{!!fa('newspaper-o')!!}<span>Breaking News</span></a>
+						</li>
 						<li class="{{ active_menu('sitemanager/page*') }}">
 							<a href="{{ url('sitemanager', ['page']) }}">{!!fa('file-text-o')!!}<span>Pages</span></a>
 						</li>
-						{{-- <li class="{{ active_menu('sitemanager/slider*') }}">
-							<a href="{{ url('sitemanager', ['slider']) }}">{!!fa('sliders')!!}<span>Slider</span></a>
-						</li> --}}
 						<li class="{{ active_menu('sitemanager/media/medsos*') }}">
 							<a href="{{ url('sitemanager', ['media', 'medsos']) }}">{!!fa('comments-o')!!}<span>Social Media</span></a>
 						</li>

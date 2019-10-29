@@ -30,7 +30,7 @@ class HomeController extends BaseController
         $lastPosts          = $this->postRepo->last($limit = 6);
         $categories         = $this->categoryRepo->all();
         $popularPosts       = $this->postRepo->popular($limit = 6);
-        return $limitSixPosts      = $this->postRepo->limit(7);
+        $limitSixPosts      = $this->postRepo->limit(7);
         $limitThreePosts    = $this->postRepo->limit(3);
         $breakingNewsPosts  = $this->postRepo->breakingNews();
 
