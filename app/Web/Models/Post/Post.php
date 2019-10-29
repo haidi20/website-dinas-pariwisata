@@ -9,7 +9,7 @@ use Session;
 
 class Post extends Model
 {
-	protected $appends = ['url_slug', 'small_preview', 'preview'];
+    protected $appends = ['url_slug', 'small_preview', 'preview'];
 
     public function scopeSorted($query, $by='id', $sort='ASC')
     {
@@ -222,6 +222,14 @@ class Post extends Model
         $template = '<span class="label label-default" style="background-color:%s">%s :</span>';
 
         return sprintf($template, $color, $this->category->name);
+    }
+
+    public function getColorCategoryAttribute()
+    {
+        if($this->category)
+        {
+            return $this->category->color;
+        }
     }
 
     public function getStatusLabelAttribute()
