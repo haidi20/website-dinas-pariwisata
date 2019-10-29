@@ -3,7 +3,8 @@ namespace App\Web\Models\Post;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Lang;
-use Yangqi\Htmldom\Htmldom;
+// use Yangqi\Htmldom\Htmldom;
+use Sunra\PhpSimple\HtmlDomParser;
 use Session;
 
 class Post extends Model
@@ -133,7 +134,7 @@ class Post extends Model
 
     public function getImageInContentAttribute()
     {
-        $html = new Htmldom($this->content);
+        $html = HtmlDomParser::str_get_html($this->content);
         return array_pluck($html->find('img'), 'src');
     }
 

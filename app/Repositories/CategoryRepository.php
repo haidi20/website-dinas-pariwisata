@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\Category;
+use App\Web\Models\Post\Category;
 
 class CategoryRepository {
     public function all(){

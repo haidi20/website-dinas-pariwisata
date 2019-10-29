@@ -110,6 +110,13 @@
 								-->
 								{!! Form::hidden('position', 'header', ['class' => 'form-control']) !!}
 								<!-- -->
+
+								<div class="form-group">
+									{!! Form::label('warna', 'Warna', ['class' => 'col-sm-2 control-label']) !!}
+									<div class="col-sm-2">
+										{!! Form::color('color', old('color'), ['class' => 'form-control', 'placeholder' => '']) !!}
+									</div>
+								</div>
 								
 								<div class="form-group">
 									{!! Form::label('order', 'Urutan', ['class' => 'col-sm-2 control-label']) !!}

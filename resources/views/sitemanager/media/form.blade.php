@@ -10,7 +10,7 @@
             <h1>{{ (old('id')) ? 'Edit' : 'Add' }} {{ $moduleTitle }}</h1>
             <div class="options">
 			    <div class="btn-toolbar">
-			        <a href="{{ url($moduleUrl, ['type', $type]) }}" class="btn btn-default">{!! fa('reply')!!} Back</a>
+			        <a href="{{ url($moduleUrl, [$type]) }}" class="btn btn-default">{!! fa('reply')!!} Back</a>
 			    </div>
 			</div>
         </div>
@@ -49,7 +49,7 @@
 								<div class="panel-footer">
 									<div class="row">
 										<div class="col-sm-10 col-sm-offset-2">
-											<a href="{{ url($moduleUrl, ['type', $type]) }}" class="btn-default btn">
+											<a href="{{ url($moduleUrl, [$type]) }}" class="btn-default btn">
 												{!! fa('reply') !!} Back
 											</a>
 											<button class="btn-primary btn" type="submit">{!! fa('save') !!} Save</button>

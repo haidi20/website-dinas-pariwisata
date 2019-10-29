@@ -49,6 +49,11 @@ class PostController extends BaseController
         return $this->template('index', compact('posts', 'total_record'));
 	}
 
+	public function breaking_news()
+	{
+		return view('sitemanager.post.breaking_news.index');
+	}
+
 	public function create()
 	{
 		return $this->form();

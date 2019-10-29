@@ -20,7 +20,7 @@ $(function() {
             <h1>{{ $moduleTitle }}</h1>
             <div class="options">
                 <div class="btn-toolbar">
-					<a href="{{ url($moduleUrl, ['create', $type]) }}" class="btn btn-primary">{!!fa('plus')!!} {{ $moduleTitle }}</a>
+					<a href="{{ url($moduleUrl, [$type, 'create']) }}" class="btn btn-primary">{!!fa('plus')!!} {{ $moduleTitle }}</a>
                 </div>
             </div>
         </div>
@@ -54,7 +54,9 @@ $(function() {
                                     <tr>
                                         <th class="text-center" width="40">No</th>
                                         <th width="300">Nama</th>
+                                        @if($type == 'medsos')
                                         <th>link</th>
+                                        @endif
                                         <th class="text-center" width="140">Actions</th>
                                     </tr>
                                 </thead>
@@ -63,10 +65,12 @@ $(function() {
                                     <tr>
                                         <td>{{ table_row_number($media, $index) }}</td>
                                         <td>{{ $item->name }}</td>
+                                        @if($type == 'medsos')
                                         <td>{{ $item->link }}</td>
+                                        @endif
                                         <td class="text-center">
                                             @if($type == 'medsos')
-                                            <a href="{{ url($moduleUrl, ['edit', $type, $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}Edit</a>
+                                            <a href="{{ url($moduleUrl, [$type, 'edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}Edit</a>
                                             @endif
                                             <a href="javascript:void(0)" data-url="{{ url($moduleUrl, ['delete', $item->id]) }}"  class="btn btn-danger btn-xs btn-label btn-delete">{!!fa('trash-o')!!}Delete</a>
                                         </td>
