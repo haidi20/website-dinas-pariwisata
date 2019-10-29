@@ -15,7 +15,7 @@ class CustomMenusTable extends Migration
     {
         Schema::table('menus', function (Blueprint $table) {
             $table->string('color')->nullable();
-            $table->string('icon')->nullable();
+            $table->string('icon')->nullable()->change();
         });
     }
 
