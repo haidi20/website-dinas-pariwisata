@@ -143,4 +143,7 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager', 'middlewa
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){
+	return redirect('/');
+});

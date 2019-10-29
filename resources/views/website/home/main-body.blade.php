@@ -19,13 +19,13 @@
                             <div class="col-md-6">
                                 <div class="news-post image-post2">
                                     <div class="post-gallery">
-                                        <img src='{{asset("images/$firstPost->image")}}' alt="" >
+                                        {!!$firstPost->preview_single!!}
                                         <div class="hover-box">
                                             <div class="inner-hover">
-                                                <a class="category-post tech">{{$firstPost->nameCategory}}</a>
+                                                <a class="category-post tech">{{$firstPost->display_category_name}}</a>
                                                 <h2 style="color:white"><a href="{{url('post', $firstPost->slug)}}" >{{$firstPost->title}}</a></h2>
                                                 <ul class="post-tags">
-                                                    <li><i class="fa fa-clock-o"></i>{{$firstPost->date}}</li>
+                                                    <li><i class="fa fa-clock-o"></i>{{$firstPost->long_date}}</li>
                                                     <li><i class="fa fa-eye"></i>{{$firstPost->read}}</li>
                                                 </ul>
                                             </div>
@@ -39,12 +39,12 @@
                                     @foreach ($limitThreePosts as $index => $item)
                                         <li>
                                             <a href="{{url('post', $item->slug)}}" >
-                                                <img src='{{asset("images/$item->image")}}' alt="">
+                                                {!!$item->preview_single!!}
                                                 <div class="post-content">
-                                                    {{$item->nameCategory}}
+                                                    {{$item->display_category_name}}
                                                     <h2>{{$item->title}}</h2>
                                                     <ul class="post-tags">
-                                                        <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
+                                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                                     </ul>
                                                 </div>
                                             </a>
@@ -70,7 +70,7 @@
                             
                                 @foreach ($image as $index => $item)
                                 <div class="item news-post image-post3">
-                                        <img src='{{asset("images/$item->name")}}'>
+                                        {!!$item->preview_original!!}
                                     </div>
                                 @endforeach
 
@@ -99,12 +99,14 @@
                             @foreach ($lastPosts as $index => $item)
                                 <div class="news-post standard-post2 {{$index == 0 ? 'default-size' : ''}}">
                                     <div class="post-gallery">
-                                        <a href="{{url('post', $item->slug)}}"> <img src='{{asset("images/$item->image")}}' alt=""> </a>
+                                        <a href="{{url('post', $item->slug)}}"> 
+                                            {!!$item->preview_single!!}
+                                        </a>
                                     </div>
                                     <div class="post-title">
                                         <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                                         <ul class="post-tags">
-                                            <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
+                                            <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                             <li><a href="#">
                                                 <li><i class="fa fa-eye"></i>{{$item->read}}</li>
                                             </a></li>

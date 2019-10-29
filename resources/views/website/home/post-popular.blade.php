@@ -13,13 +13,13 @@
                 @foreach ($popularPosts as $index => $item)
                     <div class="item news-post standard-post">
                         <div class="post-gallery">
-                            <img src='{{asset("images/$item->image")}}' alt="">
-                            <a class="category-post world" style="background-color:{{$item->colorCategory}}">{{$item->nameCategory}}</a>
+                            {!!$item->preview_single!!}
+                            <a class="category-post world" style="background-color:{{$item->color_category}}">{{$item->display_category_name}}</a>
                         </div>
                         <div class="post-content">
                             <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                             <ul class="post-tags">
-                                <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
+                                <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                 <li><a href="#">
                                     <li><i class="fa fa-eye"></i>{{$item->read}}</li>
                                 </a></li>

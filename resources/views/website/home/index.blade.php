@@ -13,7 +13,7 @@
 					<ul id="js-news">
 						@foreach($breakingNewsPosts as $index => $item)
 						<li class="news-item">
-							<span class="time-news">{{$item->time}}</span>   
+							<span class="time-news">{{$item->long_date}}</span>   
 							{{$item->title}}
 						</li>
 						@endforeach
@@ -23,10 +23,10 @@
 		</section>
 	
 		@include('website.home.search')
+
+		@include('website.home.post-popular')
 	
 		@include('website.home.main-body')
-	
-		@include('website.home.post-popular')
 	@endif
 	
 @endsection

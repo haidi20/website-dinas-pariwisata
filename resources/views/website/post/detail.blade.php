@@ -44,13 +44,13 @@
                             </div>
 
                             <div class="post-gallery">
-                                <img src='{{asset("images/$post->image")}}' alt="">
+                                    {!!$post->preview_original!!}
                                 <span class="image-caption">{{$post->title}}</span>
                             </div>
 
                             <div class="post-content">
 
-                                {{$post->content}}
+                                {!!$post->content!!}
                                 
                             </div>
 

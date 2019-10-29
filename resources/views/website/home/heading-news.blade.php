@@ -61,20 +61,41 @@
 			@endfor
 
 			@foreach ($limitSixPosts as $index => $item)
-				<div class="news-post image-post">
-					{!!$item->preview_single!!}
-					<div class="hover-box">
-						<div class="inner-hover">
-							<a class="category-post" style="background-color:{{$item->colorCategory}}" href="#">{{$item->display_category_name}}</a>
-							<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
-							<ul class="post-tags">
-								<li><i class="fa fa-clock-o"></i><span>{{$item->long_date}}</span></li>
-								<li><i class="fa fa-eye"></i><span>{{$item->read}}</span></li>
-							</ul>
-							<p>{{$item->limitContent}}</p>
+				@if($index == 5 && $index == 6)
+					@for ($i = 1; $i <= 2; $i++)
+						<div class="news-post image-post">
+							<img src="" alt="">
+							<div class="hover-box">
+								<div class="inner-hover">
+									<a class="category-post"  href="#"></a>
+									<h2><a href="#"></a></h2>
+									<ul class="post-tags">
+										<li><i class="fa fa-clock-o"></i><span></span></li>
+										<li><i class="fa fa-eye"></i><span></span></li>
+									</ul>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					@endfor
+				@else
+
+					<div class="news-post image-post">
+						{!!$item->preview_single!!}
+						<div class="hover-box">
+							<div class="inner-hover">
+								<a class="category-post" style="background-color:{{$item->colorCategory}}" href="#">{{$item->display_category_name}}</a>
+								<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
+								<ul class="post-tags">
+									<li><i class="fa fa-clock-o"></i><span>{{$item->long_date}}</span></li>
+									<li><i class="fa fa-eye"></i><span>{{$item->read}}</span></li>
+								</ul>
+								<p>{{$item->limitContent}}</p>
+							</div>
 						</div>
 					</div>
-				</div>
+
+				@endif
 			@endforeach
 
 		</div>

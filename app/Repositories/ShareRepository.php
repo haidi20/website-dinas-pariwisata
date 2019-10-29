@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Models\Share;
+use App\Web\Models\Media;
 
 class ShareRepository{
     public function all(){
-        return Share::all();
+        return Media::where('type', 'share')->get();
     }
 }
 

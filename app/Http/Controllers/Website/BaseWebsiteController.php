@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use App\Web\Models\Menu;
+
 use App\Repositories\PostRepository;
 use App\Repositories\MediaRepository;
 use App\Repositories\GalleryRepository;
@@ -49,7 +51,7 @@ class BaseWebsiteController extends Controller
             ],
             4 => (object) [
                 'name' => 'footerMedsos',
-                'data' => $this->mediaRepo->all()
+                'data' => $this->mediaRepo->allMedsos()
             ],
             5 => (object) [
                 'name' => 'footerCategories',
@@ -63,6 +65,10 @@ class BaseWebsiteController extends Controller
                 'name' => 'footerPosts',
                 'data' => $this->postRepo->limit(3),
             ],
+            8 => (object) [
+                'name' => 'menu',
+                'data' => $menu = Menu::active()->isParent()->sorted()->get(),
+            ]
         ];
     }
 }

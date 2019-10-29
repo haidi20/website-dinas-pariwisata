@@ -2,10 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Models\Media;
+use App\Web\Models\Media;
 
 class MediaRepository {
-    public function all(){
-        return Media::all();
+    public function allMedsos(){
+        return Media::where('type', 'medsos')->get();
     }
 }

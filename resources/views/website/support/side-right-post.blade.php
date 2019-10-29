@@ -12,12 +12,12 @@
                         <li>
                             <div class="news-post image-post2">
                                 <div class="post-gallery">
-                                    <img src='{{asset("images/$item->image")}}' alt="">
+                                    {!!$item->preview_original!!}
                                     <div class="hover-box">
                                         <div class="inner-hover">
                                             <h2><a href="{{url('post', $item->slug)}}">{{$item->title}} </a></h2>
                                             <ul class="post-tags">
-                                                <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
+                                                <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                                 <li><a href="#">
                                                     <li><i class="fa fa-eye"></i>{{$item->read}}</li>
                                                 </a></li>
@@ -34,11 +34,11 @@
 
                @foreach ($rightSidePosts as $index => $item)
                     <li>
-                        <img src='{{asset("images/$item->image")}}' alt="">
+                        {!!$item->preview_single!!}
                         <div class="post-content">
                             <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                             <ul class="post-tags">
-                                <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
+                                <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                             </ul>
                         </div>
                     </li>
@@ -63,11 +63,11 @@
                     <ul class="list-posts">
                         @foreach ($rightSidePopularPosts as $index => $item)
                             <li>
-                                <img src='{{asset("images/$item->image")}}' alt="">
+                                {!!$item->preview_single!!}
                                 <div class="post-content">
                                     <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                                     <ul class="post-tags">
-                                        <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
+                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                     </ul>
                                 </div>
                             </li>
@@ -79,11 +79,11 @@
 
                         @foreach ($rightSideRecentPosts as $index => $item)
                             <li>
-                                <img src='{{asset("images/$item->image")}}' alt="">
+                                {!!$item->preview_single!!}
                                 <div class="post-content">
                                     <h2><a href="{{url('post', $item->slug)}}">{{$item->title}} </a></h2>
                                     <ul class="post-tags">
-                                        <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
+                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                     </ul>
                                 </div>
                             </li>
@@ -100,10 +100,10 @@
             </div>
             <div class="news-post video-post">
                     <img src="{{$rightSideVideo->thumbnail}}">
-                    <a href="{{$rightSideVideo->link}}" class="video-link">{{$rightSideVideo->name}}</a>
+                    <a href="{{$rightSideVideo->link}}" class="video-link">{{$rightSideVideo->caption}}</a>
                 <div class="hover-box">
                     <ul class="post-tags">
-                        <li><i class="fa fa-clock-o"></i>{{$rightSideVideo->date}}</li>
+                        <li><i class="fa fa-clock-o"></i>{{$rightSideVideo->long_date}}</li>
                     </ul>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\Gallery;
+use App\Web\Models\Gallery;
 
 class GalleryRepository 
 {

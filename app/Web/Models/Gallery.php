@@ -212,6 +212,11 @@ class Gallery extends Model
         return url('sitemanager', ['gallery', 'delete', $this->type, $this->id]);
     }
 
+    public function getLongDateAttribute()
+    {
+        return pretty_date($this->created_at);
+    }
+
     public function getFormatDateAttribute()
     {
         return format_date($this->created_at, 1, ' ');

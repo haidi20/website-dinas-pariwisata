@@ -1,3 +1,13 @@
+@section('script-bottom')
+    <script>
+        menu = {!! str_replace("'", "\'", json_encode($menu)) !!};
+        
+        menu.map((item, index) => {
+            $('head`).prepend("<style>.navbar-nav > li > a.fashion::before{background-color:green}</style>");
+        });
+    </script>
+@endsection
+
 <!-- Header
     ================================================== -->
     <header class="clearfix">
@@ -45,10 +55,19 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-left">
 
-                            <li><a class="tech" href="{{url('/')}}">Home</a></li>
-                            <li><a class="world" href="{{url('/image')}}">Image</a></li>
-                            <li><a class="travel" href="{{url('/video')}}">Video</a></li>
-                            <li><a class="fashion" href="{{url('/contact')}}">Contact</a></li>
+                            @if($menu)
+                                @foreach ($menu as $index => $item)
+                                    <li {{ active_menu($item->link.'*') }}>
+                                        <a class="menu_{{$item->id}} fashion"  href="{{url($item->link)}}">{{$item->name}}</a>
+                                    </li>
+                                @endforeach
+                            @else
+
+                            @endif
+
+                            <li>
+                                <a href="#" class="fashion">coba</a>
+                            </li>
 
                         </ul>
                     </div>
