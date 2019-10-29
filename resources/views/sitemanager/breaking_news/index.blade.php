@@ -15,6 +15,11 @@
                 let left = $('#select-left').val();
                 let leftText = $('#select-left option:selected').text();
                 let length = $('#select-right > option').length;
+
+                let rightFirstEl = $('#select-right').find("option:first-child").val();
+                if(rightFirstEl == ''){
+                    $("#select-right option[value='']").remove();
+                }
                 if(left !== null && length < 5){
                     $("#select-left option:selected").remove();
                     $('#select-right').append(`<option value="${left}">${leftText}</option>`);
@@ -56,20 +61,22 @@
 
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-2" style="text-align:center;">
-                            <select class="form-control" id="select-left" multiple="">
-                                <option value="left-1">Lorem ipsum dolor.</option>
-                                <option value="left-2">Amet, impedit aperiam?</option>
-                                <option value="left-3">Nemo, alias, quasi?</option>
-                                <option value="left-4">Inventore, expedita.</option>
+                            <select size="12" class="form-control" id="select-left" multiple="">
+                                @forelse($posts as $item)
+                                <option value="{{ $item->id }}">{{$item->title}}</option>
+                                @empty
+                                <option value="">&nbsp;</option>
+                                @endforelse
                             </select>
                             <button id="btn-left" class="fa fa-arrow-circle-o-right fa-3x" aria-hidden="true" style="margin-top:10px; border:none; background:none;"></button>
                         </div>
                         <div class="col-sm-4" style="text-align:center;">
-                            <select class="form-control" id="select-right" multiple="">
-                                <option value="right-1">Lorem ipsum dolor.</option>
-                                <option value="right-2">Amet, impedit aperiam?</option>
-                                <option value="right-3">Nemo, alias, quasi?</option>
-                                <option value="right-4">Inventore, expedita.</option>
+                            <select size="12" class="form-control" id="select-right" multiple="">
+                                @forelse($breaking_news as $item)
+                                <option value="{{ $item->id }}">{{$item->title}}</option>
+                                @empty
+                                <option value="">&nbsp;</option>
+                                @endforelse
                             </select>
                             <button id="btn-right" class="fa fa-arrow-circle-o-left fa-3x" aria-hidden="true" style="margin-top:10px; border:none; background:none;"></button>
                         </div>
