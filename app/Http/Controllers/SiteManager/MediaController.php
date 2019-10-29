@@ -108,7 +108,7 @@ class MediaController extends BaseController
         $media->save();
 
         flash_message('message', 'success', 'check', 'Data '.strtolower($this->moduleTitle).' "'.$media->name.'" telah disimpan', false);
-        return redirect(url($this->moduleUrl, ['type', $type]));
+        return redirect(url($this->moduleUrl, [$type]));
     }
 
     public function delete($id)

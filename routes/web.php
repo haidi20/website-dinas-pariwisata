@@ -106,12 +106,11 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager', 'middlewa
 	});
 
 	Route::group(['prefix' => 'media'], function(){
-		Route::get('/', 'MediaController@index');
-		Route::get('type/{type}', 'MediaController@type');
-		Route::get('create/{type}', 'MediaController@create');
-		Route::post('create/{type}', 'MediaController@postCreate');
-		Route::get('edit/{type}/{id}', 'MediaController@edit')->where('id', '[0-9]+');
-		Route::post('edit/{type}/{id}', 'MediaController@postEdit')->where('id', '[0-9]+');
+		Route::get('{type}', 'MediaController@type');
+		Route::get('{type}/create', 'MediaController@create');
+		Route::post('{type}/create', 'MediaController@postCreate');
+		Route::get('{type}/edit/{id}', 'MediaController@edit')->where('id', '[0-9]+');
+		Route::post('{type}/edit/{id}', 'MediaController@postEdit')->where('id', '[0-9]+');
 		Route::get('delete/{id}', 'MediaController@delete')->where('id', '[0-9]+');
 	});
 
