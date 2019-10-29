@@ -14,8 +14,8 @@ class CustomPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('tags')->nullable()->change();
-            $table->integer('read')->default(0)->change();
+            $table->string('tags')->nullable();
+            $table->integer('read')->default(0);
         });
     }
 

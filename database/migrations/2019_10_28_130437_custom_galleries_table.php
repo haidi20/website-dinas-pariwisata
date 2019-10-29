@@ -14,9 +14,9 @@ class CustomGalleriesTable extends Migration
     public function up()
     {
         Schema::table('galleries', function (Blueprint $table) {
-            $table->string('link')->nullable()->change();
-            $table->string('tags')->nullable()->change();
-            $table->integer('read')->default(0)->unsigned()->change();
+            $table->string('link')->nullable();
+            $table->string('tags')->nullable();
+            $table->integer('read')->default(0)->unsigned();
         });
     }
 
@@ -28,9 +28,9 @@ class CustomGalleriesTable extends Migration
     public function down()
     {
         Schema::table('galleries', function (Blueprint $table) {
-            $table->string('link')->change();
-            $table->string('tags')->change();
-            $table->integer('read')->unsigned()->change();
+            $table->string('link');
+            $table->string('tags');
+            $table->integer('read')->unsigned();
         });
     }
 }
