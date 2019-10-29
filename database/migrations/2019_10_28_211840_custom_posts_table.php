@@ -16,6 +16,7 @@ class CustomPostsTable extends Migration
         Schema::table('posts', function (Blueprint $table) {
             $table->string('tags')->nullable()->change();
             $table->integer('read')->default(0)->change();
+            $table->integer('breaking_news')->default(0);
         });
     }
 
