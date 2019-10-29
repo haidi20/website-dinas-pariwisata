@@ -21,7 +21,7 @@
 							<div class="news-post large-post">
 								<div class="post-gallery">
 									<img src='{{asset("images/$item->image")}}' alt="">
-									<a class="category-post" style="background-color:{{$item->colorCategory}}" href="world.html">{{$item->nameCategory}}</a>
+									<a class="category-post" style="background-color:{{$item->color_category}}" href="world.html">{{$item->name_category}}</a>
 								</div>
 								<div class="post-title">
 									<h2><a href="-content">

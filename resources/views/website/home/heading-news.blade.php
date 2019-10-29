@@ -11,7 +11,7 @@
 						<a class="category-post" style="background-color:{{$firstPost->colorCategory}}" href="#">{{$firstPost->display_category_name}}</a>
 						<h2><a href="{{url('post', $firstPost->slug)}}">{{$firstPost->title}}</a></h2>
 						<ul class="post-tags">
-							<li><i class="fa fa-clock-o"></i><span>{{$firstPost->date}}</span></li>
+							<li><i class="fa fa-clock-o"></i><span>{{$firstPost->long_date}}</span></li>
 							<li><a href="#"><i class="fa fa-eye"></i><span>{{$firstPost->read}}</span></a></li>
 						</ul>
 						<p>{{$firstPost->limitContent}}</p>
@@ -31,7 +31,7 @@
 										<a class="category-post" style="background-color:{{$item->color_category}}" href="#">{{$item->display_category_name}}</a>
 										<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
 										<ul class="post-tags">
-											<li><i class="fa fa-clock-o"> {{$item->date}}</i></li>
+											<li><i class="fa fa-clock-o"> {{$item->long_date}}</i></li>
 											{{-- <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li> --}}
 											<li><i class="fa fa-eye"></i>{{$item->read}}</li>
 										</ul>
@@ -43,6 +43,23 @@
 				</ul>
 			</div>
 
+			@for ($i = 1; $i <= 2; $i++)
+				<div class="news-post image-post">
+					<img src="" alt="">
+					<div class="hover-box">
+						<div class="inner-hover">
+							<a class="category-post"  href="#"></a>
+							<h2><a href="#"></a></h2>
+							<ul class="post-tags">
+								<li><i class="fa fa-clock-o"></i><span></span></li>
+								<li><i class="fa fa-eye"></i><span></span></li>
+							</ul>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			@endfor
+
 			@foreach ($limitSixPosts as $index => $item)
 				<div class="news-post image-post">
 					{!!$item->preview_single!!}
@@ -51,7 +68,7 @@
 							<a class="category-post" style="background-color:{{$item->colorCategory}}" href="#">{{$item->display_category_name}}</a>
 							<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
 							<ul class="post-tags">
-								<li><i class="fa fa-clock-o"></i><span>{{$item->date}}</span></li>
+								<li><i class="fa fa-clock-o"></i><span>{{$item->long_date}}</span></li>
 								<li><i class="fa fa-eye"></i><span>{{$item->read}}</span></li>
 							</ul>
 							<p>{{$item->limitContent}}</p>

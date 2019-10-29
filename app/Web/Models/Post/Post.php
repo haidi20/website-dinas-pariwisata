@@ -211,13 +211,19 @@ class Post extends Model
     public function getCategoryBadgeAttribute()
     {
         if( ! $this->category ) return false;
-        $category = $this->category->slug;
-        $keyColor = 'sm.category.badge.color.' . $category;
-        $color = Session::get($keyColor, function() use ($keyColor){
-            $generate = sprintf('#%06X', mt_rand(0, 0xFFFFFF));
-            Session::put($keyColor, $generate);
-            return $generate;
-        });
+        if( ! $this->category->color){
+            $category = $this->category->slug;
+            $keyColor = 'sm.category.badge.color.' . $category;
+            $color = Session::get($keyColor, function() use ($keyColor){
+                $generate = sprintf('#%06X', mt_rand(0, 0xFFFFFF));
+                Session::put($keyColor, $generate);
+                return $generate;
+            });
+        }else{
+            $generate = sprintf($this->category->color);
+            Session::put($this->category->color, $generate);
+            $color = $generate;
+        }
 
         $template = '<span class="label label-default" style="background-color:%s">%s :</span>';
 
@@ -256,6 +262,11 @@ class Post extends Model
         $prefix = '';
         if($this->type == 'post') $prefix = $category ? $category->slug : '?';
         return url($prefix, $this->slug);
+    }
+
+    public function getLongDateAttribute()
+    {
+        return pretty_date($this->created_at);
     }
 
     public function getFormatDateAttribute()

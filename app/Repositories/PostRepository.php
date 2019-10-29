@@ -11,7 +11,7 @@ class PostRepository {
     }
 
     public function limit($limit){
-        return Post::type('post')->take($limit)->get();
+        return Post::type('post')->inRandomOrder()->limit($limit)->get();
     }
 
     public function first(){
