@@ -47,6 +47,7 @@ class CategoryController extends BaseController
 		}else{
 			$category->name 	= $input['name'];
 			$category->slug 	= str_slug($category->name);
+			$category->color 	= $input['color'];
 			$category->active 	= 0;
 			$category->save();
 

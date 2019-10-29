@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CustomPostsTable extends Migration
+class CustomPostCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CustomPostsTable extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->string('tags')->nullable()->change();
-            $table->integer('read')->default(0)->change();
-            $table->integer('breaking_news')->default(0);
+        Schema::table('post_categories', function (Blueprint $table) {
+            $table->string('color')->nullable();
         });
     }
 
@@ -27,7 +25,7 @@ class CustomPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('post_categories', function (Blueprint $table) {
             //
         });
     }

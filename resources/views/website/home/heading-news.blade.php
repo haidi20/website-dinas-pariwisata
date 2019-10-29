@@ -5,10 +5,10 @@
 		<div class="iso-call heading-news-box">
 
 			<div class="news-post image-post default-size">
-				<img src='{{asset("images/$firstPost->image")}}' alt="">
+				{!!$firstPost->preview_single!!}
 				<div class="hover-box">
 					<div class="inner-hover">
-						<a class="category-post" style="background-color:{{$firstPost->colorCategory}}" href="#">{{$firstPost->nameCategory}}</a>
+						<a class="category-post" style="background-color:{{$firstPost->colorCategory}}" href="#">{{$firstPost->display_category_name}}</a>
 						<h2><a href="{{url('post', $firstPost->slug)}}">{{$firstPost->title}}</a></h2>
 						<ul class="post-tags">
 							<li><i class="fa fa-clock-o"></i><span>{{$firstPost->date}}</span></li>
@@ -25,10 +25,10 @@
 					@foreach ($limitThreePosts as $index => $item)
 						<li>
 							<div class="news-post image-post">
-								<img src='{{asset("images/$item->image")}}' alt="">
+								{!!$item->preview_single!!}
 								<div class="hover-box">
 									<div class="inner-hover">
-										<a class="category-post" style="background-color:{{$item->colorCategory}}" href="#">{{$item->nameCategory}}</a>
+										<a class="category-post" style="background-color:{{$item->color_category}}" href="#">{{$item->display_category_name}}</a>
 										<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
 										<ul class="post-tags">
 											<li><i class="fa fa-clock-o"> {{$item->date}}</i></li>
@@ -45,10 +45,10 @@
 
 			@foreach ($limitSixPosts as $index => $item)
 				<div class="news-post image-post">
-					<img src='{{asset("images/$item->image")}}' alt="">
+					{!!$item->preview_single!!}
 					<div class="hover-box">
 						<div class="inner-hover">
-							<a class="category-post" style="background-color:{{$item->colorCategory}}" href="#">{{$item->nameCategory}}</a>
+							<a class="category-post" style="background-color:{{$item->colorCategory}}" href="#">{{$item->display_category_name}}</a>
 							<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
 							<ul class="post-tags">
 								<li><i class="fa fa-clock-o"></i><span>{{$item->date}}</span></li>

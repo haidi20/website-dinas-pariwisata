@@ -106,6 +106,7 @@ class MenuController extends BaseController
 		$menu->active_link = isset($input['active_link']) ? 1 : 0;
 		$menu->position    = $input['position'];
 		$menu->order       = $input['order'];
+		$menu->color       = $input['color'];
 		$menu->status      = $input['status'];
 		$menu->parent_id   = array_get($input, 'parent_id', 0);
         $menu->save();

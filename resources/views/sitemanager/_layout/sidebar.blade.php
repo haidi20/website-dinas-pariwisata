@@ -37,17 +37,17 @@
 						<li class="{{ active_menu('sitemanager/post*') }}">
 							<a href="{{ url('sitemanager', ['post']) }}">{!!fa('file-text')!!}<span>Posts</span></a>
 						</li>
+						<li class="{{ active_menu('sitemanager/breaking-news') }}">
+							<a href="{{ url('sitemanager', ['breaking-news']) }}">{!!fa('newspaper-o')!!}<span>Breaking News</span></a>
+						</li>
 						<li class="{{ active_menu('sitemanager/page*') }}">
 							<a href="{{ url('sitemanager', ['page']) }}">{!!fa('file-text-o')!!}<span>Pages</span></a>
 						</li>
-						{{-- <li class="{{ active_menu('sitemanager/slider*') }}">
-							<a href="{{ url('sitemanager', ['slider']) }}">{!!fa('sliders')!!}<span>Slider</span></a>
-						</li> --}}
-						<li class="{{ active_menu('sitemanager/media/type/medsos*') }}">
-							<a href="{{ url('sitemanager', ['media', 'type', 'medsos']) }}">{!!fa('comments-o')!!}<span>Social Media</span></a>
+						<li class="{{ active_menu('sitemanager/media/medsos*') }}">
+							<a href="{{ url('sitemanager', ['media', 'medsos']) }}">{!!fa('comments-o')!!}<span>Social Media</span></a>
 						</li>
-						<li class="{{ active_menu('sitemanager/media/type/share*') }}">
-							<a href="{{ url('sitemanager', ['media', 'type', 'share']) }}">{!!fa('share')!!}<span>Share</span></a>
+						<li class="{{ active_menu('sitemanager/media/share*') }}">
+							<a href="{{ url('sitemanager', ['media', 'share']) }}">{!!fa('share')!!}<span>Share</span></a>
 						</li>
 						<li class="nav-separator"></li>
 						<li><a href="{{ url('/') }}" target="_blank">{!!fa('globe')!!}<span>View Website</span></a></li>
