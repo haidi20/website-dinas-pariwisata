@@ -37,7 +37,9 @@ class Category extends Model
     public function getTotalPostAttribute()
     {
         if($this->posts()->count() > 0){
-            return '('.$this->posts()->count().')';
+            return $this->posts()->count();
+        }else{
+            return 0;
         }
     }
 }

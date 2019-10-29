@@ -25,12 +25,12 @@
                             <ul class="list-posts">
                                 @foreach ($footerPosts as $index => $item)
                                     <li>
-                                        <img src='{{asset("images/$item->image")}}' alt="">
+                                        {!!$item->preview_single!!}
                                         <div class="post-content">
-                                            <a href="travel.html">{{$item->nameCategory}}</a>
+                                            <a href="travel.html">{{$item->display_category_name}}</a>
                                             <h2><a href="{{url('post/detail')}}">{{$item->title}}</a></h2>
                                             <ul class="post-tags">
-                                                <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
+                                                <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                             </ul>
                                         </div>
                                     </li>
@@ -44,7 +44,7 @@
                             <ul class="category-list">
                                 @foreach($footerCategories as $index => $item)
                                     <li>
-                                        <a href="javascript:void(0)">{{$item->name}} <span>{{$item->countPost}}</span></a>
+                                        <a href="javascript:void(0)">{{$item->name}} <span>{{$item->total_post}}</span></a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -55,7 +55,11 @@
                             <h1>Photos</h1>
                             <ul class="flickr-list">
                                 @foreach ($footerImages as $index => $item)
-                                    <li><a href="javascript:void(0)"><img src='{{asset("images/$item->name")}}' alt=""></a></li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            {!!$item->preview_original!!}
+                                        </a>
+                                    </li>
                                 @endforeach
                             </ul>
                             <a href="{{url('/image')}}">View more photos...</a>

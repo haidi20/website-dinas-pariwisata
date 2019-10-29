@@ -100,7 +100,7 @@
             </div>
             <div class="news-post video-post">
                     <img src="{{$rightSideVideo->thumbnail}}">
-                    <a href="{{$rightSideVideo->link}}" class="video-link">{{$rightSideVideo->caption}}</a>
+                    <a href="{{$rightSideVideo->link}}" class="video-link"></a>
                 <div class="hover-box">
                     <ul class="post-tags">
                         <li><i class="fa fa-clock-o"></i>{{$rightSideVideo->long_date}}</li>
