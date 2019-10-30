@@ -23,11 +23,7 @@ class PostController extends BaseController
     }
 
     public function index($category = null){
-        if($category){
-            $posts  = $this->postRepo->filter(3, 'all', null, $category);
-        }else{
-            $posts  = $this->postRepo->paginate(3);
-        }
+        $posts  = $this->postRepo->filter(3, 'all', null, $category);
 
         return $this->view('website.post.index', compact(
             'posts'

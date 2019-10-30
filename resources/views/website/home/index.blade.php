@@ -1,5 +1,31 @@
 @extends('website._layouts.default')
 
+@section('script-bottom')
+	<script>
+		$(function(){
+			$('.image-post').click(function(){
+				link = $(this).find('.hover-box > .inner-hover > h2 > a').attr('href');
+				
+				window.location.href = link;
+			});
+
+			$('.send-search').click(function(){
+				form = $('.search-form').serializeArray();
+
+				data = []
+
+				$.each(form, function(index, item){
+					data[item.name] = item.value
+				});
+
+				link = "{{url('post')}}/"+data['category']+"?search="+data['search']
+
+				window.location.href = link
+			});
+		});
+	</script>
+@endsection
+
 @section('content')
 
 	@if($firstPost)

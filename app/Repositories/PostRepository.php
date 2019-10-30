@@ -50,6 +50,10 @@ class PostRepository {
             $post = $post->slug($slug);
         }
 
+        if(request('search')){
+            $post = $post->search('title', request('search'));
+        }
+
         if($category){
             $category = Category::where('name', $category)->first();
             $post = $post->category($category->id);

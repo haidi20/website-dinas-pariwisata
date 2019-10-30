@@ -1,13 +1,3 @@
-@section('script-bottom')
-	<script>
-		$('.image-post').click(function(){
-			link = $(this).find('.hover-box > .inner-hover > h2 > a').attr('href');
-			
-			window.location.href = link;
-		});
-	</script>
-@endsection
-
 <!-- heading-news-section
 	================================================== -->
 	<section class="heading-news">
