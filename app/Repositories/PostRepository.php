@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Web\Models\Post\Post;
+use App\Web\Models\Post\Category;
 
 class PostRepository {
 
@@ -50,7 +51,8 @@ class PostRepository {
         }
 
         if($category){
-            $post = $post->category($category);
+            $category = Category::where('name', $category)->first();
+            $post = $post->category($category->id);
         }
 
         if($type == 'all'){

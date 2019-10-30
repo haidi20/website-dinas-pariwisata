@@ -115,6 +115,10 @@ form button i.fa-search {
     padding:15px;
 }
 
+.image-post{
+    cursor: pointer;
+}
+
 section.heading-news {
     padding-top: 0px;
 }

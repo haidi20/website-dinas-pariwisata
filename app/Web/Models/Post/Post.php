@@ -284,7 +284,7 @@ class Post extends Model
 
     public function getLongDateAttribute()
     {
-        return pretty_date($this->created_at);
+        return years_old($this->created_at);
     }
 
     public function getDetailDateTimeAttribute()

@@ -232,12 +232,12 @@ if( ! function_exists('years_old') )
         $day   = Carbon::parse($date)->diffInDays();
         if($date != '0000-00-00'){
             if($year > 0){
-                $template = sprintf('%s tahun', $year);
+                $template = sprintf('%s tahun lalu', $year);
             }else{
                 if($month > 0){
-                    $template = sprintf('%s bulan', $month);
+                    $template = sprintf('%s bulan lalu', $month);
                 }else{
-                    $template = sprintf('%s hari', $day);
+                    $template = sprintf('%s hari lalu', $day);
                 }
             }
         }

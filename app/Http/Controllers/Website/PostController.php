@@ -22,9 +22,9 @@ class PostController extends BaseController
         $this->shareRepo    = $shareRepo;
     }
 
-    public function index(){
-        if(request()){
-            $posts  = $this->postRepo->filter(3, 'all', null, request('category_id'));
+    public function index($category = null){
+        if($category){
+            $posts  = $this->postRepo->filter(3, 'all', null, $category);
         }else{
             $posts  = $this->postRepo->paginate(3);
         }

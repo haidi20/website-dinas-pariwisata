@@ -1,21 +1,35 @@
+@section('script-bottom')
+	<script>
+		$('.image-post').click(function(){
+			link = $(this).find('.hover-box > .inner-hover > h2 > a').attr('href');
+			
+			window.location.href = link;
+		});
+	</script>
+@endsection
+
 <!-- heading-news-section
 	================================================== -->
 	<section class="heading-news">
 
 		<div class="iso-call heading-news-box">
 
-			<div class="news-post image-post default-size">
+			<div class="news-post image-post default-size" >
 				{!!$firstPost->preview_single!!}
 				<div class="hover-box">
 					<div class="inner-hover">
-						<a class="category-post" style="background-color:{{$firstPost->colorCategory}}" href="{{url('post?category_id='.$firstPost->id_category)}}">{{$firstPost->display_category_name}}</a>
-						<h2><a href="{{url('post', $firstPost->slug)}}">{{$firstPost->title}}</a></h2>
+						<a 
+							class="category-post" 
+							style="background-color:{{$firstPost->colorCategory}}" 
+							href="{{url('post/'.$firstPost->display_category_name)}}"
+						>
+							{{$firstPost->display_category_name}}
+						</a>
+						<h2><a href="{{url('post/tags', $firstPost->slug)}}">{{$firstPost->title}}</a></h2>
 						<ul class="post-tags">
 							<li><i class="fa fa-clock-o"></i><span>{{$firstPost->long_date}}</span></li>
 							{{-- <li><a href="#"><i class="fa fa-eye"></i><span>{{$firstPost->read}}</span></a></li> --}}
-							<li><a href="#">
-								{!! $firstPost->viewed !!}
-							</a></li>
+							<li>{!! $firstPost->viewed !!}</li>	
 						</ul>
 						<p>{{$firstPost->limitContent}}</p>
 					</div>
@@ -34,17 +48,15 @@
 										<a 
 											class="category-post" 
 											style="background-color:{{$item->color_category}}" 
-											href="{{url('post?category_id='.$item->id_category)}}"
+											href="{{url('post/'.$item->display_category_name)}}"
 										>
 											{{$item->display_category_name}}
 										</a>
-										<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
+										<h2><a href="{{url('post/tags', $item->slug)}}">{{$item->title}}</a></h2>
 										<ul class="post-tags">
 											<li><i class="fa fa-clock-o"> {{$item->long_date}}</i></li>
 											{{-- <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li> --}}
-											<li><a href="#">
-												{!! $item->viewed !!}
-											</a></li>
+											<li>{!! $item->viewed !!}</li>
 										</ul>
 									</div>
 								</div>
@@ -98,16 +110,14 @@
 								<a 
 									class="category-post" 
 									style="background-color:{{$item->color_category}}" 
-									href="{{url('post?category_id='.$item->id_category)}}"
+									href="{{url('post/'.$item->display_category_name)}}"
 								>
 									{{$item->display_category_name}}
 								</a>
-								<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
+								<h2><a href="{{url('post/tags', $item->slug)}}">{{$item->title}}</a></h2>
 								<ul class="post-tags">
 									<li><i class="fa fa-clock-o"></i><span>{{$item->long_date}}</span></li>
-									<li><a href="#">
-										{!! $item->viewed !!}
-									</a></li>
+									<li>{!! $item->viewed !!}</li>
 								</ul>
 								<p>{{$item->limitContent}}</p>
 							</div>
