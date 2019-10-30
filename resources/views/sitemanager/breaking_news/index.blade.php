@@ -11,6 +11,7 @@
             let select2 = $('#select2').val();
             let select2Text = $('#select2 option:selected').text();
 
+            //update left to right
             $('#btn-left').on('click', () => {
                 let left = $('#select-left').val();
                 let leftText = $('#select-left option:selected').text();
@@ -21,11 +22,20 @@
                     $("#select-right option[value='']").remove();
                 }
                 if(left !== null && length < 5){
-                    $("#select-left option:selected").remove();
-                    $('#select-right').append(`<option value="${left}">${leftText}</option>`);
+                    $.ajax({
+                        type:'POST',
+                        url:`${window.location.href}/update/${left}`,
+                        data:{breaking_news:1},
+                        success:function(data){
+                            console.log(data);
+                            $("#select-left option:selected").remove();
+                            $('#select-right').append(`<option value="${left}">${leftText}</option>`);
+                            }
+                    });
                 }
             })
 
+            //update right to left
             $('#btn-right').on('click', () => {
                 let right = $('#select-right').val();
                 let rightText = $('#select-right option:selected').text();
