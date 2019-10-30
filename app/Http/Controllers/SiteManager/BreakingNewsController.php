@@ -17,6 +17,8 @@ class BreakingNewsController extends Controller
 
     public function update(Request $request, $id)
     {
+        return 'update breaking news bisa';
+
         $post = Post::find($id);
 
         if(!$post){

@@ -89,6 +89,7 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager', 'middlewa
 
 	Route::group(['prefix' => 'breaking-news'], function(){
 		Route::get('/', 'BreakingNewsController@index');
+		Route::post('edit/{id}', 'BreakingNewsController@update')->where('id', '[0-9]+');
 	});
 	
 	Route::group(['prefix' => 'page'], function(){
@@ -144,9 +145,3 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager', 'middlewa
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-//WEB API
-//Breaking-news
-Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager'], function(){
-	Route::post('breaking-news/update/{id}', 'BreakingNewsController@update')->where('id', '[0-9]+');
-});

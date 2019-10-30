@@ -32,7 +32,6 @@
             }
 
             $.post(url, {_token:token}, function(response){
-                console.log(response);
                 if(response.success){
                     swal({
                         title: "Sudah Dihapus!",

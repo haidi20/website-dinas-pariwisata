@@ -11,6 +11,10 @@
             //statement
             let select2 = $('#select2').val();
             let select2Text = $('#select2 option:selected').text();
+            token   = $('[name="csrf-token"]').attr('content');
+            id      = 2;
+            url     = '{{ url('sitemanager', ['breaking-news', 'edit']) }}/'+id; 
+            console.log(url);
 
             //update left to right
             $('#btn-left').on('click', () => {
@@ -56,6 +60,12 @@
                     $('#select-left').append(`<option value="${right}">${rightText}</option>`);
                 }
             })
+
+            $.post(url, {_token:token}, function(response){
+                console.log(response);
+            }).error(function(err){
+                console.log(err)
+            });
         });
     </script>
 @endsection
