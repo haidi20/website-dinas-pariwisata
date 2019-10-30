@@ -19,7 +19,7 @@
                                             <ul class="post-tags">
                                                 <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                                 <li><a href="#">
-                                                    <li>{!! $firstPost->viewed !!}</li>
+                                                    <li>{!! $item->viewed !!}</li>
                                                 </a></li>
                                             </ul>
                                         </div>
@@ -39,7 +39,7 @@
                             <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                             <ul class="post-tags">
                                 <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                <li>{!! $firstPost->viewed !!}</li>
+                                <li>{!! $item->viewed !!}</li>
                             </ul>
                         </div>
                     </li>
@@ -69,7 +69,7 @@
                                     <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li> <br>
-                                        <li>{!! $firstPost->viewed !!}</li>
+                                        <li>{!! $item->viewed !!}</li>
                                     </ul>
                                 </div>
                             </li>
@@ -86,7 +86,7 @@
                                     <h2><a href="{{url('post', $item->slug)}}">{{$item->title}} </a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                        <li>{!! $firstPost->viewed !!}</li>
+                                        <li>{!! $item->viewed !!}</li>
                                     </ul>
                                 </div>
                             </li>

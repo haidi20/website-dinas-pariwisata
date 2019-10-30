@@ -31,7 +31,7 @@
                                 <h1>{{$post->title}}</h1>
                                 <ul class="post-tags">
                                     <li><i class="fa fa-clock-o"></i>{{$post->detail_datetime}}</li>
-                                    <li><i class="fa fa-eye"></i>{{$post->read}}</li>
+                                    <li>{!! $post->viewed !!}</li>
                                 </ul>
                             </div>
 
