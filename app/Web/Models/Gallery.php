@@ -92,6 +92,7 @@ class Gallery extends Model
 
         return '<img src="'.$url.'" 
                     class="img-responsive" 
+                    data-url-original="'.$url.'" 
                     data-url-edit="'.$this->url_edit.'" 
                     data-url-delete="'.$this->url_delete.'" 
                     data-category="'.$this->type.'"

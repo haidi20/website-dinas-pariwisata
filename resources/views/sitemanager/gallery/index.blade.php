@@ -127,7 +127,8 @@
                             {!! fa('filter') !!} Show <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu" data-auto-collapse="false">
-                            <li><a href="{{ url($moduleUrl, ['type', 'image']) }}">Image </a></li>
+                            <li><a href="{{ url($moduleUrl, ['type', 'all']) }}">Semua </a></li>
+                            <li><a href="{{ url($moduleUrl, ['type', 'image']) }}">Gambar </a></li>
                             <li><a href="{{ url($moduleUrl, ['type', 'video']) }}">Video </a></li>
                         </ul>
                     </div>

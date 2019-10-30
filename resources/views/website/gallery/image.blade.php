@@ -11,10 +11,13 @@
 @section('script-bottom')
     <script>
         $(function(){
-            $('.image').click(function(){
+            $('.img-responsive').click(function(){
                 $('#show-gallery').modal('show');
 
-                $(".modal-gallery").attr('src', $(this).attr('data-source'))
+                image   = $(this)
+                url     = image.data('url-original')
+
+                $(".modal-gallery").attr('src', url);
             });
         })
     </script>
@@ -41,10 +44,12 @@
                             <div class="col-md-6">
                                 <div class="news-post image-post2">
                                     <div class="post-gallery">
-                                        <img 
+                                        {{-- <img 
                                             src='{{asset("images/$item->name")}}' 
                                             class="image" data-source='{{asset("images/$item->name")}}'
-                                        />
+                                        /> --}}
+
+                                        {!!$item->preview_original!!}
                                     </div>
                                 </div>
                             </div>

@@ -12,10 +12,8 @@ return[
 	],
 
 	'gallery' => [
-		'plant',
-		'project', 
-		'material', 
-		'tool'
+		'video',
+		'image',
 	],
 
 	'social_media' => [

@@ -39,6 +39,7 @@
                             <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                             <ul class="post-tags">
                                 <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
+                                <li><i class="fa fa-eye"></i>{{$item->read}}</li>
                             </ul>
                         </div>
                     </li>
@@ -67,7 +68,8 @@
                                 <div class="post-content">
                                     <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                                     <ul class="post-tags">
-                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
+                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li> <br>
+                                        <li><i class="fa fa-eye"></i>{{$item->read}}</li>
                                     </ul>
                                 </div>
                             </li>
@@ -84,6 +86,7 @@
                                     <h2><a href="{{url('post', $item->slug)}}">{{$item->title}} </a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
+                                        <li><i class="fa fa-eye"></i>{{$item->read}}</li>
                                     </ul>
                                 </div>
                             </li>

@@ -6,6 +6,7 @@ use App\Web\Services\Sitemanager\ManageGallery;
 use App\Web\Services\Filemanager;
 use Illuminate\Http\Request;
 
+use DB;
 use Auth;
 
 class GalleryController extends BaseController
@@ -35,8 +36,11 @@ class GalleryController extends BaseController
 
     public function type($type)
     {
+        // DB::enableQueryLog();
         $gallery = $this->service->get(null, $type, 12, 'desc');
         $tags    = $this->service->tags($gallery);
+
+        // dd(DB::getQueryLog());
 
         return $this->template('index', compact('gallery', 'type', 'tags'));
     }
