@@ -11,7 +11,12 @@
             //statement
             let select2 = $('#select2').val();
             let select2Text = $('#select2 option:selected').text();
+            token   = $('[name="csrf-token"]').attr('content');
+            id      = 2;
+            url     = '{{ url('sitemanager', ['breaking-news', 'edit']) }}/'+id; 
+            console.log(url);
 
+            //update left to right
             $('#btn-left').on('click', () => {
                 let left = $('#select-left').val();
                 let leftText = $('#select-left option:selected').text();
@@ -22,8 +27,16 @@
                     $("#select-right option[value='']").remove();
                 }
                 if(left !== null && length < 5){
-                    $("#select-left option:selected").remove();
-                    $('#select-right').append(`<option value="${left}">${leftText}</option>`);
+                    $.ajax({
+                        type:'POST',
+                        url:`${window.location.href}/update/${left}`,
+                        data:{breaking_news:1},
+                        success:function(data){
+                            console.log(data);
+                            $("#select-left option:selected").remove();
+                            $('#select-right').append(`<option value="${left}">${leftText}</option>`);
+                            }
+                    });
                 }
                 if(length >= 5){
                     swal({
@@ -38,6 +51,7 @@
                 }
             })
 
+            //update right to left
             $('#btn-right').on('click', () => {
                 let right = $('#select-right').val();
                 let rightText = $('#select-right option:selected').text();
@@ -46,6 +60,12 @@
                     $('#select-left').append(`<option value="${right}">${rightText}</option>`);
                 }
             })
+
+            $.post(url, {_token:token}, function(response){
+                console.log(response);
+            }).error(function(err){
+                console.log(err)
+            });
         });
     </script>
 @endsection
