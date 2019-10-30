@@ -31,7 +31,7 @@
 
             $.get(url, data, function(response){
                 // console.log(response);
-                input       = form.find('input')
+                input       = form.find('input:not([name="_token"])')
                 textarea    = form.find('textarea')
                 input.val('')
                 textarea.val('')
@@ -54,7 +54,7 @@
             15);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                attribution: ''
             }).addTo(map);
             
 
