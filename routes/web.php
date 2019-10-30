@@ -27,7 +27,10 @@ Route::namespace('Website')->group(function(){
         Route::get('/', 'PostController@index');
         Route::get('/{slug}', 'PostController@detail');
     });
-    Route::get('/contact', 'ContactController@index');
+    Route::group(['prefix' => 'contact'], function(){
+		Route::get('/', 'ContactController@index');
+		Route::get('/store', 'ContactController@store');
+	});
 });
 
 Route::get('sendmail/{email}', 'SendmailController@sendmail');

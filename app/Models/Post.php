@@ -7,15 +7,30 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     //
-    protected $fillable = ['category_id', 'author_id', 'title', 'image', 'slug', 'content', 'read', 'breaking_news'];
+    protected $fillable = [
+        'category_id', 
+        'author_id', 
+        'title', 
+        'image', 
+        'slug', 
+        'content', 
+        'read', 
+        'breaking_news'
+    ];
     
     public function getRouteKeyName()
     {
         return 'slug';
     }
 
-    public function category(){
-        return $this->belongsTo('App\Models\Category');
+    public function category()
+    {
+        return $this->belongsTo('App\Web\Models\Post\Category');
+    }
+
+    public function file()
+    {
+        return $this->morphOne('App\Web\Models\File', 'ref');
     }
 
     public function getNameCategoryAttribute(){

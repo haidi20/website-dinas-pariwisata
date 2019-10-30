@@ -7,7 +7,7 @@ class Category extends Model
 {
 	protected $table = 'post_categories';
 	protected $appends = ['action', 'total_post'];
-	public $timestamps = false;
+    public $timestamps = false;
 
 	public function scopeSlug($query, $name)
     {
