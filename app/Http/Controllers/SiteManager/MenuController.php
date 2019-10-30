@@ -147,4 +147,16 @@ class MenuController extends BaseController
         flash_message('message', 'success', 'check', 'Data '.strtolower($this->moduleTitle).' "'.$menu->name.'" telah dihapus', false);
         return redirect()->back();
 	}
+
+	public function posEdit($id){
+		$menu 			= $this->menu->find($id);
+		
+		if(!$menu){
+			return response()->json(['msg' => 'menu not found!'],404);
+		}
+
+		$menu->order   	= $this->request['order'];
+		$menu->save();
+		return response()->json($menu);
+	}
 }

@@ -10,7 +10,7 @@
         const updateBreakingNews = (option, position) => {
             let {id, text} = option;
             let url = `${window.location.href}/edit/${id}`;
-            token   = $('[name="csrf-token"]').attr('content');
+            let token   = $('[name="csrf-token"]').attr('content');
             let breaking_news = position == "left" ? 1 : 0;
             $.post(url, {_token:token, breaking_news}, function(response){
                 if(position === "left"){

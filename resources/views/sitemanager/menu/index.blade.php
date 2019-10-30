@@ -5,6 +5,23 @@
 $(function() {
     $('#perpage').on('change', function() {
         this.form.submit();
+	});
+
+	// $('tbody').sortable();
+	$('#sortableContainer').sortable({
+        stop: function(e, ui) {
+			let itemOrder = $('#sortableContainer').sortable("toArray");
+			let token   = $('[name="csrf-token"]').attr('content');
+			let arr = [];
+
+			for (var i = 0; i < itemOrder.length; i++) {
+				$.post(`${window.location.href}/pos-edit/${itemOrder[i]}`, {_token:token, order: i}, function(response){
+					location.reload();
+				}).error(function(err){
+					console.log(err)
+				});
+			};
+        }
     });
 });
 </script>
@@ -58,7 +75,7 @@ $(function() {
                     </form>
 					<div class="panel">
 						<div class="panel-body panel-no-padding">
-							<table class="table table-hover table-bordered">
+							<table class="table table-hover table-bordered" id="table-menu">
 								<thead>
 									<tr>
 										<th class="text-center" width="40">No</th>
@@ -69,9 +86,9 @@ $(function() {
 					                    <th class="text-center" width="200">Action</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody id="sortableContainer">
 									@forelse($menu as $index => $item)
-									<tr @if(!$item->active_link) class="active text-muted" @endif>
+									<tr id="{{ $item->id }}" @if(!$item->active_link) class="active text-muted" @endif >
 										<td>{{ table_row_number($menu, $index) }}</td>
 										<td>{!! $item->display_active_link !!} &nbsp; {{ $item->display_name }}</td>
 										<td>{{ str_limit($item->caption, 45) }}</td>
