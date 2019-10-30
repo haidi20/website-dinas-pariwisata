@@ -21,7 +21,7 @@ class PostController extends BaseController
     }
 
     public function index(){
-        $posts = $this->postRepo->paginate(3);
+        $posts  = $this->postRepo->paginate(3);
 
         return $this->view('website.post.index', compact(
             'posts'
@@ -30,11 +30,13 @@ class PostController extends BaseController
 
     public function detail($slug){
         $post       = $this->postRepo->baseSlug($slug);
-        $shares      = $this->shareRepo->all();
+        $shares     = $this->shareRepo->all();
         $suggests   = $this->postRepo->baseCategory($post->category_id, $limit = 6);
+        
+        $tags       = $this->postRepo->tags($post->id);
 
         return $this->view('website.post.detail', compact(
-            'post', 'shares', 'suggests'
+            'post', 'shares', 'suggests', 'tags'
         ));
     }
 }

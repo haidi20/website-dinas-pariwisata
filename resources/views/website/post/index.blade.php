@@ -20,19 +20,19 @@
 						@foreach ($posts as $index => $item)
 							<div class="news-post large-post">
 								<div class="post-gallery">
-									<img src='{{asset("images/$item->image")}}' alt="">
-									<a class="category-post" style="background-color:{{$item->color_category}}" href="world.html">{{$item->name_category}}</a>
+									{!!$item->preview_original!!}
+									<a class="category-post" style="background-color:{{$item->color_category}}" href="world.html">{{$item->display_category_name}}</a>
 								</div>
 								<div class="post-title">
 									<h2><a href="-content">
 									<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
 									<ul class="post-tags">
-										<li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
+										<li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
 										<li><i class="fa fa-eye"></i>{{$item->read}}</li>
 									</ul>
 								</div>
 								<div class="post-content">
-									<p>{{$item->limitContentLarge}}</p>
+									{!! $item->display_limit_content_large !!}
 									<a href="-content">
 										<h2><a href="{{url('post', $item->slug)}}" class="read-more-button"><i class="fa fa-arrow-circle-right"></i>Read More
 									</a>

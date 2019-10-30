@@ -107,6 +107,16 @@ class Post extends Model
         }
     }
 
+    public function getDisplayLimitContentAttribute()
+    {
+        return str_limit($this->content, 40);
+    }
+
+    public function getDisplayLimitContentLargeAttribute()
+    {
+        return str_limit($this->content, 200);
+    }
+
     public function getDisplayMenuNameAttribute()
     {
         if($this->menu)
@@ -267,6 +277,11 @@ class Post extends Model
     public function getLongDateAttribute()
     {
         return pretty_date($this->created_at);
+    }
+
+    public function getDetailDateTimeAttribute()
+    {
+        return $this->created_at->format('d M Y h:i:s');
     }
 
     public function getFormatDateAttribute()

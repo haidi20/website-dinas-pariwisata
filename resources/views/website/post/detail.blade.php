@@ -10,7 +10,7 @@
 @endsection
 
 @section('script-bottom')
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=299896200609803&autoLogAppEvents=1"></script>
+
 @endsection
 
 @section('content')
@@ -30,7 +30,7 @@
                             <div class="title-post">
                                 <h1>{{$post->title}}</h1>
                                 <ul class="post-tags">
-                                    <li><i class="fa fa-clock-o"></i>{{$post->time}}</li>
+                                    <li><i class="fa fa-clock-o"></i>{{$post->detail_datetime}}</li>
                                     <li><i class="fa fa-eye"></i>{{$post->read}}</li>
                                 </ul>
                             </div>
@@ -57,10 +57,9 @@
                             <div class="post-tags-box">
                                 <ul class="tags-box">
                                     <li><i class="fa fa-tags"></i><span>Tags:</span></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Fashion</a></li>
-                                    <li><a href="#">Politics</a></li>
-                                    <li><a href="#">Sport</a></li>
+                                    @foreach ($tags as $item)
+                                        <li><a href="#">{{$item}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
 

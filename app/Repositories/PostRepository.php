@@ -42,5 +42,36 @@ class PostRepository {
         return Post::type('post')->paginate($limit);
     }
 
+    public function tags($id = null, $object=null)
+    {
+        if($id){
+            $post = Post::where('id', $id);
+        }else{
+            $post = new Post;
+        }
+
+    	if($object){
+    		$lists = $post->type('post')->this($object)->pluck('tags');
+    	}else{
+        	$lists = $post->type('post')->pluck('tags');
+    	}
+
+        $tags = [];
+        foreach($lists as $item){
+            foreach(explode(',', $item) as $subitem){
+            	if($subitem){
+	                if( ! in_array($subitem, $tags) ){
+	                    $tag = [
+	                        'name' => $subitem,
+	                        'value' => $subitem
+	                    ];
+	                    array_push($tags, $subitem);
+	                }
+	            }
+            }
+        }
+
+        return $tags;
+    }
 
 }
