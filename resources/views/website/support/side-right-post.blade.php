@@ -19,7 +19,7 @@
                                             <ul class="post-tags">
                                                 <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                                 <li><a href="#">
-                                                    <li><i class="fa fa-eye"></i>{{$item->read}}</li>
+                                                    <li>{!! $firstPost->viewed !!}</li>
                                                 </a></li>
                                             </ul>
                                         </div>
@@ -39,7 +39,7 @@
                             <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                             <ul class="post-tags">
                                 <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                <li><i class="fa fa-eye"></i>{{$item->read}}</li>
+                                <li>{!! $firstPost->viewed !!}</li>
                             </ul>
                         </div>
                     </li>
@@ -69,7 +69,7 @@
                                     <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li> <br>
-                                        <li><i class="fa fa-eye"></i>{{$item->read}}</li>
+                                        <li>{!! $firstPost->viewed !!}</li>
                                     </ul>
                                 </div>
                             </li>
@@ -86,7 +86,7 @@
                                     <h2><a href="{{url('post', $item->slug)}}">{{$item->title}} </a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                        <li><i class="fa fa-eye"></i>{{$item->read}}</li>
+                                        <li>{!! $firstPost->viewed !!}</li>
                                     </ul>
                                 </div>
                             </li>

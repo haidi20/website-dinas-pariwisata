@@ -91,13 +91,12 @@ class Gallery extends Model
         if($link) return $url;
 
         return '<img src="'.$url.'" 
-                    class="img-responsive img-'.$this->id.'" 
+                    class="img-responsive" 
                     data-url-original="'.$url.'" 
                     data-url-edit="'.$this->url_edit.'" 
                     data-url-delete="'.$this->url_delete.'" 
                     data-category="'.$this->type.'"
                     data-link="'.$linkYoutube.'"
-                    onClick="action('.$this->id.')"
                     >';
     }
 

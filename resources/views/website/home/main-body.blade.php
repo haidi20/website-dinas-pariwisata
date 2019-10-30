@@ -26,7 +26,9 @@
                                                 <h2 style="color:white"><a href="{{url('post', $firstPost->slug)}}" >{{$firstPost->title}}</a></h2>
                                                 <ul class="post-tags">
                                                     <li><i class="fa fa-clock-o"></i>{{$firstPost->long_date}}</li>
-                                                    <li><i class="fa fa-eye"></i>{{$firstPost->read}}</li>
+                                                    <li><a href="javascript:void(0)">
+                                                        {!! $firstPost->viewed !!}
+                                                    </a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -45,6 +47,9 @@
                                                     <h2>{{$item->title}}</h2>
                                                     <ul class="post-tags">
                                                         <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
+                                                        <li>
+                                                            {!! $firstPost->viewed !!}
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </a>
@@ -108,7 +113,7 @@
                                         <ul class="post-tags">
                                             <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                             <li><a href="#">
-                                                <li><i class="fa fa-eye"></i>{{$item->read}}</li>
+                                                <li>{!! $item->viewed !!}</li>
                                             </a></li>
                                         </ul>
                                     </div>

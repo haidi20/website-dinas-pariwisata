@@ -20,9 +20,7 @@
                             <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                             <ul class="post-tags">
                                 <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                <li><a href="#">
-                                    <li><i class="fa fa-eye"></i>{{$item->read}}</li>
-                                </a></li>
+                                <li>{!! $item->viewed !!}</li>
                             </ul>
                         </div>
                     </div>

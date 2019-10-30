@@ -12,7 +12,10 @@
 						<h2><a href="{{url('post', $firstPost->slug)}}">{{$firstPost->title}}</a></h2>
 						<ul class="post-tags">
 							<li><i class="fa fa-clock-o"></i><span>{{$firstPost->long_date}}</span></li>
-							<li><a href="#"><i class="fa fa-eye"></i><span>{{$firstPost->read}}</span></a></li>
+							{{-- <li><a href="#"><i class="fa fa-eye"></i><span>{{$firstPost->read}}</span></a></li> --}}
+							<li><a href="#">
+								{!! $firstPost->viewed !!}
+							</a></li>
 						</ul>
 						<p>{{$firstPost->limitContent}}</p>
 					</div>
@@ -33,7 +36,9 @@
 										<ul class="post-tags">
 											<li><i class="fa fa-clock-o"> {{$item->long_date}}</i></li>
 											{{-- <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li> --}}
-											<li><i class="fa fa-eye"></i>{{$item->read}}</li>
+											<li><a href="#">
+												{!! $item->viewed !!}
+											</a></li>
 										</ul>
 									</div>
 								</div>
@@ -88,7 +93,9 @@
 								<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
 								<ul class="post-tags">
 									<li><i class="fa fa-clock-o"></i><span>{{$item->long_date}}</span></li>
-									<li><i class="fa fa-eye"></i><span>{{$item->read}}</span></li>
+									<li><a href="#">
+										{!! $item->viewed !!}
+									</a></li>
 								</ul>
 								<p>{{$item->limitContent}}</p>
 							</div>

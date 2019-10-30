@@ -11,6 +11,16 @@
 @section('script-bottom')
     <script>
         $(function(){
+            $('.img-responsive').click(function(){
+                $('#show-gallery').modal('show');
+
+                image   = $(this)
+                url     = image.data('link')
+
+                $(".modal-gallery").attr('src', url);
+            });
+
+            // mematikan video youtube ketika modal tertutup
             $('button.close').click(function(){
                 thumbnail = $('.modal-gallery')
                 thumbnail.attr('src', '');
@@ -18,13 +28,13 @@
         })
         
         // review gambar
-        function action (id){
-            $('#show-gallery').modal('show');
-            youtube = $('.modal-gallery')
-            link     = $('.img-'+id).data('link')
+        // function action (id){
+        //     $('#show-gallery').modal('show');
+        //     youtube = $('.modal-gallery')
+        //     link     = $('.img-'+id).data('link')
 
-            youtube.attr('src', link)
-        }
+        //     youtube.attr('src', link)
+        // }
     </script>
 @endsection
 
