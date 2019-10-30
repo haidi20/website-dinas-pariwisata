@@ -8,7 +8,7 @@
 				{!!$firstPost->preview_single!!}
 				<div class="hover-box">
 					<div class="inner-hover">
-						<a class="category-post" style="background-color:{{$firstPost->colorCategory}}" href="#">{{$firstPost->display_category_name}}</a>
+						<a class="category-post" style="background-color:{{$firstPost->colorCategory}}" href="{{url('post?category_id='.$firstPost->id_category)}}">{{$firstPost->display_category_name}}</a>
 						<h2><a href="{{url('post', $firstPost->slug)}}">{{$firstPost->title}}</a></h2>
 						<ul class="post-tags">
 							<li><i class="fa fa-clock-o"></i><span>{{$firstPost->long_date}}</span></li>
@@ -31,7 +31,13 @@
 								{!!$item->preview_single!!}
 								<div class="hover-box">
 									<div class="inner-hover">
-										<a class="category-post" style="background-color:{{$item->color_category}}" href="#">{{$item->display_category_name}}</a>
+										<a 
+											class="category-post" 
+											style="background-color:{{$item->color_category}}" 
+											href="{{url('post?category_id='.$item->id_category)}}"
+										>
+											{{$item->display_category_name}}
+										</a>
 										<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
 										<ul class="post-tags">
 											<li><i class="fa fa-clock-o"> {{$item->long_date}}</i></li>
@@ -89,7 +95,13 @@
 						{!!$item->preview_single!!}
 						<div class="hover-box">
 							<div class="inner-hover">
-								<a class="category-post" style="background-color:{{$item->colorCategory}}" href="#">{{$item->display_category_name}}</a>
+								<a 
+									class="category-post" 
+									style="background-color:{{$item->color_category}}" 
+									href="{{url('post?category_id='.$item->id_category)}}"
+								>
+									{{$item->display_category_name}}
+								</a>
 								<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
 								<ul class="post-tags">
 									<li><i class="fa fa-clock-o"></i><span>{{$item->long_date}}</span></li>

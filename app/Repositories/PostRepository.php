@@ -42,6 +42,24 @@ class PostRepository {
         return Post::type('post')->paginate($limit);
     }
 
+    public function filter($limit = nul, $type = "all", $slug = null, $category = null){
+        $post = Post::type('post');
+
+        if($slug){
+            $post = $post->slug($slug);
+        }
+
+        if($category){
+            $post = $post->category($category);
+        }
+
+        if($type == 'all'){
+            return $post->paginate($limit);
+        }else{
+            return $post->first();
+        }
+    }
+
     public function tags($id = null, $object=null)
     {
         if($id){

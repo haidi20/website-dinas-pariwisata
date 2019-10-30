@@ -13,15 +13,21 @@ use App\Repositories\ShareRepository;
 class PostController extends BaseController
 {
     public function __construct(
+        Request $request,
         PostRepository $postRepo,
         ShareRepository $shareRepo
     ){
-        $this->postRepo = $postRepo;
-        $this->shareRepo = $shareRepo;
+        $this->request      = $request;
+        $this->postRepo     = $postRepo;
+        $this->shareRepo    = $shareRepo;
     }
 
     public function index(){
-        $posts  = $this->postRepo->paginate(3);
+        if(request()){
+            $posts  = $this->postRepo->filter(3, 'all', null, request('category_id'));
+        }else{
+            $posts  = $this->postRepo->paginate(3);
+        }
 
         return $this->view('website.post.index', compact(
             'posts'
@@ -29,6 +35,7 @@ class PostController extends BaseController
     }
 
     public function detail($slug){
+
         $post       = $this->postRepo->baseSlug($slug);
         $shares     = $this->shareRepo->all();
         $suggests   = $this->postRepo->baseCategory($post->category_id, $limit = 6);

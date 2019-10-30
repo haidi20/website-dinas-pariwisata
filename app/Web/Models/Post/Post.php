@@ -218,6 +218,14 @@ class Post extends Model
         }
     }
 
+    public function getIdCategoryAttribute()
+    {
+        if($this->category)
+        {
+            return $this->category->id;
+        }
+    }
+
     public function getCategoryBadgeAttribute()
     {
         if( ! $this->category ) return false;
