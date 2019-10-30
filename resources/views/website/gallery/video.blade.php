@@ -11,13 +11,20 @@
 @section('script-bottom')
     <script>
         $(function(){
-            $('.image').click(function(){
-                $('#show-gallery').modal('show');
-                var source = $(this).attr('data-source').replace("watch?v=", "embed/")
-
-                $(".modal-gallery").attr('src', source)
+            $('button.close').click(function(){
+                thumbnail = $('.modal-gallery')
+                thumbnail.attr('src', '');
             });
         })
+        
+        // review gambar
+        function action (id){
+            $('#show-gallery').modal('show');
+            youtube = $('.modal-gallery')
+            link     = $('.img-'+id).data('link')
+
+            youtube.attr('src', link)
+        }
     </script>
 @endsection
 
@@ -41,10 +48,12 @@
                         @if($index + 1 % 2)
                             <div class="col-md-6">
                                 <div class="news-post image-post2">
-                                    <img 
+                                    {{-- <img 
                                         src='{{$item->thumbnail}}' 
                                         class="image" data-source='{{$item->link}}'
-                                    />
+                                    /> --}}
+
+                                    {!!$item->preview_original!!}
                                 </div>
                             </div>
                         @else 

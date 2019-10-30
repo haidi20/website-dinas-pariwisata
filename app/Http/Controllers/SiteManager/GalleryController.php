@@ -84,6 +84,7 @@ class GalleryController extends BaseController
 
         $this->validate($this->request, [
             'caption' => 'required',
+            // 'description' => 'required',
         ]);
 
         if($id){
