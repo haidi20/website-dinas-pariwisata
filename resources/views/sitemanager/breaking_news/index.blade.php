@@ -7,18 +7,28 @@
 @section('script-bottom')
 {!! Html::script('avenger/assets/plugins/sweet-alert/sweet-alert.min.js') !!}
 	<script>
-        $(function(){
-            //statement
-            let select2 = $('#select2').val();
-            let select2Text = $('#select2 option:selected').text();
-            token   = $('[name="csrf-token"]').attr('content');
-            id      = 2;
-            url     = '{{ url('sitemanager', ['breaking-news', 'edit']) }}/'+id; 
-            console.log(url);
+        const updateBreakingNews = (option, position) => {
+            let {id, text} = option;
+            let url = `${window.location.href}/edit/${id}`;
+            let token   = $('[name="csrf-token"]').attr('content');
+            let breaking_news = position == "left" ? 1 : 0;
+            $.post(url, {_token:token, breaking_news}, function(response){
+                if(position === "left"){
+                    $("#select-left option:selected").remove();
+                    $('#select-right').append(`<option value="${id}">${text}</option>`);
+                }else if(position === "right"){
+                    $("#select-right option:selected").remove();
+                    $('#select-left').append(`<option value="${id}">${text}</option>`);
+                }
+            }).error(function(err){
+                console.log(err)
+            });
+        };
 
+        $(function(){
             //update left to right
             $('#btn-left').on('click', () => {
-                let left = $('#select-left').val();
+                let leftID = $('#select-left').val();
                 let leftText = $('#select-left option:selected').text();
                 let length = $('#select-right > option').length;
 
@@ -26,17 +36,8 @@
                 if(rightFirstEl == ''){
                     $("#select-right option[value='']").remove();
                 }
-                if(left !== null && length < 5){
-                    $.ajax({
-                        type:'POST',
-                        url:`${window.location.href}/update/${left}`,
-                        data:{breaking_news:1},
-                        success:function(data){
-                            console.log(data);
-                            $("#select-left option:selected").remove();
-                            $('#select-right').append(`<option value="${left}">${leftText}</option>`);
-                            }
-                    });
+                if(leftID !== null && length < 5){
+                    updateBreakingNews({id: leftID, text: leftText}, "left");
                 }
                 if(length >= 5){
                     swal({
@@ -53,19 +54,13 @@
 
             //update right to left
             $('#btn-right').on('click', () => {
-                let right = $('#select-right').val();
+                let rightID = $('#select-right').val();
                 let rightText = $('#select-right option:selected').text();
-                if(right !== null){
-                    $("#select-right option:selected").remove();
-                    $('#select-left').append(`<option value="${right}">${rightText}</option>`);
+                if(rightID !== null){
+                    updateBreakingNews({id: rightID, text: rightText}, "right");
                 }
             })
 
-            $.post(url, {_token:token}, function(response){
-                console.log(response);
-            }).error(function(err){
-                console.log(err)
-            });
         });
     </script>
 @endsection

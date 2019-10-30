@@ -17,8 +17,6 @@ class BreakingNewsController extends BaseController
 
     public function update(Request $request, $id)
     {
-        return 'update breaking news bisa';
-
         $post = Post::find($id);
 
         if(!$post){
@@ -27,11 +25,9 @@ class BreakingNewsController extends BaseController
             ], 404);
         }
 
-        $input = $request->input('breaking_news');
-
-        $post->breaking_news = $input;
+        $post->breaking_news = $request->input('breaking_news');
         $post->save();
 
-        return response()->json(['post' => $post, 'input' => $input]);
+        return response()->json(['post' => $post]);
     }
 }

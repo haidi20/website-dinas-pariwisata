@@ -63,6 +63,7 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager', 'middlewa
 		Route::get('parent/{id}', 'MenuController@getParent')->where('id', '[0-9]+');
 		Route::post('edit/{id}', 'MenuController@postEdit')->where('id', '[0-9]+');
 		Route::get('delete/{id}', 'MenuController@delete')->where('id', '[0-9]+');
+		Route::post('pos-edit/{id}', 'MenuController@posEdit')->where('id', '[0-9]+');
 	});
 
 	Route::group(['prefix' => 'gallery'], function(){
