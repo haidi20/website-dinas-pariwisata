@@ -2,7 +2,7 @@
 
 @section('script-top')
     <style>
-        .fa{
+        .single-post-box .share-post-box ul.share-box li a{
             padding-right: 0px;
             padding-left: 11px;
         }

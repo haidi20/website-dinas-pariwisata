@@ -7,11 +7,11 @@
         
             @foreach ($suggests as $index => $item)
                 <div class="item news-post image-post3">
-                    <img src='{{asset("images/$item->image")}}' alt="">
+                    {!!$item->preview_original!!}
                     <div class="hover-box">
                         <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                         <ul class="post-tags">
-                            <li><i class="fa fa-clock-o"></i>{{$item->date}}</li>
+                            <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                         </ul>
                     </div>
                 </div>
