@@ -65,10 +65,6 @@
 
                             @endif
 
-                            <li>
-                                <a href="#" class="fashion">coba</a>
-                            </li>
-
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
