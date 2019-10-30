@@ -5,6 +5,7 @@
 @endsection
 
 @section('script-bottom')
+{!! Html::script('avenger/assets/plugins/sweet-alert/sweet-alert.min.js') !!}
 	<script>
         $(function(){
             //statement
@@ -23,6 +24,17 @@
                 if(left !== null && length < 5){
                     $("#select-left option:selected").remove();
                     $('#select-right').append(`<option value="${left}">${leftText}</option>`);
+                }
+                if(length >= 5){
+                    swal({
+                        title: "Peringatan",
+                        text: "Maaf, Postingan Breaking news sudah 5",
+                        type: "warning",
+                        html: true,
+                        confirmButtonColor: "green",
+                        confirmButtonText: "Oke",
+                        closeOnConfirm: false
+                    })
                 }
             })
 
@@ -56,8 +68,6 @@
         <div class="container-fluid">
         	<div class="row">
 				<div class="col-md-12">
-
-                    <h1>breaking news</h1>
 
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-2" style="text-align:center;">
