@@ -38,5 +38,9 @@ class PostRepository {
         return Post::type('post')->where('category_id', $category)->limit($limit)->get();
     }
 
+    public function paginate($limit = null){
+        return Post::type('post')->paginate($limit);
+    }
+
 
 }

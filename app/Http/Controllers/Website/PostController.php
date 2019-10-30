@@ -21,7 +21,7 @@ class PostController extends BaseController
     }
 
     public function index(){
-        $posts = Post::paginate(3);
+        $posts = $this->postRepo->paginate(3);
 
         return $this->view('website.post.index', compact(
             'posts'
