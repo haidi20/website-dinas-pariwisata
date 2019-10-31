@@ -5,20 +5,16 @@
         img{
             cursor: pointer;
         }
+        .icon-show{
+            transform: translate(0px, 18px);
+        }
     </style>
 @endsection
 
 @section('script-bottom')
     <script>
         $(function(){
-            $('.img-responsive').click(function(){
-                $('#show-gallery').modal('show');
-
-                image   = $(this)
-                url     = image.data('url-original')
-
-                $(".modal-gallery").attr('src', url);
-            });
+            
         })
     </script>
 @endsection
@@ -29,52 +25,60 @@
     ================================================== -->
     <section class="block-wrapper">
         <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
 
-            <!-- block content -->
-            <div class="block-content non-sidebar">
+                    <!-- block content -->
+                    <div class="block-content">
 
-                <!-- grid box -->
-                <div class="grid-box">
-                    <div class="title-section">
-                        <h1><span class="world">Image</span></h1>
-                    </div>
+                        <!-- single-post box -->
+                        <div class="single-post-box">
 
-                    @forelse ($data as $index => $item)
-                        @if($index + 1 % 2)
-                            <div class="col-md-6">
-                                <div class="news-post image-post2">
-                                    <div class="post-gallery">
-                                        {{-- <img 
-                                            src='{{asset("images/$item->name")}}' 
-                                            class="image" data-source='{{asset("images/$item->name")}}'
-                                        /> --}}
-
-                                        {!!$item->preview_original!!}
+                            <div class="article-inpost">
+                                @foreach ($data as $index => $item)
+                                    @if($index % 2)
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="image-content">
+                                                <div class="image-place">
+                                                    {!! $item->preview_original !!}
+                                                    <div class="hover-image">
+                                                        <a class="zoom" href="{{url($item->preview_url)}}">
+                                                            <i class="fa fa-arrows-alt icon-show"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    @else
+                                    <div class="col-md-6">
+                                        <div class="image-content">
+                                            <div class="image-place">
+                                                {!! $item->preview_original !!}
+                                                <div class="hover-image">
+                                                    <a class="zoom" href="{{url($item->preview_url)}}">
+                                                        <i class="fa fa-arrows-alt icon-show"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
+                                @endforeach
                             </div>
-                        @else 
-                            
-                        @endif
-                    @empty
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>Image Empty</h3>
+
                         </div>
+                        <!-- End single-post box -->
+
                     </div>
-                    @endforelse
+                    <!-- End block content -->
 
                 </div>
-                <!-- End grid box -->
 
             </div>
-            <!-- End block content -->
-        </div>
 
-        <div class="center-button">
-            <a href="#"><i class="fa fa-refresh"></i> More from featured</a>
         </div>
-        <br><br>
     </section>
-<!-- End block-wrapper-section -->
+    <!-- End block-wrapper-section -->
 @endsection
