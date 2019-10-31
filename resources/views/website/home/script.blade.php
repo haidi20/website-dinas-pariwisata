@@ -12,22 +12,18 @@
         $('.news-post').click(function(){
             linkPopular = $(this).find('.post-content > h2 > a').attr('href');
             linkNewPost = $(this).find('.hover-box > .inner-hover > h2 > a').attr('href');
+            linkLastPost= $(this).find('.post-title > h2 > a').attr('href')
 
             if(linkPopular){
                 link = linkPopular;
             }else if(linkNewPost){
                 link = linkNewPost;
+            }else if(linkLastPost){
+                link = linkLastPost;
             }
 
             window.location.href = link;
         });
-
-        // list posts > file main-body
-        // $('.list-posts').click(function(){
-        //     link = $(this).find('.list-posts-detail > .post-content > h2 > a').attr('href');
-
-        //     window.location.href = link;
-        // });
 
         $('.send-search').click(function(){
             form = $('.search-form').serializeArray();

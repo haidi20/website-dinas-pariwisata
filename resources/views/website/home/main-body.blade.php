@@ -46,7 +46,7 @@
                                             {!!$item->preview_original!!}
                                             <div class="post-content">
                                                 <a 
-                                                    href="{{url('post/'.$firstPost->display_category_name)}}"
+                                                    href="{{url('post/'.$item->display_category_name)}}"
                                                 >
                                                     {{$item->display_category_name}}
                                                 </a>
@@ -87,7 +87,7 @@
                             </div>
 
                             <div class="center-button">
-                                <a href="{{url('/galerry')}}"> Show More </a>
+                                <a href="{{url('/image')}}"> Show More </a>
                             </div>
                         </div>
                         <!-- End carousel box -->
@@ -109,22 +109,21 @@
                             @foreach ($lastPosts as $index => $item)
                                 <div class="news-post standard-post2 {{$index == 0 ? 'default-size' : ''}}">
                                     <div class="post-gallery">
-                                        <a href="{{url('post', $item->slug)}}"> 
-                                            {!!$item->preview_single!!}
-                                        </a>
+                                        {!!$item->preview_original!!}
                                     </div>
                                     <div class="post-title">
-                                        <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
+                                        <h2><a href="{{url('post/tags', $item->slug)}}">{{$item->title}}</a></h2>
                                         <ul class="post-tags">
                                             <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                            <li><a href="#">
-                                                <li>{!! $item->viewed !!}</li>
-                                            </a></li>
+                                            <li>{!! $item->viewed !!}</li>
                                         </ul>
                                     </div>
                                 </div>
                             @endforeach
 
+                        </div>
+                        <div class="center-button">
+                            <a href="{{url('/post?last=1')}}"> Show More </a>
                         </div>
 
                     </div>

@@ -116,7 +116,7 @@ form button i.fa-search {
     padding:15px;
 }
 
-.image-post, .list-posts, .post-gallery{
+.image-post, .list-posts, .post-gallery, .news-post{
     cursor: pointer;
 }
 

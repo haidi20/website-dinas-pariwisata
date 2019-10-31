@@ -54,6 +54,10 @@ class PostRepository {
             $post = $post->search('title', request('search'));
         }
 
+        if(request('last')){
+            $post = $post->orderBy('created_at', 'desc');
+        }
+
         if($category){
             $category = Category::where('slug', $category)->first();
             $post = $post->category($category->id);
