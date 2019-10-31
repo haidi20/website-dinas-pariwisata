@@ -2,11 +2,16 @@
 
 @section('script-top')
     <style>
-        img{
+        img, .zoom{
             cursor: pointer;
         }
         .icon-show{
             transform: translate(0px, 18px);
+        }
+        .mfp-content img.mfp-img {
+            max-height: 500px;
+            width: 100%;
+            height: 500px;
         }
     </style>
 @endsection
@@ -40,7 +45,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="image-content">
-                                                <div class="image-place">
+                                                <div class="image-place zoom" href="{{url($item->preview_url)}}">
                                                     {!! $item->preview_original !!}
                                                     <div class="hover-image">
                                                         <a class="zoom" href="{{url($item->preview_url)}}">
@@ -54,7 +59,7 @@
                                     @else
                                     <div class="col-md-6">
                                         <div class="image-content">
-                                            <div class="image-place">
+                                            <div class="image-place zoom" href="{{url($item->preview_url)}}">
                                                 {!! $item->preview_original !!}
                                                 <div class="hover-image">
                                                     <a class="zoom" href="{{url($item->preview_url)}}">
