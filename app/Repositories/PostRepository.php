@@ -32,11 +32,15 @@ class PostRepository {
     }
 
     public function baseSlug($slug){
-        return Post::type('post')->where('slug', $slug)->first();
+        $post = Post::type('post')->where('slug', $slug);
+
+        $post->increment('read');
+
+        return $post->first();
     }
 
-    public function baseCategory($category, $limit = null){
-        return Post::type('post')->where('category_id', $category)->limit($limit)->get();
+    public function baseCategory($category, $idPost = null, $limit = null){
+        return Post::type('post')->where('category_id', $category)->where('id', '!=', $idPost)->limit($limit)->get();
     }
 
     public function paginate($limit = null){

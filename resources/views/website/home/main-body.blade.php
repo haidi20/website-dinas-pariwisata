@@ -42,7 +42,7 @@
                             <div class="col-md-6">
                                 <ul class="list-posts">
                                     @foreach ($limitThreePosts as $index => $item)
-                                        <li onClick="list_post_popular('{{url('post/tags', $item->slug)}}')">
+                                        <li onClick="gotolink('{{url('post/tags', $item->slug)}}')">
                                             {!!$item->preview_original!!}
                                             <div class="post-content">
                                                 <a 
@@ -112,7 +112,7 @@
                                         {!!$item->preview_original!!}
                                     </div>
                                     <div class="post-title">
-                                        <h2><a href="{{url('post/tags', $item->slug)}}">{{$item->title}}</a></h2>
+                                        <h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_title}}</a></h2>
                                         <ul class="post-tags">
                                             <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                             <li>{!! $item->viewed !!}</li>

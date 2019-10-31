@@ -1,5 +1,9 @@
 @extends('website._layouts.default')
 
+@section('script-bottom')
+	@include('website.home.script')
+@endsection
+
 @section('content')
 <!-- block-wrapper-section
 	================================================== -->
@@ -21,11 +25,17 @@
 							<div class="news-post large-post">
 								<div class="post-gallery">
 									{!!$item->preview_original!!}
-									<a class="category-post" style="background-color:{{$item->color_category}}" href="world.html">{{$item->display_category_name}}</a>
+									<a 
+										class="category-post" 
+										style="background-color:{{$item->color_category}}" 
+										href="{{url('post/'.$item->display_category_name)}}"
+									>
+										{{$item->display_category_name}}
+									</a>
 								</div>
 								<div class="post-title">
-									<h2><a href="-content">
-									<h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
+									<h2><a>
+									<h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_title}}</a></h2>
 									<ul class="post-tags">
 										<li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
 										<li>{!! $item->viewed !!}</li>
@@ -33,8 +43,8 @@
 								</div>
 								<div class="post-content">
 									{!! $item->display_limit_content_large !!}
-									<a href="-content">
-										<h2><a href="{{url('post', $item->slug)}}" class="read-more-button"><i class="fa fa-arrow-circle-right"></i>Read More
+									<a href="{{url('post/tags', $item->slug)}}">
+										<h2><a href="{{url('post/tags', $item->slug)}}" class="read-more-button"><i class="fa fa-arrow-circle-right"></i>Read More
 									</a>
 								</div>
 							</div>

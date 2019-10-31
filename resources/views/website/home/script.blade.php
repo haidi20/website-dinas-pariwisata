@@ -41,7 +41,8 @@
     });
 
     // list posts > file main-body
-    function list_post_popular(link){
+    // right side post
+    function gotolink(link){
         window.location.href = link;
     }
 </script>

@@ -1,5 +1,9 @@
 @extends('website._layouts.default')
 
+@section('script-bottom')
+	@include('website.home.script')
+@endsection
+
 @section('script-top')
     <style>
         .single-post-box .share-post-box ul.share-box li a{
@@ -28,7 +32,7 @@
                         <div class="single-post-box">
 
                             <div class="title-post">
-                                <h1>{{$post->title}}</h1>
+                                <h1>{{$post->show_title}}</h1>
                                 <ul class="post-tags">
                                     <li><i class="fa fa-clock-o"></i>{{$post->detail_datetime}}</li>
                                     <li>{!! $post->viewed !!}</li>
@@ -45,7 +49,7 @@
 
                             <div class="post-gallery">
                                     {!!$post->preview_original!!}
-                                <span class="image-caption">{{$post->title}}</span>
+                                <span class="image-caption">{{$post->show_title}}</span>
                             </div>
 
                             <div class="post-content">

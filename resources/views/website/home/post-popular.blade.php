@@ -3,7 +3,7 @@
 <section class="features-today">
     <div class="container">
 
-        <div class="show_title-section">
+        <div class="title-section">
             <h1><span>Postingan Terpopuler</span></h1>
         </div>
 
