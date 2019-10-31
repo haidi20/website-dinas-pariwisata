@@ -30,6 +30,9 @@
     .sidebar .tab-posts-widget .tab-pane ul.list-posts > li img {
         margin-right: 35px;
     }
+    .space-search {
+      margin-bottom:70px;
+    }
 }
 
 /* Portrait */
@@ -72,6 +75,9 @@
     }
     .sidebar .tab-posts-widget .tab-pane ul.list-posts > li img {
         margin-right: 35px;
+    }
+    .space-search {
+      margin-bottom:70px;
     }
 }
 
@@ -116,6 +122,9 @@
     .sidebar .tab-posts-widget .tab-pane ul.list-posts > li img {
         margin-right: 35px;
     }
+    .space-search {
+      margin-bottom:70px;
+    }
 }
 
 /* Portrait */
@@ -148,5 +157,8 @@
     }
     .sidebar .tab-posts-widget .tab-pane ul.list-posts > li img {
         margin-right: 35px;
+    }
+    .space-search {
+      margin-bottom:70px;
     }
 }
