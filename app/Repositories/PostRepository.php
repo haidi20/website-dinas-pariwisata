@@ -55,7 +55,7 @@ class PostRepository {
         }
 
         if($category){
-            $category = Category::where('name', $category)->first();
+            $category = Category::where('slug', $category)->first();
             $post = $post->category($category->id);
         }
 

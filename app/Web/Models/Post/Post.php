@@ -99,6 +99,11 @@ class Post extends Model
         return $this->belongsTo('App\Web\Models\User');
     }
 
+    public function getShowTitleAttribute()
+    {
+        return ucwords($this->title);
+    }
+
     public function getDisplayAuthorAttribute()
     {
         if($this->author)

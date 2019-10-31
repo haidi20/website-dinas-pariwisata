@@ -19,16 +19,19 @@
                             <div class="col-md-6">
                                 <div class="news-post image-post2">
                                     <div class="post-gallery">
-                                        {!!$firstPost->preview_single!!}
+                                        {!!$firstPost->preview_original!!}
                                         <div class="hover-box">
                                             <div class="inner-hover">
-                                                <a class="category-post tech">{{$firstPost->display_category_name}}</a>
-                                                <h2 style="color:white"><a href="{{url('post', $firstPost->slug)}}" >{{$firstPost->title}}</a></h2>
+                                                <a 
+                                                    class="category-post tech"
+                                                    href="{{url('post/'.$firstPost->display_category_name)}}"
+                                                >
+                                                    {{$firstPost->display_category_name}}
+                                                </a>
+                                                <h2 style="color:white" data-link="" ><a href="{{url('post/tags', $firstPost->slug)}}" >{{$firstPost->show_title}}</a></h2>
                                                 <ul class="post-tags">
                                                     <li><i class="fa fa-clock-o"></i>{{$firstPost->long_date}}</li>
-                                                    <li><a href="javascript:void(0)">
-                                                        {!! $firstPost->viewed !!}
-                                                    </a></li>
+                                                    <li>{!! $firstPost->viewed !!}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -39,20 +42,22 @@
                             <div class="col-md-6">
                                 <ul class="list-posts">
                                     @foreach ($limitThreePosts as $index => $item)
-                                        <li>
-                                            <a href="{{url('post', $item->slug)}}" >
-                                                {!!$item->preview_single!!}
-                                                <div class="post-content">
+                                        <li onClick="list_post_popular('{{url('post/tags', $item->slug)}}')">
+                                            {!!$item->preview_original!!}
+                                            <div class="post-content">
+                                                <a 
+                                                    href="{{url('post/'.$firstPost->display_category_name)}}"
+                                                >
                                                     {{$item->display_category_name}}
-                                                    <h2>{{$item->title}}</h2>
-                                                    <ul class="post-tags">
-                                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                                        <li>
-                                                            {!! $firstPost->viewed !!}
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </a>
+                                                </a>
+                                                <h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_title}}</a></h2>
+                                                <ul class="post-tags">
+                                                    <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
+                                                    <li>
+                                                        {!! $item->viewed !!}
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </li>
                                     @endforeach
                                 </ul>

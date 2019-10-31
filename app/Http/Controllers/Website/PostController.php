@@ -25,9 +25,7 @@ class PostController extends BaseController
     public function index($category = null){
         $posts  = $this->postRepo->filter(3, 'all', null, $category);
 
-        return $this->view('website.post.index', compact(
-            'posts'
-        ));
+        return $this->view('website.post.index', compact('posts'));
     }
 
     public function detail($slug){
