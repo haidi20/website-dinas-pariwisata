@@ -1,3 +1,7 @@
+/* Mediaquery for mobile user*/
+@import "mobile-iphone.css";
+@import "mobile-another.css";
+
 /* bagian header atas */
 .logo-advertisement{
     background:#f7f7f7;

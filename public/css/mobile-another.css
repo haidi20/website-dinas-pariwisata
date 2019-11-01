@@ -1,0 +1,164 @@
+/* ----------- Galaxy S3 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) {
+    .navbar-brand .logo-dispar {
+      top: 40px;
+      left: 20px;
+    }
+    .container.center-search {
+      width: 300px;
+    }
+    .container.center-search form.search-form {
+      height: 50px;
+      padding: 21px;
+      font-size: 15px;
+    }
+    .container.center-search form.search-form button {
+      top: 0px;
+      right: 20px;
+    }
+    form.search-form select.category-search {
+      margin-top: 10px;
+    }
+    .sidebar .features-slide-widget ul.list-posts li .post-content {
+      margin-left: 110px;
+    }
+    .sidebar .tab-posts-widget .tab-pane ul.list-posts > li img {
+        margin-right: 35px;
+    }
+    .space-search {
+      margin-bottom:70px;
+    }
+}
+
+/* Portrait */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+
+}
+
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    .navbar-brand .logo-dispar {
+      top: 40px;
+      left: 20px;
+    }
+    .container.center-search {
+      width: 300px;
+    }
+    .container.center-search form.search-form {
+      height: 50px;
+      padding: 21px;
+      font-size: 15px;
+    }
+    .container.center-search form.search-form button {
+      top: 0px;
+      right: 20px;
+    }
+    form.search-form select.category-search {
+      margin-top: 10px;
+    }
+    .sidebar .features-slide-widget ul.list-posts li .post-content {
+      margin-left: 110px;
+    }
+    .sidebar .tab-posts-widget .tab-pane ul.list-posts > li img {
+        margin-right: 35px;
+    }
+    .space-search {
+      margin-bottom:70px;
+    }
+}
+
+/* Portrait */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+
+}
+
+/* ----------- Galaxy S6 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) {
+    .navbar-brand .logo-dispar {
+      top: 40px;
+      left: 20px;
+    }
+    .container.center-search {
+      width: 300px;
+    }
+    .container.center-search form.search-form {
+      height: 50px;
+      padding: 21px;
+      font-size: 15px;
+    }
+    .container.center-search form.search-form button {
+      top: 0px;
+      right: 20px;
+    }
+    form.search-form select.category-search {
+      margin-top: 10px;
+    }
+    .sidebar .features-slide-widget ul.list-posts li .post-content {
+      margin-left: 110px;
+    }
+    .sidebar .tab-posts-widget .tab-pane ul.list-posts > li img {
+        margin-right: 35px;
+    }
+    .space-search {
+      margin-bottom:70px;
+    }
+}
+
+/* Portrait */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) 
+  and (orientation: portrait) {
+    .navbar-brand .logo-dispar {
+      top: 40px;
+      left: 20px;
+    }
+    .container.center-search {
+      width: 300px;
+    }
+    .container.center-search form.search-form {
+      height: 50px;
+      padding: 21px;
+      font-size: 15px;
+    }
+    .container.center-search form.search-form button {
+      top: 0px;
+      right: 20px;
+    }
+    form.search-form select.category-search {
+      margin-top: 10px;
+    }
+    .sidebar .features-slide-widget ul.list-posts li .post-content {
+      margin-left: 110px;
+    }
+    .sidebar .tab-posts-widget .tab-pane ul.list-posts > li img {
+        margin-right: 35px;
+    }
+    .space-search {
+      margin-bottom:70px;
+    }
+}
