@@ -11,6 +11,10 @@ class PostRepository {
         return Post::type('post')->all();
     }
 
+    public function page($page=null){
+        return Post::type('page')->where('slug', $page)->first();
+    }
+
     public function limit($limit){
         return Post::type('post')->inRandomOrder()->limit($limit)->get();
     }
