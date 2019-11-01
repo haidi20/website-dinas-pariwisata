@@ -27,8 +27,8 @@
                     </div>
 
                     <div class="advertisement">
-                        <div class="desktop-advert" sytle="background-color:white">
-                            <img src="{{asset('images/wonderful-indonesia.png')}}" class="logo-burung"  alt="">
+                        <div class="desktop-advert">
+                            <img src="{{asset('images/wonderful-indonesia-transparent.png')}}" class="logo-burung"  alt="">
                         </div>
                         <div class="tablet-advert">
                             
