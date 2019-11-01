@@ -59,7 +59,7 @@ class Gallery extends Model
         return $this->belongsTo('App\Web\Models\User');
     }
 
-    public function preview($width=null, $height=null, $link=false)
+    public function preview($width=null, $height=null, $link=false, $yt=false)
     {
         $linkYoutube = null;
 
@@ -87,6 +87,8 @@ class Gallery extends Model
             }
             $style = '';
         }
+
+        if($yt) return $linkYoutube;
 
         if($link) return $url;
 
@@ -156,6 +158,11 @@ class Gallery extends Model
         } else {
             return '<iframe width="100%" height="500" src="'.$embed_url.'" allowfullscreen></iframe>';
         }
+    }
+
+    public function getYoutubeLinkAttribute()
+    {
+        return $this->preview(null, null, false, true);
     }
 
     public function getPreviewUrlAttribute()

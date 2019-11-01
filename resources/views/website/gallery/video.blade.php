@@ -57,14 +57,14 @@
                     @forelse ($data as $index => $item)
                         @if($index + 1 % 2)
                             <div class="col-md-6">
-                                <div class="news-post image-post2">
-                                    {{-- <img 
-                                        src='{{$item->thumbnail}}' 
-                                        class="image" data-source='{{$item->link}}'
-                                    /> --}}
-
-                                    {!!$item->preview_original!!}
+                                <a href="{{$item->youtube_link}}" class="video-link">
+                                <div class="widget post-widget" >
+                                    <div class="news-post video-post" >
+                                        <img alt="" src="{{$item->thumbnail}}">
+                                        {{-- <a href="{{$item->youtube_link}}" class="video-link"><i class="fa fa-play-circle-o"></i></a> --}}
+                                    </div>
                                 </div>
+                                </a>
                             </div>
                         @else 
                             
