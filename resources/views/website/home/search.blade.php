@@ -1,9 +1,10 @@
 <!-- features-today-section
 ================================================== -->
-<section class="space-search" style="background-image: url('{{asset('images/bg-search.png')}}')">
+<section class="space-search" style="background-image: url('{{asset('images/bg-search-blur.jpg')}}')">
     <div class="container center-search" >
         <h2>Welcome To Kalimantan Timur</h2>
-        <h3>We offer a variety of services and options</h3>
+        <br>
+        <!-- <h3>We offer a variety of services and options</h3> -->
         <form role="search" class="search-form">
             <input type="text" id="search" name="search" placeholder="ketik judul artikel" />
             <select class="category-search" name="category" id="category">
