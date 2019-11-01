@@ -507,20 +507,18 @@ if( ! function_exists('has_error') )
 
 if( ! function_exists('render_menu_child'))
 {
-    function render_menu_child($menu, $toggle=true){
+    function render_menu_child($menu, $toggle=true, $level3=null){
         if($toggle){
             $template = 
-            '<li class="%s dropdown">
-                <a href="%s" class="dropdown-toggle" aria-expanded="false" data-toggle="dropdown">%s <span class="caret"></span></a>
-                <ul class="dropdown-menu">
+            '<li class="drop"><a class="custom_%s"  href="%s">%s</a>
+                <ul class="dropdown features-dropdown">
                     %s
                 </ul>
             </li>';
         }else{
             $template = 
-            '<li class="%s dropdown dropdown-submenu">
-                <a href="%s">%s</a>
-                <ul class="dropdown-menu">
+            '<li class="drop"><a class="%s" href="%s">%s</a>
+                <ul class="dropdown level2">
                     %s
                 </ul>
             </li>';
@@ -536,11 +534,11 @@ if( ! function_exists('render_menu_child'))
             }
         }
 
-        $html = sprintf($template, active_menu($menu->url), $menu->url ?: '#', $menu->display_name, $child);
+        $html = sprintf($template, $menu->id, $menu->url ?: '#', $menu->display_name, $child);
+        // $html = sprintf($template, active_menu($menu->url), $menu->url ?: '#', $menu->display_name, $child);
 
         return $html;
     }
-
 }
 
 if( ! function_exists('action_color') )

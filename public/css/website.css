@@ -120,6 +120,10 @@ form button i.fa-search {
     padding:15px;
 }
 
+.navbar-nav > li > a::before{
+    /* background:blue; */
+}
+
 .image-post, .list-posts, .post-gallery, .news-post{
     cursor: pointer;
 }

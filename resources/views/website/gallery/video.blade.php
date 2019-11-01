@@ -57,14 +57,8 @@
                     @forelse ($data as $index => $item)
                         @if($index + 1 % 2)
                             <div class="col-md-6">
-                                <a href="{{$item->youtube_link}}" class="video-link">
-                                <div class="widget post-widget" >
-                                    <div class="news-post video-post" >
-                                        <img alt="" src="{{$item->thumbnail}}">
-                                        {{-- <a href="{{$item->youtube_link}}" class="video-link"><i class="fa fa-play-circle-o"></i></a> --}}
-                                    </div>
-                                </div>
-                                </a>
+                                {{-- <a href="{{$item->youtube_link}}" class="video-link"> --}}
+                                <iframe class="modal-gallery" src="{{$item->youtube_link}}" id="video" width="500" height="400" frameborder="0" allowFullScreen></iframe>
                             </div>
                         @else 
                             
@@ -84,6 +78,7 @@
             <!-- End block content -->
             
         </div>
+        <br><br>
         <div class="center-button">
             <a href="#"><i class="fa fa-refresh"></i> More from featured</a>
         </div>

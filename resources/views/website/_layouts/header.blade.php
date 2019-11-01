@@ -1,13 +1,3 @@
-@section('script-bottom')
-    <script>
-        menu = {!! str_replace("'", "\'", json_encode($menu)) !!};
-        
-        menu.map((item, index) => {
-            $('head`).prepend("<style>.navbar-nav > li > a.fashion::before{background-color:green}</style>");
-        });
-    </script>
-@endsection
-
 <!-- Header
     ================================================== -->
     <header class="clearfix">
@@ -57,12 +47,45 @@
 
                             @if($menu)
                                 @foreach ($menu as $index => $item)
-                                    <li {{ active_menu($item->link.'*') }}>
-                                        <a class="menu_{{$item->id}} fashion"  href="{{url($item->link)}}">{{$item->name}}</a>
-                                    </li>
+                                    @if(!count($item->child))
+                                        <li>
+                                            <a class="custom_{{$item->id}}"  href="{{url($item->link)}}">{{$item->name}}</a>
+                                        </li>
+                                    @else
+                                    {!! render_menu_child($item) !!}
+                                       {{--<li class="drop">
+                                            <a class="menu_{{$item->id}} fashion"  href="{{url($item->link)}}">{{$item->name}}</a>
+                                            <ul class="dropdown features-dropdown">
+                                                <li class="drop"><a href="#"></a>
+                                                    <ul class="dropdown level2">
+                                                        <li>
+                                                            <a href="news-category1.html">Large Image Sidebar</a>
+                                                            <ul class="dropdown level3">
+                                                                <li><a href="news-category1.html">detail banget</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li> --}}
+                                        @endif
                                 @endforeach
+                                
                             @else
-
+                                {{-- <li class="drop"><a class="features" href="#">Features</a>
+									<ul class="dropdown features-dropdown">
+										<li class="drop"><a href="#">Category Layouts</a>
+											<ul class="dropdown level2">
+                                                <li>
+                                                    <a href="news-category1.html">Large Image Sidebar</a>
+                                                    <ul class="dropdown level3">
+                                                        <li><a href="news-category1.html">detail banget</a></li>
+                                                    </ul>
+                                                </li>
+											</ul>
+										</li>
+									</ul>
+								</li> --}}
                             @endif
 
                         </ul>

@@ -7,8 +7,8 @@ use App\Web\Models\Gallery;
 class GalleryRepository 
 {
     // image
-    public function allImages(){
-        return Gallery::where('type', 'image')->paginate(10);
+    public function allImages($limit = null){
+        return Gallery::where('type', 'image')->paginate($limit);
     }
 
     public function limitImages($limit){
@@ -19,12 +19,12 @@ class GalleryRepository
 
     //video
 
-    public function allVideos(){
-        return Gallery::where('type', 'video')->paginate(10);
+    public function allVideos($limit = null){
+        return Gallery::where('type', 'video')->paginate($limit);
     }
 
-    public function limitVideos(){
-
+    public function limitVideos($limit = null){
+        return Gallery::where('type', 'video')->limit($limit)->get();
     }
 
     public function firstVideo(){
