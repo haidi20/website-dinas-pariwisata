@@ -39,6 +39,10 @@
                         <!-- single-post box -->
                         <div class="single-post-box">
 
+                            <div class="title-section">
+                                <h1><span class="world">Foto</span></h1>
+                            </div>
+
                             <div class="article-inpost">
                                 @foreach ($data as $index => $item)
                                     @if($index % 2)
