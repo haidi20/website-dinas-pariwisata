@@ -156,6 +156,10 @@ section.heading-news {
     background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
 }
 
+.navbar-nav > li > a.nav-custom:before {
+    background: var(--custom-color);
+}
+
 /* show image */
 
 
