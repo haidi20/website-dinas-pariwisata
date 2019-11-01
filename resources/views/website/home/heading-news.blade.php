@@ -5,7 +5,7 @@
 		<div class="iso-call heading-news-box">
 
 			<div class="news-post image-post default-size" >
-				{!!$firstPost->preview_original!!}
+				{!!$firstPost->preview_single!!}
 				<div class="hover-box">
 					<div class="inner-hover">
 						<a 
@@ -15,7 +15,7 @@
 						>
 							{{$firstPost->display_category_name}}
 						</a>
-						<h2><a href="{{url('post/tags', $firstPost->slug)}}">{{$firstPost->title}}</a></h2>
+						<h2><a href="{{url('post/tags', $firstPost->slug)}}">{{$firstPost->show_limit_title}}</a></h2>
 						<ul class="post-tags">
 							<li><i class="fa fa-clock-o"></i><span>{{$firstPost->long_date}}</span></li>
 							{{-- <li><a href="#"><i class="fa fa-eye"></i><span>{{$firstPost->read}}</span></a></li> --}}
@@ -32,7 +32,7 @@
 					@foreach ($limitThreePosts as $index => $item)
 						<li>
 							<div class="news-post image-post">
-								{!!$item->preview_original!!}
+								{!!$item->preview_single!!}
 								<div class="hover-box">
 									<div class="inner-hover">
 										<a 
@@ -42,7 +42,7 @@
 										>
 											{{$item->display_category_name}}
 										</a>
-										<h2><a href="{{url('post/tags', $item->slug)}}">{{$item->title}}</a></h2>
+										<h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_limit_title}}</a></h2>
 										<ul class="post-tags">
 											<li><i class="fa fa-clock-o"> {{$item->long_date}}</i></li>
 											{{-- <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li> --}}
@@ -94,7 +94,7 @@
 				@else
 
 					<div class="news-post image-post">
-						{!!$item->preview_original!!}
+						{!!$item->preview_single!!}
 						<div class="hover-box">
 							<div class="inner-hover">
 								<a 
@@ -104,7 +104,7 @@
 								>
 									{{$item->display_category_name}}
 								</a>
-								<h2><a href="{{url('post/tags', $item->slug)}}">{{$item->title}}</a></h2>
+								<h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_limit_title}}</a></h2>
 								<ul class="post-tags">
 									<li><i class="fa fa-clock-o"></i><span>{{$item->long_date}}</span></li>
 									<li>{!! $item->viewed !!}</li>

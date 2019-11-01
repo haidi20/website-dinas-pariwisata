@@ -10,7 +10,7 @@ class BreakingNewsController extends BaseController
 {
     public function index()
     {
-        $posts = Post::select('id','title')->where('breaking_news',0)->get();
+        $posts = Post::select('id','title')->where('breaking_news',0)->where('type', 'post')->get();
         $breaking_news = Post::select('id','title')->where('breaking_news',1)->get();
         return view('sitemanager.breaking_news.index', compact('posts','breaking_news'));
     }

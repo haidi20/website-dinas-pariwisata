@@ -99,9 +99,25 @@ class Post extends Model
         return $this->belongsTo('App\Web\Models\User');
     }
 
+    public function limit_words($string, $word_limit) {
+        $string = strip_tags($string);
+        $words = explode(' ', strip_tags($string));
+        $return = trim(implode(' ', array_slice($words, 0, $word_limit)));
+        
+        if(strlen($return) < strlen($string)){
+            $return .= '...';
+        }
+        return $return;
+    }
+
     public function getShowTitleAttribute()
     {
         return ucwords($this->title);
+    }
+
+    public function getShowLimitTitleAttribute()
+    {
+        return ucwords($this->limit_words($this->title, 6));
     }
 
     public function getDisplayAuthorAttribute()
@@ -189,6 +205,17 @@ class Post extends Model
     {
         return $this->preview(90, 60);
     }
+
+    public function getMiddlePreviewAttribute()
+    {
+        return $this->preview(60, 40);
+    }
+
+    public function getLargePreviewAttribute()
+    {
+        return $this->preview(60, 40);
+    }
+
 
     public function getPreviewAttribute()
     {
