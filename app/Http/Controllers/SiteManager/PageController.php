@@ -66,7 +66,7 @@ class PageController extends BaseController
 
 	public function menu()
     {
-        $link = $this->menu->all();
+        $link = $this->menu->ready()->get();
         return $link->toArray();
     }
 

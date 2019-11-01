@@ -216,6 +216,7 @@ if( ! function_exists('format_date') )
                 $result = $date;
             break;
         }
+        
         $l = Lang::get('date.day.' . $l).', ';
         $time = ($time) ? ', '.$times : '';
         $l = ($D) ? $l : '';
@@ -232,7 +233,7 @@ if( ! function_exists('years_old') )
         $day   = Carbon::parse($date)->diffInDays();
         $hour  = Carbon::parse($date)->diffInHours();
         $minute= Carbon::parse($date)->diffInMinutes();
-        
+
         if($date != '0000-00-00'){
             if($year > 0){
                 $template = sprintf('%s tahun lalu', $year);

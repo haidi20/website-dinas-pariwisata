@@ -101,7 +101,7 @@ class MenuController extends BaseController
 		$menu->caption     = $input['caption'];
 		$menu->icon        = '';
 		if(!$lock){
-		$menu->link        = ($input['link']) ? $input['link'] : '';
+		$menu->link        = ($input['link']) ? 'page/'.$input['link'] : '';
 		}
 		$menu->active_link = isset($input['active_link']) ? 1 : 0;
 		$menu->position    = $input['position'];

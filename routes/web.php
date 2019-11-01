@@ -20,7 +20,8 @@ use Carbon\Carbon;
 // });
 
 Route::namespace('Website')->group(function(){
-    Route::get('/', 'HomeController@index');
+	Route::get('/', 'HomeController@index');
+	Route::get('page/{page}', 'PageController@index');
     Route::get('/image', 'GalleryController@image');
     Route::get('/video', 'GalleryController@video');
     Route::group(['prefix' => 'post'], function(){

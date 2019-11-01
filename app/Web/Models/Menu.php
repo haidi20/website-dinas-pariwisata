@@ -7,7 +7,12 @@ class Menu extends Model
 {
 	protected $appends = ['status_label', 'action_link', 'url'];
 	protected $fillable = ['name', 'link', 'icon', 'parent', 'position', 'order', 'status', 'lock'];
-	public $timestamps = false;
+    public $timestamps = false;
+    
+    public function post()
+    {
+        return $this->hasMany('App\Web\Models\Post\Post');
+    }
 
     public function scopeSorted($query)
     {
@@ -22,6 +27,11 @@ class Menu extends Model
 	public function scopeActive($query)
     {
         return $query->whereStatus(1);
+    }
+
+    public function scopeReady($query)
+    {
+       return $query->where('lock', 0);
     }
 
 	public function scopeIsParent($query, $id=0)

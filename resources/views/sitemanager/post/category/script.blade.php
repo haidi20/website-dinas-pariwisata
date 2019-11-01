@@ -82,6 +82,7 @@
             if(response.success){
                 data = response.data;
                 form.find('#name').val(data.name);
+                form.find('#color').val(data.color);
                 modal.modal('show');
             }
 
