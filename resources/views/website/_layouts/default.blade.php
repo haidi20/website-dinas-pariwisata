@@ -68,14 +68,7 @@
 	</script>
 
 	<script src="{{mix('js/app.js')}}"></script>
-	<script>
-		menu = @json($menu)
-
-		$.each(menu, function(index, item){
-			$('.navbar-nav li.drop ul.dropdown.features-dropdown').css('border-top', '3px solid '+item.color)
-			$('.custom_'+item.id+':before').css('background', item.color)
-		});
-	</script>
+	<script src="{{mix('js/custom.js')}}"></script>
 
 	@yield('script-bottom')
 </body>
