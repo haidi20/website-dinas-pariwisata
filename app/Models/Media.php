@@ -8,5 +8,5 @@ class Media extends Model
 {
     protected $table = "social_media";
 
-    protected $fillable = ['name','link'];
+    protected $fillable = ['name','link','status'];
 }

@@ -104,6 +104,7 @@ class MediaController extends BaseController
         }
 
         $media->name = $input['name'];
+        $media->status = $input['status'];
         $media->type = $type;
         $media->save();
 

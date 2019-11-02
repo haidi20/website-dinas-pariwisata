@@ -46,6 +46,19 @@
 									</div>
 								</div>
 								@endif
+								<div class="form-group">
+									{!! Form::label(null, 'Status', ['class' => 'col-sm-2 control-label']) !!}
+									<div class="col-sm-10">
+										<label class="radio-inline icheck">
+											{!! Form::radio('status', '1', old('status') ?: true, ['id' => 'status_enabled' ]) !!}
+											{!! Form::label('status_enabled', 'Enabled') !!}
+										</label>
+										<label class="radio-inline icheck">
+											{!! Form::radio('status', '0', old('status'), ['id' => 'status_disabled' ]) !!}
+                        					{!! Form::label('status_disabled', 'Disabled') !!}
+										</label>
+									</div>
+								</div>
 								<div class="panel-footer">
 									<div class="row">
 										<div class="col-sm-10 col-sm-offset-2">
