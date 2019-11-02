@@ -57,7 +57,6 @@ $(function() {
                                         @if($type == 'medsos')
                                         <th>link</th>
                                         @endif
-                                        <th>Status</th>
                                         <th class="text-center" width="140">Actions</th>
                                     </tr>
                                 </thead>
@@ -69,7 +68,6 @@ $(function() {
                                         @if($type == 'medsos')
                                         <td>{{ $item->link }}</td>
                                         @endif
-                                        <td><span class="badge {{ ($item->status? 'badge-success':'badge-secondary') }}">{{$item->status ? 'Enabled' : 'Disabled'}}</span></td>
                                         <td class="text-center">
                                             @if($type == 'medsos')
                                             <a href="{{ url($moduleUrl, [$type, 'edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}Edit</a>
