@@ -32,7 +32,7 @@
 					@foreach ($limitThreePosts as $index => $item)
 						<li>
 							<div class="news-post image-post">
-								{!!$item->preview_single!!}
+								{!!$item->preview_single_slide!!}
 								<div class="hover-box">
 									<div class="inner-hover">
 										<a 

@@ -169,7 +169,7 @@ class Post extends Model
         return array_pluck($html->find('img'), 'src');
     }
 
-    public function preview($width=null, $height=null, $link=false)
+    public function preview($width=null, $height=null, $link=false, $special=false)
     {
         if( is_object($this->file) ){
             if($width || $height){
@@ -177,7 +177,6 @@ class Post extends Model
                 $style = 'style="min-height: ' . $height .'px"';
             }else{
                 $url = asset('storages/image/'.$this->file->name);
-                $style = '';
             }
         }else{
             if($this->imageInContent){
@@ -193,7 +192,15 @@ class Post extends Model
 
         if($link) return $url;
 
-        return '<img src="'.$url.'" class="img-responsive" alt="">';
+        $lazy = $special ? 'lazy-special': 'lazy';
+        $loading = asset('images/loading.gif');
+
+        return '<img 
+                    src="'.$loading.'"
+                    class="img-responsive '.$lazy.'" 
+                    alt=""
+                    data-src="'.$url.'"
+                >';
     }
 
     public function getPreviewUrlAttribute()
@@ -227,9 +234,14 @@ class Post extends Model
         return $this->preview();
     }
 
+    public function getPreviewSingleSlideAttribute()
+    {
+        return $this->preview(1200, 760, false, true);
+    }
+
     public function getPreviewSingleSpecialAttribute()
     {
-        return $this->preview(1200, 940);
+        return $this->preview(1200, 940, false);
     }
 
     public function getPreviewSingleAttribute()
