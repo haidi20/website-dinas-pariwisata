@@ -163,6 +163,40 @@ section.heading-news {
     padding-left:105px;
 }
 
-
 /* end rewrite css theme */
+
+/* class image in home */
+
+.preview-header{
+    height:170px;
+}
+
+.preview-header-slider{
+    height:340px;
+}
+
+.preview-first-post{
+    height:285px;
+}
+
+.preview-three-post{
+    height:80px;
+}
+
+.preview-last-post{
+    height:240px;
+}
+
+.preview-right-side-post{
+    height:205px;
+}
+
+.preview-right-side-post-two{
+    height:65px;
+}
+
+.preview-right-side-popular-post{
+    height:60px;
+}
+/* end class image in home */
 

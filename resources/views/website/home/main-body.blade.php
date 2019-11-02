@@ -19,7 +19,7 @@
                             <div class="col-md-6">
                                 <div class="news-post image-post2">
                                     <div class="post-gallery">
-                                        {!!$firstPost->preview_original!!}
+                                        {!!$firstPost->preview_first_post!!}
                                         <div class="hover-box">
                                             <div class="inner-hover">
                                                 <a 
@@ -43,7 +43,7 @@
                                 <ul class="list-posts">
                                     @foreach ($limitThreePosts as $index => $item)
                                         <li onClick="gotolink('{{url('post/tags', $item->slug)}}')">
-                                            {!!$item->preview_original!!}
+                                            {!!$item->preview_three_post!!}
                                             <div class="post-content">
                                                 <a 
                                                     href="{{url('post/'.$item->display_category_name)}}"
@@ -79,7 +79,7 @@
                             <div class="owl-carousel" data-num="3">
                             
                                 @foreach ($image as $index => $item)
-                                <div class="item news-post image-post3">
+                                    <div class="item news-post image-post3">
                                         {!!$item->preview_original!!}
                                     </div>
                                 @endforeach
@@ -109,10 +109,10 @@
                             @foreach ($lastPosts as $index => $item)
                                 <div class="news-post standard-post2 {{$index == 0 ? 'default-size' : ''}}">
                                     <div class="post-gallery">
-                                        {!!$item->preview_original!!}
+                                        {!!$item->preview_last_post!!}
                                     </div>
                                     <div class="post-title">
-                                        <h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_title}}</a></h2>
+                                        <h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_limit_title}}</a></h2>
                                         <ul class="post-tags">
                                             <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                             <li>{!! $item->viewed !!}</li>

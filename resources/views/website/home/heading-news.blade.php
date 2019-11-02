@@ -5,7 +5,7 @@
 		<div class="iso-call heading-news-box">
 
 			<div class="news-post image-post default-size" >
-				{!!$firstPost->preview_single!!}
+				{!!$firstPost->preview_header!!}
 				<div class="hover-box">
 					<div class="inner-hover">
 						<a 
@@ -32,7 +32,7 @@
 					@foreach ($limitThreePosts as $index => $item)
 						<li>
 							<div class="news-post image-post">
-								{!!$item->preview_single_slide!!}
+								{!!$item->preview_header_slider!!}
 								<div class="hover-box">
 									<div class="inner-hover">
 										<a 
@@ -94,7 +94,7 @@
 				@else
 
 					<div class="news-post image-post">
-						{!!$item->preview_single!!}
+						{!!$item->preview_header!!}
 						<div class="hover-box">
 							<div class="inner-hover">
 								<a 

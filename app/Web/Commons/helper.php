@@ -26,9 +26,9 @@ if( ! function_exists('modal_loading') )
     }
 }
 
-if( ! function_exists('str_limit') )
+if( ! function_exists('str_limitt') )
 {
-    function str_limit($text, $limit){
+    function str_limitt($text, $limit){
 
         if(empty($text)){
             return null;

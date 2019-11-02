@@ -66,9 +66,9 @@
 
 				</div>
 				<!-- End block content -->
-
+				
 			</div>
-
+			
 			@include('website.support.side-right-post')
 
 		</div>

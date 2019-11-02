@@ -88,12 +88,15 @@ class Gallery extends Model
             $style = '';
         }
 
+        $loading = asset('images/loading.gif');
+
         if($yt) return $linkYoutube;
 
         if($link) return $url;
 
-        return '<img src="'.$url.'" 
-                    class="img-responsive" 
+        return '<img src="'.$loading.'" 
+                    data-src="'.$url.'" 
+                    class="img-responsive lazy" 
                     data-url-original="'.$url.'" 
                     data-url-edit="'.$this->url_edit.'" 
                     data-url-delete="'.$this->url_delete.'" 

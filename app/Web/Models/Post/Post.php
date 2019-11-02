@@ -117,7 +117,7 @@ class Post extends Model
 
     public function getShowLimitTitleAttribute()
     {
-        return ucwords($this->limit_words($this->title, 6));
+        return ucwords($this->limit_words($this->title, 5));
     }
 
     public function getDisplayAuthorAttribute()
@@ -135,7 +135,7 @@ class Post extends Model
 
     public function getDisplayLimitContentLargeAttribute()
     {
-        return str_limit($this->content, 200);
+        return str_limitt($this->content, 200);
     }
 
     public function getDisplayMenuNameAttribute()
@@ -169,7 +169,7 @@ class Post extends Model
         return array_pluck($html->find('img'), 'src');
     }
 
-    public function preview($width=null, $height=null, $link=false, $special=false)
+    public function preview($width=null, $height=null, $link=false, $typeImage=null)
     {
         if( is_object($this->file) ){
             if($width || $height){
@@ -192,12 +192,13 @@ class Post extends Model
 
         if($link) return $url;
 
-        $lazy = $special ? 'lazy-special': 'lazy';
         $loading = asset('images/loading.gif');
 
+        $src = $typeImage ? $loading : $url;
+
         return '<img 
-                    src="'.$loading.'"
-                    class="img-responsive '.$lazy.'" 
+                    src="'.$src.'"
+                    class="img-responsive lazy '.$typeImage.'" 
                     alt=""
                     data-src="'.$url.'"
                 >';
@@ -257,6 +258,46 @@ class Post extends Model
     public function getPreviewSidebarAttribute()
     {
         return $this->preview(300, 250);
+    }
+
+    public function getPreviewHeaderAttribute()
+    {
+        return $this->preview(1200, 760, false, 'preview-header');
+    }
+
+    public function getPreviewHeaderSliderAttribute()
+    {
+        return $this->preview(1200, 760, false, 'preview-header-slider');
+    }
+
+    public function getPreviewFirstPostAttribute()
+    {
+        return $this->preview(1200, 760, false, 'preview-first-post');
+    }
+
+    public function getPreviewThreePostAttribute()
+    {
+        return $this->preview(1200, 760, false, 'preview-three-post');
+    }
+
+    public function getPreviewLastPostAttribute()
+    {
+        return $this->preview(1200, 760, false, 'preview-last-post');
+    }
+
+    public function getPreviewRightSidePostAttribute()
+    {
+        return $this->preview(1200, 760, false, 'preview-right-side-post');
+    }
+
+    public function getPreviewRightSidePostTwoAttribute()
+    {
+        return $this->preview(1200, 760, false, 'preview-right-side-post-two');
+    }
+
+    public function getPreviewRightSidePopularPostAttribute()
+    {
+        return $this->preview(1200, 760, false, 'preview-right-side-popular-post');
     }
 
     public function getDisplayCategoryNameAttribute()

@@ -52,7 +52,7 @@
 	<script type="text/javascript" src="{{asset('hotmagazine/js/retina-1.1.0.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('hotmagazine/js/plugins-scroll.js')}}"></script>
 	<script type="text/javascript" src="{{asset('hotmagazine/js/script.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/lazy/jquery.lazy.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('plugins/lazy/jquery.lazy.min.js')}}"></script>
 
 	<script type="text/javascript">
 		if (self==top) {
@@ -67,9 +67,20 @@
 
 			
 	</script>
+	<script>
+		$(function() {
+			jQuery("img.lazy").lazy({
+				asyncLoader: function(element, response) {
+					setTimeout(function() {
+						element.html('element handled by "asyncLoader"');
+						response(true);
+					}, 1000);
+				}
+			});
+		});
+	</script>
 
 	<script src="{{mix('js/app.js')}}"></script>
-	<script src="{{asset('js/custom-lazy.js')}}"></script>
 
 	@yield('script-bottom')
 </body>
