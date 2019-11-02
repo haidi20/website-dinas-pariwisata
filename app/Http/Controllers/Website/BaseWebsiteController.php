@@ -43,7 +43,7 @@ class BaseWebsiteController extends Controller
             ],
             2 => (object) [
                 'name' => "rightSideRecentPosts",
-                'data' => $this->postRepo->last($limit = 5),
+                'data' => $this->postRepo->recent($limit = 5),
             ],
             3 => (object) [
                 'name' => "rightSidePopularPosts",

@@ -16,9 +16,11 @@
 					<span class="new-news">New</span>
 					<ul id="js-news">
 						@foreach($breakingNewsPosts as $index => $item)
-						<li class="news-item">
-							<span class="time-news">{{$item->long_date}}</span>   
-							{{$item->title}}
+						<li class="news-item" >
+							{{-- <span class="time-news">{{$item->long_date}}</span>    --}}
+							<div onClick="gotolink('post/tags/{{$item->slug}}')" style="cursor:pointer">
+								{{$item->title}}
+							</div>
 						</li>
 						@endforeach
 					</ul>

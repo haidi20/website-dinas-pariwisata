@@ -227,6 +227,11 @@ class Post extends Model
         return $this->preview();
     }
 
+    public function getPreviewSingleSpecialAttribute()
+    {
+        return $this->preview(1200, 940);
+    }
+
     public function getPreviewSingleAttribute()
     {
         return $this->preview(1200, 760);

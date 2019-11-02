@@ -52,42 +52,10 @@
                                             <a class="nav-custom" style="--custom-color:{{ $item->color }}" href="{{url($item->link)}}">{{$item->name}}</a>
                                         </li>
                                     @else
-                                    {!! render_menu_child($item) !!}
-                                       {{--<li class="drop">
-                                            <a class="menu_{{$item->id}} fashion"  href="{{url($item->link)}}">{{$item->name}}</a>
-                                            <ul class="dropdown features-dropdown">
-                                                <li class="drop"><a href="#"></a>
-                                                    <ul class="dropdown level2">
-                                                        <li>
-                                                            <a href="news-category1.html">Large Image Sidebar</a>
-                                                            <ul class="dropdown level3">
-                                                                <li><a href="news-category1.html">detail banget</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li> --}}
-                                        @endif
+                                        {!! render_menu_child($item) !!}
+                                    @endif
                                 @endforeach
-                                
-                            @else
-                                {{-- <li class="drop"><a class="features" href="#">Features</a>
-									<ul class="dropdown features-dropdown">
-										<li class="drop"><a href="#">Category Layouts</a>
-											<ul class="dropdown level2">
-                                                <li>
-                                                    <a href="news-category1.html">Large Image Sidebar</a>
-                                                    <ul class="dropdown level3">
-                                                        <li><a href="news-category1.html">detail banget</a></li>
-                                                    </ul>
-                                                </li>
-											</ul>
-										</li>
-									</ul>
-								</li> --}}
                             @endif
-
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->

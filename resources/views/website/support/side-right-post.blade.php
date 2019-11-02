@@ -12,7 +12,7 @@
                         <li>
                             <div class="news-post image-post2">
                                 <div class="post-gallery">
-                                    {!!$item->preview_original!!}
+                                    {!!$item->preview_single_special!!}
                                     <div class="hover-box">
                                         <div class="inner-hover">
                                             <h2><a href="{{url('post/tags', $item->slug)}}">{{$item->title}} </a></h2>
@@ -66,8 +66,8 @@
                                 <div class="post-content">
                                     <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
                                     <ul class="post-tags">
-                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li> <br>
-                                        <li>{!! $item->viewed !!}</li>
+                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
+                                        <li class="right-side-viewed">{!! $item->viewed !!}</li>
                                     </ul>
                                 </div>
                             </li>
@@ -84,7 +84,7 @@
                                     <h2><a href="{{url('post', $item->slug)}}">{{$item->title}} </a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                        <li>{!! $item->viewed !!}</li>
+                                        <li class="right-side-viewed">{!! $item->viewed !!}</li>
                                     </ul>
                                 </div>
                             </li>
@@ -100,6 +100,22 @@
                 <h1><span>Video</span></h1>
             </div>
             <div class="news-post video-post">
+                <img src="{{$rightSideVideo->thumbnail}}">
+                <a href="{{$rightSideVideo->link}}" class="video-link"><i class="fa fa-play-circle-o"></i></a>
+                <div class="hover-box">
+                    <h2><a href="single-post.html">{{$rightSideVideo->caption}}</a></h2>
+                    <ul class="post-tags">
+                        {{-- <li><i class="fa fa-clock-o"></i>27 may 2013</li> --}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {{-- <div class="widget post-widget">
+            <div class="title-section">
+                <h1><span>Video</span></h1>
+            </div>
+            <div class="news-post video-post">
                     <img src="{{$rightSideVideo->thumbnail}}">
                     <a href="{{$rightSideVideo->link}}" class="video-link"></a>
                 <div class="hover-box">
@@ -111,7 +127,7 @@
             <div class="center-button">
                 <a href="{{url('/video')}}"> Show More </a>
             </div>
-        </div>
+        </div> --}}
 
 
     </div>

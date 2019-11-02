@@ -121,10 +121,6 @@ form button i.fa-search {
     padding:15px;
 }
 
-.navbar-nav > li > a::before{
-    /* background:blue; */
-}
-
 .image-post, .list-posts, .post-gallery, .news-post{
     cursor: pointer;
 }
@@ -163,5 +159,10 @@ section.heading-news {
 
 /* show image */
 
+.sidebar.large-sidebar .tab-posts-widget .tab-pane ul.list-posts li.right-side-viewed{
+    padding-left:105px;
+}
+
 
 /* end rewrite css theme */
+
