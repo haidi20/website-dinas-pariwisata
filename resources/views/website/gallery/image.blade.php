@@ -45,9 +45,9 @@
 
                             <div class="article-inpost">
                                 @foreach ($data as $index => $item)
-                                    @if($index % 2)
-                                    <div class="row">
-                                        <div class="col-md-6">
+                                    {{-- @if($index % 4) --}}
+                                    {{-- <div class="row"> --}}
+                                        <div class="col-md-3">
                                             <div class="image-content">
                                                 <div class="image-place zoom" href="{{url($item->preview_url)}}">
                                                     {!! $item->preview_original !!}
@@ -59,9 +59,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @else
-                                    <div class="col-md-6">
+                                    {{-- </div> --}}
+                                    {{-- @else --}}
+                                    {{-- <div class="col-md-3">
                                         <div class="image-content">
                                             <div class="image-place zoom" href="{{url($item->preview_url)}}">
                                                 {!! $item->preview_original !!}
@@ -72,8 +72,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @endif
+                                    </div> --}}
+                                    {{-- @endif --}}
                                 @endforeach
                             </div>
 
