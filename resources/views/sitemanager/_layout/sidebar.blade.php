@@ -46,9 +46,9 @@
 						<li class="{{ active_menu('sitemanager/media/medsos*') }}">
 							<a href="{{ url('sitemanager', ['media', 'medsos']) }}">{!!fa('comments-o')!!}<span>Social Media</span></a>
 						</li>
-						<li class="{{ active_menu('sitemanager/media/share*') }}">
+						<!-- <li class="{{ active_menu('sitemanager/media/share*') }}">
 							<a href="{{ url('sitemanager', ['media', 'share']) }}">{!!fa('share')!!}<span>Share</span></a>
-						</li>
+						</li> -->
 						<li class="nav-separator"></li>
 						<li><a href="{{ url('/') }}" target="_blank">{!!fa('globe')!!}<span>View Website</span></a></li>
 						<li class="nav-separator">&nbsp;</li>
