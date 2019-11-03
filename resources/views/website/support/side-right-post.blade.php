@@ -10,7 +10,7 @@
                 <ul class="bxslider">
                     @foreach ($rightSidePosts as $index => $item)
                         <li>
-                            <div class="news-post image-post2">
+                            <div class="news-post image-post2" onClick="gotolink('{{$item->slug}}', 'post')">
                                 <div class="post-gallery">
                                     {!!$item->preview_right_side_post!!}
                                     <div class="hover-box">
@@ -31,7 +31,7 @@
             <ul class="list-posts">
 
                @foreach ($rightSidePosts as $index => $item)
-                    <li onClick="gotolink('{{url('post/tags', $item->slug)}}')">
+                    <li onClick="gotolink('{{$item->slug}}', 'post')">
                         {!!$item->preview_right_side_post_two!!}
                         <div class="post-content">
                             <h2><a href="{{url('post/tags', $item->slug)}}">{{$item->title}}</a></h2>
@@ -61,10 +61,10 @@
                 <div class="tab-pane active" id="option1">
                     <ul class="list-posts">
                         @foreach ($rightSidePopularPosts as $index => $item)
-                        <li onClick="gotolink('{{url('post/tags', $item->slug)}}')">
+                        <li onClick="gotolink('{{$item->slug}}', 'post')">
                                 {!!$item->preview_right_side_popular_post!!}
                                 <div class="post-content">
-                                    <h2><a href="{{url('post', $item->slug)}}">{{$item->title}}</a></h2>
+                                    <h2><a onClick="gotolink('{{$item->slug}}', 'post')">{{$item->title}}</a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                         {{-- <li class="right-side-viewed">{!! $item->viewed !!}</li> --}}
@@ -78,10 +78,10 @@
                     <ul class="list-posts">
 
                         @foreach ($rightSideRecentPosts as $index => $item)
-                            <li onClick="gotolink('{{url('post/tags', $item->slug)}}')">
+                            <li onClick="gotolink('{{$item->slug}}', 'post')">
                                 {!!$item->preview_right_side_popular_post!!}
                                 <div class="post-content">
-                                    <h2><a href="{{url('post', $item->slug)}}">{{$item->title}} </a></h2>
+                                    <h2><a onClick="gotolink('{{$item->slug}}', 'post')">{{$item->title}} </a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                         {{-- <li class="right-side-viewed">{!! $item->viewed !!}</li> --}}

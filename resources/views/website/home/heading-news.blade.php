@@ -4,7 +4,7 @@
 
 		<div class="iso-call heading-news-box">
 
-			<div class="news-post image-post default-size" >
+			<div class="news-post image-post default-size" onClick="gotolink('{{$firstPost->slug}}', 'post')">
 				{!!$firstPost->preview_header!!}
 				<div class="hover-box">
 					<div class="inner-hover">
@@ -31,14 +31,14 @@
 				<ul class="bxslider">
 					@foreach ($limitThreePosts as $index => $item)
 						<li>
-							<div class="news-post image-post">
+							<div class="news-post image-post" onClick="gotolink('{{$item->slug}}', 'post')">
 								{!!$item->preview_header_slider!!}
 								<div class="hover-box">
 									<div class="inner-hover">
 										<a 
 											class="category-post" 
 											style="background-color:{{$item->color_category}}" 
-											href="{{url('post/'.$item->display_category_name)}}"
+											onClick="gotolink('{{$item->slug}}', 'post')"
 										>
 											{{$item->display_category_name}}
 										</a>
@@ -57,7 +57,7 @@
 			</div>
 
 			@for ($i = 1; $i <= 2; $i++)
-				<div class="news-post image-post">
+				<div class="news-post image-post" >
 					<img src="" alt="">
 					<div class="hover-box">
 						<div class="inner-hover">
@@ -76,7 +76,7 @@
 			@foreach ($limitSixPosts as $index => $item)
 				@if($index == 5 && $index == 6)
 					@for ($i = 1; $i <= 2; $i++)
-						<div class="news-post image-post">
+						<div class="news-post image-post" >
 							<img src="" alt="">
 							<div class="hover-box">
 								<div class="inner-hover">
@@ -93,14 +93,14 @@
 					@endfor
 				@else
 
-					<div class="news-post image-post">
+					<div class="news-post image-post" onClick="gotolink('{{$item->slug}}', 'post')">
 						{!!$item->preview_header!!}
 						<div class="hover-box">
 							<div class="inner-hover">
 								<a 
 									class="category-post" 
 									style="background-color:{{$item->color_category}}" 
-									href="{{url('post/'.$item->display_category_name)}}"
+									onClick="gotolink('{{$item->slug}}', 'post')"
 								>
 									{{$item->display_category_name}}
 								</a>

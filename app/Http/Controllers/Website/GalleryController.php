@@ -17,7 +17,7 @@ class GalleryController extends BaseController
     public function image()
     {
         $typeGallery = "Image";
-        $data = $this->galleryRepo->limitImages(4);
+        $data = $this->galleryRepo->limitImages(8);
 
         return $this->view('website.gallery.image', compact(
             'data', 'typeGallery'
@@ -27,7 +27,7 @@ class GalleryController extends BaseController
     public function video()
     {
         $typeGallery = "Video";
-        $data = $this->galleryRepo->limitVideos(4);
+        $data = $this->galleryRepo->limitVideos(8);
 
         return $this->view('website.gallery.video', compact(
             'data', 'typeGallery'

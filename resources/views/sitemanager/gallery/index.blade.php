@@ -179,7 +179,7 @@
 
                                     <ul class="gallery row">
                                     @foreach($gallery as $item)
-                                        <div data-groups='{{ $item->gallery_tags }}' class="item-wrapper col-md-3" data-name="{{ $item->caption }}">
+                                        <div data-groups='{{ $item->gallery_tags }}' class="item-wrapper col-md-3" style="padding-bottom:20px" data-name="{{ $item->caption }}">
                                             <div class="item">
                                                 {!! $item->preview_original !!}
                                                 <h3>{{ str_limit($item->caption, 18) }}</h3>

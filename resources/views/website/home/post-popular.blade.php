@@ -11,13 +11,13 @@
             <div class="owl-carousel" data-num="4">
             
                 @foreach ($popularPosts as $index => $item)
-                    <div class="item news-post standard-post">
+                    <div class="item news-post standard-post" onClick="gotolink('{{$item->slug}}', 'post')">
                         <div class="post-gallery">
                             {!!$item->preview_single!!}
                             <a 
                                 class="category-post world" 
                                 style="background-color:{{$item->color_category}}"
-                                href="{{url('post/'.$item->display_category_name)}}"
+                                onClick="gotolink('{{$item->slug}}', 'post')"
                             >
                                 {{$item->display_category_name}}
                             </a>

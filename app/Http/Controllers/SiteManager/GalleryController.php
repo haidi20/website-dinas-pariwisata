@@ -30,7 +30,7 @@ class GalleryController extends BaseController
 
     public function index()
     {
-        $url = url($this->moduleUrl, ['type', 'image']);
+        $url = url($this->moduleUrl, ['type', 'all']);
         return redirect($url);
     }
 

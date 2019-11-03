@@ -1,7 +1,21 @@
 @extends('website._layouts.default')
 
 @section('script-bottom')
-	@include('website.home.script')
+<script>
+	$('.send-search').click(function(){
+		form = $('.search-form').serializeArray();
+
+		data = []
+
+		$.each(form, function(index, item){
+			data[item.name] = item.value
+		});
+
+		link = "{{url('post')}}/"+data['category']+"?search="+data['search']
+
+		window.location.href = link
+	});
+</script>
 @endsection
 
 @section('content')
@@ -18,7 +32,7 @@
 						@foreach($breakingNewsPosts as $index => $item)
 						<li class="news-item" >
 							{{-- <span class="time-news">{{$item->long_date}}</span>    --}}
-							<div onClick="gotolink('post/tags/{{$item->slug}}')" style="cursor:pointer">
+							<div onClick="gotolink('{{$item->slug}}', 'post')" style="cursor:pointer">
 								{{$item->title}}
 							</div>
 						</li>

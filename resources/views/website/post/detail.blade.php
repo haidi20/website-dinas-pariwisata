@@ -1,9 +1,5 @@
 @extends('website._layouts.default')
 
-@section('script-bottom')
-	@include('website.home.script')
-@endsection
-
 @section('script-top')
     <style>
         .single-post-box .share-post-box ul.share-box li a{

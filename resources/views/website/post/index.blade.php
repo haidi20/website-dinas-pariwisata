@@ -1,9 +1,5 @@
 @extends('website._layouts.default')
 
-@section('script-bottom')
-	@include('website.home.script')
-@endsection
-
 @section('content')
 <!-- block-wrapper-section
 	================================================== -->
@@ -22,7 +18,7 @@
 						</div>
 
 						@foreach ($posts as $index => $item)
-							<div class="news-post large-post">
+							<div class="news-post large-post" onClick="gotolink('{{$item->slug}}', 'post')">
 								<div class="post-gallery">
 									{!!$item->preview_original!!}
 									<a 
@@ -35,7 +31,7 @@
 								</div>
 								<div class="post-title">
 									<h2><a>
-									<h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_title}}</a></h2>
+									<h2><a onClick="gotolink('{{$item->slug}}', 'post')">{{$item->show_title}}</a></h2>
 									<ul class="post-tags">
 										<li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
 										<li>{!! $item->viewed !!}</li>
@@ -43,8 +39,8 @@
 								</div>
 								<div class="post-content">
 									{!! $item->display_limit_content_large !!}
-									<a href="{{url('post/tags', $item->slug)}}">
-										<h2><a href="{{url('post/tags', $item->slug)}}" class="read-more-button"><i class="fa fa-arrow-circle-right"></i>Read More
+									<a onClick="gotolink('{{$item->slug}}', 'post')">
+										<h2><a onClick="gotolink('{{$item->slug}}', 'post')" class="read-more-button"><i class="fa fa-arrow-circle-right"></i>Read More
 									</a>
 								</div>
 							</div>

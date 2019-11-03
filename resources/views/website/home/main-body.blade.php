@@ -17,7 +17,7 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="news-post image-post2">
+                                <div class="news-post image-post2" onClick="gotolink('{{$firstPost->slug}}', 'post')">
                                     <div class="post-gallery">
                                         {!!$firstPost->preview_first_post!!}
                                         <div class="hover-box">
@@ -42,7 +42,7 @@
                             <div class="col-md-6">
                                 <ul class="list-posts">
                                     @foreach ($limitThreePosts as $index => $item)
-                                        <li onClick="gotolink('{{url('post/tags', $item->slug)}}')">
+                                        <li onClick="gotolink('{{$firstPost->slug}}', 'post')">
                                             {!!$item->preview_three_post!!}
                                             <div class="post-content">
                                                 <a 
@@ -50,7 +50,7 @@
                                                 >
                                                     {{$item->display_category_name}}
                                                 </a>
-                                                <h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_title}}</a></h2>
+                                                <h2><a onClick="gotolink('{{$item->slug}}', 'post')">{{$item->show_title}}</a></h2>
                                                 <ul class="post-tags">
                                                     <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                                     <li>
@@ -107,12 +107,15 @@
                         <div class="latest-articles iso-call">
 
                             @foreach ($lastPosts as $index => $item)
-                                <div class="news-post standard-post2 {{$index == 0 ? 'default-size' : ''}}">
+                                <div 
+                                    class="news-post standard-post2 {{$index == 0 ? 'default-size' : ''}}"
+                                    onClick="gotolink('{{$item->slug}}', 'post')"
+                                >
                                     <div class="post-gallery">
                                         {!!$item->preview_last_post!!}
                                     </div>
                                     <div class="post-title">
-                                        <h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_limit_title}}</a></h2>
+                                        <h2><a onClick="gotolink('{{$item->slug}}', 'post')">{{$item->show_limit_title}}</a></h2>
                                         <ul class="post-tags">
                                             <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                             <li>{!! $item->viewed !!}</li>
