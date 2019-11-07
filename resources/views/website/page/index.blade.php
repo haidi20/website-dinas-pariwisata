@@ -1,22 +1,5 @@
 @extends('website._layouts.default')
 
-@section('script-bottom')
-	@include('website.home.script')
-@endsection
-
-@section('script-top')
-    <style>
-        .single-post-box .share-post-box ul.share-box li a{
-            padding-right: 0px;
-            padding-left: 11px;
-        }
-    </style>
-@endsection
-
-@section('script-bottom')
-
-@endsection
-
 @section('content')
 <!-- block-wrapper-section
 ================================================== -->
@@ -26,7 +9,7 @@
                 <div class="col-sm-12">
 
                     <!-- block content -->
-                    <div class="block-content">
+                    <div class="block-content non-sidebar">
 
                         <!-- single-post box -->
                         <div class="single-post-box">

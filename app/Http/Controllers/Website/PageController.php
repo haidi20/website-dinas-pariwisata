@@ -22,7 +22,7 @@ class PageController extends BaseController
         $menu = Menu::where('link', $link)->first();
         if(!$menu) abort(404);
 
-        $page = $this->postRepo->page($page);
+        $page = $this->postRepo->page($link);
 
         return $this->view('website.page.index', compact('page'));
     }

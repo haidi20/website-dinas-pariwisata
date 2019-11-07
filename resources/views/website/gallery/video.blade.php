@@ -6,40 +6,9 @@
             cursor: pointer;
         }
     </style>
-@endsection
-
-@section('script-bottom')
-    <script>
-        $(function(){
-            $('.img-responsive').click(function(){
-                $('#show-gallery').modal('show');
-
-                image   = $(this)
-                url     = image.data('link')
-
-                $(".modal-gallery").attr('src', url);
-            });
-
-            // mematikan video youtube ketika modal tertutup
-            $('button.close').click(function(){
-                thumbnail = $('.modal-gallery')
-                thumbnail.attr('src', '');
-            });
-        })
-        
-        // review gambar
-        // function action (id){
-        //     $('#show-gallery').modal('show');
-        //     youtube = $('.modal-gallery')
-        //     link     = $('.img-'+id).data('link')
-
-        //     youtube.attr('src', link)
-        // }
-    </script>
-@endsection
+@endsection 
 
 @section('content')
-@include('website.gallery.modal')
 <!-- block-wrapper-section
     ================================================== -->
     <section class="block-wrapper">
@@ -55,17 +24,18 @@
                     </div>
 
                     @forelse ($data as $index => $item)
-                        @if($index + 1 % 2)
-                            <div class="col-md-6">
-                                {{-- <a href="{{$item->youtube_link}}" class="video-link"> --}}
-                                <iframe class="modal-gallery" src="{{$item->youtube_link}}" id="video" width="500" height="400" frameborder="0" allowFullScreen></iframe>
-                            </div>
-                        @else 
-                            
-                        @endif
+                        <div class="col-md-3">
+                            <img 
+                                src="{{$item->thumbnail}}" 
+                                alt=""
+                                width="250"
+                                height="200"
+                                style="margin-bottom:30px"
+                            >
+                        </div>
                     @empty
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <h3>Image Empty</h3>
                         </div>
                     </div>
@@ -80,7 +50,7 @@
         </div>
         <br><br>
         <div class="center-button">
-            <a href="#"><i class="fa fa-refresh"></i> More from featured</a>
+            <a href="#"><i class="fa fa-refresh"></i> Lebih Banyak Video</a>
         </div>
         <br><br>
     </section>
