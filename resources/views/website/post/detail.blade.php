@@ -1,5 +1,13 @@
 @extends('website._layouts.default')
 
+@section('open-grap')
+<meta property="og:title" content="{{ $post->title }}" />
+<meta property="og:url" content="{{ Request::fullUrl() }}" />
+<meta property="og:type" content="{{ ucfirst($post->display_category_name) }}" />
+<meta property="og:description" content="{!! strip_tags(str_limit($post->content, 100)) !!}" />
+<meta property="og:image" content="{{ $post->preview_url }}" />
+@endsection
+
 @section('script-top')
     <style>
         .single-post-box .share-post-box ul.share-box li a{
@@ -80,7 +88,7 @@
                                 <div class="title-section">
                                     <h1><span>Leave a Comment</span> <span class="email-not-published">Your email address will not be published.</span></h1>
                                 </div>
-                                <div id="fb-root"></div>
+                                <div class="fb-comments" data-href="{{ Request::fullUrl() }}" data-numposts="5" data-width="100%"></div>
                                 
                             </div>
                             <!-- End contact form box -->
