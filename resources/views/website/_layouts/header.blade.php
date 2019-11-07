@@ -7,6 +7,7 @@
             <!-- Logo & advertisement -->
             <div class="logo-advertisement" style="
                 --custom-bg-website:url('{{asset('images/bg3.png')}}');
+                --custom-bg-mobile:url('{{asset('images/bg-mobile.png')}}');
             ">
                 <div class="container">
 
