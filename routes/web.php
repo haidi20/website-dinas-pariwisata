@@ -19,6 +19,8 @@ use Carbon\Carbon;
 //     Route::view('/{path?}/{path1?}/{path2?}', 'sitemanager.index');  
 // });
 
+// keren
+
 Route::namespace('Website')->group(function(){
 	Route::get('/', 'HomeController@index');
 	Route::get('page/{page}', 'PageController@index');
