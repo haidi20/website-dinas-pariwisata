@@ -79,13 +79,21 @@
 
                         </div>
                         <!-- End single-post box -->
+                        <div class="center-button">
+                            <a href="#"><i class="fa fa-refresh"></i> Lebih Banyak Foto</a>
+                        </div>
+                        <br><br>
 
                     </div>
                     <!-- End block content -->
 
+                    
+
                 </div>
+                
 
             </div>
+            
 
         </div>
     </section>

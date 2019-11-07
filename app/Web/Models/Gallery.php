@@ -225,7 +225,7 @@ class Gallery extends Model
 
     public function getLongDateAttribute()
     {
-        return pretty_date($this->created_at);
+        return years_old($this->created_at);
     }
 
     public function getFormatDateAttribute()
@@ -242,6 +242,6 @@ class Gallery extends Model
     {
         $icon = '&nbsp; '.fa('eye');
         $text = 'kali dilihat';
-        return sprintf('%s %s %s', $this->read, $text, $icon);
+        return sprintf('<p>%s %s %s</p>', $icon, $this->read, $text);
     }
 }

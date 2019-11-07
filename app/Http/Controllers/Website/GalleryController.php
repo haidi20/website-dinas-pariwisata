@@ -33,4 +33,14 @@ class GalleryController extends BaseController
             'data', 'typeGallery'
         ));
     }
+
+    public function detail_video($slug)
+    {
+        $video  = $this->galleryRepo->baseSlugVideo($slug);
+        $videos = $this->galleryRepo->withoutThisVideo($video->id); 
+
+        return $this->view('website.gallery.detail-video', compact(
+            'video', 'videos'
+        ));
+    }
 }

@@ -8,6 +8,18 @@
     </style>
 @endsection 
 
+@section('script-bottom')
+    <script>
+        $(function(){
+            $('.video').click(function(){
+                link = $(this).data('detail');
+
+                window.location.href = link
+            });
+        });
+    </script>
+@endsection
+
 @section('content')
 <!-- block-wrapper-section
     ================================================== -->
@@ -24,7 +36,10 @@
                     </div>
 
                     @forelse ($data as $index => $item)
-                        <div class="col-md-3">
+                        <div 
+                            class="col-md-3 video"
+                            data-detail="{{url('video', [$item->slug])}}"
+                        >
                             <img 
                                 src="{{$item->thumbnail}}" 
                                 alt=""
