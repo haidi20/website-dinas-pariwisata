@@ -43,11 +43,15 @@ class GalleryRepository
 
     public function baseSlugVideo($slug = null)
     {
-        return Gallery::where('type', 'video')->where('slug', $slug)->first();
+        $video = Gallery::where('type', 'video')->where('slug', $slug);
+
+        $video->increment('read');
+
+        return $video->first();
     }
 
-    public function withoutThisVideo($id = null)
+    public function withoutThisVideo($id = null, $limit = null)
     {
-        return Gallery::where('type', 'video')->where('id', '!=', $id)->get();
+        return Gallery::where('type', 'video')->where('id', '!=', $id)->limit($limit)->get();
     }
 }

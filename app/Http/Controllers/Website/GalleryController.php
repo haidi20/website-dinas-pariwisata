@@ -37,7 +37,7 @@ class GalleryController extends BaseController
     public function detail_video($slug)
     {
         $video  = $this->galleryRepo->baseSlugVideo($slug);
-        $videos = $this->galleryRepo->withoutThisVideo($video->id); 
+        $videos = $this->galleryRepo->withoutThisVideo($video->id, 10); 
 
         return $this->view('website.gallery.detail-video', compact(
             'video', 'videos'
