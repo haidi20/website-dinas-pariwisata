@@ -9,7 +9,7 @@
     .logo-dispar{
         width: 30px;
         position: absolute;
-        transform: translate(-5px, 40px);
+        transform: translate(-5px, 35px);
     }
     .logo-burung{
         width: 100px;
@@ -25,6 +25,7 @@
     .title-logo-dispar h2{
         color:white;
         font-size: 11px;
+        margin-bottom: 0px;
     }
     .title-logo-dispar p{
         color:white;

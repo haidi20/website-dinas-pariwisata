@@ -1,48 +1,53 @@
-/* ----------- Galaxy Tab 2 ----------- */
+@media (min-width: 576px) and (max-width: 768px){
 
-/* Portrait and Landscape */
-@media 
-  (min-device-width: 800px) 
-  and (max-device-width: 1280px) {
+  .logo-advertisement{
+      background:#f7f7f7;
+      background-repeat:no-repeat;
+      background-image:var(--custom-bg-tablet);
+  }
 
-}
+  .logo-dispar{
+      width: 70px;
+      position: absolute;
+      /* transform: translate(-60px, 10px); */
+      left: 0px;
+      margin-left: 30px;
+  }
+  .logo-burung{
+      width: 250px;
+      position:absolute;
+      transform: translate(30px, 6px);
+  }
+  .title-logo-dispar{
+      /* padding-left: 90px; */
+      color:white;
+      text-shadow: 0px 1px #8A2BE2;
+      transform: translate(-10px, 0px);
+      width:400px;
+  }
+  .title-logo-dispar h2{
+      color:white;
+      font-size: 30px;
+  }
+  .title-logo-dispar p{
+      color:white;
+      font-size: 6px;
+  }
+  
+  .title-logo-burung{
+      text-align:right;
+      padding-right: 75px;
+      color:black;
+      text-shadow: 0px 1px #8A2BE2;
+  }
+  .title-logo-burung p{
+      color:black;
+      font-size: 20px;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
 
-/* Portrait */
-@media 
-  (max-device-width: 800px) 
-  and (orientation: portrait) { 
-
-}
-
-/* Landscape */
-@media 
-  (max-device-width: 1280px) 
-  and (orientation: landscape) { 
-
-}
-
-/* ----------- Galaxy Tab S ----------- */
-
-/* Portrait and Landscape */
-@media 
-  (min-device-width: 800px) 
-  and (max-device-width: 1280px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
-/* Portrait */
-@media 
-  (max-device-width: 800px) 
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 2) { 
-
-}
-
-/* Landscape */
-@media 
-  (max-device-width: 1280px) 
-  and (orientation: landscape)
-  and (-webkit-min-device-pixel-ratio: 2) { 
+  section.heading-news {
+      padding-top: 0px;
+  }
 
 }
