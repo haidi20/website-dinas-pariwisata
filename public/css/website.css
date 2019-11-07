@@ -1,6 +1,6 @@
 /* Mediaquery for mobile user*/
-@import "mobile-iphone.css";
-@import "mobile-another.css";
+/* @import "mobile-iphone.css"; */
+/* @import "mobile-another.css"; */
 
 /* bagian header atas */
 .logo-advertisement{
@@ -197,6 +197,10 @@ section.heading-news {
 
 .preview-right-side-popular-post{
     height:60px;
+}
+
+.preview-footer-post{
+    height:65px;
 }
 /* end class image in home */
 

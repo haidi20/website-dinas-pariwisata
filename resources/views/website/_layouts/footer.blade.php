@@ -25,7 +25,7 @@
                             <ul class="list-posts">
                                 @foreach ($footerPosts as $index => $item)
                                     <li>
-                                        {!!$item->preview_single!!}
+                                        {!!$item->preview_footer_post!!}
                                         <div class="post-content">
                                             <a href="travel.html">{{$item->display_category_name}}</a>
                                             <h2><a href="{{url('post/detail')}}">{{$item->title}}</a></h2>

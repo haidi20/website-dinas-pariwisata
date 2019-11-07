@@ -300,6 +300,11 @@ class Post extends Model
         return $this->preview(1200, 760, false, 'preview-right-side-popular-post');
     }
 
+    public function getPreviewFooterPostAttribute()
+    {
+        return $this->preview(1200, 760, false, 'preview-footer-post');
+    }
+
     public function getDisplayCategoryNameAttribute()
     {
         if($this->category)
