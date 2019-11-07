@@ -5,7 +5,9 @@
         <nav class="navbar navbar-default navbar-static-top"  role="navigation">
 
             <!-- Logo & advertisement -->
-            <div class="logo-advertisement" style="background-image:url('{{asset('images/bg3.png')}}')">
+            <div class="logo-advertisement" style="
+                --custom-bg-website:url('{{asset('images/bg3.png')}}');
+            ">
                 <div class="container">
 
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -24,11 +26,12 @@
                                 <p>The Beauty of Culture and Nature</p>
                             </div>
                         </a>
+                        <img src="{{asset('images/wonderful-indonesia-transparent.png')}}" class="logo-burung"  alt="">
                     </div>
 
                     <div class="advertisement">
                         <div class="desktop-advert">
-                            <img src="{{asset('images/wonderful-indonesia-transparent.png')}}" class="logo-burung"  alt="">
+                            {{-- <img src="{{asset('images/wonderful-indonesia-transparent.png')}}" class="logo-burung"  alt=""> --}}
                         </div>
                         <div class="tablet-advert">
                             
