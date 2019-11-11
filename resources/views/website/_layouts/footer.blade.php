@@ -44,7 +44,7 @@
                             <ul class="category-list">
                                 @foreach($footerCategories as $index => $item)
                                     <li>
-                                        <a href="javascript:void(0)">{{$item->name}} <span>{{$item->total_post}}</span></a>
+                                        <a href="{{url('post', [$item->name])}}">{{$item->name}} <span>{{$item->total_post}}</span></a>
                                     </li>
                                 @endforeach
                             </ul>
