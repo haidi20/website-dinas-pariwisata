@@ -52,7 +52,7 @@
 
     /* bagian search */
     section.space-search {
-        height: 80%;
+        height: 360px;
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
@@ -61,7 +61,7 @@
       transform: translateY(160px);
         text-align:center;
         margin-top: 570px;
-    } */
+    }  */
    
     .center-search {
         transform: translateY(160px);

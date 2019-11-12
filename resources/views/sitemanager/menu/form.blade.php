@@ -137,6 +137,16 @@
 										</label>
 									</div>
 								</div>
+								<div class="form-group">
+									{!! Form::label(null, 'Terhubung Kategori', ['class' => 'col-sm-2 control-label']) !!}
+									<div class="col-sm-10">
+										@if(old('id'))
+										<input type="checkbox" name="active_link" id="inlinecheckbox1" value="1" @if(old('active_link')) checked="checked" @endif> {!! old('display_active_link') !!} &nbsp; Active Link
+										@else
+										<input type="checkbox" name="active_link" id="inlinecheckbox1" value="1" checked="checked"> {!!fa('link')!!} &nbsp; Active Link
+										@endif
+									</div>
+								</div>
 								<div class="panel-footer">
 									<div class="row">
 										<div class="col-sm-11 col-sm-offset-1">
