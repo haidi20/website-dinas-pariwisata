@@ -27,7 +27,7 @@ Route::namespace('Website')->group(function(){
 	Route::get('/video/{slug}', 'GalleryController@detail_video');
     Route::group(['prefix' => 'post'], function(){
         Route::get('/', 'PostController@index');
-		Route::get('{category?}', 'PostController@index');
+		Route::get('{category}/{slug}', 'PostController@index');
 		Route::get('tags/{slug}', 'PostController@detail');
     });
     Route::group(['prefix' => 'contact'], function(){
