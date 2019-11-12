@@ -72,7 +72,14 @@ class PostRepository {
 
         if($category){
             $category = Category::where('slug', $category)->first();
-            $post = $post->category($category->id);
+            
+            if($category){
+                $id = $category->id;
+            }else{
+                abort(404);
+            }
+
+            $post = $post->category($id);
         }
 
         if($type == 'all'){

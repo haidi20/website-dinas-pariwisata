@@ -79,7 +79,7 @@ class MenuController extends BaseController
 		$lastOrder = object_get($this->menu->orderBy('order', 'DESC')->first(), 'order', -1);
 		$lastOrder++;
 		
-		$categories= Category::pluck('name', 'id');
+		$categories= Category::pluck('name', 'name');
 
 		return $this->template('form', compact('parent', 'position', 'lastOrder', 'categories'));
 	}
@@ -88,6 +88,8 @@ class MenuController extends BaseController
 	{
 		$lock = false;
 		$input = $this->request->except('_token');
+
+		// return $input;
 
 		$this->validate($this->request, [
             'name' => 'required'
@@ -98,15 +100,23 @@ class MenuController extends BaseController
             if($menu->lock) $lock = true;
         }else{
             $menu = new $this->menu;
-        }
+		}
+		
+		// kondisi jika menu mengarah ke kategori tertentu
+		if($input['connect_category'] == 1){
+			$link = 'post/'.$input['category'];
+		}else{
+			$link = ($input['link']) ? 'page/'.$input['link'] : '';
+		}
 
 		$menu->name        = $input['name'];
 		$menu->caption     = $input['caption'];
 		$menu->icon        = '';
 		if(!$lock){
-		$menu->link        = ($input['link']) ? 'page/'.$input['link'] : '';
+		$menu->link        = $link;
 		}
 		$menu->active_link = isset($input['active_link']) ? 1 : 0;
+		$menu->connect_category = isset($input['connect_category']) ? 1 : 0;
 		$menu->position    = $input['position'];
 		$menu->order       = $input['order'];
 		$menu->color       = $input['color'];

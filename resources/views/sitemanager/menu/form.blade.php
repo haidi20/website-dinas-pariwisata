@@ -13,12 +13,15 @@
 
 			if(connect.attr('checked')){
 				$('.category').show();
+				$('.address').hide();
 			}else{
 				$('.category').hide();
+				$('.address').show();
 			}
 
             connect.on('ifChanged', function(){
 				$('.category').toggle();
+				$('.address').toggle();
 			});
         });
     </script>
@@ -79,6 +82,24 @@
 									</div>
 								</div>
 								<div class="form-group">
+									{!! Form::label(null, 'Terhubung Kategori', ['class' => 'col-sm-2 control-label']) !!}
+									<div class="col-sm-10">
+										<label class="checkbox-inline icheck">
+											@if(old('id'))
+											<input type="checkbox" name="connect_category" id="connect" value="1" @if(old('connect_category')) checked="checked" @endif>
+											@else
+											<input type="checkbox" name="connect_category" id="connect" value="0"> 
+											@endif
+										</label>
+									</div>
+								</div>
+								<div class="form-group category" style="{{old('display_connect_category')}}">
+									{!! Form::label('category', 'Kategori', ['class' => 'col-sm-2 control-label']) !!}
+									<div class="col-sm-10">
+										{!! Form::select('category', $categories, old('category'), ['class' => 'form-control']) !!}
+									</div>
+								</div>
+								<div class="form-group address" style="{{old('display_connect_category_address')}}">
 									{!! Form::label('link', 'Alamat Link', ['class' => 'col-sm-2 control-label']) !!}
 									<div class="col-sm-8">
 										{!! Form::text('link', old('link'), ['class' => 'form-control', old('lock') ? 'disabled' : 'placeholder' => 'masukkan link']) !!}
@@ -128,24 +149,6 @@
 											{!! Form::radio('status', '0', old('status'), ['id' => 'status_draft' ]) !!}
                         					{!! Form::label('status_draft', 'Draft') !!}
 										</label>
-									</div>
-								</div>
-								<div class="form-group">
-									{!! Form::label(null, 'Terhubung Kategori', ['class' => 'col-sm-2 control-label']) !!}
-									<div class="col-sm-10">
-										<label class="checkbox-inline icheck">
-											@if(old('id'))
-											<input type="checkbox" name="connect_category" id="connect" value="1" @if(old('connect_category')) checked="checked" @endif>
-											@else
-											<input type="checkbox" name="connect_category" id="connect" value="0"> 
-											@endif
-										</label>
-									</div>
-								</div>
-								<div class="form-group category" style="{{old('display_connect_category')}}">
-									{!! Form::label('category_id', 'Kategori', ['class' => 'col-sm-2 control-label']) !!}
-									<div class="col-sm-10">
-										{!! Form::select('category_id', $categories, old('category_id'), ['class' => 'form-control']) !!}
 									</div>
 								</div>
 								<div class="panel-footer">

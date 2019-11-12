@@ -103,13 +103,32 @@ class Menu extends Model
         return $icon;
     }
 
-    public function getDisplayActiveCategoryAttribute()
+    public function getDisplayConnectCategoryAttribute()
     {
-        if($this->connect_category){
-            return 'display:none;';
-        }else{
-            return '';
+        switch($this->connect_category){
+            default:
+                $style = 'display:none;';
+                break;
+            case 1:
+                $style = '';
+                break;
         }
+
+        return $this->connect_category;
+    }
+
+    public function getDisplayActiveCategoryAddressAttribute()
+    {
+        switch($this->connect_category){
+            default:
+                $style = '';
+                break;
+            case 1:
+                $style = 'display:none;';
+                break;
+        }
+
+        return $this->connect_category;
     }
 
     public function getUrlAttribute()
