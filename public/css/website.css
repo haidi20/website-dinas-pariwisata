@@ -147,16 +147,20 @@ section.heading-news {
     padding-top:40px
 }
 
+.navbar-nav > li > a.nav-custom:before {
+    background: var(--custom-color);
+}
+
+.navbar-nav li.drop ul.dropdown.features-dropdown {
+	border-top: 3px solid var(--custom-color);
+}
+
 .video-post a.video-link{
     font-size:15px;
 }
 
 .single-post-box .share-post-box ul.share-box li a.instagram {
     background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-}
-
-.navbar-nav > li > a.nav-custom:before {
-    background: var(--custom-color);
 }
 
 /* show image */
@@ -168,6 +172,7 @@ section.heading-news {
 /* end rewrite css theme */
 
 }
+/* end responsive website  */
 
 /* class image in home */
 
