@@ -114,7 +114,7 @@ class Menu extends Model
                 break;
         }
 
-        return $this->connect_category;
+        return $style;
     }
 
     public function getDisplayActiveCategoryAddressAttribute()
@@ -128,7 +128,21 @@ class Menu extends Model
                 break;
         }
 
-        return $this->connect_category;
+        return $style;
+    }
+
+    public function getDisplayIcheckCategoryAttribute()
+    {
+        switch($this->lock){
+            default:
+                $style = '';
+                break;
+            case 1:
+                $style = 'display:none;';
+                break;
+        }
+
+        return $style;
     }
 
     public function getUrlAttribute()

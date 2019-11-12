@@ -22,6 +22,13 @@
             connect.on('ifChanged', function(){
 				$('.category').toggle();
 				$('.address').toggle();
+
+				value = $('#value_connect')
+				if(value.val() == 1){
+					value.val(0);
+				}else if(value.val() == 0){
+					value.val(1);
+				}
 			});
         });
     </script>
@@ -81,7 +88,7 @@
 										{!! Form::text('caption', old('caption'), ['class' => 'form-control']) !!}
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group" style="{{old('display_icheck_category')}}">
 									{!! Form::label(null, 'Terhubung Kategori', ['class' => 'col-sm-2 control-label']) !!}
 									<div class="col-sm-10">
 										<label class="checkbox-inline icheck">
@@ -94,9 +101,9 @@
 									</div>
 								</div>
 								<div class="form-group category" style="{{old('display_connect_category')}}">
-									{!! Form::label('category', 'Kategori', ['class' => 'col-sm-2 control-label']) !!}
+									{!! Form::label('category_id', 'Kategori', ['class' => 'col-sm-2 control-label']) !!}
 									<div class="col-sm-10">
-										{!! Form::select('category', $categories, old('category'), ['class' => 'form-control']) !!}
+										{!! Form::select('category_id', $categories, old('category_id'), ['class' => 'form-control']) !!}
 									</div>
 								</div>
 								<div class="form-group address" style="{{old('display_connect_category_address')}}">

@@ -12,7 +12,11 @@ class PostRepository {
     }
 
     public function page($page=null){
-        return Post::type('page')->where('slug', $page)->first();
+        $post = Post::type('page')->where('slug', $page)->first();
+
+        if(!$post) return false;
+
+        return $post;
     }
 
     public function limit($limit){

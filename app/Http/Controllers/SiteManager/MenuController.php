@@ -79,7 +79,7 @@ class MenuController extends BaseController
 		$lastOrder = object_get($this->menu->orderBy('order', 'DESC')->first(), 'order', -1);
 		$lastOrder++;
 		
-		$categories= Category::pluck('name', 'name');
+		$categories= Category::pluck('name', 'id');
 
 		return $this->template('form', compact('parent', 'position', 'lastOrder', 'categories'));
 	}
@@ -95,18 +95,22 @@ class MenuController extends BaseController
             'name' => 'required'
         ]);
 
-		if($id) {
+		if($id){
             $menu = $this->menu->find($id);
             if($menu->lock) $lock = true;
         }else{
-            $menu = new $this->menu;
+			$menu = new $this->menu;
+			$input['link'] = 'page/'.$input['link'];
 		}
 		
+		$connectCategory = isset($input['connect_category']) ? $input['connect_category'] : 0;
+
 		// kondisi jika menu mengarah ke kategori tertentu
-		if($input['connect_category'] == 1){
-			$link = 'post/'.$input['category'];
-		}else{
-			$link = ($input['link']) ? 'page/'.$input['link'] : '';
+		if($connectCategory == 1){
+			$category = Category::find($input['category_id']);
+			$link = 'post/'.$category->name;
+		}else if($connectCategory == 0){
+			$link = ($input['link']) ? $input['link'] : '';
 		}
 
 		$menu->name        = $input['name'];
@@ -122,7 +126,8 @@ class MenuController extends BaseController
 		$menu->color       = $input['color'];
 		$menu->status      = $input['status'];
 		$menu->parent_id   = array_get($input, 'parent_id', 0);
-        $menu->save();
+		$menu->category_id = array_get($input, 'category_id', 0);
+		$menu->save();
 
         $redirect = ($menu->parent_id) ? url($this->moduleUrl, ['parent', $menu->parent_id]) : url($this->moduleUrl);
 
