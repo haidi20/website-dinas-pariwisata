@@ -60,4 +60,9 @@ class Post extends Model
     public function getLimitContentLargeAttribute(){
         return str_limit($this->content, 200);
     }
+
+    public function getGotolinkAttribute()
+    {
+        return 'post/'.$this->slug;
+    }
 }

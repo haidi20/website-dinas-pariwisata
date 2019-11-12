@@ -523,7 +523,7 @@ if( ! function_exists('render_menu_child'))
         if($toggle){
             $template = 
             '<li class="drop"><a class="custom_%s"  href="%s">%s</a>
-                <ul class="dropdown features-dropdown">
+                <ul class="dropdown features-dropdown" style="--custom-color:'.$menu->color.'">
                     %s
                 </ul>
             </li>';
@@ -540,7 +540,7 @@ if( ! function_exists('render_menu_child'))
         $temp = '<li><a href="%s">%s</a></li>';
         foreach($menu->child as $item){
             if(count($item->child)){
-                $child .= render_menu_child($item, false);
+                $child .= render_menu_child($item, $item->color, false);
             }else{
                 $child .= sprintf($temp, $item->url, $item->display_name);
             }

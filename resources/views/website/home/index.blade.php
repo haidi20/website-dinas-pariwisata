@@ -32,7 +32,7 @@
 						@foreach($breakingNewsPosts as $index => $item)
 						<li class="news-item" >
 							{{-- <span class="time-news">{{$item->long_date}}</span>    --}}
-							<div onClick="gotolink('{{$item->slug}}', 'post')" style="cursor:pointer">
+							<div onClick="gotolink('{{$item->gotolink}}')" style="cursor:pointer">
 								{{$item->title}}
 							</div>
 						</li>

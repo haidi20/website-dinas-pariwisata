@@ -82,7 +82,7 @@
 			});
 
 			function gotolink(link, type = null){
-				link = type == 'post' ? 'post/tags/'+link : link;
+				// link = type == 'post' ? 'post/'+link : link;
 				window.location.href = link;
 			}
 	</script>

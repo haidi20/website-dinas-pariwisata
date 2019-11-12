@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Sitemanager;
 
 use Illuminate\Http\Request;
 use App\Web\Models\Menu;
+use App\Web\Models\Post\Category;
 
 class MenuController extends BaseController
 {
@@ -76,9 +77,11 @@ class MenuController extends BaseController
 
 		$position  = $this->listPosition;
 		$lastOrder = object_get($this->menu->orderBy('order', 'DESC')->first(), 'order', -1);
-        $lastOrder++;
+		$lastOrder++;
+		
+		$categories= Category::pluck('name', 'id');
 
-		return $this->template('form', compact('parent', 'position', 'lastOrder'));
+		return $this->template('form', compact('parent', 'position', 'lastOrder', 'categories'));
 	}
 
 	public function save($id = null)
@@ -86,30 +89,45 @@ class MenuController extends BaseController
 		$lock = false;
 		$input = $this->request->except('_token');
 
+		// return $input;
+
 		$this->validate($this->request, [
             'name' => 'required'
         ]);
 
-		if($id) {
+		if($id){
             $menu = $this->menu->find($id);
             if($menu->lock) $lock = true;
         }else{
-            $menu = new $this->menu;
-        }
+			$menu = new $this->menu;
+			$input['link'] = 'page/'.$input['link'];
+		}
+		
+		$connectCategory = isset($input['connect_category']) ? $input['connect_category'] : 0;
+
+		// kondisi jika menu mengarah ke kategori tertentu
+		if($connectCategory == 1){
+			$category = Category::find($input['category_id']);
+			$link = 'post/'.$category->name;
+		}else if($connectCategory == 0){
+			$link = ($input['link']) ? $input['link'] : '';
+		}
 
 		$menu->name        = $input['name'];
 		$menu->caption     = $input['caption'];
 		$menu->icon        = '';
 		if(!$lock){
-		$menu->link        = ($input['link']) ? 'page/'.$input['link'] : '';
+		$menu->link        = $link;
 		}
 		$menu->active_link = isset($input['active_link']) ? 1 : 0;
+		$menu->connect_category = isset($input['connect_category']) ? 1 : 0;
 		$menu->position    = $input['position'];
 		$menu->order       = $input['order'];
 		$menu->color       = $input['color'];
 		$menu->status      = $input['status'];
 		$menu->parent_id   = array_get($input, 'parent_id', 0);
-        $menu->save();
+		$menu->category_id = array_get($input, 'category_id', 0);
+		$menu->save();
 
         $redirect = ($menu->parent_id) ? url($this->moduleUrl, ['parent', $menu->parent_id]) : url($this->moduleUrl);
 

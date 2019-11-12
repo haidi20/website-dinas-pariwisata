@@ -4,7 +4,7 @@
 
 		<div class="iso-call heading-news-box">
 
-			<div class="news-post image-post default-size" onClick="gotolink('{{$firstPost->slug}}', 'post')">
+			<div class="news-post image-post default-size" onClick="gotolink('{{$firstPost->gotolink}}')">
 				{!!$firstPost->preview_header!!}
 				<div class="hover-box">
 					<div class="inner-hover">
@@ -15,7 +15,7 @@
 						>
 							{{$firstPost->display_category_name}}
 						</a>
-						<h2><a href="{{url('post/tags', $firstPost->slug)}}">{{$firstPost->show_limit_title}}</a></h2>
+						<h2><a onClick="gotolink('{{$firstPost->gotolink}}')">{{$firstPost->show_limit_title}}</a></h2>
 						<ul class="post-tags">
 							<li><i class="fa fa-clock-o"></i><span>{{$firstPost->long_date}}</span></li>
 							{{-- <li><a href="#"><i class="fa fa-eye"></i><span>{{$firstPost->read}}</span></a></li> --}}
@@ -31,18 +31,18 @@
 				<ul class="bxslider">
 					@foreach ($limitThreePosts as $index => $item)
 						<li>
-							<div class="news-post image-post" onClick="gotolink('{{$item->slug}}', 'post')">
+							<div class="news-post image-post" onClick="gotolink('{{$item->gotolink}}')">
 								{!!$item->preview_header_slider!!}
 								<div class="hover-box">
 									<div class="inner-hover">
 										<a 
 											class="category-post" 
 											style="background-color:{{$item->color_category}}" 
-											onClick="gotolink('{{$item->slug}}', 'post')"
+											onClick="gotolink('{{$item->gotolink}}')"
 										>
 											{{$item->display_category_name}}
 										</a>
-										<h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_limit_title}}</a></h2>
+										<h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->show_limit_title}}</a></h2>
 										<ul class="post-tags">
 											<li><i class="fa fa-clock-o"> {{$item->long_date}}</i></li>
 											{{-- <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li> --}}
@@ -93,18 +93,18 @@
 					@endfor
 				@else
 
-					<div class="news-post image-post" onClick="gotolink('{{$item->slug}}', 'post')">
+					<div class="news-post image-post" onClick="gotolink('{{$item->gotolink}}')">
 						{!!$item->preview_header!!}
 						<div class="hover-box">
 							<div class="inner-hover">
 								<a 
 									class="category-post" 
 									style="background-color:{{$item->color_category}}" 
-									onClick="gotolink('{{$item->slug}}', 'post')"
+									onClick="gotolink('{{$item->gotolink}}')"
 								>
 									{{$item->display_category_name}}
 								</a>
-								<h2><a href="{{url('post/tags', $item->slug)}}">{{$item->show_limit_title}}</a></h2>
+								<h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->show_limit_title}}</a></h2>
 								<ul class="post-tags">
 									<li><i class="fa fa-clock-o"></i><span>{{$item->long_date}}</span></li>
 									<li>{!! $item->viewed !!}</li>

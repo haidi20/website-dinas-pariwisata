@@ -103,6 +103,48 @@ class Menu extends Model
         return $icon;
     }
 
+    public function getDisplayConnectCategoryAttribute()
+    {
+        switch($this->connect_category){
+            default:
+                $style = 'display:none;';
+                break;
+            case 1:
+                $style = '';
+                break;
+        }
+
+        return $style;
+    }
+
+    public function getDisplayActiveCategoryAddressAttribute()
+    {
+        switch($this->connect_category){
+            default:
+                $style = '';
+                break;
+            case 1:
+                $style = 'display:none;';
+                break;
+        }
+
+        return $style;
+    }
+
+    public function getDisplayIcheckCategoryAttribute()
+    {
+        switch($this->lock){
+            default:
+                $style = '';
+                break;
+            case 1:
+                $style = 'display:none;';
+                break;
+        }
+
+        return $style;
+    }
+
     public function getUrlAttribute()
     {
         return url($this->link);

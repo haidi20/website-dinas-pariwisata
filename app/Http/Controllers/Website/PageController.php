@@ -18,12 +18,20 @@ class PageController extends BaseController
 
     public function index($page)
     {
+
         $link = 'page/'.$page;
         $menu = Menu::where('link', $link)->first();
         if(!$menu) abort(404);
 
         $page = $this->postRepo->page($link);
 
-        return $this->view('website.page.index', compact('page'));
+        // jika belum di isi menu tersebut
+        if($page){
+            $view = 'index';
+        }else{
+            $view = 'empty';
+        }
+
+        return $this->view('website.page.'.$view, compact('page'));
     }
 }

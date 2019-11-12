@@ -24,11 +24,11 @@
                             <h1>Random Post</h1>
                             <ul class="list-posts">
                                 @foreach ($footerPosts as $index => $item)
-                                    <li>
+                                    <li onClick="gotolink('{{$item->gotolink}}')">
                                         {!!$item->preview_footer_post!!}
                                         <div class="post-content">
-                                            <a href="travel.html">{{$item->display_category_name}}</a>
-                                            <h2><a href="{{url('post/detail')}}">{{$item->title}}</a></h2>
+                                            <a href="{{url('post', [$item->display_category_name])}}">{{$item->display_category_name}}</a>
+                                            <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
                                             <ul class="post-tags">
                                                 <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                             </ul>

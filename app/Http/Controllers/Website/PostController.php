@@ -10,6 +10,8 @@ use App\Models\Post;
 use App\Repositories\PostRepository;
 use App\Repositories\ShareRepository;
 
+use App\Web\Models\Post\Category;
+
 class PostController extends BaseController
 {
     public function __construct(
@@ -28,11 +30,13 @@ class PostController extends BaseController
         return $this->view('website.post.index', compact('posts'));
     }
 
-    public function detail($slug){
+    public function detail($category, $slug){
+
+        $dataCategory = Category::where('name', $category)->first();
 
         $post       = $this->postRepo->baseSlug($slug);
         $shares     = $this->shareRepo->all();
-        $suggests   = $this->postRepo->baseCategory($post->category_id, $post->id, $limit = 6);
+        $suggests   = $this->postRepo->baseCategory($dataCategory->id, $post->id, $limit = 6);
         
         $tags       = $this->postRepo->tags($post->id);
 
