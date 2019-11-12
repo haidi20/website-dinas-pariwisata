@@ -9,24 +9,17 @@
 	{!! Html::script('avenger/assets/plugins/bootstrap-iconpicker/js/bootstrap-iconpicker.min.js') !!}
 	<script>
         $(function(){
-            $('#iconpicker').iconpicker({
-                arrowClass: 'btn-default',
-                arrowPrevIconClass: 'fa fa-chevron-left',
-                arrowNextIconClass: 'fa fa-chevron-right',
-                cols: 5,
-                icon: '{{ old('icon', 'fa-file') }}',
-                iconset: 'fontawesome',
-                labelHeader: '{0} of {1} pages',
-                labelFooter: '{0} - {1} of {2} icons',
-                placement: 'bottom',
-                rows: 5,
-                search: true,
-                searchText: 'Search',
-                selectedClass: 'btn-default',
-                unselectedClass: ''
-            }).on('change', function(e){
-                $('#icon').val(e.icon);
-            });
+			connect = $('#connect')
+
+			if(connect.attr('checked')){
+				$('.category').show();
+			}else{
+				$('.category').hide();
+			}
+
+            connect.on('ifChanged', function(){
+				$('.category').toggle();
+			});
         });
     </script>
 @endsection
@@ -140,11 +133,19 @@
 								<div class="form-group">
 									{!! Form::label(null, 'Terhubung Kategori', ['class' => 'col-sm-2 control-label']) !!}
 									<div class="col-sm-10">
-										@if(old('id'))
-										<input type="checkbox" name="active_link" id="inlinecheckbox1" value="1" @if(old('active_link')) checked="checked" @endif> {!! old('display_active_link') !!} &nbsp; Active Link
-										@else
-										<input type="checkbox" name="active_link" id="inlinecheckbox1" value="1" checked="checked"> {!!fa('link')!!} &nbsp; Active Link
-										@endif
+										<label class="checkbox-inline icheck">
+											@if(old('id'))
+											<input type="checkbox" name="connect_category" id="connect" value="1" @if(old('connect_category')) checked="checked" @endif>
+											@else
+											<input type="checkbox" name="connect_category" id="connect" value="0"> 
+											@endif
+										</label>
+									</div>
+								</div>
+								<div class="form-group category" style="{{old('display_connect_category')}}">
+									{!! Form::label('category_id', 'Kategori', ['class' => 'col-sm-2 control-label']) !!}
+									<div class="col-sm-10">
+										{!! Form::select('category_id', $categories, old('category_id'), ['class' => 'form-control']) !!}
 									</div>
 								</div>
 								<div class="panel-footer">

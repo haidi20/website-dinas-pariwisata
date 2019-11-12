@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Sitemanager;
 
 use Illuminate\Http\Request;
 use App\Web\Models\Menu;
+use App\Web\Models\Post\Category;
 
 class MenuController extends BaseController
 {
@@ -76,9 +77,11 @@ class MenuController extends BaseController
 
 		$position  = $this->listPosition;
 		$lastOrder = object_get($this->menu->orderBy('order', 'DESC')->first(), 'order', -1);
-        $lastOrder++;
+		$lastOrder++;
+		
+		$categories= Category::pluck('name', 'id');
 
-		return $this->template('form', compact('parent', 'position', 'lastOrder'));
+		return $this->template('form', compact('parent', 'position', 'lastOrder', 'categories'));
 	}
 
 	public function save($id = null)

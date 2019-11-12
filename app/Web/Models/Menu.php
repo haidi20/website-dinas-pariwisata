@@ -103,6 +103,15 @@ class Menu extends Model
         return $icon;
     }
 
+    public function getDisplayActiveCategoryAttribute()
+    {
+        if($this->connect_category){
+            return 'display:none;';
+        }else{
+            return '';
+        }
+    }
+
     public function getUrlAttribute()
     {
         return url($this->link);
