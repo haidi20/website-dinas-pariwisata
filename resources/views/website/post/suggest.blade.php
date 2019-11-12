@@ -6,10 +6,10 @@
         <div class="owl-carousel" data-num="3">
         
             @foreach ($suggests as $index => $item)
-                <div class="item news-post image-post3" onClick="gotolink('{{$item->slug}}', 'post')">
+                <div class="item news-post image-post3" onClick="gotolink('{{$item->gotolink}}')">
                     {!!$item->preview_original!!}
                     <div class="hover-box">
-                        <h2><a onClick="gotolink('{{$item->slug}}', 'post')">{{$item->title}}</a></h2>
+                        <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                         </ul>

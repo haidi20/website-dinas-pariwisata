@@ -419,4 +419,9 @@ class Post extends Model
         return graphApi('facebook', $this->url, 'total_count', fa('heart'));
     }
 
+    public function getGotolinkAttribute()
+    {
+        return url('post', [$this->display_category_name, $this->slug]);
+    }
+
 }
