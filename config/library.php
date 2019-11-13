@@ -108,9 +108,6 @@ return [
         ],
         2 => [
             "name" => "twitter",
-        ], 
-        3 => [
-            "name" => "google-plus",
         ],
     ],
     "settings" => [

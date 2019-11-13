@@ -33,7 +33,7 @@
 										<select class="form-control" name="name">
 											<option value=""></option>
 											@foreach($listMedia as $item)
-											<option value="{{ $item }}" @if(old('name') == $item) selected="selected" @endif>{{ $item }}</option>
+												<option value="{{ $item }}" @if(old('name') == $item) selected="selected" @endif>{{ $item }}</option>
 											@endforeach
 										</select>
 									</div>

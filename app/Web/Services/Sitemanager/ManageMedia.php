@@ -13,13 +13,9 @@ class ManageMedia
 
 	public function listMedia($type, $id = null)
     {
-        if($type == 'medsos'){
-            $lists = config('sitemanager.social_media');
-        }elseif($type == 'share'){
-            $lists = config('sitemanager.share');
-        }
+        $lists = config('sitemanager.share');
 
-        $media = $this->media->where('type', $type);
+        $media = $this->media->where('status', 1);
         
         if($id){
             $media = $media->where('id', '!=', $id);

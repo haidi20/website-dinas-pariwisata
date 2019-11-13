@@ -24,6 +24,8 @@ class Media extends Model
 			return 'https://www.facebook.com/sharer/sharer.php?u='.$link;
 		}else if($this->name == 'twitter'){
 			return 'https://twitter.com/share?url='.$link;
+		}else{
+			return 'javascript:;';
 		}
     }
 }
