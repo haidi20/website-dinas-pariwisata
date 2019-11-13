@@ -38,7 +38,7 @@
 										<a 
 											class="category-post" 
 											style="background-color:{{$item->color_category}}" 
-											onClick="gotolink('{{$item->gotolink}}')"
+											href="{{url('post/'.$item->display_category_name)}}"
 										>
 											{{$item->display_category_name}}
 										</a>
@@ -100,7 +100,7 @@
 								<a 
 									class="category-post" 
 									style="background-color:{{$item->color_category}}" 
-									onClick="gotolink('{{$item->gotolink}}')"
+									href="{{url('post/'.$item->display_category_name)}}"
 								>
 									{{$item->display_category_name}}
 								</a>
