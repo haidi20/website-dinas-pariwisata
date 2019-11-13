@@ -46,7 +46,7 @@
 }
 
 .space-search{
-    height: 109%;
+    height: 103%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position:center;
@@ -54,7 +54,7 @@
 }
 
 .center-search{
-    transform: translateY(160px);
+    transform: translateY(230px);
     text-align:center;
     width: 900px;
 }
