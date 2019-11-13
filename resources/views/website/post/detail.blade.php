@@ -50,6 +50,7 @@
                                             <a 
                                                 class="{{$item->name}}" 
                                                 href="{{$item->setShareMedsos(Request::url())}}"
+                                                target="_blank"
                                             ><i class="fa fa-{{$item->name}}" style="position:center"></i>
                                         </a></li>
                                     @endforeach
