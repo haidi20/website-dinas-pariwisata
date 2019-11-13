@@ -16,5 +16,16 @@ class Media extends Model
 	public function scopeSearch($query, $by, $key)
     {
         return $query->where($by, 'LIKE', '%'.$key.'%');
-    }	
+	}
+	
+	public function setShareMedsos($link)
+    {
+        if($this->name == 'facebook'){
+			return 'https://www.facebook.com/sharer/sharer.php?u='.$link;
+		}else if($this->name == 'twitter'){
+			return 'https://twitter.com/share?url='.$link;
+		}else{
+			return 'javascript:;';
+		}
+    }
 }

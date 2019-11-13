@@ -270,6 +270,11 @@ class Post extends Model
         return $this->preview(1200, 760, false, 'preview-header-slider');
     }
 
+    public function getPreviewPopularPostAttribute()
+    {
+        return $this->preview(1200, 760, false, 'preview-popular-post');
+    }
+
     public function getPreviewFirstPostAttribute()
     {
         return $this->preview(1200, 760, false, 'preview-first-post');

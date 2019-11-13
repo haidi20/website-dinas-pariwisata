@@ -13,7 +13,7 @@
                 @foreach ($popularPosts as $index => $item)
                     <div class="item news-post standard-post" onClick="gotolink('{{$item->gotolink}}')">
                         <div class="post-gallery">
-                            {!!$item->preview_single!!}
+                            {!!$item->preview_popular_post!!}
                             <a 
                                 class="category-post world" 
                                 style="background-color:{{$item->color_category}}"

@@ -6,7 +6,7 @@ use App\Web\Models\Media;
 
 class ShareRepository{
     public function all(){
-        return Media::where('type', 'share')->get();
+        return Media::where('status', 1)->get();
     }
 }
 
