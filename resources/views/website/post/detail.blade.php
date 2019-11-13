@@ -80,7 +80,13 @@
                             <div class="share-post-box">
                                 <ul class="share-box">
                                     @foreach ($shares as $index => $item)
-                                        <li><a class="{{$item->name == 'google-plus' ? 'google' : $item->name}}" href="#"><i class="fa fa-{{$item->name}}" style="position:center"></i></a></li>
+                                        <li>
+                                            <a 
+                                                class="{{$item->name}}" 
+                                                href="{{$item->setShareMedsos(Request::url())}}"
+                                                target="_blank"
+                                            ><i class="fa fa-{{$item->name}}" style="position:center"></i>
+                                        </a></li>
                                     @endforeach
                                 </ul>
                             </div>
