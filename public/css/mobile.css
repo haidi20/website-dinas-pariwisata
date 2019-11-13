@@ -51,50 +51,79 @@
     /* ============================= */
 
     /* bagian search */
-    section.space-search {
+    .space-search{
         height: 200px;
+        background-size: contain;
         background-repeat: no-repeat;
+        background-position:center;
         background-size: 100% 100%;
     }
-   
-    .center-search {
+
+    .center-search{
         transform: translateY(35px);
         text-align: center;
+        width: 400px;
     }
- 
-    .container.center-search h2{
-        color: #d22a3b;
+    
+    .center-search h2{
+        font-size: 19px;
+        color:#d22a3b; /* #224877 */
         font-weight: bold;
         text-shadow: 0px -0px 0px black;
-        font-family: 'Lato', sans-serif;
-        font-size: 22px;
+        /* text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.82); */
+        /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
     }
- 
-    .container.center-search form.search-form {
-        position: relative;
-        margin: 0;
-        margin-left: 10px;
-        margin-right: 10px;
+
+    .center-search h3{
+        color:#ff8040; 
+        /* #224877 */
+        text-shadow: 0px -1px 0px white;
+        font-weight:bold;
+        text-shadow: 2 2px black;
+        text-shadow: -1px 0 #224877, 0 2px #224877, 2px 0 #224877, 0 -1px #224877;
     }
- 
-    form.search-form input[type="text"] {
+
+    form.search-form{
+        width: 100%;
         height: 40px;
-        width: 60%;
-        font-size: 14px;
+        padding: 0px;
+        font-size: 15px;    
+        border-radius: 30px;
+        box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.2);
+        border: 1px solid #d1d1d1;
+        border-right: 1px solid #e9e9e9;
+        background-color:white;
+        filter: alpha(opacity=50);
+        opacity: 0.800;
+    }
+
+    form.search-form input[type="text"]{
+        height: 20px;
+        width: 50%;
+        font-size: 15px; 
         font-weight: bold;
-        transform:translate(-20px, -16px);
-        border:1px solid black;  
+        transform:translate(-30px, 4px);
+        border:0px solid black;   
         border-right: 1px solid #e9e9e9;
         text-transform: lowercase;
     }
- 
-    button, select.category-search {
-        display: none;
+    
+    form.search-form select.category-search{
+        width: 100px;
+        height: 30px;
+        transform: translate(-10px, 4px);
+        border: 0px;
+        font-size: 10px;
+        -webkit-appearance: none;
+        padding-left: 10px;
     }
- 
-    form.search-form button {
-        top:0px;
-        right: 60px;
+    
+    form.search-form select.category-search:focus{
+        outline:0px;
     }
-
+       
+    form button i.fa-search {
+        font-size: 20px;
+        transform: translate(-10px, 0px);
+    }
 }
