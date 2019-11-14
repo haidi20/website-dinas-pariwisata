@@ -69,9 +69,14 @@ class Menu extends Model
         return implode(' / ', array_filter([$this->display_parent, $this->name]));
     }
 
-    public function getDisplayLinkAttribute()
+    public function getDisplayFormLinkAttribute()
     {
         return str_replace('page/', null, $this->link);
+    }
+
+    public function getDisplayLinkAttribute()
+    {
+        return $this->active_link ? url($this->link) : 'javascript:;';
     }
 
     public function getStatusLabelAttribute()

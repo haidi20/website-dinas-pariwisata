@@ -542,11 +542,11 @@ if( ! function_exists('render_menu_child'))
             if(count($item->child)){
                 $child .= render_menu_child($item, $item->color, false);
             }else{
-                $child .= sprintf($temp, $item->url, $item->display_name);
+                $child .= sprintf($temp, $item->display_link, $item->display_name);
             }
         }
 
-        $html = sprintf($template, $menu->id, $menu->url ?: '#', $menu->display_name, $child);
+        $html = sprintf($template, $menu->id, $menu->display_link ?: '#', $menu->display_name, $child);
         // $html = sprintf($template, active_menu($menu->url), $menu->url ?: '#', $menu->display_name, $child);
 
         return $html;

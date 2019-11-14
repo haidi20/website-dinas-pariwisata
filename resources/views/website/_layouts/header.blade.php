@@ -54,7 +54,7 @@
                                 @foreach ($menu as $index => $item)
                                     @if(!count($item->child))
                                         <li>
-                                            <a class="nav-custom" style="--custom-color:{{ $item->color }}" href="{{url($item->link)}}">{{$item->name}}</a>
+                                            <a class="nav-custom" style="--custom-color:{{ $item->color }}" href="{{$item->display_link}}">{{$item->name}}</a>
                                         </li>
                                     @else
                                         {!! render_menu_child($item) !!}

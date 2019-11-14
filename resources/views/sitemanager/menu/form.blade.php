@@ -114,7 +114,7 @@
 											type="text" 
 											name="link" 
 											placeholder="masukkan link"
-											value="{{old('connect_category') ? '' : old('display_link')}}"
+											value="{{old('connect_category') ? '' : old('display_form_link')}}"
 											class="form-control {{old('lock') ? 'disabled' : ''}}" 
 										>
 									</div>
