@@ -109,7 +109,14 @@
 								<div class="form-group address" style="{{old('display_connect_category_address')}}">
 									{!! Form::label('link', 'Alamat Link', ['class' => 'col-sm-2 control-label']) !!}
 									<div class="col-sm-8">
-										{!! Form::text('link', old('link'), ['class' => 'form-control', old('lock') ? 'disabled' : 'placeholder' => 'masukkan link']) !!}
+										{{-- {!! Form::text('link', 'coba', ['class' => 'form-control', old('lock') ? 'disabled' : 'placeholder' => 'masukkan link']) !!} --}}
+										<input 
+											type="text" 
+											name="link" 
+											placeholder="masukkan link"
+											value="{{old('connect_category') ? '' : old('display_link')}}"
+											class="form-control {{old('lock') ? 'disabled' : ''}}" 
+										>
 									</div>
 									<div class="col-sm-2">
 										<label class="checkbox-inline icheck">

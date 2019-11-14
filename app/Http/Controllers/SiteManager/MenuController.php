@@ -100,7 +100,7 @@ class MenuController extends BaseController
             if($menu->lock) $lock = true;
         }else{
 			$menu = new $this->menu;
-			$input['link'] = 'page/'.$input['link'];
+			// $input['link'] = 'page/'.$input['link'];
 		}
 		
 		$connectCategory = isset($input['connect_category']) ? $input['connect_category'] : 0;
@@ -110,7 +110,7 @@ class MenuController extends BaseController
 			$category = Category::find($input['category_id']);
 			$link = 'post/'.$category->name;
 		}else if($connectCategory == 0){
-			$link = ($input['link']) ? $input['link'] : '';
+			$link = ($input['link']) ? 'page/'.$input['link'] : '';
 		}
 
 		$menu->name        = $input['name'];

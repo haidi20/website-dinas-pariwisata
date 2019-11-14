@@ -20,7 +20,7 @@ class PageController extends BaseController
     {
 
         $link = 'page/'.$page;
-        $menu = Menu::where('link', $link)->first();
+        return $menu = Menu::where('link', $link)->first();
         if(!$menu) abort(404);
 
         $page = $this->postRepo->page($link);

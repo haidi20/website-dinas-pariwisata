@@ -69,6 +69,11 @@ class Menu extends Model
         return implode(' / ', array_filter([$this->display_parent, $this->name]));
     }
 
+    public function getDisplayLinkAttribute()
+    {
+        return str_replace('page/', null, $this->link);
+    }
+
     public function getStatusLabelAttribute()
     {
         $template = '<span class="label label-%s">%s</span>';
