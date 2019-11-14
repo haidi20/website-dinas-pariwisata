@@ -82,12 +82,12 @@
 										<!--</div>-->
 									</div>
 								</div>
-								<div class="form-group">
+								{{-- <div class="form-group">
 									{!! Form::label('caption', 'Caption', ['class' => 'col-sm-2 control-label']) !!}
 									<div class="col-sm-10">
 										{!! Form::text('caption', old('caption'), ['class' => 'form-control']) !!}
 									</div>
-								</div>
+								</div> --}}
 								<div class="form-group" style="{{old('display_icheck_category')}}">
 									{!! Form::label(null, 'Terhubung Kategori', ['class' => 'col-sm-2 control-label']) !!}
 									<div class="col-sm-10">

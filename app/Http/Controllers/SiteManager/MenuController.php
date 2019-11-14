@@ -114,7 +114,6 @@ class MenuController extends BaseController
 		}
 
 		$menu->name        = $input['name'];
-		$menu->caption     = $input['caption'];
 		$menu->icon        = '';
 		if(!$lock){
 		$menu->link        = $link;

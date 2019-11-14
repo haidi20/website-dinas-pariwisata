@@ -79,11 +79,10 @@ $(function() {
 								<thead>
 									<tr>
 										<th class="text-center" width="40">No</th>
-										<th width="200">Nama Menu</th>
-					                    <th class="text-center">Caption</th>
+										<th width="200" class="text-center">Nama Menu</th>
 					                    <th class="text-center" width="160">Parent</th>
 					                    <th class="text-center" width="100">Status</th>
-					                    <th class="text-center" width="200">Action</th>
+					                    <th class="text-center" width="110">Action</th>
 									</tr>
 								</thead>
 								<tbody id="sortableContainer">
@@ -91,7 +90,6 @@ $(function() {
 									<tr id="{{ $item->id }}" @if(!$item->active_link) class="active text-muted" @endif >
 										<td>{{ table_row_number($menu, $index) }}</td>
 										<td>{!! $item->display_active_link !!} &nbsp; {{ $item->display_name }}</td>
-										<td>{{ str_limit($item->caption, 45) }}</td>
 										<td class="text-center">{{ $item->display_parent }}</td>
 										<td class="text-center">{!! $item->status_label !!}</td>
 										<td class="text-center">
