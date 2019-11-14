@@ -8,6 +8,22 @@
 
                 window.location.href = link;
             });
+
+            url = 'https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=AcUauzCn7RE&key=AIzaSyDHy18clWdaVSoLKhwxAI24XSotdc-Ucqo';
+            $.ajax({
+                url: url,
+                type: 'get',
+                success:function(response){
+                    comment = response.items[0].snippet.topLevelComment.snippet.textOriginal
+                    data = `<tr>
+                                <td>${comment}</td>
+                            </tr>`
+                    console.log('video exists ' + data);
+                },
+                error: function(xhr, ajaxOptions, thrownError){
+                    console.log(xhr, ajaxOptions, thrownError)
+                }
+            });
         }); 
     </script>
 @endsection

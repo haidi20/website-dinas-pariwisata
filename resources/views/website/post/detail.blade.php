@@ -11,14 +11,20 @@
 @section('script-top')
     <style>
         .single-post-box .share-post-box ul.share-box li a{
-            padding-right: 0px;
-            padding-left: 11px;
+            /* padding-right: 0px; */
+            /* padding-left: 14px; */
+            width:40px;
+        }
+        .single-post-box .share-post-box ul.share-box li a.facebook{
+            padding-left: 16px;
         }
     </style>
 @endsection
 
 @section('script-bottom')
-
+    <script>
+       
+    </script>
 @endsection
 
 @section('content')

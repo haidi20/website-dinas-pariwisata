@@ -1,7 +1,7 @@
 <!-- features-today-section
 ================================================== -->
 <section class="space-search" style="background-image: url('{{asset('images/bg-search-blur.jpg')}}'); border-top:1px solid #f0f0f0;">
-    <div class="container center-search" >
+    <div class="container center-search">
         <h2>Welcome To Kalimantan Timur</h2>
         <br>
         <!-- <h3>We offer a variety of services and options</h3> -->
