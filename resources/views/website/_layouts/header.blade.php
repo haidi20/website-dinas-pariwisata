@@ -24,11 +24,11 @@
                             {{-- <img src="{{asset('images/logo-keren.png')}}" style="height:90px; weidth: 400px;"  alt=""> --}}
                             <img src="{{asset('images/logo-disparr.png')}}" class="logo-dispar"  alt="">
                             <div class="title-logo-dispar">
-                                <h2>Kalimantan Timur</h2>
-                                <p>The Beauty of Culture and Nature</p>
+                                <h2>Pariwisata Kalimantan Timur</h2>
+                                <p>Paradise Of The East</p>
                             </div>
                         </a>
-                        <img src="{{asset('images/wonderful-indonesia-transparent.png')}}" class="logo-burung"  alt="">
+                        <img src="{{asset('images/pesona-indonesia.png')}}" class="logo-burung"  alt="">
                     </div>
 
                     <div class="advertisement">

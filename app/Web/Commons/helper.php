@@ -547,7 +547,6 @@ if( ! function_exists('render_menu_child'))
         }
 
         $html = sprintf($template, $menu->id, $menu->display_link ?: '#', $menu->display_name, $child);
-        // $html = sprintf($template, active_menu($menu->url), $menu->url ?: '#', $menu->display_name, $child);
 
         return $html;
     }

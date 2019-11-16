@@ -120,8 +120,36 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-md-8">
+                            <!-- contact form box -->
+                            <div class="contact-form-box">
+                                <div class="title-section">
+                                    <h1><span>Leave a Comment</span></h1>
+                                </div>
+                                {{-- <div class="fb-comments" data-href="{{ Request::fullUrl() }}" data-numposts="5" data-width="100%"></div> --}}
+                                <form id="comment-form">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="name">Name*</label>
+                                            <input id="name" name="name" type="text" required>
+                                        </div>
+                                    </div>
+                                    <label for="comment">Comment*</label>
+                                    <textarea id="comment" name="comment" required></textarea>
+                                    <button type="submit" id="submit-contact">
+                                        <i class="fa fa-comment"></i> Post Comment
+                                    </button>
+                                </form>                               
+                            </div>
+                            <!-- End contact form box -->
+                        </div>
+                    </div>
+
                 </div>
                 <!-- End grid box -->
+
+                
 
             </div>
             <!-- End block content -->
