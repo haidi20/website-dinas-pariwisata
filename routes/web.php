@@ -91,6 +91,11 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager', 'middlewa
 		Route::post('category/save', 'CategoryController@save');
 		Route::post('category/save/{id}', 'CategoryController@save');
 		Route::post('category/delete/{id}', 'CategoryController@delete');
+		Route::group(['prefix' => '{post_id}/comment'], function(){
+			Route::get('/', 'CommentController@index');
+			Route::get('detail/{id}', 'CommentController@detail');
+			Route::get('hidden/{id}', 'CommentController@hide');
+		});
 
 	});
 

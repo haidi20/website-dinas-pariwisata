@@ -47,6 +47,21 @@ if( ! function_exists('str_limitt') )
     }
 }
 
+if ( ! function_exists('word_limit') )
+{
+    function word_limit($string, $limit){
+        $string = strip_tags($string);
+        $words = explode(' ', strip_tags($string));
+        $return = trim(implode(' ', array_slice($words, 0, $limit)));
+        
+        if(strlen($return) < strlen($string)){
+            $return .= '...';
+        }
+        
+        return $return;
+    }
+}
+
 if( ! function_exists('initials') )
 {
     function initials($str) {

@@ -31,9 +31,10 @@
     $('.btn-delete').click(function() {
         element = $(this);
         url = element.data('url');
+        status = element.data('status') ? element.data('status') : 'menghapus';
 
         bootbox.confirm({
-            message: "Anda yakin akan menghapus data ini?",
+            message: "Anda yakin akan "+status+" data ini?",
             callback: function(result){
                 if(result){
                     window.location.href = url;

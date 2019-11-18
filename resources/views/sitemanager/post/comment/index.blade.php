@@ -1,37 +1,36 @@
 @extends('sitemanager._layout.default')
 
-@section('script-top')
-{!! Html::style('avenger/assets/plugins/sweet-alert/sweet-alert.css') !!}
-
-<style>
-	.btn-label.btn-xs i {
-		width: 16px;
-		left: -4px;
-		line-height: 10px;
-		padding: 2px 6px;
-	}
-</style>
-@endsection
-
 @section('script-bottom')
-	@include('sitemanager.post.category.modal')
-	@include('sitemanager.post.category.script')
+    <script>
+        $(function(){
+            $('.btn-detail').click(function(){
+                $('#modal-comment').modal('show');
+
+                link = $(this).data('url')
+                
+                $.get(link, function(response){
+                    $('#show-text').text(response.text)
+                });
+            });
+
+            $('#perpage').change(function(){
+                perpage = $(this).val()
+                window.location.href = "{{$baseUrl}}?perpage="+perpage
+            });
+        });
+    </script>
 @endsection
 
 @section('content')
+@include('sitemanager.post.comment.modal')
 <div class="static-content">
     <div class="page-content">
-    
-        @include('sitemanager._layout.heading')
 
         <div class="page-heading">            
             <h1>{{ $moduleTitle }}</h1>
             <div class="options">
 			    <div class="btn-toolbar">
-			    	@if($moduleTitle === 'Post')
-			        <a data-toggle="modal" href="#category" class="btn btn-default">{!!fa('tasks')!!} Kategori</a>
-			        @endif
-			        <a href="{{ url($moduleUrl, ['create']) }}" class="btn btn-primary">{!!fa('plus')!!} Tambah {{ $moduleTitle }}</a>
+			        <a href="{{ url('sitemanager', ['post']) }}" class="btn btn-default">{!!fa('reply')!!} Kembali</a>
 			    </div>
 			</div>
         </div>
@@ -56,8 +55,9 @@
                         <div class="form-group pull-right">
                             Search by &nbsp; : &nbsp;
                             <select name="by" id="by" class="form-control">
-                                <option value="title" {{ (request('by') == 'title') ? 'selected' : '' }}>Judul</option>
-                                <option value="status" {{ (request('by') == 'status') ? 'selected' : '' }}>Status</option>
+                                <option value="text" {{ (request('by') == 'text') ? 'selected' : '' }}>Comment</option>
+                                <option value="name" {{ (request('by') == 'name') ? 'selected' : '' }}>Name</option>
+                                <option value="email" {{ (request('by') == 'email') ? 'selected' : '' }}>Email</option>
                             </select>
                             <input type="text" name="q" id="q" class="form-control" value="{{ request('q') }}">
                             <button class="btn btn-default" id="btn-search">Search</button>
@@ -69,38 +69,27 @@
 								<thead>
 									<tr>
 										<th class="text-center" width="40">No</th>
-										<th>Judul</th>
-										<th class="text-center" width="80">Dibaca</th>
-										@if(Request::segment(2) == 'page')
-										<th class="text-center" width="250">Url</th>
-										@else
-										<th class="text-center" width="200">Terakhir dibaca</th>
-										@endif
-										<th class="text-center" width="100">Status</th>
-										<th class="text-center" width="140">Actions</th>
+                                        <th>Comment</th>
+                                        <th class="text-center" width="140">Actions</th>
 									</tr>
 								</thead>
 								<tbody>
-									@forelse($posts as $index => $item)
+									@forelse($comments as $index => $item)
 									<tr>
-										<td>{{ table_row_number($posts, $index) }}</td>
-										<td>
-											{!! $item->category_badge !!} &nbsp;
-											{!! str_limit($item->title, 40) !!}
-										</td>
-										<td class="text-center">{{ $item->read }}</td>
-										@if(Request::segment(2) == 'page')
-										<td>
-											<a href="{{ $item->url_slug }}" target="_blank">{{ $item->url_slug }}</a>
-										</td>
-										@else
-										<td class="text-center">{{ $item->updated_at }}</td>
-										@endif
-										<td class="text-center">{!! $item->status_label !!}</td>
+										<td>{{ table_row_number($comments, $index) }}</td>
+                                        <td>{{$item->review_text}}</td>
 										<td class="text-center">
-											<a href="{{url($moduleUrl, [$item->id, 'comment'])}}" class="btn btn-info btn-xs btn-label">{!!fa('comment')!!}</a>
-											<a href="{{ url($moduleUrl, ['edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}</a>
-											<a href="javascript:void(0)" class="btn btn-danger btn-xs btn-label btn-delete" data-url="{{ url($moduleUrl, ['delete', $item->id]) }}">{!!fa('trash-o')!!}</a>
+                                            <a 
+                                                href="javascript:;" 
+                                                class="btn btn-success btn-xs btn-label btn-detail"
+                                                data-url="{{ url($moduleUrl, ['detail', $item->id]) }}"
+                                            > Detail</a>
+                                            <a 
+                                                href="javascript:;" 
+                                                class="btn btn-danger btn-xs btn-delete" 
+                                                data-url="{{ url($moduleUrl, ['hidden', $item->id]) }}"
+                                                data-status="Sembunyikan"
+                                            >Hide</a>
 										</td>
 									</tr>
 									@empty
@@ -115,7 +104,7 @@
 						</div>
 					</div>
 					<div class="pull-right">
-						{!! $posts->appends([
+						{!! $comments->appends([
                                 'perpage' => request('perpage'),
                                 'by'      => request('by'),
                                 'q'       => request('q')
