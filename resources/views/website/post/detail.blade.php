@@ -11,12 +11,29 @@
 @section('script-top')
     <style>
         .single-post-box .share-post-box ul.share-box li a{
-            /* padding-right: 0px; */
-            /* padding-left: 14px; */
             width:40px;
         }
         .single-post-box .share-post-box ul.share-box li a.facebook{
             padding-left: 16px;
+        }
+        .contact-form-box #contact-form input[type="text"]:focus, .contact-form-box #comment-form input[type="text"]:focus, .contact-form-box #contact-form textarea:focus, .contact-form-box #comment-form textarea:focus {
+            border: 1px solid blue;
+        }
+        .contact-form-box #contact-form input[type="text"], .contact-form-box #comment-form input[type="text"], .contact-form-box #contact-form textarea, .contact-form-box #comment-form textarea {
+            display: block;
+            width: 100%;
+            padding: 10px 10px;
+            background: white;
+            color: #333333;
+            font-size: 13px;
+            font-family: 'Lato', sans-serif;
+            outline: none;
+            border: 1px solid #e1e1e1;
+            margin: 0 0 16px;
+            transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
         }
     </style>
 @endsection
@@ -101,27 +118,7 @@
                                 @include('website.post.suggest')
                             </div>
 
-                            <!-- contact form box -->
-                            <div class="contact-form-box">
-                                <div class="title-section">
-                                    <h1><span>Leave a Comment</span> <span class="email-not-published">Your email address will not be published.</span></h1>
-                                </div>
-                                {{-- <div class="fb-comments" data-href="{{ Request::fullUrl() }}" data-numposts="5" data-width="100%"></div> --}}
-                                <form id="comment-form">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label for="name">Name*</label>
-                                            <input id="name" name="name" type="text">
-                                        </div>
-                                    </div>
-                                    <label for="comment">Comment*</label>
-                                    <textarea id="comment" name="comment"></textarea>
-                                    <button type="submit" id="submit-contact">
-                                        <i class="fa fa-comment"></i> Post Comment
-                                    </button>
-                                </form>                               
-                            </div>
-                            <!-- End contact form box -->
+                            @include('website.post.comment')
 
                         </div>
                         <!-- End single-post box -->
