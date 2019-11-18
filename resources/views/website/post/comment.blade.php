@@ -3,10 +3,11 @@
 </div>
 <div class="card">
     <div class="card-body">
-        <ul class="list-posts">
+        <ul class="list-posts list-comment">
             <li class="place-comment">
                 <img 
-                    src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" 
+                    src="{{asset('images/loading.gif')}}"
+                    data-src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" 
                     alt=""
                     class="lazy"
                 >
@@ -25,7 +26,8 @@
             </li>
             <li class="place-comment">
                 <img 
-                    src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" 
+                    src="{{asset('images/loading.gif')}}"
+                    data-src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" 
                     alt=""
                     class="lazy"
                 >

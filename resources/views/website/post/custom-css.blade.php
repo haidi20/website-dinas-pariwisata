@@ -10,6 +10,9 @@
     .place-comment > img{
         margin-top:6px;
     }
+    .list-comment{
+        cursor: default;
+    }
     .comment{
         margin-left:120px;
     }
