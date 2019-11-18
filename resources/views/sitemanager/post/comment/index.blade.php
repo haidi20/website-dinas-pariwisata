@@ -86,10 +86,15 @@
                                             > Detail</a>
                                             <a 
                                                 href="javascript:;" 
-                                                class="btn btn-danger btn-xs btn-delete" 
+                                                class="btn btn-warning btn-xs btn-delete" 
                                                 data-url="{{ url($moduleUrl, ['hidden', $item->id]) }}"
                                                 data-status="Sembunyikan"
                                             >Hide</a>
+                                            <a 
+                                                href="javascript:;" 
+                                                class="btn btn-danger btn-xs btn-delete" 
+                                                data-url="{{ url($moduleUrl, ['delete', $item->id]) }}"
+                                            >Delete</a>
 										</td>
 									</tr>
 									@empty

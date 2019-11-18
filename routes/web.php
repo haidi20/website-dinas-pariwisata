@@ -95,6 +95,7 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager', 'middlewa
 			Route::get('/', 'CommentController@index');
 			Route::get('detail/{id}', 'CommentController@detail');
 			Route::get('hidden/{id}', 'CommentController@hide');
+			Route::get('delete/{id}', 'CommentController@delete');
 		});
 
 	});

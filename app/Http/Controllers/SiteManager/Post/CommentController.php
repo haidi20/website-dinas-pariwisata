@@ -50,4 +50,12 @@ class CommentController extends BaseController
 
         return redirect()->back();
     }
+
+    public function delete($post_id, $id)
+    {
+        $comment = Comment::find($id);
+        $comment->delete();
+        
+        return redirect()->back();
+    }
 }
