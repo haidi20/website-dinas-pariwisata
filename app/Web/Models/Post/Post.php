@@ -389,7 +389,7 @@ class Post extends Model
 
     public function getDetailDateTimeAttribute()
     {
-        return $this->created_at->format('d M Y h:i:s');
+        return $this->created_at->format('d M Y h:i');
     }
 
     public function getFormatDateAttribute()
