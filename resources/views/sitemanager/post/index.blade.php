@@ -2,6 +2,15 @@
 
 @section('script-top')
 {!! Html::style('avenger/assets/plugins/sweet-alert/sweet-alert.css') !!}
+
+<style>
+	.btn-label.btn-xs i {
+		width: 16px;
+		left: -4px;
+		line-height: 10px;
+		padding: 2px 6px;
+	}
+</style>
 @endsection
 
 @section('script-bottom')
@@ -89,8 +98,9 @@
 										@endif
 										<td class="text-center">{!! $item->status_label !!}</td>
 										<td class="text-center">
-											<a href="{{ url($moduleUrl, ['edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}Edit</a>
-											<a href="javascript:void(0)" class="btn btn-danger btn-xs btn-label btn-delete" data-url="{{ url($moduleUrl, ['delete', $item->id]) }}">{!!fa('trash-o')!!}Delete</a>
+											<a href="javascript:;" class="btn btn-info btn-xs btn-label">{!!fa('comment')!!}</a>
+											<a href="{{ url($moduleUrl, ['edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}</a>
+											<a href="javascript:void(0)" class="btn btn-danger btn-xs btn-label btn-delete" data-url="{{ url($moduleUrl, ['delete', $item->id]) }}">{!!fa('trash-o')!!}</a>
 										</td>
 									</tr>
 									@empty
