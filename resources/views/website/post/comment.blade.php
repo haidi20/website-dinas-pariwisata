@@ -5,7 +5,11 @@
     <div class="card-body">
         <ul class="list-posts">
             <li class="place-comment">
-                <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" alt="">
+                <img 
+                    src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" 
+                    alt=""
+                    class="lazy"
+                >
                 <div class="post-content">
                     <div class="name">
                         <h2>Nata</h2> <p>18 November 2019 16:00 </p>
@@ -20,7 +24,11 @@
                 </div>
             </li>
             <li class="place-comment">
-                <img src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" alt="">
+                <img 
+                    src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" 
+                    alt=""
+                    class="lazy"
+                >
                 <div class="post-content">
                     <div class="name">
                         <h2>Haidi</h2> <p>18 November 2019 16:00 </p>
