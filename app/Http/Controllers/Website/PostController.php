@@ -42,7 +42,7 @@ class PostController extends BaseController
 
         $post       = $this->postRepo->baseSlug($slug);
         $shares     = $this->shareRepo->all();
-        $comments   = $this->commentRepo->all();
+        $comments   = $this->commentRepo->limit(5);
         $suggests   = $this->postRepo->baseCategory($dataCategory->id, $post->id, $limit = 6);
         
         $tags       = $this->postRepo->tags($post->id);
