@@ -8,7 +8,7 @@ class Comment extends Model
 {
     public function scopeActive($query)
     {
-        return $query->where('active', 1);
+        return $query->where('active', 1)->orderBy('created_at', 'desc');
     }
 
     public function scopeBasePost($query, $post_id)

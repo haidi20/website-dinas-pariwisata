@@ -9,22 +9,11 @@
 @endsection
 
 @section('script-top')
-    @include('website.post.custom-css')
+    @include('website.post.style')
 @endsection
 
 @section('script-bottom')
-    <script>
-       $(function(){
-            comments = @json($comments);
-
-            $.each(comments, function(index, item){
-                // console.log(item)
-                $('#avatar_'+item.id).empty().append($.gravatar(item.email, {
-                    image: 'mp'
-                }));
-            });
-       });
-    </script>
+   @include('website.post.script')
 @endsection
 
 @section('content')

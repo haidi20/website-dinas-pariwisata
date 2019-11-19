@@ -4,36 +4,46 @@
 </div>
 <div class="contact-form-box">
     {{-- <div class="fb-comments" data-href="{{ Request::fullUrl() }}" data-numposts="5" data-width="100%"></div> --}}
-    <form id="comment-form">
+    <form id="comment-form" action="{{$urlComment}}" method="POST">
+        @csrf
+        <input type="hidden" name="post_id" value="{{$post->id}}">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <input 
+                    required
                     id="name" 
                     name="name" 
                     type="text"
                     {{-- class="form-control"  --}}
                     placeholder="Your Name"
+                    oninvalid="this.setCustomValidity('Maaf, Nama wajib di isi')"
+                    oninput="setCustomValidity('')"
                 >
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <input 
-                    id="name" 
-                    name="name" 
+                    required
+                    id="email" 
+                    name="email" 
                     type="text"
+                    pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
                     {{-- class="form-control"  --}}
                     placeholder="Your Email"
+                    oninvalid="this.setCustomValidity('Maaf, Email kosong atau kurang tepat')"
+                    oninput="setCustomValidity('')"
                 >
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <textarea 
-                    id="comment" 
-                    name="comment" 
+                    required
+                    id="text" 
+                    name="text" 
                     {{-- type="text"  --}}
                     placeholder="Enter Your Comment"
+                    oninvalid="this.setCustomValidity('Maaf, Komentar wajib di isi')"
+                    oninput="setCustomValidity('')"
                 ></textarea>
             </div>
         </div>

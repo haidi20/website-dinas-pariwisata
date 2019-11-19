@@ -11,6 +11,7 @@ use App\Repositories\PostRepository;
 use App\Repositories\ShareRepository;
 use App\Repositories\CommentRepository;
 
+use App\Web\Models\Post\Comment;
 use App\Web\Models\Post\Category;
 
 class PostController extends BaseController
@@ -27,13 +28,15 @@ class PostController extends BaseController
         $this->commentRepo  = $commentRepo;
     }
 
-    public function index($category = null){
+    public function index($category = null)
+    {
         $posts  = $this->postRepo->filter(3, 'all', null, $category);
 
         return $this->view('website.post.index', compact('posts'));
     }
 
-    public function detail($category, $slug){
+    public function detail($category, $slug)
+    {
 
         $dataCategory = Category::where('name', $category)->first();
 
@@ -44,8 +47,30 @@ class PostController extends BaseController
         
         $tags       = $this->postRepo->tags($post->id);
 
+        $urlComment = url('post', ['comment', 'store']);
+
         return $this->view('website.post.detail', compact(
-            'post', 'shares', 'suggests', 'tags', 'comments'
+            'post', 'shares', 'suggests', 'tags', 
+            'comments', 'urlComment'
         ));
+    }
+
+    public function comment()
+    {
+        $input = $this->request->except('_token');
+        $this->validate($this->request, [
+            'name' => 'required|string|max:255',
+            'text' => 'required|string|max:255',
+            'email' => 'required|email',
+        ]);
+
+        $comment = new Comment;
+        $comment->name      = $input['name'];
+        $comment->text      = $input['text'];
+        $comment->email     = $input['email'];
+        $comment->post_id   = $input['post_id'];
+        $comment->save();
+
+        return redirect()->back();
     }
 }
