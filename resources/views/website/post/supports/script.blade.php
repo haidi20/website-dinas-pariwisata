@@ -22,9 +22,9 @@
              if ($(window).scrollTop() >= endComments && status == 0){ 
                  status = 1
                  url = '{{$urlShowComment}}?skip='+countList
-                 console.log('countlist = '+countList)
-                 console.log('status = '+status)
-                 console.log('url = '+url)
+                //  console.log('countlist = '+countList)
+                //  console.log('status = '+status)
+                //  console.log('url = '+url)
                  
                 if(countComments != countList){
                     showComments(newComments)
@@ -40,7 +40,7 @@
             type: 'get',
             url: url,
             beforeSend: function(){
-                status = 1
+                
             },
             success: function(data){
                 if(data != null){

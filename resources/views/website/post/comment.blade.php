@@ -74,9 +74,6 @@
                             </p>
                         </div>
                     </div>
-                    <div class="fa-3x">
-                        <i class="fas fa-spinner fa-spin"></i>
-                    </div>
                 </li>
             @empty
                 

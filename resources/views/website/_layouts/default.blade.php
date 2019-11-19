@@ -25,6 +25,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/website.css')}}" media="screen">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/mobile.css')}}" media="screen">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/tablet.css')}}" media="screen">
+	{{-- <link rel="stylesheet" type="text/css" href="{{asset('fontawesomenew/css/all.css')}}"> --}}
 	{{-- <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" media="screen"> --}}
 
 	@yield('script-top')
