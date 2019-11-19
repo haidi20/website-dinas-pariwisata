@@ -15,10 +15,14 @@
 @section('script-bottom')
     <script>
        $(function(){
-            // console.log($.gravatar('haidinurhadinata@gmail.com'))
-            $('#avatar').empty().append($.gravatar('null', {
-                image: 'mp'
-            }));
+            comments = @json($comments);
+
+            $.each(comments, function(index, item){
+                // console.log(item)
+                $('#avatar_'+item.id).empty().append($.gravatar(item.email, {
+                    image: 'mp'
+                }));
+            });
        });
     </script>
 @endsection

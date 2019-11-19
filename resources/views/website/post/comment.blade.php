@@ -56,7 +56,7 @@
                         alt=""
                         class="lazy"
                     > --}}
-                    <div id="avatar"> 
+                    <div id="avatar_{{$item->id}}"> 
                         loading...
                     </div>
                     <div class="post-content">
