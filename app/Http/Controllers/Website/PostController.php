@@ -9,6 +9,7 @@ use App\Models\Post;
 
 use App\Repositories\PostRepository;
 use App\Repositories\ShareRepository;
+use App\Repositories\CommentRepository;
 
 use App\Web\Models\Post\Category;
 
@@ -17,11 +18,13 @@ class PostController extends BaseController
     public function __construct(
         Request $request,
         PostRepository $postRepo,
-        ShareRepository $shareRepo
+        ShareRepository $shareRepo,
+        CommentRepository $commentRepo
     ){
         $this->request      = $request;
         $this->postRepo     = $postRepo;
         $this->shareRepo    = $shareRepo;
+        $this->commentRepo  = $commentRepo;
     }
 
     public function index($category = null){
@@ -36,12 +39,13 @@ class PostController extends BaseController
 
         $post       = $this->postRepo->baseSlug($slug);
         $shares     = $this->shareRepo->all();
+        $comments   = $this->commentRepo->all();
         $suggests   = $this->postRepo->baseCategory($dataCategory->id, $post->id, $limit = 6);
         
         $tags       = $this->postRepo->tags($post->id);
 
         return $this->view('website.post.detail', compact(
-            'post', 'shares', 'suggests', 'tags'
+            'post', 'shares', 'suggests', 'tags', 'comments'
         ));
     }
 }

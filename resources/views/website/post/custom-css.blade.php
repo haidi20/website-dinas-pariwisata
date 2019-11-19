@@ -7,11 +7,12 @@
         /* background: #f2f2f2; */
         padding: 10px 10px;
     }
-    .place-comment > img{
+    .place-comment > div#avatar > img{
         margin-top:6px;
     }
     .list-comment{
         cursor: default;
+        text-align: justify;
     }
     .comment{
         margin-left:120px;

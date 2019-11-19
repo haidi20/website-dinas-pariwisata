@@ -14,7 +14,12 @@
 
 @section('script-bottom')
     <script>
-       
+       $(function(){
+            // console.log($.gravatar('haidinurhadinata@gmail.com'))
+            $('#avatar').empty().append($.gravatar('null', {
+                image: 'mp'
+            }));
+       });
     </script>
 @endsection
 

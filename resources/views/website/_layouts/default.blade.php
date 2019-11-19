@@ -67,6 +67,8 @@
 	<script type="text/javascript" src="{{asset('hotmagazine/js/plugins-scroll.js')}}"></script>
 	<script type="text/javascript" src="{{asset('hotmagazine/js/script.js')}}"></script>
     <script type="text/javascript" src="{{asset('plugins/lazy/jquery.lazy.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('plugins/gravatar/md5.js')}}"></script>
+    <script type="text/javascript" src="{{asset('plugins/gravatar/jquery.gravatar.js')}}"></script>
 
 	<script type="text/javascript">
 
@@ -82,7 +84,6 @@
 			});
 
 			function gotolink(link, type = null){
-				// link = type == 'post' ? 'post/'+link : link;
 				window.location.href = link;
 			}
 	</script>

@@ -25,4 +25,9 @@ class Comment extends Model
     {
         return word_limit($this->text, 28);
     }
+
+    public function getDetailDateTimeAttribute()
+    {
+        return $this->created_at->format('d M Y h:i');
+    }
 }
