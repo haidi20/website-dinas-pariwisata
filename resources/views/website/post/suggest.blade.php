@@ -1,5 +1,5 @@
-<!-- carousel box -->
-<div class="carousel-box owl-wrapper">
+<div class="contact-form-box">
+    <div class="carousel-box owl-wrapper">
         <div class="title-section">
             <h1><span>Artikel Terkait Lainnya</span></h1>
         </div>
@@ -19,4 +19,4 @@
 
         </div>
     </div>
-    <!-- End carousel box -->
+</div>

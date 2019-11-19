@@ -46,7 +46,7 @@
                             </div>
 
                             <div class="share-post-box">
-                                <ul class="share-box">
+                                <ul class="icon-bar">
                                     @foreach ($shares as $index => $item)
                                         <li>
                                             <a 
@@ -93,9 +93,8 @@
                                 </ul>
                             </div>
 
-                            <div class="contact-form-box">
-                                @include('website.post.suggest')
-                            </div>
+                            
+                            @include('website.post.suggest')
 
                             @include('website.post.comment')
 

@@ -50,4 +50,46 @@
         -o-transition: all 0.2s ease-in-out;
         resize: none;
     }
+
+    /* medsos */
+    .icon-bar {
+        position: fixed;
+        top: 50%;
+        left: -40px;
+        z-index: 100;
+    }
+    ul.icon-bar li {
+        list-style-type: none;
+    }
+    .icon-bar a {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 20px;
+    }
+    .icon-bar a:hover {
+        background-color: #000;
+    }
+    .facebook {
+        background: #3B5998;
+        color: white;
+    }
+    .twitter {
+        background: #55ACEE;
+        color: white;
+    }
+    .google {
+        background: #dd4b39;
+        color: white;
+    }
+    .linkedin {
+        background: #007bb5;
+        color: white;
+    }
+    .youtube {
+        background: #bb0000;
+        color: white;
+    }
 </style>
