@@ -14,4 +14,17 @@ class CommentRepository {
     {
         return Comment::active()->limit($limit)->get();
     }
+
+    public function show($limit)
+    {
+        $comment = Comment::skip(request('skip'))->limit($limit)->get();
+
+        $comment = $comment->map(function($item){
+            $item->detail_date_time = 'keren';
+
+            return $item;
+        });
+
+        return $comment;
+    }
 }

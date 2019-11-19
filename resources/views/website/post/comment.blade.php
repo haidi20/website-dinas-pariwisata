@@ -4,7 +4,7 @@
 </div>
 <div class="contact-form-box">
     {{-- <div class="fb-comments" data-href="{{ Request::fullUrl() }}" data-numposts="5" data-width="100%"></div> --}}
-    <form id="comment-form" action="{{$urlComment}}" method="POST">
+    <form id="comment-form" action="{{$urlStoreComment}}" method="POST">
         @csrf
         <input type="hidden" name="post_id" value="{{$post->id}}">
         <div class="row">
@@ -60,12 +60,6 @@
         <ul class="list-posts list-comment">
             @forelse ($comments as $index => $item)
                 <li class="place-comment">
-                    {{-- <img 
-                        src="{{asset('images/loading.gif')}}"
-                        data-src="{{asset('images/pemerintah/POSTER BARU PARIWISATA-01.jpg')}}" 
-                        alt=""
-                        class="lazy"
-                    > --}}
                     <div id="avatar_{{$item->id}}"> 
                         loading...
                     </div>
@@ -79,6 +73,9 @@
                                 {{$item->text}}
                             </p>
                         </div>
+                    </div>
+                    <div class="fa-3x">
+                        <i class="fas fa-spinner fa-spin"></i>
                     </div>
                 </li>
             @empty

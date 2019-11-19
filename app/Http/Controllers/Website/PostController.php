@@ -38,7 +38,7 @@ class PostController extends BaseController
     public function detail($category, $slug)
     {
 
-        $dataCategory = Category::where('name', $category)->first();
+        $dataCategory   = Category::where('name', $category)->first();
 
         $post       = $this->postRepo->baseSlug($slug);
         $shares     = $this->shareRepo->all();
@@ -47,12 +47,21 @@ class PostController extends BaseController
         
         $tags       = $this->postRepo->tags($post->id);
 
-        $urlComment = url('post', ['comment', 'store']);
+        $urlShowComment     = url('post', ['comment', 'show']);
+        $urlStoreComment    = url('post', ['comment', 'store']);
 
         return $this->view('website.post.detail', compact(
             'post', 'shares', 'suggests', 'tags', 
-            'comments', 'urlComment'
+            'comments', 'urlStoreComment', 'urlShowComment'
         ));
+    }
+
+    public function show_comments()
+    {
+        $comments = $this->commentRepo->show(5);
+
+        // return response()->json($comments);
+        return $comments;
     }
 
     public function comment()

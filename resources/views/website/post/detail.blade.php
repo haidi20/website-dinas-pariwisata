@@ -9,11 +9,11 @@
 @endsection
 
 @section('script-top')
-    @include('website.post.style')
+    @include('website.post.supports.style')
 @endsection
 
 @section('script-bottom')
-   @include('website.post.script')
+   @include('website.post.supports.script')
 @endsection
 
 @section('content')

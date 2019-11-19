@@ -12,7 +12,7 @@
 
 (function($)
 {
-    $.gravatar = function(emailAddress, overrides)
+    $.gravatar = function(emailAddress, overrides, type = null)
     {
         var options = $.extend({
             // Defaults are not hardcoded here in case gravatar changes them on their end.
@@ -30,7 +30,21 @@
 
         var baseUrl = options.secure ? 'https://secure.gravatar.com/avatar/' : 'http://www.gravatar.com/avatar/';
 
-        return $('<img src="' + baseUrl +
+        if(type != 'html'){
+            return $('<img src="' + baseUrl +
+                hex_md5(emailAddress) +
+                '.jpg?' +
+                (options.size ? 's=' + options.size + '&' : '') +
+                (options.rating ? 'r=' + options.rating + '&' : '') +
+                (options.image ? 'd=' + encodeURIComponent(options.image) : '') +
+                '"' +
+                (options.classes ? ' class="' + options.classes + '"' : '') +
+                ' />').bind('error', function()
+                {
+                    $(this).remove();
+                });
+        }else{
+            return '<img src="' + baseUrl +
             hex_md5(emailAddress) +
             '.jpg?' +
             (options.size ? 's=' + options.size + '&' : '') +
@@ -38,9 +52,7 @@
             (options.image ? 'd=' + encodeURIComponent(options.image) : '') +
             '"' +
             (options.classes ? ' class="' + options.classes + '"' : '') +
-            ' />').bind('error', function()
-            {
-                $(this).remove();
-            });
+            ' />'
+        }
     };
 })(jQuery);
