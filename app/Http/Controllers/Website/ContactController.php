@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Website\BaseWebsiteController as BaseController;
 
 use App\Web\Models\Inbox;
+use App\Web\Models\Setting;
 
 class ContactController extends BaseController
 {
@@ -14,7 +15,23 @@ class ContactController extends BaseController
     }
 
     public function index(){
-        return $this->view('website.contact.index');
+        $setting = new Setting;
+
+        if(!$setting->get()->isEmpty()){
+            $address = Setting::where('key', 'address')->first()->value;
+            $phone   = Setting::where('key', 'phone')->first()->value;
+            $fax     = Setting::where('key', 'fax')->first()->value;
+            $email   = Setting::where('key', 'email')->first()->value;
+            $time    = Setting::where('key', 'time')->first()->value;
+        }else{
+            $address = '';
+            $phone   = '';
+            $fax     = '';
+            $email   = '';
+            $time    = '';  
+        }
+
+        return $this->view('website.contact.index', compact('page', 'address', 'phone', 'fax', 'email', 'time'));
     }
 
     public function store()

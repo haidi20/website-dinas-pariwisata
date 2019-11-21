@@ -11,7 +11,17 @@
             height: 400px;  /* The height is 400 pixels */
             width: 100%;  /* The width is the width of the web page */
         }
-     </style>
+
+        .contact-text{
+            padding-left: 45px;
+        }
+        .contact-text > p{
+            font-size: 15px;
+        }
+        .contact-icon > .fa{
+            font-size: 45px;
+        }
+    </style>
 @endsection
 
 @section('script-bottom')
@@ -76,40 +86,93 @@
 	<div class="container">
         <div class="row">
             <div class="col-sm-4">
-                kiri
+                <!-- contact form box -->
+                <div class="contact-form-box">
+                    <div class="title-section">
+                        <h1><span>Tentang Kami</span></h1>
+                    </div>
+                    <form id="comment-form">
+                        <div class="row contact">
+                            <div class="col-sm-2 contact-icon">
+                                {!! fa('home') !!}
+                            </div>
+                            <div class="col-sm-10 contact-text">
+                                <h4>Alamat :</h4>
+                                {!!$address!!}
+                            </div>
+                        </div>
+                        <div class="row contact">
+                            <div class="col-sm-2 contact-icon">
+                                {!! fa('phone') !!}
+                            </div>
+                            <div class="col-sm-10 contact-text">
+                                <h4>Nomor Telp :</h4>
+                                {!!$phone!!}
+                            </div>
+                        </div>
+                        <div class="row contact">
+                            <div class="col-sm-2 contact-icon">
+                                {!! fa('fax') !!}
+                            </div>
+                            <div class="col-sm-10 contact-text">
+                                <h4>Fax :</h4>
+                                {!!$fax!!}
+                            </div>
+                        </div>
+                        <div class="row contact">
+                            <div class="col-sm-2 contact-icon">
+                                {!! fa('envelope') !!}
+                            </div>
+                            <div class="col-sm-10 contact-text">
+                                <h4>Email :</h4>
+                                {!!$email!!}
+                            </div>
+                        </div>
+                        <div class="row contact">
+                            <div class="col-sm-2 contact-icon">
+                                {!! fa('clock-o') !!}
+                            </div>
+                            <div class="col-sm-10 contact-text">
+                                <h4>Jam Kerja :</h4>
+                                {!!$time!!}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End contact form box -->
             </div>
             <div class="col-sm-8">
                 <!-- contact form box -->
-                    <div class="contact-form-box">
-                        <div class="title-section">
-                            <h1><span>Leave a Comment</span> 
-                        </div>
-                        <form id="comment-form">
-                            @csrf
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <label for="name">Name*</label>
-                                    <input id="name" name="name" type="text" >
-                                </div>
-                                <div class="col-sm-4">
-                                    <label for="email">E-mail*</label>
-                                    <input id="email" name="email" type="text" >
-                                </div>
-                                <div class="col-sm-4">
-                                    <label for="phone">Handphone</label>
-                                    <input id="phone" name="phone" type="text" >
-                                </div>
-                            </div>
-                            <label for="subject">Subject</label>
-                            <input id="subject" name="subject" type="text" >
-                            <label for="comment">Comment*</label>
-                            <textarea id="comment" name="comment" ></textarea>
-                            <button type="button" id="submit-contact" onClick="send()">
-                                <i class="fa fa-comment"></i> Post Comment
-                            </button>
-                        </form>
+                <div class="contact-form-box">
+                    <div class="title-section">
+                        <h1><span>Formulir Pertanyaan</span></h1>
                     </div>
-                    <!-- End contact form box -->
+                    <form id="comment-form">
+                        @csrf
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="name">Name*</label>
+                                <input id="name" name="name" type="text" >
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="email">E-mail*</label>
+                                <input id="email" name="email" type="text" >
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="phone">Handphone</label>
+                                <input id="phone" name="phone" type="text" >
+                            </div>
+                        </div>
+                        <label for="subject">Subject</label>
+                        <input id="subject" name="subject" type="text" >
+                        <label for="comment">Comment*</label>
+                        <textarea id="comment" name="comment" ></textarea>
+                        <button type="button" id="submit-contact" onClick="send()">
+                            <i class="fa fa-comment"></i> Post Comment
+                        </button>
+                    </form>
+                </div>
+                <!-- End contact form box -->
             </div>
         </div>
         <br>
