@@ -58,7 +58,7 @@
 
 			@for ($i = 1; $i <= 2; $i++)
 				<div class="news-post image-post" >
-					<img src="" alt="">
+					<img>
 					<div class="hover-box">
 						<div class="inner-hover">
 							<a class="category-post"  href="#"></a>
