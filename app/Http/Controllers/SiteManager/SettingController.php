@@ -65,6 +65,10 @@ class SettingController extends BaseController
         foreach($input as $data){
             $request = $this->request->get($data);
             $setting = Setting::where('key', $data)->first();
+            if(!$setting){
+                $setting = new Setting;
+                $setting->key = $data;
+            } 
             $setting->value = (!empty($request)) ? $request : strip_tags($request);
             $setting->save();
         }
