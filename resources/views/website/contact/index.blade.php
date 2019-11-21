@@ -75,7 +75,10 @@
     <br><br>
 	<div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-4">
+                kiri
+            </div>
+            <div class="col-sm-8">
                 <!-- contact form box -->
                     <div class="contact-form-box">
                         <div class="title-section">
