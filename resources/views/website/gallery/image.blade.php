@@ -24,32 +24,46 @@
     <script>
         $(function(){
             $('.more-images').click(function(){
-                icon = $(this).find('i')
-                icon.removeClass('fa-refresh')
-                icon.addClass('fa-spinner fa-spin')
-
                 count = $('.list-images .row-image').length
 
-                $.get("{{url('image', ['show'])}}?skip="+count, function(data){
-                    row = '';
-                    $.each(data, function(index, item){
-                        row =   row + '<div class="col-md-3 row-image">';
-                        row =       row +'<div class="image-content">';
-                        row =           row +'<div class="image-place zoom" href="'+item.preview_url+'">';
-                        row =               row + item.preview_original;                                   
-                        row =               row +'<div class="hover-image">';
-                        row =                   row +'<a class="zoom" href="'+item.preview_url+'">';
-                        row =                       row +'<i class="fa fa-arrows-alt icon-show"></i>';
-                        row =                   row +'</a>';
-                        row =               row +'</div>';
-                        row =           row +'</div>';
-                        row =        row +'</div>';
-                        row =   row +'</div>';
-                    });
+                if(count !== {{$countImages}}){
+                    icon = $(this).find('i')
+                    icon.removeClass('fa-refresh')
+                    icon.addClass('fa-spinner fa-spin')
 
-                    $('.list-images').append(row);
-                    lazyImage();
-                });
+
+                    $.get("{{url('image', ['show'])}}?skip="+count, function(data){
+                        row = '';
+                        $.each(data, function(index, item){
+                            row =   row + '<div class="col-md-3 row-image">';
+                            row =       row +'<div class="image-content">';
+                            row =           row +'<div class="image-place zoom" href="'+item.preview_url+'">';
+                            row =               row + item.preview_original;                                   
+                            row =               row +'<div class="hover-image">';
+                            row =                   row +'<a class="zoom" href="'+item.preview_url+'">';
+                            row =                       row +'<i class="fa fa-arrows-alt icon-show"></i>';
+                            row =                   row +'</a>';
+                            row =               row +'</div>';
+                            row =           row +'</div>';
+                            row =        row +'</div>';
+                            row =   row +'</div>';
+                        })
+
+                        $('.list-images').append(row);
+                        lazyImage();
+                        showImage();
+                    }).done(function(){
+                        icon.removeClass('fa-spinner fa-spin')
+                        icon.addClass('fa-refresh')
+                        count = $('.list-images .row-image').length
+
+                        console.log(count, {{$countImages}})
+
+                        if(count === {{$countImages}}){
+                            $('a.more-images').addClass('disabled');
+                        }
+                    });
+                }
             });
         })
     </script>

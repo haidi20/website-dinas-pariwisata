@@ -89,6 +89,16 @@
 				});
 			}
 
+			function showImage()
+			{
+				$('.zoom').magnificPopup({
+					type: 'image',
+					gallery: {
+						enabled: true
+					}
+				});
+			}
+
 			function gotolink(link, type = null)
 			{
 				window.location.href = link;

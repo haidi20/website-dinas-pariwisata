@@ -27,6 +27,11 @@ class GalleryRepository
         return $gallery;
     }
 
+    public function countImages()
+    {
+        return Gallery::where('type', 'image')->count();
+    }
+
     // end image
 
     //video
