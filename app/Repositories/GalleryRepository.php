@@ -19,12 +19,12 @@ class GalleryRepository
 
     public function limitImages($limit)
     {
-        $gallery = Gallery::where('type', 'image');
-        $gallery = $gallery->limit($limit);
-        $gallery = $gallery->skip(request('skip'));
-        $gallery = $gallery->get();
+        $images = Gallery::where('type', 'image');
+        $images = $images->limit($limit);
+        $images = $images->skip(request('skip'));
+        $images = $images->get();
         
-        return $gallery;
+        return $images;
     }
 
     public function countImages()
@@ -43,7 +43,17 @@ class GalleryRepository
 
     public function limitVideos($limit = null)
     {
-        return Gallery::where('type', 'video')->limit($limit)->get();
+        $videos = Gallery::where('type', 'video');
+        $videos = $videos->limit($limit);
+        $videos = $videos->skip(request('skip'));
+        $videos = $videos->get();
+        
+        return $videos;
+    }
+
+    public function countVideos()
+    {
+        return Gallery::where('type', 'video')->count();
     }
 
     public function firstVideo()

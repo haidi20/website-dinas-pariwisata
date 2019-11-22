@@ -31,8 +31,7 @@
                     icon.removeClass('fa-refresh')
                     icon.addClass('fa-spinner fa-spin')
 
-
-                    $.get("{{url('image', ['show'])}}?skip="+count, function(data){
+                    $.get("{{url('image', ['more'])}}?skip="+count, function(data){
                         row = '';
                         $.each(data, function(index, item){
                             row =   row + '<div class="col-md-3 row-image">';
@@ -56,8 +55,6 @@
                         icon.removeClass('fa-spinner fa-spin')
                         icon.addClass('fa-refresh')
                         count = $('.list-images .row-image').length
-
-                        console.log(count, {{$countImages}})
 
                         if(count === {{$countImages}}){
                             $('a.more-images').addClass('disabled');
