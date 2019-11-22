@@ -21,20 +21,20 @@
              
              if ($(window).scrollTop() >= endComments && status == 0){ 
                  status = 1
-                 url = '{{$urlShowComment}}?skip='+countList
+                 url = '{{$urlMoreComments}}?skip='+countList
                 //  console.log('countlist = '+countList)
                 //  console.log('status = '+status)
                 //  console.log('url = '+url)
                  
                 if(countComments != countList){
-                    showComments(newComments)
+                    showComments(newComments, url)
                 }
                 countComments = countList
             }
         }); 
     });
 
-    function showComments(newComments)
+    function showComments(newComments, url)
     {
         $.ajax({
             type: 'get',

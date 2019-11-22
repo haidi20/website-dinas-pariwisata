@@ -65,7 +65,7 @@
         </div>
         <br><br>
         <div class="center-button">
-            <a href="#"><i class="fa fa-refresh"></i> Lebih Banyak Video</a>
+            <a href="#" class="more-videos"><i class="fa fa-refresh"></i> Lebih Banyak Video</a>
         </div>
         <br><br>
     </section>

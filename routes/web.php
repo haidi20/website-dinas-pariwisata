@@ -29,7 +29,7 @@ Route::namespace('Website')->group(function(){
     Route::group(['prefix' => 'post'], function(){
 		Route::get('/', 'PostController@index');
 		Route::post('comment/store', 'PostController@comment');
-		Route::get('comment/show', 'PostController@show_comments');
+		Route::get('comment/more', 'PostController@more_comments');
 		Route::get('{category}', 'PostController@index');
 		Route::get('{category}/{slug}', 'PostController@detail');
     });
