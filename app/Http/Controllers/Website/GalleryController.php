@@ -17,11 +17,16 @@ class GalleryController extends BaseController
     public function image()
     {
         $typeGallery = "Image";
-        $data = $this->galleryRepo->allImages();
+        $data = $this->galleryRepo->limitImages(8);
 
         return $this->view('website.gallery.image', compact(
             'data', 'typeGallery'
         ));
+    }
+
+    public function show_images()
+    {
+        return $this->galleryRepo->limitImages(8);
     }
 
     public function video()

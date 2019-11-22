@@ -19,7 +19,12 @@ class GalleryRepository
 
     public function limitImages($limit)
     {
-        return Gallery::where('type', 'image')->limit($limit)->get();
+        $gallery = Gallery::where('type', 'image');
+        $gallery = $gallery->limit($limit);
+        $gallery = $gallery->skip(request('skip'));
+        $gallery = $gallery->get();
+        
+        return $gallery;
     }
 
     // end image

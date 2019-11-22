@@ -74,6 +74,11 @@
 	<script type="text/javascript">
 
 			$(function() {
+				lazyImage();
+			});
+
+			function lazyImage()
+			{
 				jQuery("img.lazy").lazy({
 					asyncLoader: function(element, response) {
 						setTimeout(function() {
@@ -82,9 +87,10 @@
 						}, 1000);
 					}
 				});
-			});
+			}
 
-			function gotolink(link, type = null){
+			function gotolink(link, type = null)
+			{
 				window.location.href = link;
 			}
 	</script>
