@@ -141,6 +141,14 @@
 			{
 				window.location.href = link;
 			}
+
+			function source()
+			{
+				owlWrap();
+                lazyImage();
+				showImage();
+				// gotolink();
+			}
 	</script>
 
 	{{-- @include('website._layouts.script') --}}

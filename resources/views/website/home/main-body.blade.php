@@ -16,8 +16,8 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="news-post image-post2" onClick="gotolink('{{$firstPost->gotolink}}')">
+                            <div class="col-md-6 section-firstpost">
+                                {{-- <div class="news-post image-post2" onClick="gotolink('{{$firstPost->gotolink}}')">
                                     <div class="post-gallery">
                                         {!!$firstPost->preview_first_post!!}
                                         <div class="hover-box">
@@ -36,7 +36,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <div class="col-md-6">
@@ -138,7 +138,7 @@
             </div>
 
            {{-- sisi kanan postingan  --}}
-           @include('website.support.side-right-post')
+           {{-- @include('website.support.side-right-post') --}}
             
         </div>
 

@@ -38,25 +38,28 @@
             type: 'get',
             url: url,
             cache: false,
+            async: false,
             beforeSend: function(){
                 loading = '<div style="text-align:center"><i class="fa fa-spinner fa-spin big-loading"></i></div>';
 
                 listPost= $('.section-popular > .container').find('.post-popular');
                 listPost.append(loading);
+
+                console.log('loading bekerja')
             },
             success: function(data){
                 popular = popular+'<div class="features-today-box owl-wrapper ">';
                     popular = popular+'<div class="owl-carousel"  data-num="4">';
                 $.each(data, function(index, item){
-                    popular = popular+'<div class="item news-post standard-post" onClick="gotolink('+item.gotolink+')">';
+                    popular = popular+'<div class="item news-post standard-post" onClick="gotolink(\''+item.gotolink+'\')">';
                         popular = popular+'<div class="post-gallery">';
                             popular = popular+item.preview_popular_post;
-                            popular = popular+'<a class="category-post world" style="background-color:'+item.color_category+'" onClick="gotolink('+item.gotolink+')">';
+                            popular = popular+'<a class="category-post world" style="background-color:'+item.color_category+'" onClick="gotolink(\''+item.gotolink+'\')">';
                                 popular = popular+ item.display_category_name;
                             popular = popular+'</a>';
                         popular = popular+'</div>';
                         popular = popular+'<div class="post-content">';
-                            popular = popular+'<h2><a onClick="onClick="gotolink('+item.gotolink+')"">'+item.show_title+'</a></h2>';
+                            popular = popular+'<h2><a onClick="gotolink(\''+item.gotolink+'\')">'+item.show_title+'</a></h2>';
                             popular = popular+'<ul class="post-tags">';
                                 popular = popular+'<li><i class="fa fa-clock-o"></i>'+item.long_date+'</li>';
                                 popular = popular+'<li>'+item.viewed+'</li>';
@@ -71,9 +74,7 @@
                 listPost.empty();
                 listPost.append(popular);
 
-                owlWrap();
-                lazyImage();
-                showImage();
+                source();
             },
             error: function(xhr){ 
                 console.log(xhr.statusText + xhr.responseText);
