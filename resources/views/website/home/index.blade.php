@@ -1,21 +1,7 @@
 @extends('website._layouts.default')
 
 @section('script-bottom')
-<script>
-	$('.send-search').click(function(){
-		form = $('.search-form').serializeArray();
-
-		data = []
-
-		$.each(form, function(index, item){
-			data[item.name] = item.value
-		});
-
-		link = "{{url('post')}}/"+data['category']+"?search="+data['search']
-
-		window.location.href = link
-	});
-</script>
+	@include('website.home.script')
 @endsection
 
 @section('content')
@@ -46,7 +32,7 @@
 
 		@include('website.home.post-popular')
 	
-		@include('website.home.main-body')
+		{{-- @include('website.home.main-body') --}}
 	@endif
 	
 @endsection

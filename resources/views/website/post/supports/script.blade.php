@@ -15,20 +15,21 @@
          newComments    = '';
          countComments  = 0
          
-         $(window).on('scroll', function() { 
-             endComments = list.offset().top + list.outerHeight() - window.innerHeight
-             countList = $('ul.list-comment li').length
-             
-             if ($(window).scrollTop() >= endComments && status == 0){ 
-                 status = 1
-                 url = '{{$urlMoreComments}}?skip='+countList
+        $(window).on('scroll', function() { 
+            endComments = list.offset().top + list.outerHeight() - window.innerHeight
+            countList = $('ul.list-comment li').length
+            
+            if ($(window).scrollTop() >= endComments && status == 0){ 
+                status = 1
+                url = '{{$urlMoreComments}}?skip='+countList
                 //  console.log('countlist = '+countList)
                 //  console.log('status = '+status)
                 //  console.log('url = '+url)
-                 
+                
                 if(countComments != countList){
                     showComments(newComments, url)
                 }
+
                 countComments = countList
             }
         }); 

@@ -21,6 +21,7 @@ use Carbon\Carbon;
 
 Route::namespace('Website')->group(function(){
 	Route::get('/', 'HomeController@index');
+	Route::get('/popular-posts', 'HomeController@popularPosts');
 	Route::get('page/{page}', 'PageController@index');
 	Route::get('/image', 'GalleryController@image');
 	Route::get('/image/more', 'GalleryController@more_images');
