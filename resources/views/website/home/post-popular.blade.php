@@ -7,10 +7,12 @@
             <h1><span>Postingan Terpopuler</span></h1>
         </div>
 
-        <div class="features-today-box owl-wrapper post-popular">
-            <div class="owl-carousel list-post-popular" id="list-post-popular" data-num="4">
-                <h1>coba</h1>
-            
+        <div class="post-popular">
+            {{-- kodingan di script.blade.php --}}
+        </div>
+
+        {{-- <div class="features-today-box owl-wrapper post-popular">
+            <div class="owl-carousel list-post-popular" id="list-post-popular" data-num="4">             --}}
                 {{-- @foreach ($popularPosts as $index => $item)
                     <div class="item news-post standard-post" onClick="gotolink('{{$item->gotolink}}')">
                         <div class="post-gallery">
@@ -33,8 +35,8 @@
                     </div>
                 @endforeach --}}
 
-            </div>
-        </div>
+            {{-- </div> --}}
+        {{-- </div> --}}
 
     </div>
 </section>
