@@ -41,7 +41,7 @@
 
 		@include('website.home.post-popular')
 	
-		{{-- @include('website.home.main-body') --}}
+		@include('website.home.main-body')
 	@endif
 	
 @endsection

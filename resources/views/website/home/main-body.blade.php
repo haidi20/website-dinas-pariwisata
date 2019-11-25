@@ -138,7 +138,7 @@
             </div>
 
            {{-- sisi kanan postingan  --}}
-           {{-- @include('website.support.side-right-post') --}}
+           @include('website.support.side-right-post')
             
         </div>
 
