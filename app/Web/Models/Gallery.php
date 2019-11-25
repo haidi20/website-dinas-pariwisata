@@ -9,7 +9,11 @@ use Image;
 class Gallery extends Model
 {
     protected $fillable = ['caption', 'type'];
-    protected $appends = ['url', 'preview_original', 'preview', 'small_preview', 'thumbnail', 'gallery_tags', 'url_edit', 'url_delete'];
+    protected $appends = [
+        'url', 'preview_original', 'preview', 'small_preview', 
+        'thumbnail', 'gallery_tags', 'url_edit', 'url_delete',
+        'preview_url',
+    ];
 
     public function scopeSorted($query, $by='id', $sort='ASC')
     {

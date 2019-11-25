@@ -41,4 +41,9 @@ class HomeController extends BaseController
             'categories'
         ));
     }
+
+    public function popularPosts()
+    {
+        return $this->postRepo->popular($limit = 6);
+    }
 }

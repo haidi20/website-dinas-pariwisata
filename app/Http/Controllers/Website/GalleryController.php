@@ -17,27 +17,41 @@ class GalleryController extends BaseController
     public function image()
     {
         $typeGallery = "Image";
-        $data = $this->galleryRepo->allImages();
+        
+        $data       = $this->galleryRepo->limitImages(8);
+        $countImages= $this->galleryRepo->countImages();
 
         return $this->view('website.gallery.image', compact(
-            'data', 'typeGallery'
+            'data', 'typeGallery', 'countImages'
         ));
+    }
+
+    public function more_images()
+    {
+        return $this->galleryRepo->limitImages(8);
     }
 
     public function video()
     {
         $typeGallery = "Video";
-        $data = $this->galleryRepo->limitVideos(8);
+        
+        $data       = $this->galleryRepo->limitVideos(8);
+        $countVideos= $this->galleryRepo->countVideos();
 
         return $this->view('website.gallery.video', compact(
-            'data', 'typeGallery'
+            'data', 'typeGallery', 'countVideos'
         ));
+    }
+
+    public function more_videos()
+    {
+        return $this->galleryRepo->limitVideos(8);
     }
 
     public function detail_video($slug)
     {
         $video  = $this->galleryRepo->baseSlugVideo($slug);
-        $videos = $this->galleryRepo->withoutThisVideo($video->id, 10); 
+        $videos = $this->galleryRepo->withoutThisVideo($video->id, 5); 
 
         return $this->view('website.gallery.detail-video', compact(
             'video', 'videos'

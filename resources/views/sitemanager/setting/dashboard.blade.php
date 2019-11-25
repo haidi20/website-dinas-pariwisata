@@ -9,9 +9,9 @@
 		<div class="row">
 			<div class="col-sm-11 col-sm-offset-1">
 				<a href="{{ url($moduleUrl) }}" class="btn btn-default">
-					@fa('reply') Back
+					{!!fa('reply')!!}  Back
 				</a>
-				<button class="btn-primary btn" type="submit">@fa('save') Save</button>
+				<button class="btn-primary btn" type="submit">{!!fa('save')!!} Save</button>
 			</div>
 		</div>
 	</div>

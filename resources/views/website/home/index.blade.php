@@ -1,21 +1,16 @@
 @extends('website._layouts.default')
 
+@section('script-top')
+	<style>
+		.big-loading{
+			font-size:60px;
+			text-align: center;
+		}
+	</style>
+@endsection
+
 @section('script-bottom')
-<script>
-	$('.send-search').click(function(){
-		form = $('.search-form').serializeArray();
-
-		data = []
-
-		$.each(form, function(index, item){
-			data[item.name] = item.value
-		});
-
-		link = "{{url('post')}}/"+data['category']+"?search="+data['search']
-
-		window.location.href = link
-	});
-</script>
+	@include('website.home.script')
 @endsection
 
 @section('content')

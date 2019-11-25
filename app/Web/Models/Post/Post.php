@@ -9,7 +9,11 @@ use Session;
 
 class Post extends Model
 {
-    protected $appends = ['url_slug', 'small_preview', 'preview'];
+    protected $appends = [
+        'url_slug', 'small_preview', 'preview', 'gotolink',
+        'preview_popular_post', 'color_category', 'long_date', 
+        'viewed', 'display_category_name', 'show_title'
+    ];
 
     public function scopeSorted($query, $by='id', $sort='ASC')
     {

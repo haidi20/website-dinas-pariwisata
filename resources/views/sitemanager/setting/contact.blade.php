@@ -32,7 +32,7 @@
 	<div class="panel-footer">
 		<div class="row">
 			<div class="col-sm-11 col-sm-offset-1">
-				<button class="btn-primary btn" type="submit">@fa('save') Save</button>
+				<button class="btn-primary btn" type="submit">{!!fa('save')!!}  Save</button>
 			</div>
 		</div>
 	</div>

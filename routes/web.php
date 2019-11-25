@@ -21,15 +21,18 @@ use Carbon\Carbon;
 
 Route::namespace('Website')->group(function(){
 	Route::get('/', 'HomeController@index');
+	Route::get('/popular-posts', 'HomeController@popularPosts');
 	Route::get('page/{page}', 'PageController@index');
-    Route::get('/image', 'GalleryController@image');
+	Route::get('/image', 'GalleryController@image');
+	Route::get('/image/more', 'GalleryController@more_images');
 	Route::get('/video', 'GalleryController@video');
+	Route::get('/video/more', 'GalleryController@more_videos');
 	Route::get('/video/{slug}', 'GalleryController@detail_video');
 	Route::post('/video/{slug}', 'GalleryController@create_comment');
     Route::group(['prefix' => 'post'], function(){
 		Route::get('/', 'PostController@index');
 		Route::post('comment/store', 'PostController@comment');
-		Route::get('comment/show', 'PostController@show_comments');
+		Route::get('comment/more', 'PostController@more_comments');
 		Route::get('{category}', 'PostController@index');
 		Route::get('{category}/{slug}', 'PostController@detail');
     });

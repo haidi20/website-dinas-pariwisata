@@ -40,11 +40,21 @@ class SettingController extends BaseController
 
     public function formContact($page)
     {
-        $address = Setting::where('key', 'address')->first()->value;
-        $phone   = Setting::where('key', 'phone')->first()->value;
-        $fax     = Setting::where('key', 'fax')->first()->value;
-        $email   = Setting::where('key', 'email')->first()->value;
-        $time    = Setting::where('key', 'time')->first()->value;
+        $setting = new Setting;
+
+        if(!$setting->get()->isEmpty()){
+            $address = Setting::where('key', 'address')->first()->value;
+            $phone   = Setting::where('key', 'phone')->first()->value;
+            $fax     = Setting::where('key', 'fax')->first()->value;
+            $email   = Setting::where('key', 'email')->first()->value;
+            $time    = Setting::where('key', 'time')->first()->value;
+        }else{
+            $address = '';
+            $phone   = '';
+            $fax     = '';
+            $email   = '';
+            $time    = '';  
+        }
 
         return $this->template('index', compact('page', 'address', 'phone', 'fax', 'email', 'time'));
     }
@@ -55,6 +65,10 @@ class SettingController extends BaseController
         foreach($input as $data){
             $request = $this->request->get($data);
             $setting = Setting::where('key', $data)->first();
+            if(!$setting){
+                $setting = new Setting;
+                $setting->key = $data;
+            } 
             $setting->value = (!empty($request)) ? $request : strip_tags($request);
             $setting->save();
         }

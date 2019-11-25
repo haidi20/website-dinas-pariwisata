@@ -1,16 +1,19 @@
 <!-- features-today-section
 ================================================== -->
-<section class="features-today">
+<section class="features-today section-popular" id="section-popular">
     <div class="container">
 
         <div class="title-section">
             <h1><span>Postingan Terpopuler</span></h1>
         </div>
 
-        <div class="features-today-box owl-wrapper">
-            <div class="owl-carousel" data-num="4">
-            
-                @foreach ($popularPosts as $index => $item)
+        <div class="post-popular">
+            {{-- kodingan di script.blade.php --}}
+        </div>
+
+        {{-- <div class="features-today-box owl-wrapper post-popular">
+            <div class="owl-carousel list-post-popular" id="list-post-popular" data-num="4">             --}}
+                {{-- @foreach ($popularPosts as $index => $item)
                     <div class="item news-post standard-post" onClick="gotolink('{{$item->gotolink}}')">
                         <div class="post-gallery">
                             {!!$item->preview_popular_post!!}
@@ -30,10 +33,10 @@
                             </ul>
                         </div>
                     </div>
-                @endforeach
+                @endforeach --}}
 
-            </div>
-        </div>
+            {{-- </div> --}}
+        {{-- </div> --}}
 
     </div>
 </section>
