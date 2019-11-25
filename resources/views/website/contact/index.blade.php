@@ -38,6 +38,24 @@
             showMap();
         });
 
+        function showMap(){
+            var latlong = ["-0.501054", "117.143388"]
+            var map = L.map('map').setView(
+                latlong, 
+            15);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: ''
+            }).addTo(map);
+            
+
+            L.marker(latlong).addTo(map)
+                .bindPopup('Dinas Pariwisata Kalimantan Timur')
+                .openPopup();
+            
+            map.scrollWheelZoom.disable();
+        }
+
         function send(){
             url     = "{{url('contact/store')}}";
             form    = $('#comment-form')
@@ -54,7 +72,6 @@
                     })
 
                     status = 0
-                    // break;
                 }else{
                     if(status != 0){
                         status = 1
@@ -74,30 +91,12 @@
                         text: "Pesan sudah di kirim",
                         footer: "Dialog ini akan otomatis menutup setelah 3 detik",
                         customClass: 'swal-wide',
-                        timer: 3000,
+                        timer: 2000,
                     })
                 }).error(function(err){
                     console.log(err.responseText);
                 });
             }
-        }
-
-        function showMap(){
-            var latlong = ["-0.501054", "117.143388"]
-            var map = L.map('map').setView(
-                latlong, 
-            15);
-
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: ''
-            }).addTo(map);
-            
-
-            L.marker(latlong).addTo(map)
-                .bindPopup('Dinas Pariwisata Kalimantan Timur')
-                .openPopup();
-            
-            map.scrollWheelZoom.disable();
         }
     </script>
 @endsection

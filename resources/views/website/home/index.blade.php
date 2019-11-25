@@ -1,5 +1,14 @@
 @extends('website._layouts.default')
 
+@section('script-top')
+	<style>
+		.big-loading{
+			font-size:60px;
+			text-align: center;
+		}
+	</style>
+@endsection
+
 @section('script-bottom')
 	@include('website.home.script')
 @endsection

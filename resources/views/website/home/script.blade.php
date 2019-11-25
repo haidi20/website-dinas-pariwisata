@@ -37,8 +37,12 @@
         $.ajax({
             type: 'get',
             url: url,
+            cache: false,
             beforeSend: function(){
-                
+                loading = '<div style="text-align:center"><i class="fa fa-spinner fa-spin big-loading"></i></div>';
+
+                listPost= $('.section-popular > .container').find('.post-popular');
+                listPost.append(loading);
             },
             success: function(data){
                 popular = popular+'<div class="features-today-box owl-wrapper ">';
@@ -63,10 +67,8 @@
                     popular = popular+'</div>';
                 popular =popular+'</div>';
 
-                
-                h1 = '<h1> coba </h1>';
-
-                listPost= $('.section-popular > .container').find('.post-popular')
+                listPost= $('.section-popular > .container').find('.post-popular');
+                listPost.empty();
                 listPost.append(popular);
 
                 owlWrap();
@@ -76,9 +78,6 @@
             error: function(xhr){ 
                 console.log(xhr.statusText + xhr.responseText);
             },
-            complete: function(){
-                
-            }
         });
     }
 </script>
