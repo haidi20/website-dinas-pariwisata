@@ -38,7 +38,7 @@
             type: 'get',
             url: url,
             beforeSend: function(){
-                console.log('loading');
+                
             },
             success: function(data){
                 popular = popular+'<div class="features-today-box owl-wrapper ">';
@@ -68,12 +68,10 @@
 
                 listPost= $('.section-popular > .container').find('.post-popular')
                 listPost.append(popular);
-                console.log(popular)
 
                 owlWrap();
                 lazyImage();
                 showImage();
-
             },
             error: function(xhr){ 
                 console.log(xhr.statusText + xhr.responseText);

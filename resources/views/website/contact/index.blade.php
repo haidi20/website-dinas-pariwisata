@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""/>
-    {!! Html::style('avenger/assets/plugins/sweet-alert/sweet-alert.css') !!}
+    {!! Html::style('plugins/sweet-alert/dist/sweetalert2.min.css') !!}
     <style>
         /* Set the size of the div element that contains the map */
         #map {
@@ -21,6 +21,10 @@
         .contact-icon > .fa{
             font-size: 45px;
         }
+        .swal-wide{
+            /* width:850px !important; */
+            font-size: 1.6rem !important; 
+        }
     </style>
 @endsection
 
@@ -28,7 +32,7 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
     crossorigin=""></script>
-    {!! Html::script('avenger/assets/plugins/sweet-alert/sweet-alert.min.js') !!}
+    {!! Html::script('plugins/sweet-alert/dist/sweetalert2.all.min.js') !!}
     <script>
         $(function () {
             showMap();
@@ -38,23 +42,44 @@
             url     = "{{url('contact/store')}}";
             form    = $('#comment-form')
             data    = form.serializeArray()
+            status  = 1
 
-            $.get(url, data, function(response){
-                // console.log(response);
-                input       = form.find('input:not([name="_token"])')
-                textarea    = form.find('textarea')
-                input.val('')
-                textarea.val('')
-                swal({
-                    title: "Sudah Disimpan!",
-                    text: "Pesan sudah di kirim <br><small>Dialog ini akan otomatis menutup setelah 3 detik</small>",
-                    type: "success",
-                    timer: 3000,
-                    html: true
-                });
-            }).error(function(err){
-                console.log(err.responseText);
+            $('input[type="text"]').each(function(){
+                if($(this).val()==""){                   
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Peringatan',
+                        text: 'Maaf, tidak boleh ada yang kosong',
+                        customClass: 'swal-wide',
+                    })
+
+                    status = 0
+                    // break;
+                }else{
+                    if(status != 0){
+                        status = 1
+                    }
+                }
             });
+
+            if(status == 1){
+                $.get(url, data, function(response){
+                    input       = form.find('input:not([name="_token"])')
+                    textarea    = form.find('textarea')
+                    input.val('')
+                    textarea.val('')
+                    Swal.fire({
+                        icon: 'success',
+                        title: "Sudah Disimpan!",
+                        text: "Pesan sudah di kirim",
+                        footer: "Dialog ini akan otomatis menutup setelah 3 detik",
+                        customClass: 'swal-wide',
+                        timer: 3000,
+                    })
+                }).error(function(err){
+                    console.log(err.responseText);
+                });
+            }
         }
 
         function showMap(){
@@ -91,7 +116,7 @@
                     <div class="title-section">
                         <h1><span>Tentang Kami</span></h1>
                     </div>
-                    <form id="comment-form">
+                    <form>
                         <div class="row contact">
                             <div class="col-sm-2 contact-icon">
                                 {!! fa('home') !!}
