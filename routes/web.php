@@ -44,6 +44,7 @@ Route::namespace('Website')->group(function(){
 		Route::get('new-posts', 'HomeController@newPosts');
 		Route::get('galleries', 'HomeController@galleries');
 		Route::get('latest-posts', 'HomeController@latestPosts');
+		Route::get('right-side-posts', 'HomeController@rightSidePosts');
 	});
 });
 

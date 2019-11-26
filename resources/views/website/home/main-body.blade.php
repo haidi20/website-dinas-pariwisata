@@ -30,15 +30,6 @@
                             <div class="list-galleries">
                                 {{-- codingannya ada di script.blade.php --}}
                             </div>
-                            {{-- <div class="owl-carousel" data-num="3">
-                            
-                                @foreach ($image as $index => $item)
-                                    <div class="item news-post image-post3">
-                                        {!!$item->preview_original!!}
-                                    </div>
-                                @endforeach
-
-                            </div> --}}
 
                             <div class="center-button button-gallery" style="display:none">
                                 <a href="{{url('/image')}}"> Show More </a>
@@ -59,30 +50,8 @@
                         </div>
 
                         <div class="section-latest-posts">
-
+                            {{-- codingannya ada di script.blade.php --}}
                         </div>
-
-                        {{-- <div class="latest-articles iso-call">
-
-                            @foreach ($lastPosts as $index => $item)
-                                <div 
-                                    class="news-post standard-post2 {{$index == 0 ? 'default-size' : ''}}"
-                                    onClick="gotolink('{{$item->gotolink}}')"
-                                >
-                                    <div class="post-gallery">
-                                        {!!$item->preview_last_post!!}
-                                    </div>
-                                    <div class="post-title">
-                                        <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->show_limit_title}}</a></h2>
-                                        <ul class="post-tags">
-                                            <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                            <li>{!! $item->viewed !!}</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                        </div> --}}
                         <div class="center-button button-latest-posts" style="display:none">
                             <a href="{{url('/post?last=1')}}"> Show More </a>
                         </div>
@@ -95,8 +64,13 @@
 
             </div>
 
-           {{-- sisi kanan postingan  --}}
-           @include('website.support.side-right-post')
+            {{-- sisi kanan postingan  --}}
+            <div class="loading-right-side-posts" style="text-align:center; padding-top:50px;">
+                <i class="fa fa-spinner fa-spin big-loading"></i>
+            </div>
+            <div class="right-side-posts" style="display:none">
+                @include('website.support.side-right-post')
+            </div>
             
         </div>
 

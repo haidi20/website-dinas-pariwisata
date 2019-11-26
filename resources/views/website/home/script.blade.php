@@ -37,7 +37,9 @@
             if ($(window).scrollTop() >= spacePopular && status.showPopularPosts == 0){
                 status.showPopularPosts = 1;
 
-                showPopularPosts()
+                showPopularPosts();
+
+                showRightSidePosts();
             }
             else if($(window).scrollTop() >= spaceNewPost && status.showNewPosts == 0){
                 status.showNewPosts = 1;
@@ -103,6 +105,30 @@
                 console.log(xhr.statusText + xhr.responseText);
             },
         });
+    }
+
+    function showRightSidePosts()
+    {
+        url     = "{{url('home/right-side-posts')}}"
+        popular = ''
+
+        $.ajax({
+            type: 'get',
+            url: url,
+            cache: false,
+            async : true,
+            start_time: new Date().getTime(),
+            beforeSend: function(){
+                
+            },
+            success: function(data){
+                $('.loading-right-side-posts').hide();
+                $('.right-side-posts').show();
+            },
+            error: function(xhr){ 
+                console.log(xhr.statusText + xhr.responseText);
+            },
+        }); 
     }
 
     function showNewPosts()

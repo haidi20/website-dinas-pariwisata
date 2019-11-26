@@ -63,4 +63,9 @@ class HomeController extends BaseController
     {
         return $this->postRepo->last($limit = 6);
     }
+
+    public function rightSidePosts()
+    {
+        return $this->postRepo->recent($limit = 5);
+    }
 }
