@@ -78,7 +78,10 @@
                             <div class="title-section">
                                 <h1><span>Gallery</span></h1>
                             </div>
-                            <div class="owl-carousel" data-num="3">
+                            <div class="section-galleries">
+                                {{-- codingannya ada di script.blade.php --}}
+                            </div>
+                            {{-- <div class="owl-carousel" data-num="3">
                             
                                 @foreach ($image as $index => $item)
                                     <div class="item news-post image-post3">
@@ -86,9 +89,9 @@
                                     </div>
                                 @endforeach
 
-                            </div>
+                            </div> --}}
 
-                            <div class="center-button">
+                            <div class="center-button button-gallery" style="display:none">
                                 <a href="{{url('/image')}}"> Show More </a>
                             </div>
                         </div>

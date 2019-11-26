@@ -42,6 +42,7 @@ Route::namespace('Website')->group(function(){
 	Route::group(['prefix' => 'home'], function(){
 		Route::get('popular-posts', 'HomeController@popularPosts');
 		Route::get('new-posts', 'HomeController@newPosts');
+		Route::get('galleries', 'HomeController@galleries');
 	});
 });
 

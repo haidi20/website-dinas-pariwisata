@@ -54,4 +54,9 @@ class HomeController extends BaseController
 
         return response()->json(compact('firstPost', 'limitThreePosts'));
     }
+
+    public function galleries()
+    {
+        return $this->galleryRepo->limitImages(5);
+    }
 }

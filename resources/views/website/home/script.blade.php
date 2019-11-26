@@ -40,6 +40,8 @@
                 status.showNewPosts = 1;
 
                 showNewPosts();
+
+                showGalleries();
             }
         });
     }
@@ -160,6 +162,45 @@
                 listPost.empty();
                 listPost.append(newPosts);
 
+
+                source();
+                // status.showNewPosts = 0;
+            },
+            error: function(xhr){ 
+                console.log(xhr.statusText + xhr.responseText);
+            },
+        });
+    }
+
+    function showGalleries()
+    {
+        var url         = "{{url('home/galleries')}}";
+        var galleries   = '';
+
+        $.ajax({
+            type: 'get',
+            url: url,
+            cache: false,
+            beforeSend: function(){
+                loading = '<div style="text-align:center"><i class="fa fa-spinner fa-spin big-loading"></i></div>';
+
+                listGalleries= $('.section-galleries');
+                listGalleries.append(loading);
+            },
+            success: function(data){
+                galleries = galleries+'<div class="owl-carousel" data-num="3">';
+                $.each(data, function(index, item){
+                    galleries = galleries+'<div class="item news-post image-post3">';
+                        galleries = galleries+item.preview_original;  
+                    galleries = galleries+'</div>';
+                })
+                galleries = galleries+'</div>';
+
+                listGalleries = $('.section-galleries');
+                listGalleries.empty();
+                listGalleries.append(galleries);
+
+                $('.button-gallery').show();
 
                 source();
                 status.showNewPosts = 0;
