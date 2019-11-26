@@ -21,7 +21,6 @@ use Carbon\Carbon;
 
 Route::namespace('Website')->group(function(){
 	Route::get('/', 'HomeController@index');
-	Route::get('/popular-posts', 'HomeController@popularPosts');
 	Route::get('page/{page}', 'PageController@index');
 	Route::get('/image', 'GalleryController@image');
 	Route::get('/image/more', 'GalleryController@more_images');
@@ -38,6 +37,11 @@ Route::namespace('Website')->group(function(){
     Route::group(['prefix' => 'contact'], function(){
 		Route::get('/', 'ContactController@index');
 		Route::get('/store', 'ContactController@store');
+	});
+	// kirim data json untuk home di website
+	Route::group(['prefix' => 'home'], function(){
+		Route::get('popular-posts', 'HomeController@popularPosts');
+		Route::get('new-posts', 'HomeController@newPosts');
 	});
 });
 

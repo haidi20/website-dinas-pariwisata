@@ -46,4 +46,12 @@ class HomeController extends BaseController
     {
         return $this->postRepo->popular($limit = 6);
     }
+
+    public function newPosts()
+    {
+        $firstPost          = $this->postRepo->first();
+        $limitThreePosts    = $this->postRepo->limit(3);
+
+        return response()->json(compact('firstPost', 'limitThreePosts'));
+    }
 }

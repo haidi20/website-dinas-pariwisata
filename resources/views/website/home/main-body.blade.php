@@ -15,57 +15,59 @@
                             <h1><span>Postingan Terbaru</span></h1>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-6 section-firstpost">
-                                <div class="news-post image-post2" onClick="gotolink('{{$firstPost->gotolink}}')">
-                                    <div class="post-gallery">
-                                        {!!$firstPost->preview_first_post!!}
-                                        <div class="hover-box">
-                                            <div class="inner-hover">
-                                                <a 
-                                                    class="category-post tech"
-                                                    href="{{url('post/'.$firstPost->display_category_name)}}"
-                                                >
-                                                    {{$firstPost->display_category_name}}
-                                                </a>
-                                                <h2 style="color:white" data-link="" ><a href="{{url('post/tags', $firstPost->slug)}}" >{{$firstPost->show_title}}</a></h2>
-                                                <ul class="post-tags">
-                                                    <li><i class="fa fa-clock-o"></i>{{$firstPost->long_date}}</li>
-                                                    <li>{!! $firstPost->viewed !!}</li>
-                                                </ul>
+                        <div class="section-new-posts">
+                            {{-- <div class="row">
+                                <div class="col-md-6">
+                                    <div class="news-post image-post2" onClick="gotolink('{{$firstPost->gotolink}}')">
+                                        <div class="post-gallery">
+                                            {!!$firstPost->preview_first_post!!}
+                                            <div class="hover-box">
+                                                <div class="inner-hover">
+                                                    <a 
+                                                        class="category-post tech"
+                                                        href="{{url('post/'.$firstPost->display_category_name)}}"
+                                                    >
+                                                        {{$firstPost->display_category_name}}
+                                                    </a>
+                                                    <h2 style="color:white" data-link="" ><a href="{{url('post/tags', $firstPost->slug)}}" >{{$firstPost->show_title}}</a></h2>
+                                                    <ul class="post-tags">
+                                                        <li><i class="fa fa-clock-o"></i>{{$firstPost->long_date}}</li>
+                                                        <li>{!! $firstPost->viewed !!}</li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+    
+                                <div class="col-md-6">
+                                    <ul class="list-posts">
+                                        @foreach ($limitThreePosts as $index => $item)
+                                            <li onClick="gotolink('{{$item->gotolink}}')">
+                                                {!!$item->preview_three_post!!}
+                                                <div class="post-content">
+                                                    <a 
+                                                        href="{{url('post/'.$item->display_category_name)}}"
+                                                    >
+                                                        {{$item->display_category_name}}
+                                                    </a>
+                                                    <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->show_title}}</a></h2>
+                                                    <ul class="post-tags">
+                                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
+                                                        <li>
+                                                            {!! $item->viewed !!}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-
-                            <div class="col-md-6">
-                                <ul class="list-posts">
-                                    @foreach ($limitThreePosts as $index => $item)
-                                        <li onClick="gotolink('{{$item->gotolink}}')">
-                                            {!!$item->preview_three_post!!}
-                                            <div class="post-content">
-                                                <a 
-                                                    href="{{url('post/'.$item->display_category_name)}}"
-                                                >
-                                                    {{$item->display_category_name}}
-                                                </a>
-                                                <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->show_title}}</a></h2>
-                                                <ul class="post-tags">
-                                                    <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                                    <li>
-                                                        {!! $item->viewed !!}
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="center-button">
-                            <a href="{{url('/post')}}"> Show More </a>
+    
+                            <div class="center-button">
+                                <a href="{{url('/post')}}"> Show More </a>
+                            </div> --}}
                         </div>
 
                     </div>
