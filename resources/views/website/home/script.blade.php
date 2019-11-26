@@ -20,28 +20,34 @@
     function scrolling()
     {
         var endSearch       = $('.section-popular');
+        var endGallery      = $('.section-galleries');
         var endPostPopular  = $('.post-popular');
 
         var status = {
             showNewPosts: 0,
+            showLatestPosts: 0,
             showPopularPosts: 0,
         };
 
         $(window).on('scroll', function() { 
-            spacePopular = endSearch.offset().top + endSearch.outerHeight() - window.innerHeight;
-            spaceNewPost = endPostPopular.offset().top + endPostPopular.outerHeight() - window.innerHeight;
+            spacePopular        = endSearch.offset().top + endSearch.outerHeight() - window.innerHeight;
+            spaceNewPost        = endPostPopular.offset().top + endPostPopular.outerHeight() - window.innerHeight;
+            spaceLatestPost     = endGallery.offset().top + endGallery.outerHeight() - window.innerHeight;
             
             if ($(window).scrollTop() >= spacePopular && status.showPopularPosts == 0){
                 status.showPopularPosts = 1;
 
                 showPopularPosts()
             }
-            else if($(window).scrollTop() >= spacePopular && status.showNewPosts == 0){
+            else if($(window).scrollTop() >= spaceNewPost && status.showNewPosts == 0){
                 status.showNewPosts = 1;
 
                 showNewPosts();
 
                 showGalleries();
+            }
+            else if($(window).scrollTop() >= spaceLatestPost && status.showLatestPosts == 0){
+                status.showLatestPosts = 1;
 
                 showLatestPosts();
             }
@@ -186,7 +192,7 @@
             beforeSend: function(){
                 loading = '<div style="text-align:center"><i class="fa fa-spinner fa-spin big-loading"></i></div>';
 
-                listGalleries= $('.section-galleries');
+                listGalleries= $('.list-galleries');
                 listGalleries.append(loading);
             },
             success: function(data){
@@ -198,7 +204,7 @@
                 })
                 galleries = galleries+'</div>';
 
-                listGalleries = $('.section-galleries');
+                listGalleries= $('.list-galleries');
                 listGalleries.empty();
                 listGalleries.append(galleries);
 
@@ -215,8 +221,8 @@
 
     function showLatestPosts()
     {
-        var url         = "{{url('home/latest-posts')}}";
-        var galleries   = '';
+        var url      = "{{url('home/latest-posts')}}";
+        var latest   = '';
 
         $.ajax({
             type: 'get',
@@ -225,11 +231,36 @@
             beforeSend: function(){
                 loading = '<div style="text-align:center"><i class="fa fa-spinner fa-spin big-loading"></i></div>';
 
-                listGalleries= $('.section-galleries');
-                listGalleries.append(loading);
+                latestPosts= $('.section-latest-posts');
+                latestPosts.append(loading);
             },
             success: function(data){
-                console.log(data)
+                latest = latest+'<div class="latest-articles iso-call">';
+                $.each(data, function(index, item){
+                    var default_size = index == 0 ? 'default-size' : '';
+                    
+                    latest = latest+'<div class="news-post standard-post2 '+default_size+'">';
+                        latest = latest+'<div class="post-gallery">';
+                            latest = latest+item.preview_last_post;
+                        latest = latest+'</div>';
+                        latest = latest+'<div class="post-title">';
+                            latest = latest+'<h2><a onClick="gotolink(\''+item.gotolink+'\')">'+item.show_limit_title+'</a></h2>';
+                                latest = latest+'<ul class="post-tags">';
+                                    latest = latest+'<li><i class="fa fa-clock-o"></i>'+item.long_date+'</li>';
+                                    latest = latest+'<li>'+item.viewed+'</li>';
+                                latest = latest+'</ul>';
+                        latest = latest+'</div>';
+                    latest = latest+'</div>';
+                });
+                latest = latest+'</div>';
+
+                latestPosts= $('.section-latest-posts');
+
+                latestPosts.empty();
+                latestPosts.append(latest);
+
+                source();
+                status.showLatestPosts = 0;
             },
             error: function(xhr){ 
                 console.log(xhr.statusText + xhr.responseText);

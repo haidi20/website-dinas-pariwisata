@@ -13,7 +13,8 @@ class Post extends Model
         'url_slug', 'small_preview', 'preview', 'gotolink',
         'preview_popular_post', 'color_category', 'long_date', 
         'viewed', 'display_category_name', 'show_title', 'link_category',
-        'show_title', 'preview_first_post', 'preview_three_post'
+        'show_title', 'preview_first_post', 'preview_three_post', 'show_limit_title',
+        'preview_last_post'
     ];
 
     public function scopeSorted($query, $by='id', $sort='ASC')

@@ -23,11 +23,11 @@
                     <!-- End grid box -->
 
                     <!-- carousel box -->
-                        <div class="carousel-box owl-wrapper">
+                        <div class="carousel-box owl-wrapper section-galleries">
                             <div class="title-section">
                                 <h1><span>Gallery</span></h1>
                             </div>
-                            <div class="section-galleries">
+                            <div class="list-galleries">
                                 {{-- codingannya ada di script.blade.php --}}
                             </div>
                             {{-- <div class="owl-carousel" data-num="3">
@@ -58,9 +58,13 @@
                             <h1><span>Postingan Terlama</span></h1>
                         </div>
 
-                        <div class="latest-articles iso-call">
+                        <div class="section-latest-posts">
 
-                            {{-- @foreach ($lastPosts as $index => $item)
+                        </div>
+
+                        {{-- <div class="latest-articles iso-call">
+
+                            @foreach ($lastPosts as $index => $item)
                                 <div 
                                     class="news-post standard-post2 {{$index == 0 ? 'default-size' : ''}}"
                                     onClick="gotolink('{{$item->gotolink}}')"
@@ -76,9 +80,9 @@
                                         </ul>
                                     </div>
                                 </div>
-                            @endforeach --}}
+                            @endforeach
 
-                        </div>
+                        </div> --}}
                         <div class="center-button button-latest-posts" style="display:none">
                             <a href="{{url('/post?last=1')}}"> Show More </a>
                         </div>
@@ -92,7 +96,7 @@
             </div>
 
            {{-- sisi kanan postingan  --}}
-           {{-- @include('website.support.side-right-post') --}}
+           @include('website.support.side-right-post')
             
         </div>
 

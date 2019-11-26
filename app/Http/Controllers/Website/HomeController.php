@@ -27,7 +27,7 @@ class HomeController extends BaseController
         // $image              = $this->galleryRepo->limitImages(5);
         
         $firstPost          = $this->postRepo->first();
-        // $lastPosts          = $this->postRepo->last($limit = 6);
+        $lastPosts          = $this->postRepo->last($limit = 6);
         $categories         = $this->categoryRepo->all();
         // $popularPosts       = $this->postRepo->popular($limit = 6);
         $limitSixPosts      = $this->postRepo->limit(7);
@@ -37,7 +37,7 @@ class HomeController extends BaseController
 
         return $this->view('website.home.index', compact(
             'limitSixPosts', 'breakingNewsPosts', 'categories',
-            'firstPost', 'limitThreePosts', 'limitSixPosts'
+            'firstPost', 'limitThreePosts', 'limitSixPosts', 'lastPosts'
         ));
     }
 
