@@ -4,10 +4,10 @@
 </div>
 <div class="contact-form-box">
     {{-- <div class="fb-comments" data-href="{{ Request::fullUrl() }}" data-numposts="5" data-width="100%"></div> --}}
-    <form id="comment-form" action="#" method="POST">
+    <form id="comment-form" action="{{ url('/video/'.$video->slug) }}" method="POST">
         @csrf
-        <input type="hidden" name="post_id" value="">
         <div class="row">
+            <input type="hidden" name="comment_thread_id" id="comment_thread_id">
             <div class="col-md-6">
                 <input 
                     required
