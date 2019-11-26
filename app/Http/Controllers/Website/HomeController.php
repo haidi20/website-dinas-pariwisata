@@ -24,21 +24,20 @@ class HomeController extends BaseController
 
     public function index()
     {
-        $image              = $this->galleryRepo->limitImages(5);
+        // $image              = $this->galleryRepo->limitImages(5);
         
         $firstPost          = $this->postRepo->first();
-        $lastPosts          = $this->postRepo->last($limit = 6);
+        // $lastPosts          = $this->postRepo->last($limit = 6);
         $categories         = $this->categoryRepo->all();
-        $popularPosts       = $this->postRepo->popular($limit = 6);
+        // $popularPosts       = $this->postRepo->popular($limit = 6);
         $limitSixPosts      = $this->postRepo->limit(7);
         $limitThreePosts    = $this->postRepo->limit(3);
         $breakingNewsPosts  = $this->postRepo->breakingNews();
 
 
         return $this->view('website.home.index', compact(
-            'firstPost', 'limitSixPosts', 'limitThreePosts',
-            'breakingNewsPosts', 'image', 'lastPosts', 'popularPosts',
-            'categories'
+            'limitSixPosts', 'breakingNewsPosts', 'categories',
+            'firstPost', 'limitThreePosts', 'limitSixPosts'
         ));
     }
 
@@ -58,5 +57,10 @@ class HomeController extends BaseController
     public function galleries()
     {
         return $this->galleryRepo->limitImages(5);
+    }
+
+    public function latestPosts()
+    {
+        return $this->postRepo->last($limit = 6);
     }
 }

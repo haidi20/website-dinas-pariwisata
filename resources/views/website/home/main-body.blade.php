@@ -16,58 +16,7 @@
                         </div>
 
                         <div class="section-new-posts">
-                            {{-- <div class="row">
-                                <div class="col-md-6">
-                                    <div class="news-post image-post2" onClick="gotolink('{{$firstPost->gotolink}}')">
-                                        <div class="post-gallery">
-                                            {!!$firstPost->preview_first_post!!}
-                                            <div class="hover-box">
-                                                <div class="inner-hover">
-                                                    <a 
-                                                        class="category-post tech"
-                                                        href="{{url('post/'.$firstPost->display_category_name)}}"
-                                                    >
-                                                        {{$firstPost->display_category_name}}
-                                                    </a>
-                                                    <h2 style="color:white" data-link="" ><a href="{{url('post/tags', $firstPost->slug)}}" >{{$firstPost->show_title}}</a></h2>
-                                                    <ul class="post-tags">
-                                                        <li><i class="fa fa-clock-o"></i>{{$firstPost->long_date}}</li>
-                                                        <li>{!! $firstPost->viewed !!}</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="col-md-6">
-                                    <ul class="list-posts">
-                                        @foreach ($limitThreePosts as $index => $item)
-                                            <li onClick="gotolink('{{$item->gotolink}}')">
-                                                {!!$item->preview_three_post!!}
-                                                <div class="post-content">
-                                                    <a 
-                                                        href="{{url('post/'.$item->display_category_name)}}"
-                                                    >
-                                                        {{$item->display_category_name}}
-                                                    </a>
-                                                    <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->show_title}}</a></h2>
-                                                    <ul class="post-tags">
-                                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                                        <li>
-                                                            {!! $item->viewed !!}
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            </div>
-    
-                            <div class="center-button">
-                                <a href="{{url('/post')}}"> Show More </a>
-                            </div> --}}
+                            
                         </div>
 
                     </div>
@@ -111,7 +60,7 @@
 
                         <div class="latest-articles iso-call">
 
-                            @foreach ($lastPosts as $index => $item)
+                            {{-- @foreach ($lastPosts as $index => $item)
                                 <div 
                                     class="news-post standard-post2 {{$index == 0 ? 'default-size' : ''}}"
                                     onClick="gotolink('{{$item->gotolink}}')"
@@ -127,10 +76,10 @@
                                         </ul>
                                     </div>
                                 </div>
-                            @endforeach
+                            @endforeach --}}
 
                         </div>
-                        <div class="center-button">
+                        <div class="center-button button-latest-posts" style="display:none">
                             <a href="{{url('/post?last=1')}}"> Show More </a>
                         </div>
 
@@ -143,7 +92,7 @@
             </div>
 
            {{-- sisi kanan postingan  --}}
-           @include('website.support.side-right-post')
+           {{-- @include('website.support.side-right-post') --}}
             
         </div>
 

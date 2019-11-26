@@ -43,6 +43,7 @@ Route::namespace('Website')->group(function(){
 		Route::get('popular-posts', 'HomeController@popularPosts');
 		Route::get('new-posts', 'HomeController@newPosts');
 		Route::get('galleries', 'HomeController@galleries');
+		Route::get('latest-posts', 'HomeController@latestPosts');
 	});
 });
 

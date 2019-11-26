@@ -42,6 +42,8 @@
                 showNewPosts();
 
                 showGalleries();
+
+                showLatestPosts();
             }
         });
     }
