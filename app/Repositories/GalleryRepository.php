@@ -95,7 +95,7 @@ class GalleryRepository
         // printf("Open this link in your browser:\n%s\n", $authUrl);
         // print('Enter verification code: ');
         // $authCode = trim(fgets(STDIN));
-        $authCode = redirect($authUrl);
+        return $authUrl;
 
         // Exchange authorization code for an access token.
         $accessToken = $client->fetchAccessTokenWithAuthCode($authCode);
