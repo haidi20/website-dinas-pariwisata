@@ -14,8 +14,13 @@
             window.location.href = link;
         });
 
-        endSearch       = $('.section-popular');
-        endPostPopular  = $('.post-popular');
+        scrolling();
+    });
+
+    function scrolling()
+    {
+        var endSearch       = $('.section-popular');
+        var endPostPopular  = $('.post-popular');
 
         var status = {
             showNewPosts: 0,
@@ -37,7 +42,7 @@
                 showNewPosts();
             }
         });
-    });
+    }
 
     function showPopularPosts()
     {
@@ -92,8 +97,9 @@
 
     function showNewPosts()
     {
-        var url = "{{url('home/new-posts')}}"
-        var newPosts = ''
+        var url             = "{{url('home/new-posts')}}";
+        var newPosts        = '';
+        var detailNewPosts  = '';
 
         $.ajax({
             type: 'get',
@@ -106,6 +112,25 @@
                 listPost.append(loading);
             },
             success: function(data){
+                detailNewPosts = detailNewPosts+'<div class="col-md-6">';
+                        detailNewPosts = detailNewPosts+'<ul class="list-posts">';
+                $.each(data.limitThreePosts, function(index, item){
+                    detailNewPosts = detailNewPosts+'<li onClick="gotolink(\''+item.gotolink+'\')">';
+                        detailNewPosts = detailNewPosts+item.preview_three_post;
+                        detailNewPosts = detailNewPosts+'<div class="post-content">';
+                            detailNewPosts = detailNewPosts+'<a href="'+item.link_category+'">';
+                                detailNewPosts = detailNewPosts+item.display_category_name;
+                            detailNewPosts = detailNewPosts+'</a>';
+                            detailNewPosts = detailNewPosts+'<h2 style="color:white"><a href="javascript:;" onClick="gotolink(\''+item.gotolink+'\')">'+item.show_title+'</a></h2>';
+                            detailNewPosts = detailNewPosts+'<ul class="post-tags">';
+                                detailNewPosts = detailNewPosts+'<li><i class="fa fa-clock-o"></i>'+item.long_date+'</li>';
+                                detailNewPosts = detailNewPosts+'<li>'+item.viewed+'</li>';
+                            detailNewPosts = detailNewPosts+'</ul>';
+                        detailNewPosts = detailNewPosts+'</div>';
+                    detailNewPosts = detailNewPosts+'</li>';
+                });
+                    detailNewPosts = detailNewPosts+'</ul>';
+                detailNewPosts = detailNewPosts+'</div>';
                
                 newPosts = newPosts+'<div class="row">';
                     newPosts = newPosts+'<div class="col-md-6">';
@@ -127,11 +152,14 @@
                             newPosts = newPosts+'</div>';
                         newPosts = newPosts+'</div>';
                     newPosts = newPosts+'</div>';
+                    newPosts = newPosts+detailNewPosts;
                 newPosts = newPosts+'</div>';
 
                 listPost= $('.section-new-posts');
+
                 listPost.empty();
                 listPost.append(newPosts);
+
 
                 source();
                 status.showNewPosts = 0;

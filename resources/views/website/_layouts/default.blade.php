@@ -70,6 +70,7 @@
     <script type="text/javascript" src="{{asset('plugins/lazy/jquery.lazy.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('plugins/gravatar/md5.js')}}"></script>
     <script type="text/javascript" src="{{asset('plugins/gravatar/jquery.gravatar.js')}}"></script>
+    <script type="text/javascript" src="{{asset('plugins/jquery.sprintf.js')}}"></script>
 
 	<script type="text/javascript">
 
