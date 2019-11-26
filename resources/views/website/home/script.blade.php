@@ -239,7 +239,7 @@
                 $.each(data, function(index, item){
                     var default_size = index == 0 ? 'default-size' : '';
                     
-                    latest = latest+'<div class="news-post standard-post2 '+default_size+'">';
+                    latest = latest+'<div class="news-post standard-post2 '+default_size+'" onClick="gotolink(\''+item.gotolink+'\')">';
                         latest = latest+'<div class="post-gallery">';
                             latest = latest+item.preview_last_post;
                         latest = latest+'</div>';
