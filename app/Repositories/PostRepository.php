@@ -28,11 +28,11 @@ class PostRepository {
     }
 
     public function last($limit = null){
-        return Post::type('post')->orderBy('created_at', 'desc')->limit($limit)->get();
+        return Post::type('post')->orderBy('created_at')->limit($limit)->get();
     }
 
     public function recent($limit = null){
-        return Post::type('post')->orderBy('updated_at', 'desc')->limit($limit)->get();
+        return Post::type('post')->orderBy('updated_at', 'asc')->limit($limit)->get();
     }
 
     public function popular($limit = null){

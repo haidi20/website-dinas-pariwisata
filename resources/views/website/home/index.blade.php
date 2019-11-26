@@ -6,6 +6,9 @@
 			font-size:60px;
 			text-align: center;
 		}
+		div.block-content{
+			padding:30px 0px 0px;
+		}
 	</style>
 @endsection
 

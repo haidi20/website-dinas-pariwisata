@@ -210,4 +210,28 @@
             },
         });
     }
+
+    function showLatestPosts()
+    {
+        var url         = "{{url('home/latest-posts')}}";
+        var galleries   = '';
+
+        $.ajax({
+            type: 'get',
+            url: url,
+            cache: false,
+            beforeSend: function(){
+                loading = '<div style="text-align:center"><i class="fa fa-spinner fa-spin big-loading"></i></div>';
+
+                listGalleries= $('.section-galleries');
+                listGalleries.append(loading);
+            },
+            success: function(data){
+                console.log(data)
+            },
+            error: function(xhr){ 
+                console.log(xhr.statusText + xhr.responseText);
+            },
+        });
+    }
 </script>

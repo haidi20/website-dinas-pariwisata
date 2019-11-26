@@ -66,8 +66,8 @@
                                 <div class="post-content">
                                     <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
                                     <ul class="post-tags">
-                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                        {{-- <li class="right-side-viewed">{!! $item->viewed !!}</li> --}}
+                                        {{-- <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li> --}}
+                                        <li>{!! $item->viewed !!}</li>
                                     </ul>
                                 </div>
                             </li>
@@ -76,20 +76,18 @@
                 </div>
                 <div class="tab-pane" id="option2">
                     <ul class="list-posts">
-
                         @foreach ($rightSideRecentPosts as $index => $item)
                             <li onClick="gotolink('{{$item->gotolink}}')">
                                 {!!$item->preview_right_side_popular_post!!}
                                 <div class="post-content">
                                     <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->title}} </a></h2>
                                     <ul class="post-tags">
-                                        <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
-                                        {{-- <li class="right-side-viewed">{!! $item->viewed !!}</li> --}}
+                                        {{-- <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li> --}}
+                                        <li>{!! $item->viewed !!}</li>
                                     </ul>
                                 </div>
                             </li>
                         @endforeach
-
                     </ul>										
                 </div>
             </div>

@@ -106,7 +106,7 @@
                     <div class="masonry-box">
 
                         <div class="title-section">
-                            <h1><span>Latest Articles</span></h1>
+                            <h1><span>Postingan Terlama</span></h1>
                         </div>
 
                         <div class="latest-articles iso-call">

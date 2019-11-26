@@ -47,7 +47,7 @@ class PostController extends BaseController
         
         $tags       = $this->postRepo->tags($post->id);
 
-        $urlMoreComments     = url('post', ['comment', 'more']);
+        $urlMoreComments    = url('post', ['comment', 'more']);
         $urlStoreComment    = url('post', ['comment', 'store']);
 
         return $this->view('website.post.detail', compact(
