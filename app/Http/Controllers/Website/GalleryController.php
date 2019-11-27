@@ -21,7 +21,7 @@ class GalleryController extends BaseController
         $data       = $this->galleryRepo->limitImages(8);
         $countImages= $this->galleryRepo->countImages();
 
-        return $this->view('website.gallery.image', compact(
+        return $this->view('website.gallery.image.index', compact(
             'data', 'typeGallery', 'countImages'
         ));
     }
@@ -38,7 +38,7 @@ class GalleryController extends BaseController
         $data       = $this->galleryRepo->limitVideos(8);
         $countVideos= $this->galleryRepo->countVideos();
 
-        return $this->view('website.gallery.video', compact(
+        return $this->view('website.gallery.video.index', compact(
             'data', 'typeGallery', 'countVideos'
         ));
     }
@@ -53,7 +53,7 @@ class GalleryController extends BaseController
         $video  = $this->galleryRepo->baseSlugVideo($slug);
         $videos = $this->galleryRepo->withoutThisVideo($video->id, 5); 
 
-        return $this->view('website.gallery.detail-video', compact(
+        return $this->view('website.gallery.video.detail-video', compact(
             'video', 'videos'
         ));
     }
