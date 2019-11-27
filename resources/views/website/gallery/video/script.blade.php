@@ -29,18 +29,24 @@
             // console.log('show')
             $('#comment-form').show();
             $('.g-signin2').hide();
+            $('.loading').hide();
+
+            $('.image-new-comment').attr('src', profile.getImageUrl());
         }else{
             // console.log('hide')
             $('#comment-form').hide();
             $('.g-signin2').show();
+            $('.loading').hide();
         }
     }
 
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-        console.log('User signed out.');
+            auth2.signOut().then(function () {
+            console.log('User signed out.');
         });
+
+        location.reload();
     }
 
     function show_comments()

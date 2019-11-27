@@ -4,9 +4,13 @@
 </div>
 <div class="contact-form-box">
     {{-- <div class="fb-comments" data-href="{{ Request::fullUrl() }}" data-numposts="5" data-width="100%"></div> --}}
+    <div style="text-align:center" class="loading"><i class="fa fa-spinner fa-spin big-loading"></i></div>
     <form id="comment-form"  style="display:none">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-1">
+                <img src="" class="image-new-comment">
+            </div>
+            <div class="col-md-11">
                 <input 
                     required
                     id="comment" 
@@ -19,14 +23,18 @@
                 >
             </div>
         </div>
-        {{-- <a href="#" onclick="signOut();">Sign out</a> --}}
-        <button type="button" id="submit-contact">
-            <i class="fa fa-comment"></i> Video Comment
-        </button>
+        {{-- <a href="javascript:;" onclick="signOut();">Sign out</a> --}}
+        <a 
+            href="javascript:;" 
+            class="btn btn-default btn-md" 
+            style="margin-left:55px;"
+        >
+            Kirim
+        </a>
     </form>
     <div 
         class="g-signin2" 
-        style="margin-bottom:10px" 
+        style="margin-bottom:10px; display:none;" 
         data-onsuccess="onSignIn"
     /></div>                               
 </div>

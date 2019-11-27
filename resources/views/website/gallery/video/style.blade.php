@@ -59,4 +59,12 @@
         border-radius: 50%;
         width: 40px;
     }
+    .image-new-comment{
+        border-radius: 50%;
+        width: 50px;
+    }
+    .big-loading{
+        font-size:60px;
+        text-align: center;
+    }
 </style>
