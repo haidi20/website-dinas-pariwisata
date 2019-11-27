@@ -167,6 +167,14 @@ class Gallery extends Model
         }
     }
 
+    public function getVideoIdAttribute()
+    {
+        parse_str( parse_url( $this->link, PHP_URL_QUERY ), $my_array_of_vars );
+        $vid = $my_array_of_vars['v'];
+
+        return $vid;
+    }
+
     public function getYoutubeLinkAttribute()
     {
         return $this->preview(null, null, false, true);

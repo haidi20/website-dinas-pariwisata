@@ -16,6 +16,7 @@
                     id="comment" 
                     name="comment" 
                     type="text"
+                    class="comment"
                     {{-- class="form-control"  --}}
                     placeholder="Insert Your Comment"
                     oninvalid="this.setCustomValidity('Maaf, Nama wajib di isi')"
@@ -26,9 +27,8 @@
         {{-- <a href="javascript:;" onclick="signOut();">Sign out</a> --}}
         <a 
             href="javascript:;" 
-            class="btn btn-default btn-md send-comment" 
+            class="btn btn-default btn-md send-comment disabled"
             style="margin-left:65px;"
-
         >
             Kirim
         </a>

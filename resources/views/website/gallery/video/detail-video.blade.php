@@ -35,6 +35,7 @@
                                 <li><i class="fa fa-clock-o"></i>{{$video->format_date}}</li>
                                 <li>{!! $video->viewed !!}</li>
                             </ul>
+                            <input type="hidden" name="videoId" class="videoId" value="{{$video->video_id}}">
                             <br><br>
                             @include('website.gallery.video.comment')
                         </div>
