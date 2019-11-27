@@ -26,8 +26,9 @@
         {{-- <a href="javascript:;" onclick="signOut();">Sign out</a> --}}
         <a 
             href="javascript:;" 
-            class="btn btn-default btn-md" 
-            style="margin-left:55px;"
+            class="btn btn-default btn-md send-comment" 
+            style="margin-left:65px;"
+
         >
             Kirim
         </a>

@@ -1,4 +1,5 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://apis.google.com/js/client:plusone.js" type="application/javascript"></script>
 <script>
     $(function(){
         $('.article-post').click(function(){
@@ -8,6 +9,10 @@
         });
 
         show_comments();
+
+        $('.send-comment').click(function(){
+            send_comment();
+        })
     });
 
     function onSignIn(googleUser) {
@@ -23,7 +28,7 @@
 
     function condition_form_comment(profile)
     {
-        console.log('ID: ' + profile.getId());
+        // console.log('ID: ' + profile.getId());
 
         if(profile){
             // console.log('show')
@@ -49,6 +54,31 @@
         location.reload();
     }
 
+    function send_comment()
+    {
+        gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+        .then(function(ress) { 
+            return gapi.client.youtube.commentThreads.insert({
+                    "part": "snippet",
+                    "resource": {
+                        "snippet": {
+                            "videoId": "OLuBvjFjFkU",
+                            "topLevelComment": {
+                                "snippet": {
+                                "textOriginal": "mantul keren"
+                                }
+                            }
+                        }
+                    }
+                }).then(function(response) {
+                    // Handle the results here (response.result has the parsed body).
+                    // console.log("Response", response);
+                    location.reload();
+            },function(err) { console.error("Execute error", err); });
+        },function(err) { console.error("Error loading GAPI client for API", err); });
+        
+    }
+
     function show_comments()
     {
         let comments = '';
@@ -60,6 +90,7 @@
             type: 'get',
             success:function(response){
                 response.items.map(comment => {
+                    // console.log(comment.snippet);
                     var date = new Date(comment.snippet.topLevelComment.snippet.updatedAt).getDate();
                     var month = bulan[new Date(comment.snippet.topLevelComment.snippet.updatedAt).getMonth()];
                     var year = (new Date(comment.snippet.topLevelComment.snippet.updatedAt).getYear() < 1000) ? new Date(comment.snippet.topLevelComment.snippet.updatedAt).getYear() + 1900 : new Date(comment.snippet.topLevelComment.snippet.updatedAt).getYear();
