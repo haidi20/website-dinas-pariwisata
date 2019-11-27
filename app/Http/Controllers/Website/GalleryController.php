@@ -57,10 +57,4 @@ class GalleryController extends BaseController
             'video', 'videos'
         ));
     }
-
-    public function create_comment(Request $request)
-    {
-        return $this->galleryRepo->createCommentVideo($request->comment_thread_id, $request->text);
-        // return $request->all();
-    }
 }
