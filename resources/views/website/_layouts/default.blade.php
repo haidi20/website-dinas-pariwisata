@@ -8,6 +8,8 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	{{-- <meta name="google-signin-client_id" content="480303218320-t5f67643c8c2f8873a7ghlc0rqp2j888.apps.googleusercontent.com "> --}}
+	<meta name="google-signin-client_id" content="480303218320-t5f67643c8c2f8873a7ghlc0rqp2j888">
 
 	@yield('open-grap')
 
