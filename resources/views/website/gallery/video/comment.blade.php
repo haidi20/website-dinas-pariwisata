@@ -4,11 +4,11 @@
 </div>
 <div class="contact-form-box">
     {{-- <div class="fb-comments" data-href="{{ Request::fullUrl() }}" data-numposts="5" data-width="100%"></div> --}}
-    <div style="text-align:center" class="loading"><i class="fa fa-spinner fa-spin big-loading"></i></div>
-    <form id="comment-form"  style="display:none">
+    {{-- <div style="text-align:center" class="loading"><i class="fa fa-spinner fa-spin big-loading"></i></div> --}}
+    <form id="comment-form"  style="display:">
         <div class="row">
             <div class="col-md-1">
-                <img src="" class="image-new-comment">
+                {{-- <img src="" class="image-new-comment"> --}}
             </div>
             <div class="col-md-11">
                 <input 
@@ -17,7 +17,6 @@
                     name="comment" 
                     type="text"
                     class="comment"
-                    {{-- class="form-control"  --}}
                     placeholder="Insert Your Comment"
                     oninvalid="this.setCustomValidity('Maaf, Nama wajib di isi')"
                     oninput="setCustomValidity('')"
@@ -29,15 +28,16 @@
             href="javascript:;" 
             class="btn btn-default btn-md send-comment disabled"
             style="margin-left:65px;"
+            onclick="authenticate().then(loadClient).then(execute)"
         >
             Kirim
         </a>
     </form>
-    <div 
+    {{-- <div 
         class="g-signin2" 
-        style="margin-bottom:10px; display:none;" 
+        style="margin-bottom:10px; display:;" 
         data-onsuccess="onSignIn"
-    /></div>                               
+    /></div>--}}
 </div>
 <!-- End contact form box -->
 
