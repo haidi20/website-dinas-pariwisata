@@ -14,14 +14,11 @@
             </div>
             <div class="col-md-11">
                 <input 
-                    required
                     id="comment" 
                     name="comment" 
                     type="text"
                     class="comment"
                     placeholder="Insert Your Comment"
-                    oninvalid="this.setCustomValidity('Maaf, Nama wajib di isi')"
-                    oninput="setCustomValidity('')"
                 >
             </div>
         </div>
