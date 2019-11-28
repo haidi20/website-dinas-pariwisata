@@ -8,47 +8,64 @@
    * https://developers.google.com/explorer-help/guides/code_samples#javascript
    */
 
-  function authenticate() {
-    return gapi.auth2.getAuthInstance()
-        .signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
-        .then(function() { console.log("Sign-in successful"); },
-              function(err) { console.error("Error signing in", err); });
-  }
-  function loadClient() {
-    gapi.client.setApiKey("AIzaSyDHy18clWdaVSoLKhwxAI24XSotdc-Ucqo");
-    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
-              function(err) { console.error("Error loading GAPI client for API", err); });
-  }
-  // Make sure the client is loaded and sign-in is complete before calling this method.
-  function execute() {
-    var comment = $('.comment').val();
-    var videoId = $('.videoId').val();
-    let comments = '';
+    function authenticate() {
+        return gapi.auth2.getAuthInstance()
+            .signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
+            .then(function() { console.log("Sign-in successful"); },
+                function(err) { console.error("Error signing in", err); });
+    }
 
-    // console.log(comment, videoId);
-    return gapi.client.youtube.commentThreads.insert({
-      "part": "snippet",
-      "resource": {
-        "snippet": {
-          "topLevelComment": {
-            "snippet": {
-              "textOriginal": "keren",
-              "videoId": "OLuBvjFjFkU"
+    function loadClient() {
+        gapi.client.setApiKey("AIzaSyDHy18clWdaVSoLKhwxAI24XSotdc-Ucqo");
+        return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+            .then(function(ress) { 
+                    console.log("GAPI client loaded for API"); 
+            },
+            function(err) { console.error("Error loading GAPI client for API", err); });
+    }
+
+    // Make sure the client is loaded and sign-in is complete before calling this method.
+    function execute() {
+        var comment = $('.comment').val();
+        var videoId = $('.videoId').val();
+        let comments= '';
+
+        // console.log(comment, videoId);
+        return gapi.client.youtube.commentThreads.insert({
+            "part": "snippet",
+            "resource": {
+                "snippet": {
+                "topLevelComment": {
+                    "snippet": {
+                    "textOriginal": comment,
+                    "videoId": videoId
+                    }
+                }
+                }
             }
-          }
-        }
-      }
-    })
+        })
         .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
-  }
+            // Handle the results here (response.result has the parsed body).
+            console.log("Response", response);
+            var author = response.result.snippet.topLevelComment.snippet
+
+            var myUserEntity = {};
+            myUserEntity.name   = author.authorDisplayName
+            myUserEntity.image  = author.authorProfileImageUrl
+            myUserEntity.comment= author.textOriginal 
+            
+            //Store the entity object in sessionStorage where it will be accessible from all pages of your site.
+            sessionStorage.setItem('myUserEntity', JSON.stringify(myUserEntity));
+            // console.log('session = '+sessionStorage.getItem('myUserEntity'))
+            // console.log('data = '+myUserEntity.name)
+        },
+        function(err) { console.error("Execute error", err); });
+    }
+
     gapi.load("client:auth2", function() {
         gapi.auth2.init({client_id: "480303218320-t5f67643c8c2f8873a7ghlc0rqp2j888"});
     });
+
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
@@ -68,12 +85,6 @@
             window.location.href = link;
         });
 
-        // show_comments();
-
-        // $('.send-comment').click(function(){
-        //     // send_comment();
-        // })
-
         $('.comment').keyup(function(){
             var btn = $('.send-comment')
             if($(this).val() != ""){
@@ -87,12 +98,14 @@
             }
         });
 
-        // if(sessionStorage.getItem('myUserEntity') == null){
-        //     // $('.g-signin2').show();
-        //     // $('#comment-form').hide();
-        //     // $('.loading').hide();
-        //     // console.log('kosong')
-        // }
+        $('#image-new-comment').empty().append($.gravatar('', {
+            image: 'mp'
+        }));
+
+        if(sessionStorage.getItem('myUserEntity') != null){
+            var user = JSON.parse(sessionStorage.getItem('myUserEntity'))
+            $('#image-new-comment').empty().append('<img src="'+user.image+'" />')
+        }
 
         // console.log('session = '+sessionStorage.getItem('myUserEntity'))
 

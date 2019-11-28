@@ -59,7 +59,7 @@
         border-radius: 50%;
         width: 40px;
     }
-    .image-new-comment{
+    .image-new-comment > img{
         border-radius: 50%;
         width: 50px;
     }

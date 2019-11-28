@@ -8,7 +8,9 @@
     <form id="comment-form"  style="display:">
         <div class="row">
             <div class="col-md-1">
-                {{-- <img src="" class="image-new-comment"> --}}
+                <div class="image-new-comment" id="image-new-comment"> 
+                    loading..
+                </div>
             </div>
             <div class="col-md-11">
                 <input 
