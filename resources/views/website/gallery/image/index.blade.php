@@ -67,7 +67,6 @@
 @endsection
 
 @section('content')
-@include('website.gallery.modal')
 <!-- block-wrapper-section
     ================================================== -->
     <section class="block-wrapper">
