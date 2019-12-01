@@ -15,7 +15,7 @@
                                     {!!$item->preview_right_side_post!!}
                                     <div class="hover-box">
                                         <div class="inner-hover">
-                                            <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->title}} </a></h2>
+                                            <h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->title}} </a></h2>
                                             <ul class="post-tags">
                                                 <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                                 <li>{!! $item->viewed !!}</li>
@@ -34,7 +34,7 @@
                     <li onClick="gotolink('{{$item->gotolink}}')">
                         {!!$item->preview_right_side_post_two!!}
                         <div class="post-content">
-                            <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
+                            <h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
                             <ul class="post-tags">
                                 <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                 <li>{!! $item->viewed !!}</li>
@@ -64,7 +64,7 @@
                         <li onClick="gotolink('{{$item->gotolink}}')">
                                 {!!$item->preview_right_side_popular_post!!}
                                 <div class="post-content">
-                                    <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
+                                    <h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
                                     <ul class="post-tags">
                                         {{-- <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li> --}}
                                         <li>{!! $item->viewed !!}</li>
@@ -80,7 +80,7 @@
                             <li onClick="gotolink('{{$item->gotolink}}')">
                                 {!!$item->preview_right_side_popular_post!!}
                                 <div class="post-content">
-                                    <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->title}} </a></h2>
+                                    <h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->title}} </a></h2>
                                     <ul class="post-tags">
                                         {{-- <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li> --}}
                                         <li>{!! $item->viewed !!}</li>

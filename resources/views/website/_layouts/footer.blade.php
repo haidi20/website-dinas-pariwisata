@@ -28,7 +28,7 @@
                                         {!!$item->preview_footer_post!!}
                                         <div class="post-content">
                                             <a href="{{url('post', [$item->display_category_name])}}">{{$item->display_category_name}}</a>
-                                            <h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
+                                            <h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
                                             <ul class="post-tags">
                                                 <li><i class="fa fa-clock-o"></i>{{$item->long_date}}</li>
                                             </ul>

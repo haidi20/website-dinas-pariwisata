@@ -196,6 +196,7 @@ class Post extends Model
                     class="img-responsive lazy '.$typeImage.'" 
                     alt=""
                     data-src="'.$url.'"
+                    href="'.$this->gotolink.'"
                 >';
     }
 

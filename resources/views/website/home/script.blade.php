@@ -157,7 +157,7 @@
                             detailNewPosts = detailNewPosts+'<a href="'+item.link_category+'">';
                                 detailNewPosts = detailNewPosts+item.display_category_name;
                             detailNewPosts = detailNewPosts+'</a>';
-                            detailNewPosts = detailNewPosts+'<h2 style="color:white"><a href="javascript:;" onClick="gotolink(\''+item.gotolink+'\')">'+item.show_title+'</a></h2>';
+                            detailNewPosts = detailNewPosts+'<h2 style="color:white"><a href="'+item.gotolink+'" onClick="gotolink(\''+item.gotolink+'\')">'+item.show_title+'</a></h2>';
                             detailNewPosts = detailNewPosts+'<ul class="post-tags">';
                                 detailNewPosts = detailNewPosts+'<li><i class="fa fa-clock-o"></i>'+item.long_date+'</li>';
                                 detailNewPosts = detailNewPosts+'<li>'+item.viewed+'</li>';
@@ -178,7 +178,7 @@
                                         newPosts = newPosts+'<a class="category-post tech" href="'+data.firstPost.link_category+'">';
                                             newPosts = newPosts+data.firstPost.display_category_name;
                                         newPosts = newPosts+'</a>';
-                                        newPosts = newPosts+'<h2 style="color:white"><a href="javascript:;" onClick="gotolink(\''+data.firstPost.gotolink+'\')">'+data.firstPost.show_title+'</a></h2>';
+                                        newPosts = newPosts+'<h2 style="color:white"><a href="'+data.firstPost.gotolink+'" onClick="gotolink(\''+data.firstPost.gotolink+'\')">'+data.firstPost.show_title+'</a></h2>';
                                         newPosts = newPosts+'<ul class="post-tags">';
                                             newPosts = newPosts+'<li><i class="fa fa-clock-o"></i>'+data.firstPost.long_date+'</li>';
                                             newPosts = newPosts+'<li>'+data.firstPost.viewed+'</li>';
@@ -270,7 +270,7 @@
                             latest = latest+item.preview_last_post;
                         latest = latest+'</div>';
                         latest = latest+'<div class="post-title">';
-                            latest = latest+'<h2><a onClick="gotolink(\''+item.gotolink+'\')">'+item.show_limit_title+'</a></h2>';
+                            latest = latest+'<h2><a href="'+item.gotolink+'" onClick="gotolink(\''+item.gotolink+'\')">'+item.show_limit_title+'</a></h2>';
                                 latest = latest+'<ul class="post-tags">';
                                     latest = latest+'<li><i class="fa fa-clock-o"></i>'+item.long_date+'</li>';
                                     latest = latest+'<li>'+item.viewed+'</li>';
