@@ -77,7 +77,9 @@
                     $.each(data, function(index, item){
                         popular = popular+'<div class="item news-post standard-post" onClick="gotolink(\''+item.gotolink+'\')">';
                             popular = popular+'<div class="post-gallery">';
-                                popular = popular+item.preview_popular_post;
+                                popular = popular+'<a href="'+item.gotolink+'">';
+                                    popular = popular+item.preview_popular_post;
+                                popular = popular+'</a>'
                                 popular = popular+'<a href="'+item.link_category+'" class="category-post world" style="background-color:'+item.color_category+'" onClick="gotolink(\''+item.link_category+'\')">';
                                     popular = popular+ item.display_category_name;
                                 popular = popular+'</a>';
@@ -152,7 +154,9 @@
                         detailNewPosts = detailNewPosts+'<ul class="list-posts">';
                 $.each(data.limitThreePosts, function(index, item){
                     detailNewPosts = detailNewPosts+'<li onClick="gotolink(\''+item.gotolink+'\')">';
-                        detailNewPosts = detailNewPosts+item.preview_three_post;
+                        detailNewPosts = detailNewPosts+'<a href="'+item.gotolink+'">';
+                            detailNewPosts = detailNewPosts+item.preview_three_post;
+                        detailNewPosts = detailNewPosts+'</a>';
                         detailNewPosts = detailNewPosts+'<div class="post-content">';
                             detailNewPosts = detailNewPosts+'<a href="'+item.link_category+'">';
                                 detailNewPosts = detailNewPosts+item.display_category_name;
@@ -169,6 +173,7 @@
                 detailNewPosts = detailNewPosts+'</div>';
                
                 newPosts = newPosts+'<div class="row">';
+                        newPosts = newPosts+'<a href="'+data.firstPost.gotolink+'">';
                     newPosts = newPosts+'<div class="col-md-6">';
                         newPosts = newPosts+'<div class="news-post image-post2" onClick="gotolink(\''+data.firstPost.gotolink+'\')">';
                             newPosts = newPosts+'<div class="post-gallery">';
@@ -188,6 +193,7 @@
                             newPosts = newPosts+'</div>';
                         newPosts = newPosts+'</div>';
                     newPosts = newPosts+'</div>';
+                        newPosts = newPosts+'</a>';
                     newPosts = newPosts+detailNewPosts;
                 newPosts = newPosts+'</div>';
 
@@ -267,7 +273,9 @@
                     
                     latest = latest+'<div class="news-post standard-post2 '+default_size+'" onClick="gotolink(\''+item.gotolink+'\')">';
                         latest = latest+'<div class="post-gallery">';
-                            latest = latest+item.preview_last_post;
+                            latest = latest+'<a href="'+item.gotolink+'">';
+                                latest = latest+item.preview_last_post;
+                            latest = latest+'</a>';
                         latest = latest+'</div>';
                         latest = latest+'<div class="post-title">';
                             latest = latest+'<h2><a href="'+item.gotolink+'" onClick="gotolink(\''+item.gotolink+'\')">'+item.show_limit_title+'</a></h2>';
