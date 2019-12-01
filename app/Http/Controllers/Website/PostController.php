@@ -42,12 +42,12 @@ class PostController extends BaseController
 
         $post       = $this->postRepo->baseSlug($slug);
         $shares     = $this->shareRepo->all();
-        $comments   = $this->commentRepo->limit(5);
+        $comments   = $this->commentRepo->limit(5, $post->id);
         $suggests   = $this->postRepo->baseCategory($dataCategory->id, $post->id, $limit = 6);
         
         $tags       = $this->postRepo->tags($post->id);
 
-        $urlMoreComments    = url('post', ['comment', 'more']);
+        $urlMoreComments    = url('post', ['comment', 'more', $post->id]);
         $urlStoreComment    = url('post', ['comment', 'store']);
 
         return $this->view('website.post.detail', compact(
@@ -56,12 +56,13 @@ class PostController extends BaseController
         ));
     }
 
-    public function more_comments()
+    public function more_comments($id)
     {
-        $comments = $this->commentRepo->show(5);
+        $comments = $this->commentRepo->show(5, $id);
 
         // return response()->json($comments);
-        return $comments;
+        // return $comments;
+        return $id;
     }
 
     public function comment()

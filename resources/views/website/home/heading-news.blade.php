@@ -15,10 +15,14 @@
 						>
 							{{$firstPost->display_category_name}}
 						</a>
-						<h2><a onClick="gotolink('{{$firstPost->gotolink}}')">{{$firstPost->show_limit_title}}</a></h2>
+						<h2><a 
+								href="{{$firstPost->gotolink}}" 
+								onClick="gotolink('{{$firstPost->gotolink}}')"
+							>
+								{{$firstPost->show_limit_title}}
+							</a></h2>
 						<ul class="post-tags">
 							<li><i class="fa fa-clock-o"></i><span>{{$firstPost->long_date}}</span></li>
-							{{-- <li><a href="#"><i class="fa fa-eye"></i><span>{{$firstPost->read}}</span></a></li> --}}
 							<li>{!! $firstPost->viewed !!}</li>	
 						</ul>
 						<p>{{$firstPost->limitContent}}</p>
@@ -42,7 +46,7 @@
 										>
 											{{$item->display_category_name}}
 										</a>
-										<h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->show_limit_title}}</a></h2>
+										<h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->show_limit_title}}</a></h2>
 										<ul class="post-tags">
 											<li><i class="fa fa-clock-o"> {{$item->long_date}}</i></li>
 											{{-- <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li> --}}
@@ -104,7 +108,7 @@
 								>
 									{{$item->display_category_name}}
 								</a>
-								<h2><a onClick="gotolink('{{$item->gotolink}}')">{{$item->show_limit_title}}</a></h2>
+								<h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->show_limit_title}}</a></h2>
 								<ul class="post-tags">
 									<li><i class="fa fa-clock-o"></i><span>{{$item->long_date}}</span></li>
 									<li>{!! $item->viewed !!}</li>

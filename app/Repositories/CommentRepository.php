@@ -10,14 +10,14 @@ class CommentRepository {
         return Comment::active()->get();
     }
 
-    public function limit($limit)
+    public function limit($limit, $post_id)
     {
-        return Comment::active()->limit($limit)->get();
+        return Comment::active()->basePost($post_id)->limit($limit)->get();
     }
 
-    public function show($limit)
+    public function show($limit, $post_id)
     {
-        $comment = Comment::skip(request('skip'))->limit($limit)->get();
+        $comment = Comment::skip(request('skip'))->basePost($post_id)->limit($limit)->get();
 
         $comment = $comment->map(function($item){
             $item->detail_date_time = 'keren';
