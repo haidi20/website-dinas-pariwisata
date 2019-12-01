@@ -78,12 +78,12 @@
                         popular = popular+'<div class="item news-post standard-post" onClick="gotolink(\''+item.gotolink+'\')">';
                             popular = popular+'<div class="post-gallery">';
                                 popular = popular+item.preview_popular_post;
-                                popular = popular+'<a class="category-post world" style="background-color:'+item.color_category+'" onClick="gotolink(\''+item.gotolink+'\')">';
+                                popular = popular+'<a href="'+item.link_category+'" class="category-post world" style="background-color:'+item.color_category+'" onClick="gotolink(\''+item.link_category+'\')">';
                                     popular = popular+ item.display_category_name;
                                 popular = popular+'</a>';
                             popular = popular+'</div>';
                             popular = popular+'<div class="post-content">';
-                                popular = popular+'<h2><a onClick="gotolink(\''+item.gotolink+'\')">'+item.show_title+'</a></h2>';
+                                popular = popular+'<h2><a href="'+item.gotolink+'" onClick="gotolink(\''+item.gotolink+'\')">'+item.show_title+'</a></h2>';
                                 popular = popular+'<ul class="post-tags">';
                                     popular = popular+'<li><i class="fa fa-clock-o"></i>'+item.long_date+'</li>';
                                     popular = popular+'<li>'+item.viewed+'</li>';
