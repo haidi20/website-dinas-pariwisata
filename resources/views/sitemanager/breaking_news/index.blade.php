@@ -2,6 +2,26 @@
 
 @section('script-top')
 {!! Html::style('avenger/assets/plugins/sweet-alert/sweet-alert.css') !!}
+<style>
+    .pilihan {
+        border-bottom:1px solid grey;
+        margin-bottom:5px;
+        font-size: 14px;
+    }
+    .pilihan:hover {
+        background-color : grey;
+        color: white;
+    }
+    .label-left {
+        display:inline-block;
+        margin-right:10rem;
+        padding-right:10rem;
+    }
+    .label-right {
+        display:inline-block;
+        margin-left:8rem;
+    }
+</style>
 @endsection
 
 @section('script-bottom')
@@ -82,8 +102,8 @@
 
         <div class="container-fluid">
             <div class="row text-center">
-                <h4 style="display:inline-block;margin-right:10rem;padding-right:10rem;">Pilihan</h4>
-                <h4 style="display:inline-block;margin-left:8rem;">Ditampilkan</h4>
+                <h4 class="label-left">Pilihan</h4>
+                <h4 class="label-right">Ditampilkan</h4>
             </div>
         	<div class="row">
 				<div class="col-md-12">
@@ -92,7 +112,7 @@
                         <div class="col-sm-4 col-sm-offset-2" style="text-align:center;">
                             <select size="12" class="form-control" id="select-left" multiple="">
                                 @forelse($posts as $item)
-                                <option style="border-bottom:1px solid blue;margin-bottom:5px;" value="{{ $item->id }}">{{$item->title}}</option>
+                                <option class="pilihan" value="{{ $item->id }}">{{$item->title}}</option>
                                 @empty
                                 <option value="">&nbsp;</option>
                                 @endforelse
@@ -102,7 +122,7 @@
                         <div class="col-sm-4" style="text-align:center;">
                             <select size="12" class="form-control" id="select-right" multiple="">
                                 @forelse($breaking_news as $item)
-                                <option style="border-bottom:1px solid blue;margin-bottom:5px;" value="{{ $item->id }}">{{$item->title}}</option>
+                                <option class="pilihan" value="{{ $item->id }}">{{$item->title}}</option>
                                 @empty
                                 <option value="">&nbsp;</option>
                                 @endforelse
