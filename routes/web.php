@@ -114,7 +114,7 @@ Route::group(['prefix' => 'sitemanager', 'namespace' => 'Sitemanager', 'middlewa
 
 	Route::group(['prefix' => 'breaking-news'], function(){
 		Route::get('/', 'BreakingNewsController@index');
-		Route::post('edit/{id}', 'BreakingNewsController@update')->where('id', '[0-9]+');
+		Route::get('edit/{id}', 'BreakingNewsController@update')->where('id', '[0-9]+');
 	});
 	
 	Route::group(['prefix' => 'page'], function(){

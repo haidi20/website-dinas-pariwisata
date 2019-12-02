@@ -31,4 +31,7 @@
     .option-post:hover{
         background: #EEEEEE;
     }
+    .btn-switch{
+        margin-top:10px; border:none; background:none;
+    }
 </style>

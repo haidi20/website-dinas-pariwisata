@@ -31,30 +31,47 @@
                             <div class="title">
                                 Daftar Postingan
                             </div>
-                            <ul class="select-post">
+                            <ul class="select-post post-left">
                                 @forelse($posts as $item)
-                                    <li class="option-post" id="post_{{$item->id}}" data-id="{{ $item->id }}">
+                                    <li 
+                                        class="option-post" 
+                                        onClick="clickPost({{$item->id}}, {{$item->breaking_news}})"  
+                                        id="post_{{$item->id}}" 
+                                    >
                                         <p>{{$item->title}}</p>
-                                        {{-- {{$item->title}} --}}
                                     </li>
                                 @empty
                                     <li value="">&nbsp;</li>
                                 @endforelse
                             </ul>
-                            <button id="btn-left" class="fa fa-arrow-circle-o-right fa-3x" aria-hidden="true" style="margin-top:10px; border:none; background:none;"></button>
+                            {{-- <button 
+                                id="btn-left" 
+                                aria-hidden="true"
+                                class="fa fa-arrow-circle-o-right fa-3x btn-switch" 
+                            ></button> --}}
                         </div>
                         <div class="col-sm-6" style="text-align:center; padding-right: 0px ">
                             <div class="title">
                                 Daftar Breaking News
                             </div>
-                            <select size="12" class="form-control custom" id="select-right" multiple="">
+                            <ul class="select-post post-right">
                                 @forelse($breaking_news as $item)
-                                    <option value="{{ $item->id }}">{{$item->show_limit_title_large}}</option>
+                                    <li 
+                                        class="option-post" 
+                                        onClick="clickPost({{$item->id}}, {{$item->breaking_news}})" 
+                                        id="post_{{$item->id}}"
+                                    >
+                                        <p>{{$item->title}}</p>
+                                    </li>
                                 @empty
-                                    <option value="">&nbsp;</option>
+                                    <li class="option-post"></li>
                                 @endforelse
-                            </select>
-                            <button id="btn-right" class="fa fa-arrow-circle-o-left fa-3x" aria-hidden="true" style="margin-top:10px; border:none; background:none;"></button>
+                            </ul>
+                            {{-- <button 
+                                id="btn-right" 
+                                aria-hidden="true" 
+                                class="fa fa-arrow-circle-o-left fa-3x btn-switch"
+                            ></button> --}}
                         </div>
                     </div>
 

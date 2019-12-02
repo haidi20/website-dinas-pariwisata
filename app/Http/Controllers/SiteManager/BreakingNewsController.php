@@ -10,8 +10,8 @@ class BreakingNewsController extends BaseController
 {
     public function index()
     {
-        $posts = Post::select('id','title')->where('breaking_news',0)->where('type', 'post')->get();
-        $breaking_news = Post::select('id','title')->where('breaking_news',1)->get();
+        $posts = Post::where('breaking_news', 0)->where('type', 'post')->get();
+        $breaking_news = Post::where('breaking_news', 1)->get();
         return view('sitemanager.breaking_news.index', compact('posts','breaking_news'));
     }
 
@@ -25,9 +25,9 @@ class BreakingNewsController extends BaseController
             ], 404);
         }
 
-        $post->breaking_news = $request->input('breaking_news');
+        $post->breaking_news = $post->breaking_news == 1 ? 0 : 1;
         $post->save();
 
-        return response()->json(['post' => $post]);
+        return $post;
     }
 }
