@@ -14,17 +14,19 @@
     }
     .label-left {
         display:inline-block;
-        margin-right:10rem;
-        padding-right:10rem;
+        margin-right:8rem;
+        padding-right:18rem;
     }
     .label-right {
         display:inline-block;
-        margin-left:8rem;
+        margin-left:10rem;
     }
 </style>
 @endsection
 
 @section('script-bottom')
+<!-- <script src="assets/plugins/form-multiselect/js/jquery.multi-select.min.js"></script>  			Multiselect Plugin -->
+{!! Html::script('avenger/assets/plugins/form-multiselect/js/jquery.multi-select.min.js') !!}
 {!! Html::script('avenger/assets/plugins/sweet-alert/sweet-alert.min.js') !!}
 	<script>
         const updateBreakingNews = (option, position) => {
@@ -91,7 +93,7 @@
     
         @include('sitemanager._layout.heading')
 
-        <div class="page-heading">            
+        <div class="page-heading" style="margin-bottom:5px;">            
             <h1>Breaking News</h1>
             <div class="options">
 			    <div class="btn-toolbar">
@@ -109,20 +111,20 @@
 				<div class="col-md-12">
 
                     <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-2" style="text-align:center;">
-                            <select size="12" class="form-control" id="select-left" multiple="">
+                        <div class="col-sm-5 col-sm-offset-1" style="text-align:center;margin-right:10px;">
+                            <select size="16" class="form-control" id="select-left" multiple="">
                                 @forelse($posts as $item)
-                                <option class="pilihan" value="{{ $item->id }}">{{$item->title}}</option>
+                                <option class="pilihan" value="{{ $item->id }}">{{(strlen($item->title) > 50) ? substr($item->title, 0, 50)."..." : $item->title}}</option>
                                 @empty
                                 <option value="">&nbsp;</option>
                                 @endforelse
                             </select>
                             <button id="btn-left" class="fa fa-arrow-circle-o-right fa-3x" aria-hidden="true" style="margin-top:10px; border:none; background:none;"></button>
                         </div>
-                        <div class="col-sm-4" style="text-align:center;">
-                            <select size="12" class="form-control" id="select-right" multiple="">
+                        <div class="col-sm-5" style="text-align:center;">
+                            <select size="16" class="form-control" id="select-right" multiple="">
                                 @forelse($breaking_news as $item)
-                                <option class="pilihan" value="{{ $item->id }}">{{$item->title}}</option>
+                                <option class="pilihan" value="{{ $item->id }}">{{(strlen($item->title) > 50) ? substr($item->title, 0, 50)."..." : $item->title}}</option>
                                 @empty
                                 <option value="">&nbsp;</option>
                                 @endforelse
