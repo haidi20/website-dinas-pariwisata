@@ -51,7 +51,7 @@
                             ></button> --}}
                         </div>
                         <div class="col-sm-6" style="text-align:center; padding-right: 0px ">
-                            <div class="title">
+                            <div class="title" style="color:red">
                                 Daftar Breaking News
                             </div>
                             <ul class="select-post post-right">
