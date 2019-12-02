@@ -10,7 +10,7 @@ class BreakingNewsController extends BaseController
 {
     public function index()
     {
-        $posts = Post::where('breaking_news', 0)->where('type', 'post')->get();
+        return $posts = Post::where('breaking_news', 0)->where('type', 'post')->get();
         $breaking_news = Post::where('breaking_news', 1)->get();
         return view('sitemanager.breaking_news.index', compact('posts','breaking_news'));
     }
@@ -20,9 +20,7 @@ class BreakingNewsController extends BaseController
         $post = Post::find($id);
 
         if(!$post){
-            return response()->json([
-                'msg' => 'post not found'
-            ], 404);
+            return 'not found';
         }
 
         $post->breaking_news = $post->breaking_news == 1 ? 0 : 1;
