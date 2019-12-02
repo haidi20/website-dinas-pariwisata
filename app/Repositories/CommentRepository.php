@@ -17,7 +17,7 @@ class CommentRepository {
 
     public function show($limit, $post_id)
     {
-        $comment = Comment::skip(request('skip'))->basePost($post_id)->limit($limit)->get();
+        $comment = Comment::active()->skip(request('skip'))->basePost($post_id)->limit($limit)->get();
 
         $comment = $comment->map(function($item){
             $item->detail_date_time = 'keren';
