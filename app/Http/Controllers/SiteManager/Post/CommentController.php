@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Sitemanager\Post;
+namespace App\Http\Controllers\SiteManager\Post;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
