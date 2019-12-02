@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Sitemanager;
 
-use App\Models\Post;
+use App\Web\Models\Post\Post;
 use Illuminate\Http\Request;
 // use App\Http\Controllers\Controller;
 
