@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Sitemanager\Post;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Sitemanager\BaseController;
+use Illuminate\Http\Request;
 
 use App\Web\Models\Post\Comment;
 
