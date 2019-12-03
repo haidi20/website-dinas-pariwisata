@@ -12,7 +12,9 @@
                         <li>
                             <div class="news-post image-post2" onClick="gotolink('{{$item->gotolink}}')">
                                 <div class="post-gallery">
-                                    {!!$item->preview_right_side_post!!}
+                                    <a href="{{$item->gotolink}}">
+                                        {!!$item->preview_right_side_post!!}
+                                    </a>
                                     <div class="hover-box">
                                         <div class="inner-hover">
                                             <h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->title}} </a></h2>
@@ -32,7 +34,9 @@
 
                @foreach ($rightSidePosts as $index => $item)
                     <li onClick="gotolink('{{$item->gotolink}}')">
-                        {!!$item->preview_right_side_post_two!!}
+                        <a href="{{$item->gotolink}}">
+                            {!!$item->preview_right_side_post_two!!}
+                        </a>
                         <div class="post-content">
                             <h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
                             <ul class="post-tags">
@@ -62,7 +66,9 @@
                     <ul class="list-posts">
                         @foreach ($rightSidePopularPosts as $index => $item)
                         <li onClick="gotolink('{{$item->gotolink}}')">
-                                {!!$item->preview_right_side_popular_post!!}
+                                <a href="{{$item->gotolink}}">
+                                    {!!$item->preview_right_side_popular_post!!}
+                                </a>
                                 <div class="post-content">
                                     <h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->title}}</a></h2>
                                     <ul class="post-tags">
@@ -78,7 +84,9 @@
                     <ul class="list-posts">
                         @foreach ($rightSideRecentPosts as $index => $item)
                             <li onClick="gotolink('{{$item->gotolink}}')">
-                                {!!$item->preview_right_side_popular_post!!}
+                                <a href="{{$item->gotolink}}">
+                                    {!!$item->preview_right_side_popular_post!!}
+                                </a>
                                 <div class="post-content">
                                     <h2><a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')">{{$item->title}} </a></h2>
                                     <ul class="post-tags">

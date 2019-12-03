@@ -82,7 +82,7 @@ $(function() {
 										<th width="200" class="text-center">Nama Menu</th>
 					                    <th class="text-center" width="160">Parent</th>
 					                    <th class="text-center" width="100">Status</th>
-					                    <th class="text-center" width="110">Action</th>
+					                    <th class="text-center" width="150">Action</th>
 									</tr>
 								</thead>
 								<tbody id="sortableContainer">

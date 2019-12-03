@@ -115,6 +115,11 @@ class Post extends Model
         return ucwords(word_limit($this->title, 5));
     }
 
+    public function getShowLimitTitleLargeAttribute()
+    {
+        return ucwords(word_limit($this->title, 8));
+    }
+
     public function getDisplayAuthorAttribute()
     {
         if($this->author)
