@@ -9,10 +9,10 @@
 
         console.log(position)
 
-        if(countBreakingNews >= 5 && position == 0){
+        if(countBreakingNews >= 10 && position == 0){
             swal({
                 title: "Peringatan",
-                text: "Maaf, Postingan tersebut tidak ada",
+                text: "Maaf, Breaking News sudah 10 artikel",
                 type: "warning",
                 html: true,
                 confirmButtonColor: "green",
@@ -20,14 +20,10 @@
                 closeOnConfirm: false
             })
         }else{
-            removeListPost(post_id);
+            $('#post_'+post_id).remove();
+            
             updateBreakingNews(post_id);
         }       
-    }
-
-    function removeListPost(post_id)
-    {
-        $('#post_'+post_id).remove();
     }
 
     function updateBreakingNews(post_id)
