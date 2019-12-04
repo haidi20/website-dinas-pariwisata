@@ -110,7 +110,9 @@ class MenuController extends BaseController
 			$category = Category::find($input['category_id']);
 			$link = 'post/'.$category->name;
 		}else if($connectCategory == 0){
-			$link = ($input['link']) ? 'page/'.$input['link'] : '';
+			$page = strpos_array($input['link'], ['com', 'www']) ? null : 'page/';
+
+			$link = ($input['link']) ? $page.$input['link'] : '';
 		}
 
 		$menu->name        = $input['name'];
