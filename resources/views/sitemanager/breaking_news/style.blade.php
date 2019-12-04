@@ -32,6 +32,8 @@
         background: #EEEEEE;
     }
     .btn-switch{
-        margin-top:10px; border:none; background:none;
+        margin-top:10px; 
+        border:none; 
+        background:none;
     }
 </style>

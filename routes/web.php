@@ -173,3 +173,7 @@ Auth::routes();
 Route::get('/home', function(){
 	return redirect('/');
 });
+
+Route::get('test/location', function(){
+	return view('website.location');
+});
