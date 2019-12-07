@@ -17,7 +17,7 @@
 							<h1><span class="world">World</span></h1>
 						</div>
 
-						@foreach ($posts as $index => $item)
+						@forelse ($posts as $index => $item)
 							<div class="news-post large-post" onClick="gotolink('{{$item->gotolink}}')">
 								<div class="post-gallery">
 									{!!$item->preview_original!!}
@@ -44,7 +44,9 @@
 									</a>
 								</div>
 							</div>
-						@endforeach
+						@empty
+							<h3>Maaf, Judul yang anda cari tidak di temukan</h3>
+						@endforelse
 						
 
 					</div>
