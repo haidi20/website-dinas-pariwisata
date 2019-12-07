@@ -64,7 +64,7 @@
                                         <p>{{$item->title}}</p>
                                     </li>
                                 @empty
-                                    <li class="option-post"></li>
+                                    {{-- <li class="option-post"></li> --}}
                                 @endforelse
                             </ul>
                             {{-- <button 
