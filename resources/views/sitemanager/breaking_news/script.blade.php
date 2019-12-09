@@ -7,8 +7,6 @@
         $('#post_'+post_id).css('background-color', '#EEEEEE');
         var countBreakingNews = $('.post-right li').length;
 
-        console.log(position)
-
         if(countBreakingNews >= 10 && position == 0){
             swal({
                 title: "Peringatan",
@@ -32,7 +30,15 @@
 
         $.get(url, function(data){
             if(data == 'not found'){
-
+                swal({
+                    title: "Peringatan",
+                    text: "Maaf, Postingan tersebut tidak ada",
+                    type: "warning",
+                    html: true,
+                    confirmButtonColor: "green",
+                    confirmButtonText: "Oke",
+                    closeOnConfirm: false
+                })
             }else{
                 var breakingNews = data.breaking_news;
                 var option = '';

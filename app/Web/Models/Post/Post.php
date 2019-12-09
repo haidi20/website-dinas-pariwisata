@@ -29,7 +29,7 @@ class Post extends Model
 
     public function scopeType($query, $type)
     {
-        return $query->where('type', $type);
+        return $query->where('type', $type)->where('status', 1);
     }
 
 	public function scopeSlug($query, $slug)

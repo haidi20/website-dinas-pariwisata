@@ -82,7 +82,7 @@
                                     </li>
 >>>>>>> master
                                 @empty
-                                    <li class="option-post"></li>
+                                    {{-- <li class="option-post"></li> --}}
                                 @endforelse
                             </ul>
                             {{-- <button 

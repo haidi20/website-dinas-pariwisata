@@ -921,6 +921,26 @@ if ( ! function_exists('romanic_number') )
     } 
 }
 
+if ( ! function_exists('strpos_array'))
+{
+    function strpos_array($haystack, $needles) {
+        if ( is_array($needles) ) {
+            foreach ($needles as $str) {
+                if ( is_array($str) ) {
+                    $pos = strpos_array($haystack, $str);
+                } else {
+                    $pos = strpos($haystack, $str);
+                }
+                if ($pos !== FALSE) {
+                    return $pos;
+                }
+            }
+        } else {
+            return strpos($haystack, $needles);
+        }
+    }
+}
+
 if ( ! function_exists('array_search_by_key') )
 {
     function array_search_by_key($keys, $array, $display_key = false)
