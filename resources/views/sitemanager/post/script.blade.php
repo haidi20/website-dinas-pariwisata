@@ -5,6 +5,13 @@
 {!! Html::script('avenger/assets/js/jquery.serializejson.min.js') !!}
 
 <script>
+$(document).ready(function(){
+    var $url = $('#url').val();
+    var setUrl = decodeURIComponent($url);
+
+    console.log(setUrl);
+});
+
 function numberonly(e, decimal) {
     var key;
     var keychar;
