@@ -51,7 +51,7 @@
 									{!! Form::label('url', 'URL', ['class' => 'col-sm-1 control-label']) !!}
 									<div class="col-sm-11">
 										<div class="input-group">
-											{!! Form::text('url', str_slug(old('url_slug'), '/'), ['class' => 'form-control', 'id' => 'url', 'readonly' => 'readonly']) !!}
+											{!! Form::text('url', old('url_slug'), ['class' => 'form-control', 'id' => 'url', 'onkeypress' => 'return false;']) !!}
 											{!! Form::hidden('link', old('slug'), ['id' => 'link', 'class' => 'form-control']) !!}
 											<div class="input-group-btn">
 												<a data-toggle="modal" href="#menu">
@@ -104,6 +104,7 @@
 									</div>
 								</div> --}}
 								@endif
+								<input type="hidden" name="type_form" value="{{$moduleTitle}}">
 								<div class="form-group">
 									{!! Form::label('content', 'Konten', ['class' => 'col-sm-1 control-label']) !!}
 									<div class="col-sm-11">
