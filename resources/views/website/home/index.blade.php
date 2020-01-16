@@ -21,24 +21,26 @@
 	@if($firstPost)
 		@include('website.home.heading-news')
 
-		<section class="ticker-news">
-			<div class="container">
-				<div class="ticker-news-box">
-					<span class="breaking-news">breaking news</span>
-					<span class="new-news">New</span>
-					<ul id="js-news">
-						@foreach($breakingNewsPosts as $index => $item)
-						<li class="news-item" >
-							{{-- <span class="time-news">{{$item->long_date}}</span>    --}}
-							<a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')" style="cursor:pointer">
-								{{$item->title}}
-							</a>
-						</li>
-						@endforeach
-					</ul>
+		@if(!$breakingNewsPosts->isEmpty())
+			<section class="ticker-news">
+				<div class="container">
+					<div class="ticker-news-box">
+						<span class="breaking-news">breaking news</span>
+						<span class="new-news">New</span>
+						<ul id="js-news">
+							@foreach($breakingNewsPosts as $index => $item)
+							<li class="news-item" >
+								{{-- <span class="time-news">{{$item->long_date}}</span>    --}}
+								<a href="{{$item->gotolink}}" onClick="gotolink('{{$item->gotolink}}')" style="cursor:pointer">
+									{{$item->title}}
+								</a>
+							</li>
+							@endforeach
+						</ul>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		@endif
 	
 		@include('website.home.search')
 

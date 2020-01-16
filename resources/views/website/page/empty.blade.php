@@ -15,7 +15,7 @@
                         <div class="single-post-box">
 
                             <div class="title-post">
-                                <h2>Belum Ada Isi</h2>
+                                <h2>Maaf, Halaman ini kosong.</h2>
                                 {{-- <h1>{{$page->title}}</h1> --}}
                                 {{-- <ul class="post-tags">
                                     <li><i class="fa fa-clock-o"></i>{{$page->detail_datetime}}</li>
