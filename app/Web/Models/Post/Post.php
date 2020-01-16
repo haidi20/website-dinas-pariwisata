@@ -380,7 +380,7 @@ class Post extends Model
         $category = $this->category;
         $prefix = '';
         if($this->type == 'post') $prefix = $category ? $category->slug : '?';
-        return url($prefix.$this->slug);
+        return url($this->slug);
     }
 
     public function getLongDateAttribute()
