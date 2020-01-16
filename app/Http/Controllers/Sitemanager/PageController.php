@@ -108,7 +108,7 @@ class PageController extends BaseController
 		$post->status      = $input['status'];
 		$post->author_id   = Auth::user()->id;
 
-		// $post->save();
+		$post->save();
 		// return $post;
 
 		flash_message('message', 'success', 'check', 'Data '.strtolower($this->moduleTitle).' telah disimpan', false);
