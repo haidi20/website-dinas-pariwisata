@@ -98,7 +98,9 @@
 										@endif
 										<td class="text-center">{!! $item->status_label !!}</td>
 										<td class="text-center">
+											@if(Request::segment(2) == 'post')
 											<a href="{{url($moduleUrl, [$item->id, 'comment'])}}" class="btn btn-info btn-xs btn-label">{!!fa('comment')!!}</a>
+											@endif
 											<a href="{{ url($moduleUrl, ['edit', $item->id]) }}" class="btn btn-success btn-xs btn-label">{!!fa('pencil')!!}</a>
 											<a href="javascript:void(0)" class="btn btn-danger btn-xs btn-label btn-delete" data-url="{{ url($moduleUrl, ['delete', $item->id]) }}">{!!fa('trash-o')!!}</a>
 										</td>
