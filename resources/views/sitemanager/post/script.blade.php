@@ -121,15 +121,15 @@ $(function(){
         listMenu(modal);
     });
 
-    @if(strtolower($moduleTitle) === 'page')
-    var link = $('#url').val();
-    if(link.length > 0){
-        $('#url').prop('readonly', false);
-    }else{
-        $('#url').prop('readonly', true);
-        $('#link').val('');
-    }
-    @endif
+    // @if(strtolower($moduleTitle) === 'page')
+    //     var link = $('#url').val();
+    //     if(link.length > 0){
+    //         $('#url').prop('readonly', false);
+    //     }else{
+    //         $('#url').prop('readonly', true);
+    //         $('#link').val('');
+    //     }
+    // @endif
 
     $('#url').on('change', function(){
         var value = $(this).val();
