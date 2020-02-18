@@ -534,7 +534,7 @@ if( ! function_exists('has_error') )
 
 if( ! function_exists('render_menu_child'))
 {
-    function render_menu_child($menu, $toggle=true, $level3=null){
+    function render_menu_child($menu, $toggle=true, $level2=null){
         if($toggle){
             $template = 
             '<li class="drop"><a class="custom_%s"  href="%s">%s</a>
@@ -542,7 +542,8 @@ if( ! function_exists('render_menu_child'))
                     %s
                 </ul>
             </li>';
-        }else{
+        }
+        if($level2){
             $template = 
             '<li class="drop"><a class="%s" href="%s">%s</a>
                 <ul class="dropdown level2">
@@ -555,7 +556,7 @@ if( ! function_exists('render_menu_child'))
         $temp = '<li><a href="%s">%s</a></li>';
         foreach($menu->child as $item){
             if(count($item->child)){
-                $child .= render_menu_child($item, $item->color, false);
+                $child .= render_menu_child($item, true, true);
             }else{
                 $child .= sprintf($temp, $item->display_link, $item->display_name);
             }
