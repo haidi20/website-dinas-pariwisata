@@ -66,7 +66,7 @@
             url: url,
             cache: false,
             beforeSend: function(){
-                loading = '<div style="text-align:center"><i class="fa fa-spinner fa-spin big-loading"></i></div>';
+                loading = '<div class="popular-loading"><i class="fa fa-spinner fa-spin big-loading "></i></div>';
 
                 listPost= $('.section-popular > .container').find('.post-popular');
                 listPost.append(loading);

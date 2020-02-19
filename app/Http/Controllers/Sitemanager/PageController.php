@@ -101,7 +101,8 @@ class PageController extends BaseController
 
 		$post->title       = $input['title'];
 		$post->menu_id     = 2;
-		$post->slug        = str_slug($input['link']);
+		$post->slug        = str_slug($input['link'], '/');
+		// $post->slug        = $input['link'];
 		$post->content     = $input['content'];
 		$post->type        = 'page';
 		$post->status      = $input['status'];

@@ -5,6 +5,13 @@
 {!! Html::script('avenger/assets/js/jquery.serializejson.min.js') !!}
 
 <script>
+$(document).ready(function(){
+    var $url = $('#url').val();
+    var setUrl = decodeURIComponent($url);
+
+    console.log(setUrl);
+});
+
 function numberonly(e, decimal) {
     var key;
     var keychar;
@@ -114,15 +121,15 @@ $(function(){
         listMenu(modal);
     });
 
-    @if(strtolower($moduleTitle) === 'page')
-    var link = $('#url').val();
-    if(link.length > 0){
-        $('#url').prop('readonly', false);
-    }else{
-        $('#url').prop('readonly', true);
-        $('#link').val('');
-    }
-    @endif
+    // @if(strtolower($moduleTitle) === 'page')
+    //     var link = $('#url').val();
+    //     if(link.length > 0){
+    //         $('#url').prop('readonly', false);
+    //     }else{
+    //         $('#url').prop('readonly', true);
+    //         $('#link').val('');
+    //     }
+    // @endif
 
     $('#url').on('change', function(){
         var value = $(this).val();

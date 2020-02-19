@@ -104,7 +104,7 @@ class PostController extends BaseController
 		$post->tags        = $input['tags'];
 		$post->title       = $input['title'];
 		$post->menu_id     = 3;
-		$post->slug        = str_slug($input['title']);
+		$post->slug        = str_slug($input['title'], '-');
 		$post->content     = $input['content'];
 		$post->type        = 'post';
 		$post->status      = $input['status'];

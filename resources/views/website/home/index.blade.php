@@ -9,6 +9,13 @@
 		div.block-content{
 			padding:30px 0px 0px;
 		}
+		#section-popular{
+			height: 450px;
+		}
+		.popular-loading{
+			padding-top: 150px;
+			text-align:center
+		}
 	</style>
 @endsection
 
@@ -41,10 +48,10 @@
 				</div>
 			</section>
 		@endif
-	
-		@include('website.home.search')
 
 		@include('website.home.post-popular')
+	
+		@include('website.home.search')
 	
 		@include('website.home.main-body')
 	@endif
