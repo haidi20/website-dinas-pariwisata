@@ -27,6 +27,7 @@ return[
 		'facebook',
 		'twitter',
 		'instagram',
+		'youtube'
 	]
 
 ];
