@@ -26,6 +26,8 @@
 @section('content')
 
 	@if($firstPost)
+		@include('website.home.search')
+
 		@include('website.home.heading-news')
 
 		@if(!$breakingNewsPosts->isEmpty())
@@ -50,8 +52,6 @@
 		@endif
 
 		@include('website.home.post-popular')
-	
-		@include('website.home.search')
 	
 		@include('website.home.main-body')
 	@endif
