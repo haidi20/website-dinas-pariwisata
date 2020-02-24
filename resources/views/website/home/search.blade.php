@@ -2,7 +2,7 @@
 ================================================== -->
 <section class="space-search" style="background-image: url('{{asset('images/bg-search.jpg')}}'); border-top:1px solid #f0f0f0;">
     <div class="container center-search">
-        <h2>Welcome To Kalimantan Timur</h2>
+        <h2 class="text-welcome">Welcome To Kalimantan Timur</h2>
         <br>
         <!-- <h3>We offer a variety of services and options</h3> -->
         <form role="search" class="search-form">
