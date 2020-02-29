@@ -60,7 +60,7 @@ class PostRepository {
     }
 
     public function filter($limit = nul, $type = "all", $slug = null, $category = null){
-        $post = Post::type('post');
+        $post = Post::type('post')->status(1);
 
         if($slug){
             $post = $post->slug($slug);
