@@ -31,12 +31,6 @@
         	<div class="row">
 				<div class="col-md-12">
                     <div class="form-group">
-<<<<<<< HEAD
-                        <div class="col-sm-5 col-sm-offset-1" style="text-align:center;margin-right:10px;">
-                            <select size="16" class="form-control" id="select-left" multiple="">
-                                @forelse($posts as $item)
-                                <option class="pilihan" value="{{ $item->id }}">{{(strlen($item->title) > 50) ? substr($item->title, 0, 50)."..." : $item->title}}</option>
-=======
                         <div class="col-sm-6" style="text-align:center; padding-left:0px;">
                             <div class="title">
                                 Daftar Postingan
@@ -50,7 +44,6 @@
                                     >
                                         <p>{{$item->title}}</p>
                                     </li>
->>>>>>> master
                                 @empty
                                     <li value="">&nbsp;</li>
                                 @endforelse
@@ -61,12 +54,6 @@
                                 class="fa fa-arrow-circle-o-right fa-3x btn-switch" 
                             ></button> --}}
                         </div>
-<<<<<<< HEAD
-                        <div class="col-sm-5" style="text-align:center;">
-                            <select size="16" class="form-control" id="select-right" multiple="">
-                                @forelse($breaking_news as $item)
-                                <option class="pilihan" value="{{ $item->id }}">{{(strlen($item->title) > 50) ? substr($item->title, 0, 50)."..." : $item->title}}</option>
-=======
                         <div class="col-sm-6" style="text-align:center; padding-right: 0px ">
                             <div class="title" style="color:red">
                                 Daftar Breaking News
@@ -80,7 +67,6 @@
                                     >
                                         <p>{{$item->title}}</p>
                                     </li>
->>>>>>> master
                                 @empty
                                     {{-- <li class="option-post"></li> --}}
                                 @endforelse
