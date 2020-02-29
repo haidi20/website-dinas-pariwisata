@@ -160,7 +160,7 @@
                                         <div class="btn-group pull-left" id="galleryfilter">
                                             <button class="btn btn-default active" data-group="all">All</button>
                                             @foreach($tags as $tag)
-                                            <button class="btn btn-default" data-group="{{ $tag }}">{{ ucfirst($tag) }}</button>
+                                                <button class="btn btn-default" data-group="{{ $tag }}">{{ ucfirst($tag) }}</button>
                                             @endforeach
                                         </div>
                                     </div>

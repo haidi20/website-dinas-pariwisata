@@ -80,9 +80,13 @@ class Gallery extends Model
             $style = 'style="min-height: ' . $height .'px"';
 
             parse_str( parse_url( $this->link, PHP_URL_QUERY ), $my_array_of_vars );
-            $vid = $my_array_of_vars['v'];
-            $embed_url = str_replace('watch?v=', 'embed/', $this->link);
-            $linkYoutube   = $embed_url;
+            if($my_array_of_vars){
+                $vid = $my_array_of_vars['v'];
+                $embed_url = str_replace('watch?v=', 'embed/', $this->link);
+                $linkYoutube   = $embed_url;
+            }else{
+                $linkYoutube = "";
+            }
         }else{
             if($width || $height){
                 $url = 'http://placehold.it/' . $width . 'x' . $height;
