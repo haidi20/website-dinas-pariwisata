@@ -12,7 +12,7 @@ you can visit website [in here](http://dispar.kaltimprov.go.id/)
 
 ## How to Install on Local Environment
 You can follow the following step to configure this project
-- Clone the repository using the command "git clone https://github.com/haidi20/setup-project-lumen-vue.git"
+- Clone the repository using the command "git clone https://github.com/haidi20/website-dinas-pariwisata.git"
 ### Running API
 - First create database in mysql (whatever you want name datatabase)
 - copy file .env.example and rename file to .env and configure for the database
@@ -21,4 +21,4 @@ You can follow the following step to configure this project
   ```$ composer install``` <br>
   ```$ php artisan migrate``` <br>
   ```$ php artisan db:seed``` <br>
-- And run command ```$ php -S localhost:8000 -t public``` in your command line (make sure path command line in directory API) and <br> take a look at "localhost:8000" in browser
+- And run command ```$ php artisan serve``` in your command line (make sure path command line in directory API) and <br> take a look at "localhost:8000" in browser
