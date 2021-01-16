@@ -1,8 +1,14 @@
 # About Website
 The website of the Pariwista Service of East Kalimantan Province is a website that contains things related to tourism in East Kalimantan. There is a website display, including the home menu, profiles, photos, videos, public information, 3A data, pokdarwis Dewa Wisata, and contact. Features on the admin side include the inbox menu, website menu, gallery, posts, breaking news posts, page lists, and social media.
+you can visit website [in here](http://dispar.kaltimprov.go.id/)
 
 ## view Website
-![coba] (https://github.com/haidi20/website-dinas-pariwisata/blob/master/public/images/par%20-%20landing%20page.png)
+
+### Landing Page
+![plot](https://github.com/haidi20/website-dinas-pariwisata/blob/master/public/images/par%20-%20landing%20page.png)
+
+### Images
+![plot](https://github.com/haidi20/website-dinas-pariwisata/blob/master/public/images/par%20-%20images.png)
 
 ## How to Install on Local Environment
 You can follow the following step to configure this project
